@@ -12,6 +12,10 @@ namespace TNT_Paint
 {
     public partial class Form1 : Form
     {
+        Graphics g;
+        Bitmap bm;
+        Pen p;
+
         public Form1()
         {
             InitializeComponent();
