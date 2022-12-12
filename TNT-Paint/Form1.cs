@@ -15,6 +15,7 @@ namespace TNT_Paint
         Graphics g;
         Bitmap bm;
         Pen p;
+        Point px, py;
 
         public Form1()
         {
