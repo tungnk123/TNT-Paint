@@ -20,6 +20,11 @@ namespace TNT_Paint
         public Form1()
         {
             InitializeComponent();
+            bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
+            g = Graphics.FromImage(bm);
+            g.Clear(Color.White);
+            pb_mainScreen.Image = bm;
+
         }
     }
 }
