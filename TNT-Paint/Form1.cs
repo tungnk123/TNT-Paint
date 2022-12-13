@@ -69,7 +69,7 @@ namespace TNT_Paint
             g.Clear(Color.White);
             pb_mainScreen.Image = bm;
             p = new Pen(Color.Black, 1);
-            eraser = new Pen(Color.White, 10);
+            eraser = new Pen(Color.White, 20);
             SelectedMode = 1;
             // Khởi tạo ban đầu
         }
