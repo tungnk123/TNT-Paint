@@ -15,7 +15,51 @@ namespace TNT_Paint
         Graphics g; // graphics from main screen
         Bitmap bm;
         Pen p; // main pen
+        Pen eraser;
         Point px, py;
+        int SelectedMode;
+        bool AllowPaint;
+
+        private void Btn_Pencil_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 1;
+        }
+
+        private void Btn_Eraser_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 2;
+        }
+
+        private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
+        {
+            AllowPaint = true;
+            px = e.Location;
+        }
+
+        private void pb_mainScreen_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (AllowPaint)
+            {
+                if(SelectedMode == 1)
+                {
+                    py = e.Location;
+                    g.DrawLine(p, px, py);
+                    px = py;
+                }
+                if(SelectedMode == 2)
+                {
+                    py = e.Location;
+                    g.DrawLine(eraser, px, py);
+                    px = py;
+                }
+            }
+            pb_mainScreen.Refresh();
+        }
+
+        private void pb_mainScreen_MouseUp(object sender, MouseEventArgs e)
+        {
+            AllowPaint = false;
+        }
 
         public Form1()
         {
@@ -25,6 +69,7 @@ namespace TNT_Paint
             g.Clear(Color.White);
             pb_mainScreen.Image = bm;
             p = new Pen(Color.Black, 1);
+            eraser = new Pen(Color.White, 10);
             // Khởi tạo ban đầu
         }
     }

@@ -42,7 +42,10 @@ namespace TNT_Paint
             this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
+            this.Btn_Eraser = new System.Windows.Forms.Button();
+            this.Btn_Pencil = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +134,8 @@ namespace TNT_Paint
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.Btn_Eraser);
+            this.panel1.Controls.Add(this.Btn_Pencil);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
@@ -146,6 +151,32 @@ namespace TNT_Paint
             this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pb_mainScreen.TabIndex = 2;
             this.pb_mainScreen.TabStop = false;
+            this.pb_mainScreen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseDown);
+            this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
+            this.pb_mainScreen.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseUp);
+            // 
+            // Btn_Eraser
+            // 
+            this.Btn_Eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Eraser.Image = global::TNT_Paint.Properties.Resources.Eraser;
+            this.Btn_Eraser.Location = new System.Drawing.Point(12, 54);
+            this.Btn_Eraser.Name = "Btn_Eraser";
+            this.Btn_Eraser.Size = new System.Drawing.Size(39, 36);
+            this.Btn_Eraser.TabIndex = 1;
+            this.Btn_Eraser.UseVisualStyleBackColor = true;
+            this.Btn_Eraser.Click += new System.EventHandler(this.Btn_Eraser_Click);
+            // 
+            // Btn_Pencil
+            // 
+            this.Btn_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Pencil.Image = global::TNT_Paint.Properties.Resources.Pencil__2_;
+            this.Btn_Pencil.Location = new System.Drawing.Point(12, 12);
+            this.Btn_Pencil.Name = "Btn_Pencil";
+            this.Btn_Pencil.Size = new System.Drawing.Size(39, 36);
+            this.Btn_Pencil.TabIndex = 0;
+            this.Btn_Pencil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btn_Pencil.UseVisualStyleBackColor = true;
+            this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
             // 
             // Form1
             // 
@@ -160,6 +191,7 @@ namespace TNT_Paint
             this.Text = "TNT Paint";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,6 +213,8 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripMenuItem zomeInToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pb_mainScreen;
+        private System.Windows.Forms.Button Btn_Eraser;
+        private System.Windows.Forms.Button Btn_Pencil;
     }
 }
 
