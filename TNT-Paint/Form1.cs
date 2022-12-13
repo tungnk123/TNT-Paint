@@ -12,9 +12,9 @@ namespace TNT_Paint
 {
     public partial class Form1 : Form
     {
-        Graphics g;
+        Graphics g; // graphics from main screen
         Bitmap bm;
-        Pen p;
+        Pen p; // main pen
         Point px, py;
 
         public Form1()
@@ -24,7 +24,8 @@ namespace TNT_Paint
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
             pb_mainScreen.Image = bm;
-
+            p = new Pen(Color.Black, 1);
+            // Khởi tạo ban đầu
         }
     }
 }
