@@ -42,12 +42,18 @@ namespace TNT_Paint
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_Fill = new System.Windows.Forms.Button();
+            this.Btn_ColorPicker = new System.Windows.Forms.Button();
+            this.Btn_ColorPanel = new System.Windows.Forms.Button();
+            this.pb_color = new System.Windows.Forms.PictureBox();
             this.Btn_Eraser = new System.Windows.Forms.Button();
             this.Btn_Pencil = new System.Windows.Forms.Button();
-            this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_color)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,37 +86,37 @@ namespace TNT_Paint
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // svaeToolStripMenuItem
             // 
             this.svaeToolStripMenuItem.Name = "svaeToolStripMenuItem";
-            this.svaeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.svaeToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.svaeToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // homeToolStripMenuItem
@@ -130,12 +136,16 @@ namespace TNT_Paint
             // zomeInToolStripMenuItem
             // 
             this.zomeInToolStripMenuItem.Name = "zomeInToolStripMenuItem";
-            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.zomeInToolStripMenuItem.Text = "Zome in";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.Btn_Fill);
+            this.panel1.Controls.Add(this.Btn_ColorPicker);
+            this.panel1.Controls.Add(this.Btn_ColorPanel);
+            this.panel1.Controls.Add(this.pb_color);
             this.panel1.Controls.Add(this.Btn_Eraser);
             this.panel1.Controls.Add(this.Btn_Pencil);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -143,6 +153,58 @@ namespace TNT_Paint
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(908, 100);
             this.panel1.TabIndex = 1;
+            // 
+            // Btn_Fill
+            // 
+            this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Fill.Image = global::TNT_Paint.Properties.Resources.Fill;
+            this.Btn_Fill.Location = new System.Drawing.Point(69, 54);
+            this.Btn_Fill.Name = "Btn_Fill";
+            this.Btn_Fill.Size = new System.Drawing.Size(39, 36);
+            this.Btn_Fill.TabIndex = 5;
+            this.Btn_Fill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_Fill, "Fill With Color");
+            this.Btn_Fill.UseVisualStyleBackColor = true;
+            this.Btn_Fill.Click += new System.EventHandler(this.Btn_Fill_Click);
+            // 
+            // Btn_ColorPicker
+            // 
+            this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorPicker.Image = global::TNT_Paint.Properties.Resources.colorPicker2;
+            this.Btn_ColorPicker.Location = new System.Drawing.Point(69, 12);
+            this.Btn_ColorPicker.Name = "Btn_ColorPicker";
+            this.Btn_ColorPicker.Size = new System.Drawing.Size(39, 36);
+            this.Btn_ColorPicker.TabIndex = 4;
+            this.Btn_ColorPicker.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorPicker, "Color Picker");
+            this.Btn_ColorPicker.UseVisualStyleBackColor = true;
+            this.Btn_ColorPicker.Click += new System.EventHandler(this.Btn_ColorPicker_Click);
+            // 
+            // Btn_ColorPanel
+            // 
+            this.Btn_ColorPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorPanel.Image = global::TNT_Paint.Properties.Resources.colorPicker;
+            this.Btn_ColorPanel.Location = new System.Drawing.Point(205, 21);
+            this.Btn_ColorPanel.Name = "Btn_ColorPanel";
+            this.Btn_ColorPanel.Size = new System.Drawing.Size(69, 60);
+            this.Btn_ColorPanel.TabIndex = 3;
+            this.Btn_ColorPanel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorPanel, "Color Table");
+            this.Btn_ColorPanel.UseVisualStyleBackColor = true;
+            this.Btn_ColorPanel.Click += new System.EventHandler(this.Btn_ColorPanel_Click);
+            // 
+            // pb_color
+            // 
+            this.pb_color.BackColor = System.Drawing.Color.Black;
+            this.pb_color.Location = new System.Drawing.Point(144, 35);
+            this.pb_color.Name = "pb_color";
+            this.pb_color.Size = new System.Drawing.Size(44, 35);
+            this.pb_color.TabIndex = 2;
+            this.pb_color.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_color, "Current Color");
             // 
             // Btn_Eraser
             // 
@@ -172,6 +234,7 @@ namespace TNT_Paint
             // 
             // pb_mainScreen
             // 
+            this.pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
             this.pb_mainScreen.Location = new System.Drawing.Point(0, 124);
             this.pb_mainScreen.Name = "pb_mainScreen";
             this.pb_mainScreen.Size = new System.Drawing.Size(908, 471);
@@ -197,6 +260,7 @@ namespace TNT_Paint
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_color)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -221,6 +285,11 @@ namespace TNT_Paint
         private System.Windows.Forms.Button Btn_Eraser;
         private System.Windows.Forms.Button Btn_Pencil;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox pb_color;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button Btn_ColorPanel;
+        private System.Windows.Forms.Button Btn_ColorPicker;
+        private System.Windows.Forms.Button Btn_Fill;
     }
 }
 

@@ -86,5 +86,17 @@
   <ItemGroup>
     <None Include="Resources\Eraser.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorPicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorPicker2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fill2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
