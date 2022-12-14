@@ -47,6 +47,16 @@ namespace TNT_Paint
             this.Btn_Pencil = new System.Windows.Forms.Button();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zomeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridlinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
@@ -55,13 +65,17 @@ namespace TNT_Paint
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.homeToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.toolsToolStripMenuItem,
+            this.imageToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(908, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(908, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,10 +86,11 @@ namespace TNT_Paint
             this.openToolStripMenuItem,
             this.svaeToolStripMenuItem,
             this.saveAsToolStripMenuItem,
+            this.toolStripSeparator2,
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
@@ -117,15 +132,21 @@ namespace TNT_Paint
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zomeInToolStripMenuItem});
+            this.zomeInToolStripMenuItem,
+            this.zomeOutToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.toolStripSeparator1,
+            this.rulerToolStripMenuItem,
+            this.gridlinesToolStripMenuItem,
+            this.statusBarToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // zomeInToolStripMenuItem
@@ -140,7 +161,7 @@ namespace TNT_Paint
             this.panel1.Controls.Add(this.Btn_Eraser);
             this.panel1.Controls.Add(this.Btn_Pencil);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(908, 100);
             this.panel1.TabIndex = 1;
@@ -183,6 +204,64 @@ namespace TNT_Paint
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             this.pb_mainScreen.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseUp);
             // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // imageToolStripMenuItem
+            // 
+            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
+            this.imageToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
+            this.imageToolStripMenuItem.Text = "Image";
+            // 
+            // zomeOutToolStripMenuItem
+            // 
+            this.zomeOutToolStripMenuItem.Name = "zomeOutToolStripMenuItem";
+            this.zomeOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zomeOutToolStripMenuItem.Text = "Zome out";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "100%";
+            // 
+            // rulerToolStripMenuItem
+            // 
+            this.rulerToolStripMenuItem.Name = "rulerToolStripMenuItem";
+            this.rulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rulerToolStripMenuItem.Text = "Ruler";
+            // 
+            // gridlinesToolStripMenuItem
+            // 
+            this.gridlinesToolStripMenuItem.Name = "gridlinesToolStripMenuItem";
+            this.gridlinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gridlinesToolStripMenuItem.Text = "Gridlines";
+            // 
+            // statusBarToolStripMenuItem
+            // 
+            this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusBarToolStripMenuItem.Text = "Status Bar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +302,16 @@ namespace TNT_Paint
         private System.Windows.Forms.Button Btn_Eraser;
         private System.Windows.Forms.Button Btn_Pencil;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zomeOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem rulerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gridlinesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
 
