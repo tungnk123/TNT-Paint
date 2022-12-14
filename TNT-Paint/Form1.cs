@@ -12,13 +12,13 @@ namespace TNT_Paint
 {
     public partial class Form1 : Form
     {
-        Graphics g; // graphics from main screen
+        Graphics g; // đồ hoạ từ màn hình vẽ chính
         Bitmap bm;
-        Pen p; // main pen
-        Pen eraser;
+        Pen p; // bút vẽ chính
+        Pen eraser; // tẩy
         Point px, py;
-        int SelectedMode;
-        bool AllowPaint;
+        int SelectedMode; // mỗi giá trị là mỗi mode vẽ lên màn hình chính
+        bool AllowPaint; // nếu là true thì cho phép vẽ lên màn hình chính
 
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace TNT_Paint
             pb_mainScreen.Image = bm;
             p = new Pen(Color.Black, 1);
             eraser = new Pen(Color.White, 20);
-            SelectedMode = 1;
+            SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
         }
     }

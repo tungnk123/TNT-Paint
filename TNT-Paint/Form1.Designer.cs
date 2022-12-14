@@ -80,37 +80,37 @@ namespace TNT_Paint
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // svaeToolStripMenuItem
             // 
             this.svaeToolStripMenuItem.Name = "svaeToolStripMenuItem";
-            this.svaeToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.svaeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.svaeToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // homeToolStripMenuItem
@@ -130,7 +130,7 @@ namespace TNT_Paint
             // zomeInToolStripMenuItem
             // 
             this.zomeInToolStripMenuItem.Name = "zomeInToolStripMenuItem";
-            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zomeInToolStripMenuItem.Text = "Zome in";
             // 
             // panel1
@@ -172,7 +172,6 @@ namespace TNT_Paint
             // 
             // pb_mainScreen
             // 
-            this.pb_mainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pb_mainScreen.Location = new System.Drawing.Point(0, 124);
             this.pb_mainScreen.Name = "pb_mainScreen";
             this.pb_mainScreen.Size = new System.Drawing.Size(908, 471);
