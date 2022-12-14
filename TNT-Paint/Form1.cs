@@ -20,6 +20,18 @@ namespace TNT_Paint
         int SelectedMode; // mỗi giá trị là mỗi mode vẽ lên màn hình chính
         bool AllowPaint; // nếu là true thì cho phép vẽ lên màn hình chính
 
+        public Form1()
+        {
+            InitializeComponent();
+            bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
+            g = Graphics.FromImage(bm);
+            g.Clear(Color.White);
+            pb_mainScreen.Image = bm;
+            p = new Pen(Color.Black, 1);
+            eraser = new Pen(Color.White, 20);
+            SelectedMode = 1; // chọn bút chì làm mặc định
+            // Khởi tạo ban đầu
+        }
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
             SelectedMode = 1;
@@ -29,24 +41,22 @@ namespace TNT_Paint
         {
             SelectedMode = 2;
         }
-
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
             AllowPaint = true;
             px = e.Location;
         }
-
         private void pb_mainScreen_MouseMove(object sender, MouseEventArgs e)
         {
             if (AllowPaint)
             {
-                if(SelectedMode == 1)
+                if (SelectedMode == 1)
                 {
                     py = e.Location;
                     g.DrawLine(p, px, py);
                     px = py;
                 }
-                if(SelectedMode == 2)
+                if (SelectedMode == 2)
                 {
                     py = e.Location;
                     g.DrawLine(eraser, px, py);
@@ -59,19 +69,6 @@ namespace TNT_Paint
         private void pb_mainScreen_MouseUp(object sender, MouseEventArgs e)
         {
             AllowPaint = false;
-        }
-
-        public Form1()
-        {
-            InitializeComponent();
-            bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
-            g = Graphics.FromImage(bm);
-            g.Clear(Color.White);
-            pb_mainScreen.Image = bm;
-            p = new Pen(Color.Black, 1);
-            eraser = new Pen(Color.White, 20);
-            SelectedMode = 1; // chọn bút chì làm mặc định
-            // Khởi tạo ban đầu
         }
     }
 }
