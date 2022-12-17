@@ -95,6 +95,9 @@
     <None Include="Resources\Eraser.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\colorPicker.png" />
+    <None Include="Resources\Fill.png" />
+    <None Include="Resources\ColorPanel.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
