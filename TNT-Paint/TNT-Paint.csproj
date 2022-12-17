@@ -98,6 +98,9 @@
     <None Include="Resources\colorPicker.png" />
     <None Include="Resources\Fill.png" />
     <None Include="Resources\ColorPanel.png" />
+    <None Include="Resources\Small_line.png" />
+    <None Include="Resources\MediumLine.png" />
+    <None Include="Resources\BigLine.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -66,6 +66,19 @@ namespace TNT_Paint
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
         }
+        private void btn_SmallLine_Click(object sender, EventArgs e)
+        {
+            p.Width = 1;
+        }
+        private void Btn_MediumLine_Click(object sender, EventArgs e)
+        {
+            p.Width = 3;
+        }
+        private void Btn_BigLine_Click(object sender, EventArgs e)
+        {
+            p.Width = 6;
+        }
+
         #endregion
         #region MainScreen Mouse Event
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
@@ -125,7 +138,6 @@ namespace TNT_Paint
                 bm.SetPixel(x, y, newColor);
             }
         }
-
 
         private void Fill(Bitmap bm, int x, int y, Color newColor)
         {

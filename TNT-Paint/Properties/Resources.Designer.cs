@@ -63,6 +63,16 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BigLine {
+            get {
+                object obj = ResourceManager.GetObject("BigLine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ColorPanel {
             get {
                 object obj = ResourceManager.GetObject("ColorPanel", resourceCulture);
@@ -103,9 +113,29 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MediumLine {
+            get {
+                object obj = ResourceManager.GetObject("MediumLine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pencil__2_ {
             get {
                 object obj = ResourceManager.GetObject("Pencil (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Small_line {
+            get {
+                object obj = ResourceManager.GetObject("Small_line", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
