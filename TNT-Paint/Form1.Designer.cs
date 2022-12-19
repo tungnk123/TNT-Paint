@@ -61,11 +61,15 @@ namespace TNT_Paint
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Panel_size = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Btn_Clear = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.Panel_size = new System.Windows.Forms.Panel();
+            this.gb_Shape = new System.Windows.Forms.GroupBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.Btn_BigLine = new System.Windows.Forms.Button();
             this.Btn_MediumLine = new System.Windows.Forms.Button();
             this.btn_SmallLine = new System.Windows.Forms.Button();
@@ -75,10 +79,11 @@ namespace TNT_Paint
             this.Btn_ColorPicker = new System.Windows.Forms.Button();
             this.Btn_Eraser = new System.Windows.Forms.Button();
             this.Btn_Pencil = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Panel_size.SuspendLayout();
+            this.gb_Shape.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
             this.SuspendLayout();
@@ -293,6 +298,7 @@ namespace TNT_Paint
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.gb_Shape);
             this.panel1.Controls.Add(this.Panel_size);
             this.panel1.Controls.Add(this.Btn_Clear);
             this.panel1.Controls.Add(this.Btn_ColorDialog);
@@ -307,6 +313,28 @@ namespace TNT_Paint
             this.panel1.Size = new System.Drawing.Size(908, 100);
             this.panel1.TabIndex = 1;
             // 
+            // Panel_size
+            // 
+            this.Panel_size.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Panel_size.Controls.Add(this.label1);
+            this.Panel_size.Controls.Add(this.Btn_BigLine);
+            this.Panel_size.Controls.Add(this.Btn_MediumLine);
+            this.Panel_size.Controls.Add(this.btn_SmallLine);
+            this.Panel_size.Location = new System.Drawing.Point(484, 3);
+            this.Panel_size.Name = "Panel_size";
+            this.Panel_size.Size = new System.Drawing.Size(91, 97);
+            this.Panel_size.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(26, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 18);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Size";
+            // 
             // Btn_Clear
             // 
             this.Btn_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -319,17 +347,27 @@ namespace TNT_Paint
             this.Btn_Clear.UseVisualStyleBackColor = true;
             this.Btn_Clear.Click += new System.EventHandler(this.Btn_Clear_Click);
             // 
-            // Panel_size
+            // gb_Shape
             // 
-            this.Panel_size.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Panel_size.Controls.Add(this.label1);
-            this.Panel_size.Controls.Add(this.Btn_BigLine);
-            this.Panel_size.Controls.Add(this.Btn_MediumLine);
-            this.Panel_size.Controls.Add(this.btn_SmallLine);
-            this.Panel_size.Location = new System.Drawing.Point(512, 3);
-            this.Panel_size.Name = "Panel_size";
-            this.Panel_size.Size = new System.Drawing.Size(91, 97);
-            this.Panel_size.TabIndex = 7;
+            this.gb_Shape.Controls.Add(this.toolStrip1);
+            this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_Shape.Location = new System.Drawing.Point(581, 3);
+            this.gb_Shape.Name = "gb_Shape";
+            this.gb_Shape.Size = new System.Drawing.Size(174, 97);
+            this.gb_Shape.TabIndex = 8;
+            this.gb_Shape.TabStop = false;
+            this.gb_Shape.Text = "Shapes";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip1.Location = new System.Drawing.Point(3, 18);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(168, 28);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // pb_mainScreen
             // 
@@ -342,6 +380,16 @@ namespace TNT_Paint
             this.pb_mainScreen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseDown);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             this.pb_mainScreen.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseUp);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::TNT_Paint.Properties.Resources.Line;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(25, 25);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // Btn_BigLine
             // 
@@ -451,16 +499,6 @@ namespace TNT_Paint
             this.Btn_Pencil.UseVisualStyleBackColor = true;
             this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Size";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +517,10 @@ namespace TNT_Paint
             this.panel1.ResumeLayout(false);
             this.Panel_size.ResumeLayout(false);
             this.Panel_size.PerformLayout();
+            this.gb_Shape.ResumeLayout(false);
+            this.gb_Shape.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).EndInit();
             this.ResumeLayout(false);
@@ -533,6 +575,9 @@ namespace TNT_Paint
         private System.Windows.Forms.Button Btn_MediumLine;
         private System.Windows.Forms.Button Btn_BigLine;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gb_Shape;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
