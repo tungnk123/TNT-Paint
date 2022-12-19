@@ -245,11 +245,12 @@ namespace TNT_Paint
             }
             else
             {
-                if (py == StartPoint)
+                if (py.X - StartPoint.X < 10 && py.Y - StartPoint.Y < 10)
                 {
-                    g.DrawLine(p, PreviousPoint, py);
+                    g.DrawLine(p, StartPoint, PreviousPoint);
                     StartPoint = new Point(0, 0);
                     PreviousPoint = new Point(0, 0);
+                    inPolygon = false;
                 }
                 else
                 {
