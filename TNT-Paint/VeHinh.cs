@@ -47,5 +47,102 @@ namespace TNT_Paint
             g.DrawLine(p, p2, p3);
             g.DrawLine(p, p3, p1);
         }
+        public void DrawRoundedRectangle(Pen p, Graphics g, Point px, Point py)
+        {
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+
+            //top left
+            Point tl1, tl2, tl3;
+            tl1 = new Point(px.X, px.Y + height / 7);
+            tl2 = new Point(px.X + width / 7,px.Y);
+            tl3 = new Point((tl1.X + tl2.X) / 2 - width / 19, (tl1.Y + tl2.Y) / 2 - height / 19);
+            Point[] pnt_tl = { tl1, tl3, tl2 };
+
+            // bottom left
+            Point bl1, bl2, bl3;
+            bl1 = new Point(px.X, py.Y - height / 7);
+            bl2 = new Point(px.X + width / 7, py.Y);
+            bl3 = new Point((bl1.X + bl2.X) / 2 - width / 19, (bl1.Y + bl2.Y) / 2 + height / 19);
+            Point[] pnt_bl = { bl1, bl3, bl2 };
+
+            // top right
+            Point tr1, tr2, tr3;
+            tr1 = new Point(px.X + 6 * width / 7, px.Y);
+            tr2 = new Point(py.X, px.Y + height / 7);
+            tr3 = new Point((tr1.X + tr2.X) / 2 + width / 19, (tr1.Y + tr2.Y) / 2 - height / 19);
+            Point[] pnt_tr = { tr1, tr3, tr2 };
+
+            //bottom right
+            Point br1, br2, br3;
+            br1 = new Point(px.X + 6 * width / 7, py.Y);
+            br2 = new Point(py.X, px.Y + 6 * height / 7);
+            br3 = new Point((br1.X + br2.X) / 2 + width / 19, (br1.Y + br2.Y) / 2 + height / 20);
+            Point[] pnt_br = { br1, br3, br2 };
+            //
+
+            g.DrawCurve(p, pnt_tl);
+            g.DrawCurve(p, pnt_bl);
+            g.DrawCurve(p, pnt_tr);
+            g.DrawCurve(p, pnt_br);
+            g.DrawLine(p, tl1, bl1);
+            g.DrawLine(p, tl2, tr1);
+            g.DrawLine(p, tr2, br2);
+            g.DrawLine(p, bl2, br1);
+        }
+        public void DrawDiamond(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+
+            p1 = new Point(px.X + width / 2, px.Y);
+            p2 = new Point(px.X, px.Y + height / 2);
+            p3 = new Point(py.X, px.Y + height / 2);
+            p4 = new Point(px.X + width / 2, py.Y);
+
+            g.DrawLine(p, p1, p2);
+            g.DrawLine(p, p2, p4);
+            g.DrawLine(p, p3, p4);
+            g.DrawLine(p, p1, p3);
+        }
+        public void DrawPentagon(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4, p5;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+
+            p1 = new Point(px.X + width / 2, px.Y); // top
+            p2 = new Point(px.X, px.Y + height / 3); // left
+            p3 = new Point(py.X, px.Y + height / 3); // right
+            p4 = new Point(px.X + width / 5, py.Y); // bottom left
+            p5 = new Point(py.X - width / 5, py.Y); // bottom right
+
+            g.DrawLine(p, p1, p2);
+            g.DrawLine(p, p1, p3);
+            g.DrawLine(p, p3, p5);
+            g.DrawLine(p, p4, p2);
+            g.DrawLine(p, p4, p5);
+        }
+        public void DrawHexagon(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4, p5, p6;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+
+            p1 = new Point(px.X + width / 5, px.Y); // top left
+            p2 = new Point(px.X + 4 * width / 5, px.Y); // top right
+            p3 = new Point(px.X, px.Y + height / 2); // left
+            p4 = new Point(py.X, px.Y + height / 2); // right
+            p5 = new Point(px.X + width / 5, py.Y); // bottom left
+            p6 = new Point(px.X + 4 * width / 5, py.Y); // bottom right
+
+            g.DrawLine(p, p1, p2);
+            g.DrawLine(p, p1, p3);
+            g.DrawLine(p, p2, p4);
+            g.DrawLine(p, p3, p5);
+            g.DrawLine(p, p4, p6);
+            g.DrawLine(p, p5, p6);
+        }
     }
 }

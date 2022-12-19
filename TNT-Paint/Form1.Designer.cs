@@ -74,6 +74,10 @@ namespace TNT_Paint
             this.Btn_DrawRect = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawTriangle = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRightTriangle = new System.Windows.Forms.ToolStripButton();
+            this.Btn_DrawRoundedRectangle = new System.Windows.Forms.ToolStripButton();
+            this.Btn_DrawDiamond = new System.Windows.Forms.ToolStripButton();
+            this.Btn_DrawPentagon = new System.Windows.Forms.ToolStripButton();
+            this.Btn_DrawHexagon = new System.Windows.Forms.ToolStripButton();
             this.Btn_BigLine = new System.Windows.Forms.Button();
             this.Btn_MediumLine = new System.Windows.Forms.Button();
             this.btn_SmallLine = new System.Windows.Forms.Button();
@@ -323,7 +327,7 @@ namespace TNT_Paint
             this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_Shape.Location = new System.Drawing.Point(581, 3);
             this.gb_Shape.Name = "gb_Shape";
-            this.gb_Shape.Size = new System.Drawing.Size(141, 97);
+            this.gb_Shape.Size = new System.Drawing.Size(162, 97);
             this.gb_Shape.TabIndex = 8;
             this.gb_Shape.TabStop = false;
             this.gb_Shape.Text = "Shapes";
@@ -335,11 +339,15 @@ namespace TNT_Paint
             this.Btn_Ellipse,
             this.Btn_DrawRect,
             this.Btn_DrawTriangle,
-            this.Btn_DrawRightTriangle});
+            this.Btn_DrawRightTriangle,
+            this.Btn_DrawRoundedRectangle,
+            this.Btn_DrawDiamond,
+            this.Btn_DrawPentagon,
+            this.Btn_DrawHexagon});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(3, 18);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(135, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(156, 56);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -359,7 +367,7 @@ namespace TNT_Paint
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 76);
+            this.label1.Location = new System.Drawing.Point(25, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 18);
             this.label1.TabIndex = 3;
@@ -445,32 +453,79 @@ namespace TNT_Paint
             this.Btn_DrawRightTriangle.Text = "toolStripButton1";
             this.Btn_DrawRightTriangle.Click += new System.EventHandler(this.Btn_DrawRightTriangle_Click);
             // 
+            // Btn_DrawRoundedRectangle
+            // 
+            this.Btn_DrawRoundedRectangle.AutoSize = false;
+            this.Btn_DrawRoundedRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Btn_DrawRoundedRectangle.Image = global::TNT_Paint.Properties.Resources.RoundedRectangle;
+            this.Btn_DrawRoundedRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_DrawRoundedRectangle.Name = "Btn_DrawRoundedRectangle";
+            this.Btn_DrawRoundedRectangle.Size = new System.Drawing.Size(25, 25);
+            this.Btn_DrawRoundedRectangle.Text = "toolStripButton1";
+            this.Btn_DrawRoundedRectangle.Click += new System.EventHandler(this.Btn_DrawRoundedRectangle_Click);
+            // 
+            // Btn_DrawDiamond
+            // 
+            this.Btn_DrawDiamond.AutoSize = false;
+            this.Btn_DrawDiamond.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Btn_DrawDiamond.Image = global::TNT_Paint.Properties.Resources.Diamond;
+            this.Btn_DrawDiamond.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_DrawDiamond.Name = "Btn_DrawDiamond";
+            this.Btn_DrawDiamond.Size = new System.Drawing.Size(25, 25);
+            this.Btn_DrawDiamond.Text = "toolStripButton1";
+            this.Btn_DrawDiamond.Click += new System.EventHandler(this.Btn_DrawDiamond_Click);
+            // 
+            // Btn_DrawPentagon
+            // 
+            this.Btn_DrawPentagon.AutoSize = false;
+            this.Btn_DrawPentagon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Btn_DrawPentagon.Image = global::TNT_Paint.Properties.Resources.Pentagon;
+            this.Btn_DrawPentagon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_DrawPentagon.Name = "Btn_DrawPentagon";
+            this.Btn_DrawPentagon.Size = new System.Drawing.Size(25, 25);
+            this.Btn_DrawPentagon.Text = "toolStripButton1";
+            this.Btn_DrawPentagon.Click += new System.EventHandler(this.Btn_DrawPentagon_Click);
+            // 
+            // Btn_DrawHexagon
+            // 
+            this.Btn_DrawHexagon.AutoSize = false;
+            this.Btn_DrawHexagon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Btn_DrawHexagon.Image = global::TNT_Paint.Properties.Resources.Hexagon;
+            this.Btn_DrawHexagon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_DrawHexagon.Name = "Btn_DrawHexagon";
+            this.Btn_DrawHexagon.Size = new System.Drawing.Size(25, 25);
+            this.Btn_DrawHexagon.Text = "toolStripButton1";
+            this.Btn_DrawHexagon.Click += new System.EventHandler(this.Btn_DrawHexagon_Click);
+            // 
             // Btn_BigLine
             // 
+            this.Btn_BigLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_BigLine.Image = global::TNT_Paint.Properties.Resources.BigLine;
-            this.Btn_BigLine.Location = new System.Drawing.Point(0, 55);
+            this.Btn_BigLine.Location = new System.Drawing.Point(3, 55);
             this.Btn_BigLine.Name = "Btn_BigLine";
-            this.Btn_BigLine.Size = new System.Drawing.Size(91, 22);
+            this.Btn_BigLine.Size = new System.Drawing.Size(85, 22);
             this.Btn_BigLine.TabIndex = 2;
             this.Btn_BigLine.UseVisualStyleBackColor = true;
             this.Btn_BigLine.Click += new System.EventHandler(this.Btn_BigLine_Click);
             // 
             // Btn_MediumLine
             // 
+            this.Btn_MediumLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_MediumLine.Image = global::TNT_Paint.Properties.Resources.MediumLine;
-            this.Btn_MediumLine.Location = new System.Drawing.Point(0, 30);
+            this.Btn_MediumLine.Location = new System.Drawing.Point(3, 30);
             this.Btn_MediumLine.Name = "Btn_MediumLine";
-            this.Btn_MediumLine.Size = new System.Drawing.Size(91, 22);
+            this.Btn_MediumLine.Size = new System.Drawing.Size(85, 22);
             this.Btn_MediumLine.TabIndex = 1;
             this.Btn_MediumLine.UseVisualStyleBackColor = true;
             this.Btn_MediumLine.Click += new System.EventHandler(this.Btn_MediumLine_Click);
             // 
             // btn_SmallLine
             // 
+            this.btn_SmallLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_SmallLine.Image = global::TNT_Paint.Properties.Resources.Small_line;
-            this.btn_SmallLine.Location = new System.Drawing.Point(0, 5);
+            this.btn_SmallLine.Location = new System.Drawing.Point(3, 5);
             this.btn_SmallLine.Name = "btn_SmallLine";
-            this.btn_SmallLine.Size = new System.Drawing.Size(91, 22);
+            this.btn_SmallLine.Size = new System.Drawing.Size(85, 22);
             this.btn_SmallLine.TabIndex = 0;
             this.btn_SmallLine.UseVisualStyleBackColor = true;
             this.btn_SmallLine.Click += new System.EventHandler(this.btn_SmallLine_Click);
@@ -636,6 +691,10 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripButton Btn_DrawRect;
         private System.Windows.Forms.ToolStripButton Btn_DrawTriangle;
         private System.Windows.Forms.ToolStripButton Btn_DrawRightTriangle;
+        private System.Windows.Forms.ToolStripButton Btn_DrawRoundedRectangle;
+        private System.Windows.Forms.ToolStripButton Btn_DrawDiamond;
+        private System.Windows.Forms.ToolStripButton Btn_DrawPentagon;
+        private System.Windows.Forms.ToolStripButton Btn_DrawHexagon;
     }
 }
 

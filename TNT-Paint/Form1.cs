@@ -21,7 +21,6 @@ namespace TNT_Paint
         bool AllowPaint; // nếu là true thì cho phép vẽ lên màn hình chính
         Color currentColor = Color.Black;
         VeHinh veHinh;
-        VeMinhHoa veMinhHoa;
 
         public Form1()
         {
@@ -35,7 +34,6 @@ namespace TNT_Paint
             SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
             veHinh = new VeHinh();
-            veMinhHoa = new VeMinhHoa();
         }
         #region All buttons event
         private void Btn_Pencil_Click(object sender, EventArgs e)
@@ -102,6 +100,23 @@ namespace TNT_Paint
         {
             SelectedMode = 9;
         }
+        private void Btn_DrawRoundedRectangle_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 10;
+        }
+        private void Btn_DrawDiamond_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 11;
+        }
+        private void Btn_DrawPentagon_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 12;
+        }
+        private void Btn_DrawHexagon_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 13;
+        }
+
 
         #endregion
 
@@ -167,8 +182,25 @@ namespace TNT_Paint
             }
             if (SelectedMode == 9)
             {
-                veMinhHoa.DrawRightTriangle(p, g, px, py);
+                veHinh.DrawRightTriangle(p, g, px, py);
             }
+            if(SelectedMode == 10)
+            {
+                veHinh.DrawRoundedRectangle(p, g, px, py);
+            }
+            if(SelectedMode == 11)
+            {
+                veHinh.DrawDiamond(p, g, px, py);
+            }
+            if(SelectedMode == 12)
+            {
+                veHinh.DrawPentagon(p, g, px, py);
+            }
+            if(SelectedMode == 13)
+            {
+                veHinh.DrawHexagon(p, g, px, py);
+            }
+
         }
 
         #endregion
@@ -205,7 +237,6 @@ namespace TNT_Paint
             }
         }
 
-
         // paint function
         private void pb_mainScreen_Paint(object sender, PaintEventArgs e)
         {
@@ -214,23 +245,39 @@ namespace TNT_Paint
             {
                 if(SelectedMode == 5)
                 {
-                    veMinhHoa.DrawLine(p, gx, px, py);
+                    veHinh.DrawLine(p, gx, px, py);
                 }
                 if(SelectedMode == 6)
                 {
-                    veMinhHoa.DrawEllipse(p, gx, px, py);
+                    veHinh.DrawEllipse(p, gx, px, py);
                 }
                 if(SelectedMode == 7)
                 {
-                    veMinhHoa.DrawRect(p, gx, px, py);
+                    veHinh.DrawRect(p, gx, px, py);
                 }
                 if (SelectedMode == 8)
                 {
-                    veMinhHoa.DrawTriangle(p, gx, px, py);
+                    veHinh.DrawTriangle(p, gx, px, py);
                 }
                 if(SelectedMode == 9)
                 {
-                    veMinhHoa.DrawRightTriangle(p, gx, px, py);
+                    veHinh.DrawRightTriangle(p, gx, px, py);
+                }
+                if (SelectedMode == 10)
+                {
+                    veHinh.DrawRoundedRectangle(p, gx, px, py);
+                }
+                if (SelectedMode == 11)
+                {
+                    veHinh.DrawDiamond(p, gx, px, py);
+                }
+                if (SelectedMode == 12)
+                {
+                    veHinh.DrawPentagon(p, gx, px, py);
+                }
+                if (SelectedMode == 13)
+                {
+                    veHinh.DrawHexagon(p, gx, px, py);
                 }
             }
         }
