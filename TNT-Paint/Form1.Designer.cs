@@ -419,6 +419,7 @@ namespace TNT_Paint
             this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_ColorTable.TabIndex = 9;
             this.pb_ColorTable.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
             this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
             // 
             // Btn_DrawLine
@@ -430,6 +431,7 @@ namespace TNT_Paint
             this.Btn_DrawLine.Name = "Btn_DrawLine";
             this.Btn_DrawLine.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawLine.Text = "toolStripButton1";
+            this.Btn_DrawLine.ToolTipText = "Line";
             this.Btn_DrawLine.Click += new System.EventHandler(this.Btn_DrawLine_Click);
             // 
             // Btn_Ellipse
@@ -441,6 +443,7 @@ namespace TNT_Paint
             this.Btn_Ellipse.Name = "Btn_Ellipse";
             this.Btn_Ellipse.Size = new System.Drawing.Size(25, 25);
             this.Btn_Ellipse.Text = "toolStripButton1";
+            this.Btn_Ellipse.ToolTipText = "Ellipse";
             this.Btn_Ellipse.Click += new System.EventHandler(this.Btn_Ellipse_Click);
             // 
             // Btn_DrawRect
@@ -452,6 +455,7 @@ namespace TNT_Paint
             this.Btn_DrawRect.Name = "Btn_DrawRect";
             this.Btn_DrawRect.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawRect.Text = "toolStripButton1";
+            this.Btn_DrawRect.ToolTipText = "Rectangle";
             this.Btn_DrawRect.Click += new System.EventHandler(this.Btn_DrawRect_Click);
             // 
             // Btn_DrawTriangle
@@ -463,6 +467,7 @@ namespace TNT_Paint
             this.Btn_DrawTriangle.Name = "Btn_DrawTriangle";
             this.Btn_DrawTriangle.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawTriangle.Text = "toolStripButton1";
+            this.Btn_DrawTriangle.ToolTipText = "Triangle";
             this.Btn_DrawTriangle.Click += new System.EventHandler(this.Btn_DrawTriangle_Click);
             // 
             // Btn_DrawRightTriangle
@@ -474,6 +479,7 @@ namespace TNT_Paint
             this.Btn_DrawRightTriangle.Name = "Btn_DrawRightTriangle";
             this.Btn_DrawRightTriangle.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawRightTriangle.Text = "toolStripButton1";
+            this.Btn_DrawRightTriangle.ToolTipText = "RightTriangle";
             this.Btn_DrawRightTriangle.Click += new System.EventHandler(this.Btn_DrawRightTriangle_Click);
             // 
             // Btn_DrawRoundedRectangle
@@ -485,6 +491,7 @@ namespace TNT_Paint
             this.Btn_DrawRoundedRectangle.Name = "Btn_DrawRoundedRectangle";
             this.Btn_DrawRoundedRectangle.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawRoundedRectangle.Text = "toolStripButton1";
+            this.Btn_DrawRoundedRectangle.ToolTipText = "Rounded Rectangle";
             this.Btn_DrawRoundedRectangle.Click += new System.EventHandler(this.Btn_DrawRoundedRectangle_Click);
             // 
             // Btn_DrawDiamond
@@ -496,6 +503,7 @@ namespace TNT_Paint
             this.Btn_DrawDiamond.Name = "Btn_DrawDiamond";
             this.Btn_DrawDiamond.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawDiamond.Text = "toolStripButton1";
+            this.Btn_DrawDiamond.ToolTipText = "Diamond";
             this.Btn_DrawDiamond.Click += new System.EventHandler(this.Btn_DrawDiamond_Click);
             // 
             // Btn_DrawPentagon
@@ -507,6 +515,7 @@ namespace TNT_Paint
             this.Btn_DrawPentagon.Name = "Btn_DrawPentagon";
             this.Btn_DrawPentagon.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawPentagon.Text = "toolStripButton1";
+            this.Btn_DrawPentagon.ToolTipText = "Pentagon";
             this.Btn_DrawPentagon.Click += new System.EventHandler(this.Btn_DrawPentagon_Click);
             // 
             // Btn_DrawHexagon
@@ -518,6 +527,7 @@ namespace TNT_Paint
             this.Btn_DrawHexagon.Name = "Btn_DrawHexagon";
             this.Btn_DrawHexagon.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawHexagon.Text = "toolStripButton1";
+            this.Btn_DrawHexagon.ToolTipText = "Hexagon";
             this.Btn_DrawHexagon.Click += new System.EventHandler(this.Btn_DrawHexagon_Click);
             // 
             // Btn_DrawUpArrow
@@ -529,6 +539,7 @@ namespace TNT_Paint
             this.Btn_DrawUpArrow.Name = "Btn_DrawUpArrow";
             this.Btn_DrawUpArrow.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawUpArrow.Text = "toolStripButton1";
+            this.Btn_DrawUpArrow.ToolTipText = "Up Arrow";
             this.Btn_DrawUpArrow.Click += new System.EventHandler(this.Btn_DrawUpArrow_Click);
             // 
             // Btn_DrawLeftArrow
@@ -540,6 +551,7 @@ namespace TNT_Paint
             this.Btn_DrawLeftArrow.Name = "Btn_DrawLeftArrow";
             this.Btn_DrawLeftArrow.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawLeftArrow.Text = "toolStripButton1";
+            this.Btn_DrawLeftArrow.ToolTipText = "Left Arrow";
             this.Btn_DrawLeftArrow.Click += new System.EventHandler(this.Btn_DrawLeftArrow_Click);
             // 
             // Btn_DrawRightArrow
@@ -551,6 +563,7 @@ namespace TNT_Paint
             this.Btn_DrawRightArrow.Name = "Btn_DrawRightArrow";
             this.Btn_DrawRightArrow.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawRightArrow.Text = "toolStripButton1";
+            this.Btn_DrawRightArrow.ToolTipText = "Right Arrow";
             this.Btn_DrawRightArrow.Click += new System.EventHandler(this.Btn_DrawRightArrow_Click);
             // 
             // Btn_DrawDownArrow
@@ -562,6 +575,7 @@ namespace TNT_Paint
             this.Btn_DrawDownArrow.Name = "Btn_DrawDownArrow";
             this.Btn_DrawDownArrow.Size = new System.Drawing.Size(25, 25);
             this.Btn_DrawDownArrow.Text = "toolStripButton1";
+            this.Btn_DrawDownArrow.ToolTipText = "Down Arrow";
             this.Btn_DrawDownArrow.Click += new System.EventHandler(this.Btn_DrawDownArrow_Click);
             // 
             // Btn_BigLine
@@ -602,9 +616,9 @@ namespace TNT_Paint
             this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_ColorDialog.Image = global::TNT_Paint.Properties.Resources.ColorPanel;
-            this.Btn_ColorDialog.Location = new System.Drawing.Point(191, 15);
+            this.Btn_ColorDialog.Location = new System.Drawing.Point(187, 13);
             this.Btn_ColorDialog.Name = "Btn_ColorDialog";
-            this.Btn_ColorDialog.Size = new System.Drawing.Size(70, 69);
+            this.Btn_ColorDialog.Size = new System.Drawing.Size(71, 74);
             this.Btn_ColorDialog.TabIndex = 5;
             this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
