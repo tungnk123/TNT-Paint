@@ -104,6 +104,10 @@
     <None Include="Resources\MediumLine.png" />
     <None Include="Resources\BigLine.png" />
     <None Include="Resources\Line.png" />
+    <None Include="Resources\Circle.png" />
+    <None Include="Resources\Rect.png" />
+    <None Include="Resources\Triangle.png" />
+    <None Include="Resources\RightTriangle.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

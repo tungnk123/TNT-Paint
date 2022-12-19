@@ -20,6 +20,8 @@ namespace TNT_Paint
         int SelectedMode; // mỗi giá trị là mỗi mode vẽ lên màn hình chính
         bool AllowPaint; // nếu là true thì cho phép vẽ lên màn hình chính
         Color currentColor = Color.Black;
+        VeHinh veHinh;
+        VeMinhHoa veMinhHoa;
 
         public Form1()
         {
@@ -32,6 +34,8 @@ namespace TNT_Paint
             eraser = new Pen(Color.White, 20);
             SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
+            veHinh = new VeHinh();
+            veMinhHoa = new VeMinhHoa();
         }
         #region All buttons event
         private void Btn_Pencil_Click(object sender, EventArgs e)
@@ -78,9 +82,31 @@ namespace TNT_Paint
         {
             p.Width = 6;
         }
+        private void Btn_DrawLine_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 5;
+        }
+        private void Btn_Ellipse_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 6;
+        }
+        private void Btn_DrawRect_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 7;
+        }
+        private void Btn_DrawTriangle_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 8;
+        }
+        private void Btn_DrawRightTriangle_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 9;
+        }
 
         #endregion
+
         #region MainScreen Mouse Event
+
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
             if(SelectedMode == 3)
@@ -105,15 +131,14 @@ namespace TNT_Paint
         {
             if (AllowPaint)
             {
+                py = e.Location;
                 if (SelectedMode == 1)
                 {
-                    py = e.Location;
                     g.DrawLine(p, px, py);
                     px = py;
                 }
                 if (SelectedMode == 2)
                 {
-                    py = e.Location;
                     g.DrawLine(eraser, px, py);
                     px = py;
                 }
@@ -124,6 +149,26 @@ namespace TNT_Paint
         private void pb_mainScreen_MouseUp(object sender, MouseEventArgs e)
         {
             AllowPaint = false;
+            if(SelectedMode == 5)
+            {
+                veHinh.DrawLine(p, g, px, py);
+            }
+            if(SelectedMode == 6)
+            {
+                veHinh.DrawEllipse(p, g, px, py);
+            }
+            if(SelectedMode == 7)
+            {
+                veHinh.DrawRect(p, g, px, py);
+            }
+            if(SelectedMode == 8)
+            {
+                veHinh.DrawTriangle(p, g, px, py);
+            }
+            if (SelectedMode == 9)
+            {
+                veMinhHoa.DrawRightTriangle(p, g, px, py);
+            }
         }
 
         #endregion
@@ -156,6 +201,36 @@ namespace TNT_Paint
                     validate(bm, pixel, pt.X, pt.Y - 1, oldColor, newColor);
                     validate(bm, pixel, pt.X + 1, pt.Y, oldColor, newColor);
                     validate(bm, pixel, pt.X, pt.Y + 1, oldColor, newColor);
+                }
+            }
+        }
+
+
+        // paint function
+        private void pb_mainScreen_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gx = e.Graphics;
+            if (AllowPaint)
+            {
+                if(SelectedMode == 5)
+                {
+                    veMinhHoa.DrawLine(p, gx, px, py);
+                }
+                if(SelectedMode == 6)
+                {
+                    veMinhHoa.DrawEllipse(p, gx, px, py);
+                }
+                if(SelectedMode == 7)
+                {
+                    veMinhHoa.DrawRect(p, gx, px, py);
+                }
+                if (SelectedMode == 8)
+                {
+                    veMinhHoa.DrawTriangle(p, gx, px, py);
+                }
+                if(SelectedMode == 9)
+                {
+                    veMinhHoa.DrawRightTriangle(p, gx, px, py);
                 }
             }
         }
