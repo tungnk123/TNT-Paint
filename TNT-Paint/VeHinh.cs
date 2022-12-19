@@ -144,5 +144,89 @@ namespace TNT_Paint
             g.DrawLine(p, p4, p6);
             g.DrawLine(p, p5, p6);
         }
+        public void DrawUpArrow(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4, p5, p6, p7;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+            p1 = new Point(px.X + width / 2, px.Y); // top
+            p2 = new Point(px.X, px.Y + height / 3); // left
+            p3 = new Point(py.X, px.Y + height / 3); // right
+            p4 = new Point(px.X + width / 5, px.Y + height / 3); // middle left
+            p5 = new Point(px.X + 4 * width / 5, px.Y + height / 3);// middle right
+            p6 = new Point(px.X + width / 5, py.Y); // bottom left
+            p7 = new Point(px.X + 4 * width / 5, py.Y); // bottom right
+
+            g.DrawLine(p, p1, p2);
+            g.DrawLine(p, p1, p3);
+            g.DrawLine(p, p2, p4);
+            g.DrawLine(p, p3, p5);
+            g.DrawLine(p, p4, p6);
+            g.DrawLine(p, p5, p7);
+            g.DrawLine(p, p6, p7);
+        }
+        public void DrawLeftArrow(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4, p5, p6, p7;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+            p1 = new Point(px.X, px.Y + height / 2); // right
+            p2 = new Point(px.X + width/2, px.Y); // top
+            p3 = new Point(px.X + width / 2, py.Y); // bottom
+            p4 = new Point(px.X + width / 2, px.Y + height / 5); // middle top
+            p5 = new Point(px.X + width / 2, py.Y - height / 5);// middle bottom
+            p6 = new Point(py.X, px.Y + height / 5); // top left
+            p7 = new Point(py.X, px.Y + 4 * height / 5); // bottom left
+
+            g.DrawLine(p, p1, p2);
+            g.DrawLine(p, p1, p3);
+            g.DrawLine(p, p2, p4);
+            g.DrawLine(p, p3, p5);
+            g.DrawLine(p, p4, p6);
+            g.DrawLine(p, p5, p7);
+            g.DrawLine(p, p6, p7);
+        }
+        public void DrawRightArrow(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4, p5, p6, p7;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+            p1 = new Point(py.X, px.Y + height / 2); // left
+            p2 = new Point(px.X + width / 2, px.Y); // top
+            p3 = new Point(px.X + width / 2, py.Y); // bottom
+            p4 = new Point(px.X + width / 2, px.Y +  height / 5); // middle top
+            p5 = new Point(px.X + width / 2, py.Y - height / 5); // middle  bottom
+            p6 = new Point(px.X, px.Y + height / 5); // top left
+            p7 = new Point(px.X, py.Y - height / 5); // bottom left
+
+            g.DrawLine(p, p1, p2);
+            g.DrawLine(p, p1, p3);
+            g.DrawLine(p, p2, p4);
+            g.DrawLine(p, p3, p5);
+            g.DrawLine(p, p4, p6);
+            g.DrawLine(p, p5, p7);
+            g.DrawLine(p, p6, p7);
+        }
+        public void DrawDownArrow(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4, p5, p6, p7;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+            p1 = new Point(px.X + width / 2, py.Y); // bottom
+            p2 = new Point(px.X, py.Y - height / 3); // left
+            p3 = new Point(py.X, py.Y - height / 3); // right
+            p4 = new Point(px.X + width / 5, py.Y - height / 3); // middle left
+            p5 = new Point(px.X + 4 * width / 5, py.Y - height / 3); // middle right
+            p6 = new Point(px.X + width / 5, px.Y); // top left
+            p7 = new Point(px.X + 4 * width / 5, px.Y);// top right
+
+            g.DrawLine(p, p1, p2);
+            g.DrawLine(p, p1, p3);
+            g.DrawLine(p, p2, p4);
+            g.DrawLine(p, p3, p5);
+            g.DrawLine(p, p4, p6);
+            g.DrawLine(p, p5, p7);
+            g.DrawLine(p, p6, p7);
+        }
     }
 }

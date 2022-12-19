@@ -103,9 +103,39 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ColorTable {
+            get {
+                object obj = ResourceManager.GetObject("ColorTable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ColorTable2 {
+            get {
+                object obj = ResourceManager.GetObject("ColorTable2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Diamond {
             get {
                 object obj = ResourceManager.GetObject("Diamond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DownArrow {
+            get {
+                object obj = ResourceManager.GetObject("DownArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,16 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap Hexagon {
             get {
                 object obj = ResourceManager.GetObject("Hexagon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LeftArrow {
+            get {
+                object obj = ResourceManager.GetObject("LeftArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +233,16 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RightArrow {
+            get {
+                object obj = ResourceManager.GetObject("RightArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RightTriangle {
             get {
                 object obj = ResourceManager.GetObject("RightTriangle", resourceCulture);
@@ -226,6 +276,26 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap Triangle {
             get {
                 object obj = ResourceManager.GetObject("Triangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Up_arrow {
+            get {
+                object obj = ResourceManager.GetObject("Up arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpArrow1 {
+            get {
+                object obj = ResourceManager.GetObject("UpArrow1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -36,6 +36,28 @@ namespace TNT_Paint
             veHinh = new VeHinh();
         }
         #region All buttons event
+
+        private void pb_ColorTable_MouseClick(object sender, MouseEventArgs e)
+        {
+            Point pt = setPoint(pb_ColorTable, e.Location);
+            pb_currentColor.BackColor = ((Bitmap)(pb_ColorTable.Image)).GetPixel(pt.X, pt.Y);
+            currentColor = pb_currentColor.BackColor;
+            p.Color = currentColor;
+        }
+        private void Btn_ColorDialog_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                currentColor = colorDialog1.Color;
+                p.Color = colorDialog1.Color;
+                pb_currentColor.BackColor = colorDialog1.Color;
+            }
+        }
+        private void Btn_Clear_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            pb_mainScreen.Refresh();
+        }
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
             SelectedMode = 1;
@@ -50,23 +72,9 @@ namespace TNT_Paint
             SelectedMode = 3;
             pb_mainScreen.Cursor = Cursors.Hand;
         }
-        private void Btn_ColorDialog_Click(object sender, EventArgs e)
-        {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                currentColor = colorDialog1.Color;
-                p.Color = colorDialog1.Color;
-                pb_currentColor.BackColor = colorDialog1.Color;
-            }
-        }
         private void Btn_Fill_Click(object sender, EventArgs e)
         {
             SelectedMode = 4;
-        }
-        private void Btn_Clear_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
-            pb_mainScreen.Refresh();
         }
         private void btn_SmallLine_Click(object sender, EventArgs e)
         {
@@ -116,7 +124,22 @@ namespace TNT_Paint
         {
             SelectedMode = 13;
         }
-
+        private void Btn_DrawUpArrow_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 14;
+        }
+        private void Btn_DrawLeftArrow_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 15;
+        }
+        private void Btn_DrawRightArrow_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 16;
+        }
+        private void Btn_DrawDownArrow_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 17;
+        }
 
         #endregion
 
@@ -200,6 +223,22 @@ namespace TNT_Paint
             {
                 veHinh.DrawHexagon(p, g, px, py);
             }
+            if (SelectedMode == 14)
+            {
+                veHinh.DrawUpArrow(p, g, px, py);
+            }
+            if (SelectedMode == 15)
+            {
+                veHinh.DrawLeftArrow(p, g, px, py);
+            }
+            if (SelectedMode == 16)
+            {
+                veHinh.DrawRightArrow(p, g, px, py);
+            }
+            if (SelectedMode == 17)
+            {
+                veHinh.DrawDownArrow(p, g, px, py);
+            }
 
         }
 
@@ -235,6 +274,13 @@ namespace TNT_Paint
                     validate(bm, pixel, pt.X, pt.Y + 1, oldColor, newColor);
                 }
             }
+        }
+        // set point function 
+        private Point setPoint(PictureBox pb, Point pt)
+        {
+            float px = 1f * pb.Image.Width / pb.Width;
+            float py = 1f * pb.Image.Height / pb.Height;
+            return new Point((int)(pt.X * px), (int)(pt.Y * py));
         }
 
         // paint function
@@ -278,6 +324,22 @@ namespace TNT_Paint
                 if (SelectedMode == 13)
                 {
                     veHinh.DrawHexagon(p, gx, px, py);
+                }
+                if (SelectedMode == 14)
+                {
+                    veHinh.DrawUpArrow(p, gx, px, py);
+                }
+                if (SelectedMode == 15)
+                {
+                    veHinh.DrawLeftArrow(p, gx, px, py);
+                }
+                if (SelectedMode == 16)
+                {
+                    veHinh.DrawRightArrow(p, gx, px, py);
+                }
+                if (SelectedMode == 17)
+                {
+                    veHinh.DrawDownArrow(p, gx, px, py);
                 }
             }
         }
