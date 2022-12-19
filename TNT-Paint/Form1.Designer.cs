@@ -92,6 +92,7 @@ namespace TNT_Paint
             this.Btn_ColorPicker = new System.Windows.Forms.Button();
             this.Btn_Eraser = new System.Windows.Forms.Button();
             this.Btn_Pencil = new System.Windows.Forms.Button();
+            this.Btn_DrawPolygon = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gb_Shape.SuspendLayout();
@@ -354,7 +355,8 @@ namespace TNT_Paint
             this.Btn_DrawUpArrow,
             this.Btn_DrawLeftArrow,
             this.Btn_DrawRightArrow,
-            this.Btn_DrawDownArrow});
+            this.Btn_DrawDownArrow,
+            this.Btn_DrawPolygon});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(3, 18);
             this.toolStrip1.Name = "toolStrip1";
@@ -689,6 +691,17 @@ namespace TNT_Paint
             this.Btn_Pencil.UseVisualStyleBackColor = true;
             this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
             // 
+            // Btn_DrawPolygon
+            // 
+            this.Btn_DrawPolygon.AutoSize = false;
+            this.Btn_DrawPolygon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Btn_DrawPolygon.Image = global::TNT_Paint.Properties.Resources.Polygon;
+            this.Btn_DrawPolygon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_DrawPolygon.Name = "Btn_DrawPolygon";
+            this.Btn_DrawPolygon.Size = new System.Drawing.Size(25, 25);
+            this.Btn_DrawPolygon.Text = "Polygon";
+            this.Btn_DrawPolygon.Click += new System.EventHandler(this.Btn_DrawPolygon_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -782,6 +795,7 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripButton Btn_DrawRightArrow;
         private System.Windows.Forms.ToolStripButton Btn_DrawDownArrow;
         private System.Windows.Forms.PictureBox pb_ColorTable;
+        private System.Windows.Forms.ToolStripButton Btn_DrawPolygon;
     }
 }
 

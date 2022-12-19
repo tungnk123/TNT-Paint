@@ -12,7 +12,13 @@ namespace TNT_Paint
 {
     class VeHinh
     {
-        public VeHinh() { }
+        public bool inPolygon;
+        public Point PreviousPoint;
+        public Point StartPoint;
+        public VeHinh()
+        {
+            inPolygon = false;
+        }
         public void DrawLine(Pen p, Graphics g, Point px, Point py)
         {
             g.DrawLine(p, px, py);
@@ -227,6 +233,41 @@ namespace TNT_Paint
             g.DrawLine(p, p4, p6);
             g.DrawLine(p, p5, p7);
             g.DrawLine(p, p6, p7);
+        }
+        public void DrawPolygon(Pen p, Graphics g, Point px, Point py)
+        {
+            if (inPolygon == false)
+            {
+                StartPoint = px;
+                g.DrawLine(p, px, py);
+                PreviousPoint = py;
+                inPolygon = true;
+            }
+            else
+            {
+                if (py == StartPoint)
+                {
+                    g.DrawLine(p, PreviousPoint, py);
+                    StartPoint = new Point(0, 0);
+                    PreviousPoint = new Point(0, 0);
+                }
+                else
+                {
+                    g.DrawLine(p, PreviousPoint, py);
+                    PreviousPoint = py;
+                }
+            }
+        }
+        public void MinhHoaPolygon(Pen p, Graphics g, Point px, Point py)
+        {
+            if(inPolygon == false)
+            {
+                g.DrawLine(p, px, py);
+            }
+            else
+            {
+                g.DrawLine(p, PreviousPoint, py);
+            }
         }
     }
 }

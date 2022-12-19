@@ -118,6 +118,7 @@
     <None Include="Resources\DownArrow.png" />
     <None Include="Resources\ColorTable.png" />
     <None Include="Resources\ColorTable2.png" />
+    <None Include="Resources\Polygon.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

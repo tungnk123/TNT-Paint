@@ -61,20 +61,24 @@ namespace TNT_Paint
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
             SelectedMode = 1;
+            veHinh.inPolygon = false;
         }
 
         private void Btn_Eraser_Click(object sender, EventArgs e)
         {
             SelectedMode = 2;
+            veHinh.inPolygon = false;;
         }
         private void Btn_ColorPicker_Click(object sender, EventArgs e)
         {
             SelectedMode = 3;
             pb_mainScreen.Cursor = Cursors.Hand;
+            veHinh.inPolygon = false;
         }
         private void Btn_Fill_Click(object sender, EventArgs e)
         {
             SelectedMode = 4;
+            veHinh.inPolygon = false;
         }
         private void btn_SmallLine_Click(object sender, EventArgs e)
         {
@@ -91,54 +95,72 @@ namespace TNT_Paint
         private void Btn_DrawLine_Click(object sender, EventArgs e)
         {
             SelectedMode = 5;
+            veHinh.inPolygon = false;
         }
         private void Btn_Ellipse_Click(object sender, EventArgs e)
         {
             SelectedMode = 6;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawRect_Click(object sender, EventArgs e)
         {
             SelectedMode = 7;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawTriangle_Click(object sender, EventArgs e)
         {
             SelectedMode = 8;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawRightTriangle_Click(object sender, EventArgs e)
         {
             SelectedMode = 9;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawRoundedRectangle_Click(object sender, EventArgs e)
         {
             SelectedMode = 10;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawDiamond_Click(object sender, EventArgs e)
         {
             SelectedMode = 11;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawPentagon_Click(object sender, EventArgs e)
         {
             SelectedMode = 12;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawHexagon_Click(object sender, EventArgs e)
         {
             SelectedMode = 13;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawUpArrow_Click(object sender, EventArgs e)
         {
             SelectedMode = 14;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawLeftArrow_Click(object sender, EventArgs e)
         {
             SelectedMode = 15;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawRightArrow_Click(object sender, EventArgs e)
         {
             SelectedMode = 16;
+            veHinh.inPolygon = false;
         }
         private void Btn_DrawDownArrow_Click(object sender, EventArgs e)
         {
             SelectedMode = 17;
+            veHinh.inPolygon = false;
+        }
+        private void Btn_DrawPolygon_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 18;
+            veHinh.inPolygon = false;
         }
 
         #endregion
@@ -238,6 +260,10 @@ namespace TNT_Paint
             if (SelectedMode == 17)
             {
                 veHinh.DrawDownArrow(p, g, px, py);
+            }
+            if (SelectedMode == 18)
+            {
+                veHinh.DrawPolygon(p, g, px, py);
             }
 
         }
@@ -340,6 +366,10 @@ namespace TNT_Paint
                 if (SelectedMode == 17)
                 {
                     veHinh.DrawDownArrow(p, gx, px, py);
+                }
+                if (SelectedMode == 18)
+                {
+                    veHinh.MinhHoaPolygon(p, gx, px, py);
                 }
             }
         }
