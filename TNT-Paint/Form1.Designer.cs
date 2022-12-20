@@ -73,6 +73,7 @@ namespace TNT_Paint
             this.Btn_DrawLine = new System.Windows.Forms.ToolStripButton();
             this.Btn_Ellipse = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRect = new System.Windows.Forms.ToolStripButton();
+            this.Btn_DrawPolygon = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawTriangle = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRightTriangle = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRoundedRectangle = new System.Windows.Forms.ToolStripButton();
@@ -83,6 +84,7 @@ namespace TNT_Paint
             this.Btn_DrawLeftArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRightArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawDownArrow = new System.Windows.Forms.ToolStripButton();
+            this.Btn_DrawFivePointStar = new System.Windows.Forms.ToolStripButton();
             this.Btn_BigLine = new System.Windows.Forms.Button();
             this.Btn_MediumLine = new System.Windows.Forms.Button();
             this.btn_SmallLine = new System.Windows.Forms.Button();
@@ -92,7 +94,6 @@ namespace TNT_Paint
             this.Btn_ColorPicker = new System.Windows.Forms.Button();
             this.Btn_Eraser = new System.Windows.Forms.Button();
             this.Btn_Pencil = new System.Windows.Forms.Button();
-            this.Btn_DrawPolygon = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gb_Shape.SuspendLayout();
@@ -335,7 +336,7 @@ namespace TNT_Paint
             this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_Shape.Location = new System.Drawing.Point(597, -2);
             this.gb_Shape.Name = "gb_Shape";
-            this.gb_Shape.Size = new System.Drawing.Size(170, 102);
+            this.gb_Shape.Size = new System.Drawing.Size(148, 102);
             this.gb_Shape.TabIndex = 8;
             this.gb_Shape.TabStop = false;
             this.gb_Shape.Text = "Shapes";
@@ -346,6 +347,7 @@ namespace TNT_Paint
             this.Btn_DrawLine,
             this.Btn_Ellipse,
             this.Btn_DrawRect,
+            this.Btn_DrawPolygon,
             this.Btn_DrawTriangle,
             this.Btn_DrawRightTriangle,
             this.Btn_DrawRoundedRectangle,
@@ -356,11 +358,11 @@ namespace TNT_Paint
             this.Btn_DrawLeftArrow,
             this.Btn_DrawRightArrow,
             this.Btn_DrawDownArrow,
-            this.Btn_DrawPolygon});
+            this.Btn_DrawFivePointStar});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(3, 18);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(164, 84);
+            this.toolStrip1.Size = new System.Drawing.Size(142, 103);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -459,6 +461,17 @@ namespace TNT_Paint
             this.Btn_DrawRect.Text = "toolStripButton1";
             this.Btn_DrawRect.ToolTipText = "Rectangle";
             this.Btn_DrawRect.Click += new System.EventHandler(this.Btn_DrawRect_Click);
+            // 
+            // Btn_DrawPolygon
+            // 
+            this.Btn_DrawPolygon.AutoSize = false;
+            this.Btn_DrawPolygon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Btn_DrawPolygon.Image = global::TNT_Paint.Properties.Resources.Polygon;
+            this.Btn_DrawPolygon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_DrawPolygon.Name = "Btn_DrawPolygon";
+            this.Btn_DrawPolygon.Size = new System.Drawing.Size(25, 25);
+            this.Btn_DrawPolygon.Text = "Polygon";
+            this.Btn_DrawPolygon.Click += new System.EventHandler(this.Btn_DrawPolygon_Click);
             // 
             // Btn_DrawTriangle
             // 
@@ -580,6 +593,17 @@ namespace TNT_Paint
             this.Btn_DrawDownArrow.ToolTipText = "Down Arrow";
             this.Btn_DrawDownArrow.Click += new System.EventHandler(this.Btn_DrawDownArrow_Click);
             // 
+            // Btn_DrawFivePointStar
+            // 
+            this.Btn_DrawFivePointStar.AutoSize = false;
+            this.Btn_DrawFivePointStar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Btn_DrawFivePointStar.Image = global::TNT_Paint.Properties.Resources.Five_PointStar;
+            this.Btn_DrawFivePointStar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Btn_DrawFivePointStar.Name = "Btn_DrawFivePointStar";
+            this.Btn_DrawFivePointStar.Size = new System.Drawing.Size(25, 25);
+            this.Btn_DrawFivePointStar.Text = "toolStripButton1";
+            this.Btn_DrawFivePointStar.Click += new System.EventHandler(this.Btn_DrawFivePointStar_Click);
+            // 
             // Btn_BigLine
             // 
             this.Btn_BigLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -618,9 +642,9 @@ namespace TNT_Paint
             this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_ColorDialog.Image = global::TNT_Paint.Properties.Resources.ColorPanel;
-            this.Btn_ColorDialog.Location = new System.Drawing.Point(187, 13);
+            this.Btn_ColorDialog.Location = new System.Drawing.Point(187, 16);
             this.Btn_ColorDialog.Name = "Btn_ColorDialog";
-            this.Btn_ColorDialog.Size = new System.Drawing.Size(71, 74);
+            this.Btn_ColorDialog.Size = new System.Drawing.Size(71, 71);
             this.Btn_ColorDialog.TabIndex = 5;
             this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
@@ -690,17 +714,6 @@ namespace TNT_Paint
             this.toolTip1.SetToolTip(this.Btn_Pencil, "Pencil");
             this.Btn_Pencil.UseVisualStyleBackColor = true;
             this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
-            // 
-            // Btn_DrawPolygon
-            // 
-            this.Btn_DrawPolygon.AutoSize = false;
-            this.Btn_DrawPolygon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Btn_DrawPolygon.Image = global::TNT_Paint.Properties.Resources.Polygon;
-            this.Btn_DrawPolygon.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Btn_DrawPolygon.Name = "Btn_DrawPolygon";
-            this.Btn_DrawPolygon.Size = new System.Drawing.Size(25, 25);
-            this.Btn_DrawPolygon.Text = "Polygon";
-            this.Btn_DrawPolygon.Click += new System.EventHandler(this.Btn_DrawPolygon_Click);
             // 
             // Form1
             // 
@@ -796,6 +809,7 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripButton Btn_DrawDownArrow;
         private System.Windows.Forms.PictureBox pb_ColorTable;
         private System.Windows.Forms.ToolStripButton Btn_DrawPolygon;
+        private System.Windows.Forms.ToolStripButton Btn_DrawFivePointStar;
     }
 }
 

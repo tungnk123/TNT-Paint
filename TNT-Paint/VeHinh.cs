@@ -270,5 +270,35 @@ namespace TNT_Paint
                 g.DrawLine(p, PreviousPoint, py);
             }
         }
+        public void DrawFivePointStar(Pen p, Graphics g, Point px, Point py)
+        {
+            Point p1, p2, p3, p4, p5;
+            int width = py.X - px.X;
+            int height = py.Y - px.Y;
+
+            p1 = new Point(px.X + width / 2, px.Y); // top
+            p2 = new Point(px.X, px.Y + 4 * height / 10); // left
+            p3 = new Point(py.X, px.Y + 4 * height / 10); // right
+            p4 = new Point(px.X + width / 5, py.Y); // bottom left
+            p5 = new Point(px.X + 4 * width / 5, py.Y); // bottom right
+
+            Point p6, p7, p8, p9, p10;
+            p6 = new Point(px.X + 2 * width / 6, px.Y + 2 * height / 6); // between top and left
+            p7 = new Point(px.X + 4 * width / 6, px.Y + 2 * height / 6); // between top and right
+            p8 = new Point(px.X + width / 4, px.Y + 6 * height / 9); // between left and bottom left
+            p9 = new Point(px.X + 3 * width / 4, px.Y + 6 * height / 9); // between right and bottom right
+            p10 = new Point(px.X + width / 2, py.Y - height / 5); // between bottom left and right
+
+            g.DrawLine(p, p1, p6);
+            g.DrawLine(p, p2, p6);
+            g.DrawLine(p, p1, p7);
+            g.DrawLine(p, p3, p7);
+            g.DrawLine(p, p2, p8);
+            g.DrawLine(p, p3, p9);
+            g.DrawLine(p, p4, p8);
+            g.DrawLine(p, p5, p9);
+            g.DrawLine(p, p4, p10);
+            g.DrawLine(p, p5, p10);
+        }
     }
 }

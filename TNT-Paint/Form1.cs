@@ -162,6 +162,12 @@ namespace TNT_Paint
             SelectedMode = 18;
             veHinh.inPolygon = false;
         }
+        private void Btn_DrawFivePointStar_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 19;
+            veHinh.inPolygon = false;
+        }
+
 
         #endregion
 
@@ -264,6 +270,10 @@ namespace TNT_Paint
             if (SelectedMode == 18)
             {
                 veHinh.DrawPolygon(p, g, px, py);
+            }
+            if (SelectedMode == 19)
+            {
+                veHinh.DrawFivePointStar(p, g, px, py);
             }
 
         }
@@ -370,6 +380,10 @@ namespace TNT_Paint
                 if (SelectedMode == 18)
                 {
                     veHinh.MinhHoaPolygon(p, gx, px, py);
+                }
+                if (SelectedMode == 19)
+                {
+                    veHinh.DrawFivePointStar(p, gx, px, py);
                 }
             }
         }
