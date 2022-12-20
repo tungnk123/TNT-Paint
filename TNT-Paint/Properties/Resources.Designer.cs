@@ -173,6 +173,16 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Five_PointStar1 {
+            get {
+                object obj = ResourceManager.GetObject("Five_PointStar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hexagon {
             get {
                 object obj = ResourceManager.GetObject("Hexagon", resourceCulture);

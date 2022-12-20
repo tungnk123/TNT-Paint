@@ -318,7 +318,6 @@ namespace TNT_Paint
             float py = 1f * pb.Image.Height / pb.Height;
             return new Point((int)(pt.X * px), (int)(pt.Y * py));
         }
-
         // paint function
         private void pb_mainScreen_Paint(object sender, PaintEventArgs e)
         {
