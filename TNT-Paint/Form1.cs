@@ -391,6 +391,8 @@ namespace TNT_Paint
             }
         }
 
+        
+
         #endregion
 
         #region Menu events
@@ -399,6 +401,17 @@ namespace TNT_Paint
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
             pb_mainScreen.Image = bm;
+
+        }
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = openFileDialog.FileName;
+                pb_mainScreen.Image = Image.FromFile(fileName);
+                pb_mainScreen.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
 
         }
         #endregion
