@@ -21,6 +21,8 @@ namespace TNT_Paint
         bool AllowPaint; // nếu là true thì cho phép vẽ lên màn hình chính
         Color currentColor = Color.Black;
         VeHinh veHinh;
+        public bool isSaved = false;
+        public string path = "";// bien string luu duong dan luu file
 
         public Form1()
         {
@@ -403,6 +405,9 @@ namespace TNT_Paint
             pb_mainScreen.Image = bm;
 
         }
+
+        
+
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
@@ -413,6 +418,39 @@ namespace TNT_Paint
                 pb_mainScreen.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
+        }
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isSaved == false)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Save image" };
+                saveFileDialog.RestoreDirectory = true;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    isSaved = true;
+                    path = saveFileDialog.FileName;
+                    pb_mainScreen.Image.Save(path);
+                }
+            }
+            else
+            {
+                saveAsToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isSaved)
+            {
+                pb_mainScreen.Image.Save(path);
+                MessageBox.Show("Lưu thành công!", "TNT Paint");
+            }
+            else
+            {
+                saveToolStripMenuItem_Click(sender, e);
+            }
         }
         #endregion
     }
