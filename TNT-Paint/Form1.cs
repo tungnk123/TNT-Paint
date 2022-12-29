@@ -57,6 +57,7 @@ namespace TNT_Paint
         {
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
+            pb_mainScreen.Image = bm;// xoa hinh anh dang co o trong pb_mainScreen
         }
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
@@ -318,6 +319,9 @@ namespace TNT_Paint
             float py = 1f * pb.Image.Height / pb.Height;
             return new Point((int)(pt.X * px), (int)(pt.Y * py));
         }
+
+        
+
         // paint function
         private void pb_mainScreen_Paint(object sender, PaintEventArgs e)
         {
@@ -387,6 +391,16 @@ namespace TNT_Paint
             }
         }
 
+        #endregion
+
+        #region Menu events
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            pb_mainScreen.Refresh();
+            pb_mainScreen.Image = bm;
+
+        }
         #endregion
     }
 }
