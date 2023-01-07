@@ -247,7 +247,7 @@ namespace TNT_Paint
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(52, 21);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // imageToolStripMenuItem
@@ -497,7 +497,7 @@ namespace TNT_Paint
             // 
             this.gb_Shape.Controls.Add(this.toolStrip1);
             this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_Shape.Location = new System.Drawing.Point(593, 23);
+            this.gb_Shape.Location = new System.Drawing.Point(593, 25);
             this.gb_Shape.Name = "gb_Shape";
             this.gb_Shape.Size = new System.Drawing.Size(134, 102);
             this.gb_Shape.TabIndex = 8;

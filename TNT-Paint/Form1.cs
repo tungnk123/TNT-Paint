@@ -48,6 +48,10 @@ namespace TNT_Paint
             veHinh = new VeHinh();
             graphicPanel = this.CreateGraphics();
             Khung.Ve3DauThayDoiKichThuocKhung(graphicPanel, this.pb_mainScreen.Height, this.pb_mainScreen.Width);
+            pb_mainScreen.MouseDown += pb_mainScreen_MouseDown;
+            pb_mainScreen.MouseMove += pb_mainScreen_MouseMove;
+            pb_mainScreen.MouseUp += pb_mainScreen_MouseUp;
+            pb_mainScreen.Paint += pb_mainScreen_Paint;
         }
         #region All buttons event
 
