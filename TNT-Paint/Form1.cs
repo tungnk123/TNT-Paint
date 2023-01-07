@@ -13,6 +13,7 @@ namespace TNT_Paint
     public partial class Form1 : Form
     {
         Graphics g; // đồ hoạ từ màn hình vẽ chính
+        Graphics graphicPanel;
         Bitmap bm;
         Pen p; // bút vẽ chính
         Pen eraser; // tẩy
@@ -21,11 +22,20 @@ namespace TNT_Paint
         bool AllowPaint; // nếu là true thì cho phép vẽ lên màn hình chính
         Color currentColor = Color.Black;
         VeHinh veHinh;
+        Khung Khung = new Khung();// class khung de ve cac dau thay doi kich thuoc
+
+        //
+        
+        //
+        //
         public bool isSaved = false;
         public string path = "";// bien string luu duong dan luu file
 
+        //
+
         public Form1()
         {
+            
             InitializeComponent();
             bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
             g = Graphics.FromImage(bm);
@@ -36,6 +46,8 @@ namespace TNT_Paint
             SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
             veHinh = new VeHinh();
+            graphicPanel = this.CreateGraphics();
+            Khung.Ve3DauThayDoiKichThuocKhung(graphicPanel, this.pb_mainScreen.Height, this.pb_mainScreen.Width);
         }
         #region All buttons event
 

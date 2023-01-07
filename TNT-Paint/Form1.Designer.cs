@@ -93,6 +93,7 @@ namespace TNT_Paint
             this.Btn_DrawFivePointStar = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -101,6 +102,7 @@ namespace TNT_Paint
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
             this.gb_Shape.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,46 +141,46 @@ namespace TNT_Paint
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(117, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // homeToolStripMenuItem
@@ -706,25 +708,30 @@ namespace TNT_Paint
             this.Btn_DrawFivePointStar.ToolTipText = "Five Point Star";
             this.Btn_DrawFivePointStar.Click += new System.EventHandler(this.Btn_DrawFivePointStar_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pb_mainScreen);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 125);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(908, 470);
+            this.panel2.TabIndex = 9;
+            // 
             // pb_mainScreen
             // 
-            this.pb_mainScreen.Location = new System.Drawing.Point(0, 124);
+            this.pb_mainScreen.Location = new System.Drawing.Point(19, 15);
             this.pb_mainScreen.Name = "pb_mainScreen";
-            this.pb_mainScreen.Size = new System.Drawing.Size(908, 471);
+            this.pb_mainScreen.Size = new System.Drawing.Size(870, 440);
             this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pb_mainScreen.TabIndex = 2;
+            this.pb_mainScreen.TabIndex = 3;
             this.pb_mainScreen.TabStop = false;
-            this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
-            this.pb_mainScreen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseDown);
-            this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
-            this.pb_mainScreen.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseUp);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 595);
-            this.Controls.Add(this.pb_mainScreen);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.gb_Shape);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -744,6 +751,8 @@ namespace TNT_Paint
             this.gb_Shape.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -764,7 +773,6 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zomeInToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pb_mainScreen;
         private System.Windows.Forms.Button Btn_Eraser;
         private System.Windows.Forms.Button Btn_Pencil;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -815,6 +823,8 @@ namespace TNT_Paint
         private System.Windows.Forms.PictureBox pb_ColorTable;
         private System.Windows.Forms.ToolStripButton Btn_DrawPolygon;
         private System.Windows.Forms.ToolStripButton Btn_DrawFivePointStar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pb_mainScreen;
     }
 }
 
