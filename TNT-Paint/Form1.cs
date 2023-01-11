@@ -75,7 +75,7 @@ namespace TNT_Paint
         {
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
-            pb_mainScreen.Image = bm;// xoa hinh anh dang co o trong pb_mainScreen
+            pb_mainScreen.Image = bm ;// xoa hinh anh dang co o trong pb_mainScreen
         }
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
@@ -419,19 +419,20 @@ namespace TNT_Paint
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
             pb_mainScreen.Image = bm;
-
         }
 
-        
-
+       
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string fileName = openFileDialog.FileName;
-                pb_mainScreen.Image = Image.FromFile(fileName);
-                pb_mainScreen.SizeMode = PictureBoxSizeMode.StretchImage;
+                Image img = Image.FromFile(fileName);
+                bm = new Bitmap(img, new Size(pb_mainScreen.Width,pb_mainScreen.Height));
+                pb_mainScreen.Refresh();
+                pb_mainScreen.Image = bm;
+                g = Graphics.FromImage(bm);
             }
 
         }
