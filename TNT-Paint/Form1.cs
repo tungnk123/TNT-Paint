@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TNT_Paint
@@ -26,7 +21,7 @@ namespace TNT_Paint
         Khung Khung = new Khung();// class khung de ve cac dau thay doi kich thuoc
 
         //
-        
+
         //
         //
         public bool isSaved = false;
@@ -36,7 +31,7 @@ namespace TNT_Paint
 
         public Form1()
         {
-            
+
             InitializeComponent();
             bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
             g = Graphics.FromImage(bm);
@@ -57,7 +52,7 @@ namespace TNT_Paint
             this.FormClosing += new FormClosingEventHandler(Form1_Closing);
         }
 
-        
+
         #region All buttons event
 
         private void pb_ColorTable_MouseClick(object sender, MouseEventArgs e)
@@ -80,7 +75,7 @@ namespace TNT_Paint
         {
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
-            pb_mainScreen.Image = bm ;// xoa hinh anh dang co o trong pb_mainScreen
+            pb_mainScreen.Image = bm;// xoa hinh anh dang co o trong pb_mainScreen
         }
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
@@ -91,7 +86,7 @@ namespace TNT_Paint
         private void Btn_Eraser_Click(object sender, EventArgs e)
         {
             SelectedMode = 2;
-            veHinh.inPolygon = false;;
+            veHinh.inPolygon = false; ;
         }
         private void Btn_ColorPicker_Click(object sender, EventArgs e)
         {
@@ -200,18 +195,18 @@ namespace TNT_Paint
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
             isPainted = true;
-            if(SelectedMode == 3)
+            if (SelectedMode == 3)
             {
-                if(pb_mainScreen.Cursor == Cursors.Hand)
+                if (pb_mainScreen.Cursor == Cursors.Hand)
                 {
                     currentColor = ((Bitmap)(pb_mainScreen.Image)).GetPixel(e.X, e.Y);
                     p.Color = currentColor;
                     pb_currentColor.BackColor = currentColor;
                     pb_mainScreen.Cursor = Cursors.Default;
                 }
-                
+
             }
-            if(SelectedMode == 4)
+            if (SelectedMode == 4)
             {
                 Fill(bm, e.X, e.Y, currentColor);
             }
@@ -240,19 +235,19 @@ namespace TNT_Paint
         private void pb_mainScreen_MouseUp(object sender, MouseEventArgs e)
         {
             AllowPaint = false;
-            if(SelectedMode == 5)
+            if (SelectedMode == 5)
             {
                 veHinh.DrawLine(p, g, px, py);
             }
-            if(SelectedMode == 6)
+            if (SelectedMode == 6)
             {
                 veHinh.DrawEllipse(p, g, px, py);
             }
-            if(SelectedMode == 7)
+            if (SelectedMode == 7)
             {
                 veHinh.DrawRect(p, g, px, py);
             }
-            if(SelectedMode == 8)
+            if (SelectedMode == 8)
             {
                 veHinh.DrawTriangle(p, g, px, py);
             }
@@ -260,19 +255,19 @@ namespace TNT_Paint
             {
                 veHinh.DrawRightTriangle(p, g, px, py);
             }
-            if(SelectedMode == 10)
+            if (SelectedMode == 10)
             {
                 veHinh.DrawRoundedRectangle(p, g, px, py);
             }
-            if(SelectedMode == 11)
+            if (SelectedMode == 11)
             {
                 veHinh.DrawDiamond(p, g, px, py);
             }
-            if(SelectedMode == 12)
+            if (SelectedMode == 12)
             {
                 veHinh.DrawPentagon(p, g, px, py);
             }
-            if(SelectedMode == 13)
+            if (SelectedMode == 13)
             {
                 veHinh.DrawHexagon(p, g, px, py);
             }
@@ -306,10 +301,10 @@ namespace TNT_Paint
         #endregion
         #region Function
         //fill function
-        private void validate(Bitmap bm, Stack<Point>sp, int x, int y,Color oldColor, Color newColor)
+        private void validate(Bitmap bm, Stack<Point> sp, int x, int y, Color oldColor, Color newColor)
         {
             Color cx = bm.GetPixel(x, y);
-            if(cx == oldColor)
+            if (cx == oldColor)
             {
                 sp.Push(new Point(x, y));
                 bm.SetPixel(x, y, newColor);
@@ -322,12 +317,12 @@ namespace TNT_Paint
             Stack<Point> pixel = new Stack<Point>();
             pixel.Push(new Point(x, y));
             bm.SetPixel(x, y, newColor);
-            if(oldColor == newColor) { return; }
+            if (oldColor == newColor) { return; }
 
-            while(pixel.Count > 0)
+            while (pixel.Count > 0)
             {
                 Point pt = pixel.Pop();
-                if(pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
+                if (pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
                 {
                     validate(bm, pixel, pt.X - 1, pt.Y, oldColor, newColor);
                     validate(bm, pixel, pt.X, pt.Y - 1, oldColor, newColor);
@@ -344,24 +339,24 @@ namespace TNT_Paint
             return new Point((int)(pt.X * px), (int)(pt.Y * py));
         }
 
-        
+
 
         // paint function
         private void pb_mainScreen_Paint(object sender, PaintEventArgs e)
         {
-            
+
             Graphics gx = e.Graphics;
             if (AllowPaint)
             {
-                if(SelectedMode == 5)
+                if (SelectedMode == 5)
                 {
                     veHinh.DrawLine(p, gx, px, py);
                 }
-                if(SelectedMode == 6)
+                if (SelectedMode == 6)
                 {
                     veHinh.DrawEllipse(p, gx, px, py);
                 }
-                if(SelectedMode == 7)
+                if (SelectedMode == 7)
                 {
                     veHinh.DrawRect(p, gx, px, py);
                 }
@@ -369,7 +364,7 @@ namespace TNT_Paint
                 {
                     veHinh.DrawTriangle(p, gx, px, py);
                 }
-                if(SelectedMode == 9)
+                if (SelectedMode == 9)
                 {
                     veHinh.DrawRightTriangle(p, gx, px, py);
                 }
@@ -416,7 +411,7 @@ namespace TNT_Paint
             }
         }
 
-        
+
 
         #endregion
 
@@ -428,18 +423,61 @@ namespace TNT_Paint
             pb_mainScreen.Image = bm;
         }
 
-       
+
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (isPainted)
             {
-                string fileName = openFileDialog.FileName;
-                Image img = Image.FromFile(fileName);
-                bm = new Bitmap(img, new Size(pb_mainScreen.Width,pb_mainScreen.Height));
-                pb_mainScreen.Refresh();
-                pb_mainScreen.Image = bm;
-                g = Graphics.FromImage(bm);
+                switch (MessageBox.Show("Bạn có muốn lưu file không", "Thông Báo", MessageBoxButtons.YesNoCancel))
+                {
+                    case DialogResult.Yes:
+                        {
+                            saveToolStripMenuItem_Click(sender, e);
+                            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
+                            if (openFileDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                string fileName = openFileDialog.FileName;
+                                Image img = Image.FromFile(fileName);
+                                bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
+                                pb_mainScreen.Refresh();
+                                pb_mainScreen.Image = bm;
+                                g = Graphics.FromImage(bm);
+                            }
+                            break;
+                        }
+                    case DialogResult.No:
+                        {
+                            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
+                            if (openFileDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                string fileName = openFileDialog.FileName;
+                                Image img = Image.FromFile(fileName);
+                                bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
+                                pb_mainScreen.Refresh();
+                                pb_mainScreen.Image = bm;
+                                g = Graphics.FromImage(bm);
+                            }
+
+                            break;
+                        }
+
+                    case DialogResult.Cancel:
+                        return;
+
+                }
+            }
+            else
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = openFileDialog.FileName;
+                    Image img = Image.FromFile(fileName);
+                    bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
+                    pb_mainScreen.Refresh();
+                    pb_mainScreen.Image = bm;
+                    g = Graphics.FromImage(bm);
+                }
             }
 
         }
@@ -462,7 +500,7 @@ namespace TNT_Paint
             }
         }
 
-        
+
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
