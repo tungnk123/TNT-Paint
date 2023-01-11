@@ -20,6 +20,7 @@ namespace TNT_Paint
         Point px, py;
         int SelectedMode; // mỗi giá trị là mỗi mode vẽ lên màn hình chính
         bool AllowPaint; // nếu là true thì cho phép vẽ lên màn hình chính
+        bool isPainted = false;
         Color currentColor = Color.Black;
         VeHinh veHinh;
         Khung Khung = new Khung();// class khung de ve cac dau thay doi kich thuoc
@@ -52,7 +53,11 @@ namespace TNT_Paint
             pb_mainScreen.MouseMove += pb_mainScreen_MouseMove;
             pb_mainScreen.MouseUp += pb_mainScreen_MouseUp;
             pb_mainScreen.Paint += pb_mainScreen_Paint;
+
+            this.FormClosing += new FormClosingEventHandler(Form1_Closing);
         }
+
+        
         #region All buttons event
 
         private void pb_ColorTable_MouseClick(object sender, MouseEventArgs e)
@@ -194,6 +199,7 @@ namespace TNT_Paint
 
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
+            isPainted = true;
             if(SelectedMode == 3)
             {
                 if(pb_mainScreen.Cursor == Cursors.Hand)
@@ -343,6 +349,7 @@ namespace TNT_Paint
         // paint function
         private void pb_mainScreen_Paint(object sender, PaintEventArgs e)
         {
+            
             Graphics gx = e.Graphics;
             if (AllowPaint)
             {
@@ -467,6 +474,28 @@ namespace TNT_Paint
             else
             {
                 saveToolStripMenuItem_Click(sender, e);
+            }
+        }
+        private void Form1_Closing(object sender, FormClosingEventArgs e)
+        {
+            // truong hop khong ve cai gi het
+            if (isPainted == false)
+            {
+                return;
+            }
+            else
+            {
+                switch (MessageBox.Show("Bạn có muốn lưu file không", "Thông Báo", MessageBoxButtons.YesNoCancel))
+                {
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                    case DialogResult.Yes:
+                        saveToolStripMenuItem_Click(sender, e);
+                        break;
+                    case DialogResult.No:
+                        break;
+                }
             }
         }
         #endregion
