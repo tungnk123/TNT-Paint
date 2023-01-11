@@ -426,10 +426,12 @@ namespace TNT_Paint
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // truong hop da ve gi do len picturebox
             if (isPainted)
             {
                 switch (MessageBox.Show("Bạn có muốn lưu file không", "Thông Báo", MessageBoxButtons.YesNoCancel))
                 {
+                    // truong hop nguoi dung muon luu anh dang ve lai va open file sau
                     case DialogResult.Yes:
                         {
                             saveToolStripMenuItem_Click(sender, e);
@@ -445,6 +447,7 @@ namespace TNT_Paint
                             }
                             break;
                         }
+                    // truong hop nguoi dung khong muon luu anh dang ve ma muon open file luon
                     case DialogResult.No:
                         {
                             OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
@@ -466,6 +469,7 @@ namespace TNT_Paint
 
                 }
             }
+            // truong hop chua ve gi len picturebox
             else
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
@@ -483,6 +487,7 @@ namespace TNT_Paint
         }
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // truong hop chua save lan nao 
             if (isSaved == false)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Save image" };
@@ -494,7 +499,9 @@ namespace TNT_Paint
                     pb_mainScreen.Image.Save(path);
                 }
             }
+            // truong hop da save se goi ham saveas
             else
+
             {
                 saveAsToolStripMenuItem_Click(sender, e);
             }
@@ -521,6 +528,7 @@ namespace TNT_Paint
             {
                 return;
             }
+            // truong hop da ve cai gi len picturebox 
             else
             {
                 switch (MessageBox.Show("Bạn có muốn lưu file không", "Thông Báo", MessageBoxButtons.YesNoCancel))
