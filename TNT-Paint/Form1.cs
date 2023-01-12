@@ -42,8 +42,8 @@ namespace TNT_Paint
             SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
             veHinh = new VeHinh();
-            graphicPanel = this.CreateGraphics();
-            Khung.Ve3DauThayDoiKichThuocKhung(graphicPanel, this.pb_mainScreen.Height, this.pb_mainScreen.Width);
+            graphicPanel = this.panel2.CreateGraphics();
+            Khung.Ve3DauThayDoiKichThuocKhung(graphicPanel, this.pb_mainScreen.Width, this.pb_mainScreen.Height);
             pb_mainScreen.MouseDown += pb_mainScreen_MouseDown;
             pb_mainScreen.MouseMove += pb_mainScreen_MouseMove;
             pb_mainScreen.MouseUp += pb_mainScreen_MouseUp;
