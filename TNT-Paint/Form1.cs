@@ -8,7 +8,6 @@ namespace TNT_Paint
     public partial class Form1 : Form
     {
         Graphics g; // đồ hoạ từ màn hình vẽ chính
-        Graphics graphicPanel;
         Bitmap bm;
         Pen p; // bút vẽ chính
         Pen eraser; // tẩy
@@ -18,10 +17,8 @@ namespace TNT_Paint
         bool isPainted = false;
         Color currentColor = Color.Black;
         VeHinh veHinh;
-        Khung Khung = new Khung();// class khung de ve cac dau thay doi kich thuoc
 
         //
-
         //
         //
         public bool isSaved = false;
@@ -42,8 +39,6 @@ namespace TNT_Paint
             SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
             veHinh = new VeHinh();
-            graphicPanel = this.panel2.CreateGraphics();
-            Khung.Ve3DauThayDoiKichThuocKhung(graphicPanel, this.pb_mainScreen.Width, this.pb_mainScreen.Height);
             pb_mainScreen.MouseDown += pb_mainScreen_MouseDown;
             pb_mainScreen.MouseMove += pb_mainScreen_MouseMove;
             pb_mainScreen.MouseUp += pb_mainScreen_MouseUp;
