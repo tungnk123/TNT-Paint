@@ -50,6 +50,8 @@ namespace TNT_Paint
             pb_mainScreen.Paint += pb_mainScreen_Paint;
 
             this.FormClosing += new FormClosingEventHandler(Form1_Closing);
+
+            timer1.Start();
         }
 
 
@@ -521,6 +523,7 @@ namespace TNT_Paint
                 saveToolStripMenuItem_Click(sender, e);
             }
         }
+        
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
             // truong hop khong ve cai gi het
@@ -543,6 +546,16 @@ namespace TNT_Paint
                         break;
                 }
             }
+        }
+        #endregion
+
+        #region Timer ve cac dau cham
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            panelDauCham1.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height / 2 + pb_mainScreen.Location.Y);
+            panelDauCham2.Location = new Point(this.pb_mainScreen.Width/2 + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
+            panelDauCham3.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
+
         }
         #endregion
     }

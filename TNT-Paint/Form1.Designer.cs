@@ -95,6 +95,10 @@ namespace TNT_Paint
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelDauCham1 = new System.Windows.Forms.Panel();
+            this.panelDauCham2 = new System.Windows.Forms.Panel();
+            this.panelDauCham3 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
@@ -247,7 +251,7 @@ namespace TNT_Paint
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(52, 21);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // imageToolStripMenuItem
@@ -710,6 +714,9 @@ namespace TNT_Paint
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panelDauCham3);
+            this.panel2.Controls.Add(this.panelDauCham2);
+            this.panel2.Controls.Add(this.panelDauCham1);
             this.panel2.Controls.Add(this.pb_mainScreen);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 125);
@@ -725,6 +732,38 @@ namespace TNT_Paint
             this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_mainScreen.TabIndex = 3;
             this.pb_mainScreen.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panelDauCham1
+            // 
+            this.panelDauCham1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham1.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.panelDauCham1.Location = new System.Drawing.Point(876, 213);
+            this.panelDauCham1.Name = "panelDauCham1";
+            this.panelDauCham1.Size = new System.Drawing.Size(10, 10);
+            this.panelDauCham1.TabIndex = 4;
+            // 
+            // panelDauCham2
+            // 
+            this.panelDauCham2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham2.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.panelDauCham2.Location = new System.Drawing.Point(422, 440);
+            this.panelDauCham2.Name = "panelDauCham2";
+            this.panelDauCham2.Size = new System.Drawing.Size(10, 10);
+            this.panelDauCham2.TabIndex = 5;
+            // 
+            // panelDauCham3
+            // 
+            this.panelDauCham3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham3.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.panelDauCham3.Location = new System.Drawing.Point(876, 440);
+            this.panelDauCham3.Name = "panelDauCham3";
+            this.panelDauCham3.Size = new System.Drawing.Size(10, 10);
+            this.panelDauCham3.TabIndex = 5;
             // 
             // Form1
             // 
@@ -824,6 +863,10 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripButton Btn_DrawFivePointStar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pb_mainScreen;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelDauCham1;
+        private System.Windows.Forms.Panel panelDauCham3;
+        private System.Windows.Forms.Panel panelDauCham2;
     }
 }
 
