@@ -94,11 +94,11 @@ namespace TNT_Paint
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelDauCham3 = new System.Windows.Forms.Panel();
+            this.panelDauCham2 = new System.Windows.Forms.Panel();
+            this.panelDauCham1 = new System.Windows.Forms.Panel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelDauCham1 = new System.Windows.Forms.Panel();
-            this.panelDauCham2 = new System.Windows.Forms.Panel();
-            this.panelDauCham3 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
@@ -724,6 +724,42 @@ namespace TNT_Paint
             this.panel2.Size = new System.Drawing.Size(908, 470);
             this.panel2.TabIndex = 9;
             // 
+            // panelDauCham3
+            // 
+            this.panelDauCham3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham3.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.panelDauCham3.Location = new System.Drawing.Point(876, 440);
+            this.panelDauCham3.Name = "panelDauCham3";
+            this.panelDauCham3.Size = new System.Drawing.Size(10, 10);
+            this.panelDauCham3.TabIndex = 5;
+            this.panelDauCham3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseDown);
+            this.panelDauCham3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseMove);
+            this.panelDauCham3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseUp);
+            // 
+            // panelDauCham2
+            // 
+            this.panelDauCham2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham2.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.panelDauCham2.Location = new System.Drawing.Point(422, 440);
+            this.panelDauCham2.Name = "panelDauCham2";
+            this.panelDauCham2.Size = new System.Drawing.Size(10, 10);
+            this.panelDauCham2.TabIndex = 5;
+            this.panelDauCham2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseDown);
+            this.panelDauCham2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseMove);
+            this.panelDauCham2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseUp);
+            // 
+            // panelDauCham1
+            // 
+            this.panelDauCham1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham1.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.panelDauCham1.Location = new System.Drawing.Point(876, 213);
+            this.panelDauCham1.Name = "panelDauCham1";
+            this.panelDauCham1.Size = new System.Drawing.Size(10, 10);
+            this.panelDauCham1.TabIndex = 4;
+            this.panelDauCham1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseDown);
+            this.panelDauCham1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseMove);
+            this.panelDauCham1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseUp);
+            // 
             // pb_mainScreen
             // 
             this.pb_mainScreen.Location = new System.Drawing.Point(0, 0);
@@ -737,33 +773,6 @@ namespace TNT_Paint
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelDauCham1
-            // 
-            this.panelDauCham1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham1.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panelDauCham1.Location = new System.Drawing.Point(876, 213);
-            this.panelDauCham1.Name = "panelDauCham1";
-            this.panelDauCham1.Size = new System.Drawing.Size(10, 10);
-            this.panelDauCham1.TabIndex = 4;
-            // 
-            // panelDauCham2
-            // 
-            this.panelDauCham2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham2.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.panelDauCham2.Location = new System.Drawing.Point(422, 440);
-            this.panelDauCham2.Name = "panelDauCham2";
-            this.panelDauCham2.Size = new System.Drawing.Size(10, 10);
-            this.panelDauCham2.TabIndex = 5;
-            // 
-            // panelDauCham3
-            // 
-            this.panelDauCham3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham3.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.panelDauCham3.Location = new System.Drawing.Point(876, 440);
-            this.panelDauCham3.Name = "panelDauCham3";
-            this.panelDauCham3.Size = new System.Drawing.Size(10, 10);
-            this.panelDauCham3.TabIndex = 5;
             // 
             // Form1
             // 

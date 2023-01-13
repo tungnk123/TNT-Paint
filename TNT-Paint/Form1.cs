@@ -21,6 +21,8 @@ namespace TNT_Paint
         //
         //
         //
+        public bool isDown = false;// biến chỉ ra các dáu chấm thay đổi kích thước có nhấn ko
+        public Point oldPoint = new Point(); 
         public bool isSaved = false;
         public string path = "";// bien string luu duong dan luu file
 
@@ -542,6 +544,8 @@ namespace TNT_Paint
                 }
             }
         }
+
+        
         #endregion
 
         #region Timer ve cac dau cham
@@ -552,6 +556,84 @@ namespace TNT_Paint
             panelDauCham3.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
 
         }
+
+        
+        #endregion
+
+        #region Events thay đổi vẽ 3 dấu chấm thay đổi kích thước
+
+        private void panelDauCham1_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDown = true;
+        }
+        private void panelDauCham1_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDown = false;
+        }
+
+       
+        private void panelDauCham1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDown)
+            {
+                if (oldPoint != e.Location)
+                {
+                    this.pb_mainScreen.Width = (e.X + panelDauCham1.Location.X - pb_mainScreen.Location.X);
+                    this.Invalidate();
+                }
+            }
+            oldPoint = e.Location;
+        }
+
+        private void panelDauCham2_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDown = true;
+        }
+
+        private void panelDauCham2_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDown = false;
+        }
+
+
+        private void panelDauCham2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDown)
+            {
+                if (oldPoint != e.Location)
+                {
+                    pb_mainScreen.Height = (e.Y + panelDauCham2.Location.Y - pb_mainScreen.Location.Y);
+                    this.Invalidate();
+                }
+            }
+            oldPoint = e.Location;
+        }
+
+        private void panelDauCham3_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDown = true;
+
+        }
+        private void panelDauCham3_MouseUp(object sender, MouseEventArgs e)
+        {
+                isDown = false;
+        }
+
+        private void panelDauCham3_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDown)
+            {
+                if (oldPoint != e.Location)
+                {
+                    pb_mainScreen.Width = (e.X + panelDauCham1.Location.X - pb_mainScreen.Location.X);
+                    pb_mainScreen.Height = (e.Y + panelDauCham2.Location.Y - pb_mainScreen.Location.Y);
+                    this.Invalidate();
+                }
+            }
+            oldPoint = e.Location;
+        }
+
+
         #endregion
     }
 }
