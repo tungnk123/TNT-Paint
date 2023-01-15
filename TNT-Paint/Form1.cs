@@ -25,6 +25,7 @@ namespace TNT_Paint
         public Point oldPoint = new Point(); 
         public bool isSaved = false;
         public string path = "";// bien string luu duong dan luu file
+        public string tenFileTieuDe = "Untitled";
 
         //
 
@@ -49,6 +50,7 @@ namespace TNT_Paint
             this.FormClosing += new FormClosingEventHandler(Form1_Closing);
 
             timer1.Start();
+            this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
         }
 
 
@@ -72,6 +74,7 @@ namespace TNT_Paint
         }
         private void Btn_Clear_Click(object sender, EventArgs e)
         {
+            tenFileTieuDe = "Untitled";
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
             pb_mainScreen.Image = bm;// xoa hinh anh dang co o trong pb_mainScreen
@@ -475,6 +478,7 @@ namespace TNT_Paint
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string fileName = openFileDialog.FileName;
+                    tenFileTieuDe = openFileDialog.SafeFileName;
                     Image img = Image.FromFile(fileName);
                     bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
                     pb_mainScreen.Refresh();
@@ -495,6 +499,7 @@ namespace TNT_Paint
                 {
                     isSaved = true;
                     path = saveFileDialog.FileName;
+                    
                     pb_mainScreen.Image.Save(path);
                 }
             }
@@ -551,6 +556,7 @@ namespace TNT_Paint
         #region Timer ve cac dau cham
         private void timer1_Tick(object sender, EventArgs e)
         {
+            this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
             panelDauCham1.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height / 2 + pb_mainScreen.Location.Y);
             panelDauCham2.Location = new Point(this.pb_mainScreen.Width/2 + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
             panelDauCham3.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
