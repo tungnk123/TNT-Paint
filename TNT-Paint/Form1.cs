@@ -420,6 +420,8 @@ namespace TNT_Paint
         #region Menu events
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tenFileTieuDe = "Untitled";
+            isPainted = false;
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
             pb_mainScreen.Image = bm;
