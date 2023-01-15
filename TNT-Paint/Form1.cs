@@ -627,6 +627,8 @@ namespace TNT_Paint
                 isDown = false;
         }
 
+        
+
         private void panelDauCham3_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDown)
@@ -639,6 +641,31 @@ namespace TNT_Paint
                 }
             }
             oldPoint = e.Location;
+        }
+
+        
+
+
+        #endregion
+
+        #region Zoom in zoom out
+        private void zomeInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.pb_mainScreen.Width = pb_mainScreen.Width + pb_mainScreen.Width / 3;
+            this.pb_mainScreen.Height = pb_mainScreen.Height + pb_mainScreen.Height / 3;
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.pb_mainScreen.Width = 870;
+            this.pb_mainScreen.Height = 434;
+        }
+
+        private void zomeOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.pb_mainScreen.Width = pb_mainScreen.Width - pb_mainScreen.Width / 3;
+            this.pb_mainScreen.Height = pb_mainScreen.Height - pb_mainScreen.Height / 3;
         }
 
 
