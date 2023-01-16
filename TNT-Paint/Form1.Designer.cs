@@ -97,7 +97,12 @@ namespace TNT_Paint
             this.panelDauCham2 = new System.Windows.Forms.Panel();
             this.panelDauCham3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
@@ -106,7 +111,9 @@ namespace TNT_Paint
             this.gb_Shape.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -269,45 +276,45 @@ namespace TNT_Paint
             // zomeInToolStripMenuItem
             // 
             this.zomeInToolStripMenuItem.Name = "zomeInToolStripMenuItem";
-            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.zomeInToolStripMenuItem.Text = "Zome in";
             this.zomeInToolStripMenuItem.Click += new System.EventHandler(this.zomeInToolStripMenuItem_Click);
             // 
             // zomeOutToolStripMenuItem
             // 
             this.zomeOutToolStripMenuItem.Name = "zomeOutToolStripMenuItem";
-            this.zomeOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zomeOutToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.zomeOutToolStripMenuItem.Text = "Zome out";
             this.zomeOutToolStripMenuItem.Click += new System.EventHandler(this.zomeOutToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(134, 22);
             this.toolStripMenuItem2.Text = "100%";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(131, 6);
             // 
             // rulerToolStripMenuItem
             // 
             this.rulerToolStripMenuItem.Name = "rulerToolStripMenuItem";
-            this.rulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rulerToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.rulerToolStripMenuItem.Text = "Ruler";
             // 
             // gridlinesToolStripMenuItem
             // 
             this.gridlinesToolStripMenuItem.Name = "gridlinesToolStripMenuItem";
-            this.gridlinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gridlinesToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.gridlinesToolStripMenuItem.Text = "Gridlines";
             // 
             // statusBarToolStripMenuItem
             // 
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.statusBarToolStripMenuItem.Text = "Status Bar";
             // 
             // helpToolStripMenuItem
@@ -751,6 +758,7 @@ namespace TNT_Paint
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Controls.Add(this.panelDauCham3);
             this.panel2.Controls.Add(this.panelDauCham2);
             this.panel2.Controls.Add(this.panelDauCham1);
@@ -761,6 +769,40 @@ namespace TNT_Paint
             this.panel2.Size = new System.Drawing.Size(908, 470);
             this.panel2.TabIndex = 9;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 448);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(908, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Image = global::TNT_Paint.Properties.Resources.Diamond;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(134, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(496, 17);
+            this.toolStripStatusLabel3.Text = "                                                                                 " +
+    "                                                                                " +
+    "  ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
             // pb_mainScreen
             // 
             this.pb_mainScreen.Location = new System.Drawing.Point(0, 0);
@@ -769,6 +811,7 @@ namespace TNT_Paint
             this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_mainScreen.TabIndex = 3;
             this.pb_mainScreen.TabStop = false;
+            this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove_1);
             // 
             // Form1
             // 
@@ -797,7 +840,11 @@ namespace TNT_Paint
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -872,6 +919,11 @@ namespace TNT_Paint
         private System.Windows.Forms.Panel panelDauCham3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pb_mainScreen;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }
 

@@ -662,13 +662,26 @@ namespace TNT_Paint
             this.pb_mainScreen.Height = 434;
         }
 
+        
+
         private void zomeOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.pb_mainScreen.Width = pb_mainScreen.Width - pb_mainScreen.Width / 3;
             this.pb_mainScreen.Height = pb_mainScreen.Height - pb_mainScreen.Height / 3;
         }
 
+       
 
+
+        #endregion
+
+        #region Status bar
+
+        private void pb_mainScreen_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            toolStripStatusLabel1.Text = e.X + ", " + e.Y + "px";
+            toolStripStatusLabel2.Text = pb_mainScreen.Width + " x " + pb_mainScreen.Height + "px";
+        }
         #endregion
     }
 }
