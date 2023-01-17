@@ -27,6 +27,8 @@ namespace TNT_Paint
         public string path = "";// bien string luu duong dan luu file
         public string tenFileTieuDe = "Untitled";
 
+        public bool isGridLine = false;
+
         //
 
         public Form1()
@@ -231,7 +233,13 @@ namespace TNT_Paint
                     px = py;
                 }
             }
-            pb_mainScreen.Refresh();
+            if (!isGridLine)
+            {
+                pb_mainScreen.Refresh();
+            }
+            toolStripStatusLabel1.Text = e.X + ", " + e.Y + "px";
+            toolStripStatusLabel2.Text = pb_mainScreen.Width + " x " + pb_mainScreen.Height + "px";
+            
         }
 
         private void pb_mainScreen_MouseUp(object sender, MouseEventArgs e)
@@ -411,6 +419,7 @@ namespace TNT_Paint
                     veHinh.DrawFivePointStar(p, gx, px, py);
                 }
             }
+            
         }
 
 
@@ -562,7 +571,11 @@ namespace TNT_Paint
             panelDauCham1.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height / 2 + pb_mainScreen.Location.Y);
             panelDauCham2.Location = new Point(this.pb_mainScreen.Width/2 + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
             panelDauCham3.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
-
+            Graphics g = this.pb_mainScreen.CreateGraphics();
+            if (isGridLine)
+            {
+                PaintGridLines(g);
+            }
         }
 
         
@@ -677,10 +690,52 @@ namespace TNT_Paint
 
         #region Status bar
 
-        private void pb_mainScreen_MouseMove_1(object sender, MouseEventArgs e)
+        
+
+        
+        #endregion
+
+        #region GridLines và Ruler
+
+        public void PaintGridLines(Graphics g)
         {
-            toolStripStatusLabel1.Text = e.X + ", " + e.Y + "px";
-            toolStripStatusLabel2.Text = pb_mainScreen.Width + " x " + pb_mainScreen.Height + "px";
+            int column = this.pb_mainScreen.Width / 10;
+            int row = pb_mainScreen.Height / 10;
+            int x = 0, y = 0;
+            Pen p = new Pen(Color.Black) { Width = 1, DashStyle = System.Drawing.Drawing2D.DashStyle.Dot };
+            for (int i = 0; i < column; i++)
+            {
+                g.DrawLine(p, x, 0, x, pb_mainScreen.Height);
+                x += 10;
+            }
+            for (int i = 0; i < row; i++)
+            {
+                g.DrawLine(p, 0, y, pb_mainScreen.Width, y);
+                y += 10;
+            }
+
+        }
+
+        private void pb_mainScreen_SizeChanged(object sender, EventArgs e)
+        {
+            Graphics g = this.pb_mainScreen.CreateGraphics();
+            if (isGridLine)
+            {
+                PaintGridLines(g);
+            }
+        }
+
+        
+
+        private void gridlinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            isGridLine = !isGridLine;
+            Graphics g = this.pb_mainScreen.CreateGraphics();
+            if (isGridLine)
+            {
+                PaintGridLines(g);
+            }
+            this.Invalidate();
         }
         #endregion
     }
