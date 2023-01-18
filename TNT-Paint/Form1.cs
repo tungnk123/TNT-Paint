@@ -683,16 +683,19 @@ namespace TNT_Paint
             this.pb_mainScreen.Height = pb_mainScreen.Height - pb_mainScreen.Height / 3;
         }
 
-       
+
 
 
         #endregion
 
         #region Status bar
 
-        
+        private void statusBarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusStrip1.Visible = !statusStrip1.Visible;
+        }
 
-        
+
         #endregion
 
         #region GridLines và Ruler
