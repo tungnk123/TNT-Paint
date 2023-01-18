@@ -741,5 +741,13 @@ namespace TNT_Paint
             this.Invalidate();
         }
         #endregion
+        #region Information and About
+        private void informationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Information information = new Information();
+            information.ShowDialog();
+        }
+
+        #endregion
     }
 }
