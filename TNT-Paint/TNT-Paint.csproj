@@ -140,6 +140,7 @@
     <None Include="Resources\Five_PointStar.png" />
     <None Include="Resources\Five_PointStar1.png" />
     <None Include="Resources\TNT-Paint.png" />
+    <None Include="Resources\logo-uit.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
