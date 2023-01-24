@@ -751,12 +751,22 @@ namespace TNT_Paint
             information.ShowDialog();
         }
 
+        
+
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
         }
 
+        #endregion
+
+        #region events và menu tools 
+        private void imageEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChinhSuaAnh formChinhSuaAnh = new FormChinhSuaAnh();
+            formChinhSuaAnh.ShowDialog();
+        }
         #endregion
     }
 }
