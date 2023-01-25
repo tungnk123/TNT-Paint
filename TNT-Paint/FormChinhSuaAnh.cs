@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
 
 namespace TNT_Paint
 {
@@ -19,21 +13,23 @@ namespace TNT_Paint
         public const float bwgt = 0.0820f;
         private static ImageAttributes imageAttributes = new ImageAttributes();
         private static ColorMatrix colorMatrix = new ColorMatrix();
+        public Image imageFormPb_mainscreen = Form1.instance.pb_mainScreen.Image;
         public FormChinhSuaAnh()
         {
-            Form1.instance.Visible = false;
+            //Form1.instance.Visible = false;
             instanceFormCSA = this;
             InitializeComponent();
             trackBar1.SetRange(0, 30);
             trackBar2.SetRange(-100, 100);
 
         }
-        
+
         private void FormChinhSuaAnh_Load(object sender, EventArgs e)
         {
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Image = Form1.instance.pb_mainScreen.Image;
-            
+            pictureBox1.Image = imageFormPb_mainscreen;
+
+
         }
 
         #region Events scroll
@@ -41,16 +37,22 @@ namespace TNT_Paint
         {
             float value = trackBar1.Value;
 
-            pictureBox1.Image = AdjustBrightness(pictureBox1.Image, value / 10);
+            pictureBox1.Image = AdjustBrightness(imageFormPb_mainscreen, value / 10);
         }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             float value = trackBar2.Value;
-            pictureBox1.Image = AdjustSaturation(pictureBox1.Image, value / 10);
+            pictureBox1.Image = AdjustSaturation(imageFormPb_mainscreen, value / 10);
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            float value = trackBar3.Value;
+            pictureBox1.Image = AdjustContrast(imageFormPb_mainscreen, value);
         }
         #endregion
-        #region Code thay đổi brightness và saturation
+        #region Code thay đổi brightness, saturation, contrast, gray ...
         private static Bitmap AdjustBrightness(Image image, float brightness)
         {
             // Make the ColorMatrix.
@@ -132,6 +134,80 @@ namespace TNT_Paint
 
             return NewBitmap;
         }
+        public static Bitmap AdjustContrast(Image Image, float Value)
+        {
+            Value = (100.0f + Value) / 100.0f;
+            Value *= Value;
+            Bitmap NewBitmap = (Bitmap)Image.Clone();
+            BitmapData data = NewBitmap.LockBits(
+                new Rectangle(0, 0, NewBitmap.Width, NewBitmap.Height),
+                ImageLockMode.ReadWrite,
+                NewBitmap.PixelFormat);
+            int Height = NewBitmap.Height;
+            int Width = NewBitmap.Width;
+
+            unsafe
+            {
+                for (int y = 0; y < Height; ++y)
+                {
+                    byte* row = (byte*)data.Scan0 + (y * data.Stride);
+                    int columnOffset = 0;
+                    for (int x = 0; x < Width; ++x)
+                    {
+                        byte B = row[columnOffset];
+                        byte G = row[columnOffset + 1];
+                        byte R = row[columnOffset + 2];
+
+                        float Red = R / 255.0f;
+                        float Green = G / 255.0f;
+                        float Blue = B / 255.0f;
+                        Red = (((Red - 0.5f) * Value) + 0.5f) * 255.0f;
+                        Green = (((Green - 0.5f) * Value) + 0.5f) * 255.0f;
+                        Blue = (((Blue - 0.5f) * Value) + 0.5f) * 255.0f;
+
+                        int iR = (int)Red;
+                        iR = iR > 255 ? 255 : iR;
+                        iR = iR < 0 ? 0 : iR;
+                        int iG = (int)Green;
+                        iG = iG > 255 ? 255 : iG;
+                        iG = iG < 0 ? 0 : iG;
+                        int iB = (int)Blue;
+                        iB = iB > 255 ? 255 : iB;
+                        iB = iB < 0 ? 0 : iB;
+
+                        row[columnOffset] = (byte)iB;
+                        row[columnOffset + 1] = (byte)iG;
+                        row[columnOffset + 2] = (byte)iR;
+
+                        columnOffset += 4;
+                    }
+                }
+            }
+
+            NewBitmap.UnlockBits(data);
+
+            return NewBitmap;
+        }
+        public Bitmap MakeGrayscale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(
+               new float[][]
+               {
+                   new float[] {.3f, .3f, .3f, 0, 0},
+                   new float[] {.59f, .59f, .59f, 0, 0},
+                   new float[] {.11f, .11f, .11f, 0, 0},
+                   new float[] {0, 0, 0, 1, 0},
+                   new float[] {0, 0, 0, 0, 1}
+               });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
 
 
         #endregion
@@ -145,8 +221,17 @@ namespace TNT_Paint
                 pictureBox1.Image = Form1.instance.pb_mainScreen.Image;
                 trackBar1.Value = 15;
                 trackBar2.Value = 0;
+                trackBar3.Value = 0;
             }
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = MakeGrayscale(imageFormPb_mainscreen);
+        }
+
+
         #endregion
+
+        
     }
 }
