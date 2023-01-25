@@ -24,16 +24,18 @@ namespace TNT_Paint
         public bool isDown = false;// biến chỉ ra các dáu chấm thay đổi kích thước có nhấn ko
         public Point oldPoint = new Point(); 
         public bool isSaved = false;
-        public string path = "";// bien string luu duong dan luu file
+        public static string path = "";// bien string luu duong dan luu file
         public string tenFileTieuDe = "Untitled";
 
         public bool isGridLine = false;
 
         //
+        public static Form1 instance;
+
 
         public Form1()
         {
-
+            instance = this;
             InitializeComponent();
             bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
             g = Graphics.FromImage(bm);

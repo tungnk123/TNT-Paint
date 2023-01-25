@@ -955,7 +955,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Panel panelDauCham2;
         private System.Windows.Forms.Panel panelDauCham3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pb_mainScreen;
+        public System.Windows.Forms.PictureBox pb_mainScreen;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;

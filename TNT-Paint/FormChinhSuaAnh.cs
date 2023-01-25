@@ -12,14 +12,20 @@ namespace TNT_Paint
 {
     public partial class FormChinhSuaAnh : Form
     {
+        public static FormChinhSuaAnh instanceFormCSA;
         public FormChinhSuaAnh()
         {
+            instanceFormCSA = this;
             InitializeComponent();
         }
+        
+        
 
-        private void label2_Click(object sender, EventArgs e)
+        private void FormChinhSuaAnh_Load(object sender, EventArgs e)
         {
-
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Image = Form1.instance.pb_mainScreen.Image;
+            
         }
     }
 }
