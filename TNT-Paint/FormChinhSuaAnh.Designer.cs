@@ -48,6 +48,9 @@ namespace TNT_Paint
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -99,7 +102,7 @@ namespace TNT_Paint
             // 
             this.button1.Location = new System.Drawing.Point(692, 27);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 42);
             this.button1.TabIndex = 5;
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
@@ -107,7 +110,7 @@ namespace TNT_Paint
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(692, 81);
+            this.button2.Location = new System.Drawing.Point(692, 75);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -117,7 +120,7 @@ namespace TNT_Paint
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(692, 139);
+            this.button3.Location = new System.Drawing.Point(692, 104);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 7;
@@ -127,30 +130,33 @@ namespace TNT_Paint
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(692, 195);
+            this.button4.Location = new System.Drawing.Point(692, 133);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 8;
-            this.button4.Text = "button4";
+            this.button4.Text = "Fog";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(692, 253);
+            this.button5.Location = new System.Drawing.Point(692, 162);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 9;
-            this.button5.Text = "button5";
+            this.button5.Text = "Flash";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(692, 316);
+            this.button6.Location = new System.Drawing.Point(692, 191);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 10;
-            this.button6.Text = "button6";
+            this.button6.Text = "Frozen";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // menuStrip1
             // 
@@ -219,11 +225,42 @@ namespace TNT_Paint
             this.trackBar3.TickFrequency = 5;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(692, 220);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 14;
+            this.button7.Text = "Red Scale";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(692, 249);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(692, 278);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 16;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // FormChinhSuaAnh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 507);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.trackBar3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button6);
@@ -275,5 +312,8 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }

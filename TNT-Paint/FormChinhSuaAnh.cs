@@ -209,6 +209,83 @@ namespace TNT_Paint
             return newBmp;
         }
 
+        public Bitmap MakeFogScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{1+0.3f, 0, 0, 0, 0},
+            new float[]{0, 1+0.7f, 0, 0, 0},
+            new float[]{0, 0, 1+1.3f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+        public Bitmap MakeFlashScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{1+0.9f, 0, 0, 0, 0},
+            new float[]{0, 1+1.5f, 0, 0, 0},
+            new float[]{0, 0, 1+1.3f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+        public Bitmap MakeFrozenScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{1+0.3f, 0, 0, 0, 0},
+            new float[]{0, 1+0f, 0, 0, 0},
+            new float[]{0, 0, 1+5f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
+        public Bitmap MakeRedScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{.393f, .349f, .272f+1.3f, 0, 0},
+            new float[]{.769f, .686f+0.5f, .534f, 0, 0},
+            new float[]{.189f+2.3f, .168f, .131f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
 
         #endregion
 
@@ -232,6 +309,7 @@ namespace TNT_Paint
         private void button3_Click(object sender, EventArgs e)
         {
             Bitmap bmp = new Bitmap(pictureBox1.Image);
+            
             int width = pictureBox1.Image.Width;
             int height = pictureBox1.Image.Height;
 
@@ -294,10 +372,28 @@ namespace TNT_Paint
             pictureBox1.Image = bmp;
 
         }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = MakeFogScale(imageFormPb_mainscreen);
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = MakeFlashScale(imageFormPb_mainscreen);
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = MakeFrozenScale(imageFormPb_mainscreen);
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = MakeRedScale(imageFormPb_mainscreen);
+        }
+
+        
 
         #endregion
 
-
+        
     }
 }
