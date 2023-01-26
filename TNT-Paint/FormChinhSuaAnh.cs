@@ -287,6 +287,46 @@ namespace TNT_Paint
             return newBmp;
         }
 
+        public Bitmap MakeDramaticScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{.393f, .349f+0.5f, .272f, 0, 0},
+            new float[]{.769f+0.3f, .686f, .534f, 0, 0},
+            new float[]{.189f, .168f, .131f+0.5f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
+        public Bitmap MakeKakaoScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{.393f+0.3f, .349f, .272f, 0, 0},
+            new float[]{.769f, .686f+0.2f, .534f, 0, 0},
+            new float[]{.189f, .168f, .131f+0.9f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
         #endregion
 
         #region Events các button
@@ -390,10 +430,23 @@ namespace TNT_Paint
             pictureBox1.Image = MakeRedScale(imageFormPb_mainscreen);
         }
 
-        
+        private void button8_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = MakeDramaticScale(imageFormPb_mainscreen);
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = MakeKakaoScale(imageFormPb_mainscreen);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form1.instance.pb_mainScreen.Image = pictureBox1.Image;
+            this.Close();
+        }
 
         #endregion
 
-        
+
     }
 }
