@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
@@ -14,6 +15,16 @@ namespace TNT_Paint
         private static ImageAttributes imageAttributes = new ImageAttributes();
         private static ColorMatrix colorMatrix = new ColorMatrix();
         public Image imageFormPb_mainscreen = Form1.instance.pb_mainScreen.Image;
+
+        //crop variable
+        bool isCropping = false;
+        int cropX;
+        int cropY;
+        int cropWidth;
+        int cropHeight;
+        public Pen cropPen;
+        public DashStyle cropDashStyle = DashStyle.DashDot;
+        //
         public FormChinhSuaAnh()
         {
             //Form1.instance.Visible = false;
@@ -341,15 +352,16 @@ namespace TNT_Paint
                 trackBar3.Value = 0;
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Image = MakeGrayscale(imageFormPb_mainscreen);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
+
             Bitmap bmp = new Bitmap(pictureBox1.Image);
-            
+
             int width = pictureBox1.Image.Width;
             int height = pictureBox1.Image.Height;
 
@@ -412,33 +424,40 @@ namespace TNT_Paint
             pictureBox1.Image = bmp;
 
         }
-        private void button4_Click(object sender, EventArgs e)
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Image = MakeFogScale(imageFormPb_mainscreen);
         }
-        private void button5_Click(object sender, EventArgs e)
+
+        private void button5_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Image = MakeFlashScale(imageFormPb_mainscreen);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Image = MakeFrozenScale(imageFormPb_mainscreen);
         }
-        private void button7_Click(object sender, EventArgs e)
+
+        private void button7_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Image = MakeRedScale(imageFormPb_mainscreen);
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Image = MakeDramaticScale(imageFormPb_mainscreen);
         }
-        private void button9_Click(object sender, EventArgs e)
+
+        private void button9_Click_1(object sender, EventArgs e)
         {
             pictureBox1.Image = MakeKakaoScale(imageFormPb_mainscreen);
         }
+        
 
+        
+        
         private void button11_Click(object sender, EventArgs e)
         {
             Form1.instance.pb_mainScreen.Image = pictureBox1.Image;
@@ -448,9 +467,78 @@ namespace TNT_Paint
         {
             this.Close();
         }
+        private void button12_Click(object sender, EventArgs e)
+        {
+            isCropping = true;
+        }
+
+
+        #endregion
+        #region Crop events
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (isCropping)
+            {
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+                    Cursor = Cursors.Cross;
+                    cropX = e.X;
+                    cropY = e.Y;
+                    cropPen = new Pen(Color.Black, 1);
+                    cropPen.DashStyle = DashStyle.DashDotDot;
+                }
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isCropping)
+            {
+                if (pictureBox1.Image == null)
+                    return;
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+                    pictureBox1.Refresh();
+                    cropWidth = e.X - cropX;
+                    cropHeight = e.Y - cropY;
+                    pictureBox1.CreateGraphics().DrawRectangle(cropPen, cropX, cropY, cropWidth, cropHeight);
+                }
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Crop();
+            isCropping = false;
+        }
+
+        public void Crop()
+        {
+            Cursor = Cursors.Default;
+            if (cropWidth < 1)
+            {
+                return;
+            }
+            Rectangle rect = new Rectangle(cropX, cropY, cropWidth, cropHeight);
+            Bitmap OriginalImage = new Bitmap(pictureBox1.Image, pictureBox1.Width, pictureBox1.Height);
+            Bitmap _img = new Bitmap(cropWidth, cropHeight);
+            Graphics g = Graphics.FromImage(_img);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            g.DrawImage(OriginalImage, 0, 0, rect, GraphicsUnit.Pixel);
+            pictureBox1.Image = _img;
+            pictureBox1.Width = _img.Width;
+            pictureBox1.Height = _img.Height;
+            
+            
+        }
+
+
 
         #endregion
 
-
+        
     }
 }
