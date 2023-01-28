@@ -32,6 +32,7 @@ namespace TNT_Paint
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Information));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@ namespace TNT_Paint
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,16 @@ namespace TNT_Paint
             this.label5.Size = new System.Drawing.Size(132, 18);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã Số Sinh Viên";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TNT_Paint.Properties.Resources.logo_uit;
+            this.pictureBox1.Location = new System.Drawing.Point(421, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(157, 141);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -211,16 +221,6 @@ namespace TNT_Paint
             this.label1.TabIndex = 7;
             this.label1.Text = "Chương trình TNT Paint Version 0.1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TNT_Paint.Properties.Resources.logo_uit;
-            this.pictureBox1.Location = new System.Drawing.Point(421, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 141);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +234,7 @@ namespace TNT_Paint
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Information";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

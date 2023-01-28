@@ -444,6 +444,10 @@ namespace TNT_Paint
             Form1.instance.pb_mainScreen.Image = pictureBox1.Image;
             this.Close();
         }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         #endregion
 
