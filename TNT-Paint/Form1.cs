@@ -40,8 +40,10 @@ namespace TNT_Paint
             bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pb_mainScreen.Image = bm;
             p = new Pen(Color.Black, 1);
+            
             eraser = new Pen(Color.White, 20);
             SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
@@ -82,6 +84,7 @@ namespace TNT_Paint
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
             pb_mainScreen.Image = bm;// xoa hinh anh dang co o trong pb_mainScreen
+            isPainted = false;
         }
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
