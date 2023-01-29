@@ -49,6 +49,7 @@ namespace TNT_Paint
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,23 +63,21 @@ namespace TNT_Paint
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
             this.Panel_size = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_BigLine = new System.Windows.Forms.Button();
+            this.Btn_MediumLine = new System.Windows.Forms.Button();
+            this.btn_SmallLine = new System.Windows.Forms.Button();
             this.Btn_Clear = new System.Windows.Forms.Button();
+            this.Btn_ColorDialog = new System.Windows.Forms.Button();
+            this.Btn_Fill = new System.Windows.Forms.Button();
+            this.pb_currentColor = new System.Windows.Forms.PictureBox();
+            this.Btn_ColorPicker = new System.Windows.Forms.Button();
+            this.Btn_Eraser = new System.Windows.Forms.Button();
+            this.Btn_Pencil = new System.Windows.Forms.Button();
             this.gb_Shape = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelDauCham1 = new System.Windows.Forms.Panel();
-            this.panelDauCham2 = new System.Windows.Forms.Panel();
-            this.panelDauCham3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.Btn_DrawLine = new System.Windows.Forms.ToolStripButton();
             this.Btn_Ellipse = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRect = new System.Windows.Forms.ToolStripButton();
@@ -94,28 +93,29 @@ namespace TNT_Paint
             this.Btn_DrawRightArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawDownArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawFivePointStar = new System.Windows.Forms.ToolStripButton();
-            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
-            this.Btn_BigLine = new System.Windows.Forms.Button();
-            this.Btn_MediumLine = new System.Windows.Forms.Button();
-            this.btn_SmallLine = new System.Windows.Forms.Button();
-            this.Btn_ColorDialog = new System.Windows.Forms.Button();
-            this.Btn_Fill = new System.Windows.Forms.Button();
-            this.pb_currentColor = new System.Windows.Forms.PictureBox();
-            this.Btn_ColorPicker = new System.Windows.Forms.Button();
-            this.Btn_Eraser = new System.Windows.Forms.Button();
-            this.Btn_Pencil = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelDauCham1 = new System.Windows.Forms.Panel();
+            this.panelDauCham2 = new System.Windows.Forms.Panel();
+            this.panelDauCham3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.imageEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
             this.Panel_size.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
             this.gb_Shape.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,42 +212,44 @@ namespace TNT_Paint
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(110, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolsToolStripMenuItem
@@ -257,6 +259,13 @@ namespace TNT_Paint
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
             this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // imageEditorToolStripMenuItem
+            // 
+            this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
+            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.imageEditorToolStripMenuItem.Text = "Image Editor";
+            this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
             // 
             // imageToolStripMenuItem
             // 
@@ -369,6 +378,19 @@ namespace TNT_Paint
             this.panel1.Size = new System.Drawing.Size(908, 100);
             this.panel1.TabIndex = 1;
             // 
+            // pb_ColorTable
+            // 
+            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
+            this.pb_ColorTable.Location = new System.Drawing.Point(268, 3);
+            this.pb_ColorTable.Name = "pb_ColorTable";
+            this.pb_ColorTable.Size = new System.Drawing.Size(213, 94);
+            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ColorTable.TabIndex = 9;
+            this.pb_ColorTable.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
+            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
+            // 
             // Panel_size
             // 
             this.Panel_size.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -391,6 +413,39 @@ namespace TNT_Paint
             this.label1.TabIndex = 3;
             this.label1.Text = "Size";
             // 
+            // Btn_BigLine
+            // 
+            this.Btn_BigLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_BigLine.Image = global::TNT_Paint.Properties.Resources.BigLine;
+            this.Btn_BigLine.Location = new System.Drawing.Point(3, 55);
+            this.Btn_BigLine.Name = "Btn_BigLine";
+            this.Btn_BigLine.Size = new System.Drawing.Size(85, 22);
+            this.Btn_BigLine.TabIndex = 2;
+            this.Btn_BigLine.UseVisualStyleBackColor = true;
+            this.Btn_BigLine.Click += new System.EventHandler(this.Btn_BigLine_Click);
+            // 
+            // Btn_MediumLine
+            // 
+            this.Btn_MediumLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_MediumLine.Image = global::TNT_Paint.Properties.Resources.MediumLine;
+            this.Btn_MediumLine.Location = new System.Drawing.Point(3, 30);
+            this.Btn_MediumLine.Name = "Btn_MediumLine";
+            this.Btn_MediumLine.Size = new System.Drawing.Size(85, 22);
+            this.Btn_MediumLine.TabIndex = 1;
+            this.Btn_MediumLine.UseVisualStyleBackColor = true;
+            this.Btn_MediumLine.Click += new System.EventHandler(this.Btn_MediumLine_Click);
+            // 
+            // btn_SmallLine
+            // 
+            this.btn_SmallLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_SmallLine.Image = global::TNT_Paint.Properties.Resources.Small_line;
+            this.btn_SmallLine.Location = new System.Drawing.Point(3, 5);
+            this.btn_SmallLine.Name = "btn_SmallLine";
+            this.btn_SmallLine.Size = new System.Drawing.Size(85, 22);
+            this.btn_SmallLine.TabIndex = 0;
+            this.btn_SmallLine.UseVisualStyleBackColor = true;
+            this.btn_SmallLine.Click += new System.EventHandler(this.btn_SmallLine_Click);
+            // 
             // Btn_Clear
             // 
             this.Btn_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -402,6 +457,84 @@ namespace TNT_Paint
             this.Btn_Clear.Text = "Clear";
             this.Btn_Clear.UseVisualStyleBackColor = true;
             this.Btn_Clear.Click += new System.EventHandler(this.Btn_Clear_Click);
+            // 
+            // Btn_ColorDialog
+            // 
+            this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorDialog.Image = global::TNT_Paint.Properties.Resources.ColorPanel;
+            this.Btn_ColorDialog.Location = new System.Drawing.Point(187, 16);
+            this.Btn_ColorDialog.Name = "Btn_ColorDialog";
+            this.Btn_ColorDialog.Size = new System.Drawing.Size(71, 71);
+            this.Btn_ColorDialog.TabIndex = 5;
+            this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
+            this.Btn_ColorDialog.UseVisualStyleBackColor = true;
+            this.Btn_ColorDialog.Click += new System.EventHandler(this.Btn_ColorDialog_Click);
+            // 
+            // Btn_Fill
+            // 
+            this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Fill.Image = global::TNT_Paint.Properties.Resources.Fill;
+            this.Btn_Fill.Location = new System.Drawing.Point(69, 54);
+            this.Btn_Fill.Name = "Btn_Fill";
+            this.Btn_Fill.Size = new System.Drawing.Size(39, 36);
+            this.Btn_Fill.TabIndex = 4;
+            this.Btn_Fill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_Fill, "Fill With Color");
+            this.Btn_Fill.UseVisualStyleBackColor = true;
+            this.Btn_Fill.Click += new System.EventHandler(this.Btn_Fill_Click);
+            // 
+            // pb_currentColor
+            // 
+            this.pb_currentColor.BackColor = System.Drawing.Color.Black;
+            this.pb_currentColor.Location = new System.Drawing.Point(126, 29);
+            this.pb_currentColor.Name = "pb_currentColor";
+            this.pb_currentColor.Size = new System.Drawing.Size(50, 42);
+            this.pb_currentColor.TabIndex = 3;
+            this.pb_currentColor.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_currentColor, "Current Color");
+            // 
+            // Btn_ColorPicker
+            // 
+            this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorPicker.Image = global::TNT_Paint.Properties.Resources.colorPicker;
+            this.Btn_ColorPicker.Location = new System.Drawing.Point(69, 12);
+            this.Btn_ColorPicker.Name = "Btn_ColorPicker";
+            this.Btn_ColorPicker.Size = new System.Drawing.Size(39, 36);
+            this.Btn_ColorPicker.TabIndex = 2;
+            this.Btn_ColorPicker.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorPicker, "Color Picker");
+            this.Btn_ColorPicker.UseVisualStyleBackColor = true;
+            this.Btn_ColorPicker.Click += new System.EventHandler(this.Btn_ColorPicker_Click);
+            // 
+            // Btn_Eraser
+            // 
+            this.Btn_Eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Eraser.Image = global::TNT_Paint.Properties.Resources.Eraser;
+            this.Btn_Eraser.Location = new System.Drawing.Point(12, 54);
+            this.Btn_Eraser.Name = "Btn_Eraser";
+            this.Btn_Eraser.Size = new System.Drawing.Size(39, 36);
+            this.Btn_Eraser.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.Btn_Eraser, "Eraser");
+            this.Btn_Eraser.UseVisualStyleBackColor = true;
+            this.Btn_Eraser.Click += new System.EventHandler(this.Btn_Eraser_Click);
+            // 
+            // Btn_Pencil
+            // 
+            this.Btn_Pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Pencil.Image = global::TNT_Paint.Properties.Resources.Pencil__2_;
+            this.Btn_Pencil.Location = new System.Drawing.Point(12, 12);
+            this.Btn_Pencil.Name = "Btn_Pencil";
+            this.Btn_Pencil.Size = new System.Drawing.Size(39, 36);
+            this.Btn_Pencil.TabIndex = 0;
+            this.Btn_Pencil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_Pencil, "Pencil");
+            this.Btn_Pencil.UseVisualStyleBackColor = true;
+            this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
             // 
             // gb_Shape
             // 
@@ -438,107 +571,6 @@ namespace TNT_Paint
             this.toolStrip1.Size = new System.Drawing.Size(128, 84);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelDauCham1
-            // 
-            this.panelDauCham1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham1.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panelDauCham1.Location = new System.Drawing.Point(876, 213);
-            this.panelDauCham1.Name = "panelDauCham1";
-            this.panelDauCham1.Size = new System.Drawing.Size(8, 8);
-            this.panelDauCham1.TabIndex = 4;
-            this.panelDauCham1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseDown);
-            this.panelDauCham1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseMove);
-            this.panelDauCham1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseUp);
-            // 
-            // panelDauCham2
-            // 
-            this.panelDauCham2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham2.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.panelDauCham2.Location = new System.Drawing.Point(422, 440);
-            this.panelDauCham2.Name = "panelDauCham2";
-            this.panelDauCham2.Size = new System.Drawing.Size(8, 8);
-            this.panelDauCham2.TabIndex = 5;
-            this.panelDauCham2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseDown);
-            this.panelDauCham2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseMove);
-            this.panelDauCham2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseUp);
-            // 
-            // panelDauCham3
-            // 
-            this.panelDauCham3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham3.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.panelDauCham3.Location = new System.Drawing.Point(876, 440);
-            this.panelDauCham3.Name = "panelDauCham3";
-            this.panelDauCham3.Size = new System.Drawing.Size(8, 8);
-            this.panelDauCham3.TabIndex = 5;
-            this.panelDauCham3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseDown);
-            this.panelDauCham3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseMove);
-            this.panelDauCham3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseUp);
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.statusStrip1);
-            this.panel2.Controls.Add(this.panelDauCham3);
-            this.panel2.Controls.Add(this.panelDauCham2);
-            this.panel2.Controls.Add(this.panelDauCham1);
-            this.panel2.Controls.Add(this.pb_mainScreen);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 125);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(908, 470);
-            this.panel2.TabIndex = 9;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 448);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(908, 22);
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(496, 17);
-            this.toolStripStatusLabel3.Text = "                                                                                 " +
-    "                                                                                " +
-    "  ";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Image = global::TNT_Paint.Properties.Resources.Diamond;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(134, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // pb_mainScreen
-            // 
-            this.pb_mainScreen.Location = new System.Drawing.Point(0, 0);
-            this.pb_mainScreen.Name = "pb_mainScreen";
-            this.pb_mainScreen.Size = new System.Drawing.Size(870, 434);
-            this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_mainScreen.TabIndex = 3;
-            this.pb_mainScreen.TabStop = false;
-            this.pb_mainScreen.SizeChanged += new System.EventHandler(this.pb_mainScreen_SizeChanged);
-            this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
-            this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
             // Btn_DrawLine
             // 
@@ -719,136 +751,106 @@ namespace TNT_Paint
             this.Btn_DrawFivePointStar.ToolTipText = "Five Point Star";
             this.Btn_DrawFivePointStar.Click += new System.EventHandler(this.Btn_DrawFivePointStar_Click);
             // 
-            // pb_ColorTable
+            // timer1
             // 
-            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
-            this.pb_ColorTable.Location = new System.Drawing.Point(268, 3);
-            this.pb_ColorTable.Name = "pb_ColorTable";
-            this.pb_ColorTable.Size = new System.Drawing.Size(213, 94);
-            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ColorTable.TabIndex = 9;
-            this.pb_ColorTable.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
-            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Btn_BigLine
+            // panelDauCham1
             // 
-            this.Btn_BigLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Btn_BigLine.Image = global::TNT_Paint.Properties.Resources.BigLine;
-            this.Btn_BigLine.Location = new System.Drawing.Point(3, 55);
-            this.Btn_BigLine.Name = "Btn_BigLine";
-            this.Btn_BigLine.Size = new System.Drawing.Size(85, 22);
-            this.Btn_BigLine.TabIndex = 2;
-            this.Btn_BigLine.UseVisualStyleBackColor = true;
-            this.Btn_BigLine.Click += new System.EventHandler(this.Btn_BigLine_Click);
+            this.panelDauCham1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham1.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.panelDauCham1.Location = new System.Drawing.Point(876, 213);
+            this.panelDauCham1.Name = "panelDauCham1";
+            this.panelDauCham1.Size = new System.Drawing.Size(8, 8);
+            this.panelDauCham1.TabIndex = 4;
+            this.panelDauCham1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseDown);
+            this.panelDauCham1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseMove);
+            this.panelDauCham1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseUp);
             // 
-            // Btn_MediumLine
+            // panelDauCham2
             // 
-            this.Btn_MediumLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Btn_MediumLine.Image = global::TNT_Paint.Properties.Resources.MediumLine;
-            this.Btn_MediumLine.Location = new System.Drawing.Point(3, 30);
-            this.Btn_MediumLine.Name = "Btn_MediumLine";
-            this.Btn_MediumLine.Size = new System.Drawing.Size(85, 22);
-            this.Btn_MediumLine.TabIndex = 1;
-            this.Btn_MediumLine.UseVisualStyleBackColor = true;
-            this.Btn_MediumLine.Click += new System.EventHandler(this.Btn_MediumLine_Click);
+            this.panelDauCham2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham2.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.panelDauCham2.Location = new System.Drawing.Point(422, 440);
+            this.panelDauCham2.Name = "panelDauCham2";
+            this.panelDauCham2.Size = new System.Drawing.Size(8, 8);
+            this.panelDauCham2.TabIndex = 5;
+            this.panelDauCham2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseDown);
+            this.panelDauCham2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseMove);
+            this.panelDauCham2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseUp);
             // 
-            // btn_SmallLine
+            // panelDauCham3
             // 
-            this.btn_SmallLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_SmallLine.Image = global::TNT_Paint.Properties.Resources.Small_line;
-            this.btn_SmallLine.Location = new System.Drawing.Point(3, 5);
-            this.btn_SmallLine.Name = "btn_SmallLine";
-            this.btn_SmallLine.Size = new System.Drawing.Size(85, 22);
-            this.btn_SmallLine.TabIndex = 0;
-            this.btn_SmallLine.UseVisualStyleBackColor = true;
-            this.btn_SmallLine.Click += new System.EventHandler(this.btn_SmallLine_Click);
+            this.panelDauCham3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham3.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.panelDauCham3.Location = new System.Drawing.Point(876, 440);
+            this.panelDauCham3.Name = "panelDauCham3";
+            this.panelDauCham3.Size = new System.Drawing.Size(8, 8);
+            this.panelDauCham3.TabIndex = 5;
+            this.panelDauCham3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseDown);
+            this.panelDauCham3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseMove);
+            this.panelDauCham3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseUp);
             // 
-            // Btn_ColorDialog
+            // panel2
             // 
-            this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ColorDialog.Image = global::TNT_Paint.Properties.Resources.ColorPanel;
-            this.Btn_ColorDialog.Location = new System.Drawing.Point(187, 16);
-            this.Btn_ColorDialog.Name = "Btn_ColorDialog";
-            this.Btn_ColorDialog.Size = new System.Drawing.Size(71, 71);
-            this.Btn_ColorDialog.TabIndex = 5;
-            this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
-            this.Btn_ColorDialog.UseVisualStyleBackColor = true;
-            this.Btn_ColorDialog.Click += new System.EventHandler(this.Btn_ColorDialog_Click);
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.statusStrip1);
+            this.panel2.Controls.Add(this.panelDauCham3);
+            this.panel2.Controls.Add(this.panelDauCham2);
+            this.panel2.Controls.Add(this.panelDauCham1);
+            this.panel2.Controls.Add(this.pb_mainScreen);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 125);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(908, 470);
+            this.panel2.TabIndex = 9;
             // 
-            // Btn_Fill
+            // statusStrip1
             // 
-            this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Fill.Image = global::TNT_Paint.Properties.Resources.Fill;
-            this.Btn_Fill.Location = new System.Drawing.Point(69, 54);
-            this.Btn_Fill.Name = "Btn_Fill";
-            this.Btn_Fill.Size = new System.Drawing.Size(39, 36);
-            this.Btn_Fill.TabIndex = 4;
-            this.Btn_Fill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_Fill, "Fill With Color");
-            this.Btn_Fill.UseVisualStyleBackColor = true;
-            this.Btn_Fill.Click += new System.EventHandler(this.Btn_Fill_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 448);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(908, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // pb_currentColor
+            // toolStripStatusLabel1
             // 
-            this.pb_currentColor.BackColor = System.Drawing.Color.Black;
-            this.pb_currentColor.Location = new System.Drawing.Point(126, 29);
-            this.pb_currentColor.Name = "pb_currentColor";
-            this.pb_currentColor.Size = new System.Drawing.Size(50, 42);
-            this.pb_currentColor.TabIndex = 3;
-            this.pb_currentColor.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_currentColor, "Current Color");
+            this.toolStripStatusLabel1.Image = global::TNT_Paint.Properties.Resources.Diamond;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(134, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // Btn_ColorPicker
+            // toolStripStatusLabel3
             // 
-            this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ColorPicker.Image = global::TNT_Paint.Properties.Resources.colorPicker;
-            this.Btn_ColorPicker.Location = new System.Drawing.Point(69, 12);
-            this.Btn_ColorPicker.Name = "Btn_ColorPicker";
-            this.Btn_ColorPicker.Size = new System.Drawing.Size(39, 36);
-            this.Btn_ColorPicker.TabIndex = 2;
-            this.Btn_ColorPicker.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_ColorPicker, "Color Picker");
-            this.Btn_ColorPicker.UseVisualStyleBackColor = true;
-            this.Btn_ColorPicker.Click += new System.EventHandler(this.Btn_ColorPicker_Click);
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(496, 17);
+            this.toolStripStatusLabel3.Text = "                                                                                 " +
+    "                                                                                " +
+    "  ";
             // 
-            // Btn_Eraser
+            // toolStripStatusLabel2
             // 
-            this.Btn_Eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Eraser.Image = global::TNT_Paint.Properties.Resources.Eraser;
-            this.Btn_Eraser.Location = new System.Drawing.Point(12, 54);
-            this.Btn_Eraser.Name = "Btn_Eraser";
-            this.Btn_Eraser.Size = new System.Drawing.Size(39, 36);
-            this.Btn_Eraser.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.Btn_Eraser, "Eraser");
-            this.Btn_Eraser.UseVisualStyleBackColor = true;
-            this.Btn_Eraser.Click += new System.EventHandler(this.Btn_Eraser_Click);
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
-            // Btn_Pencil
+            // pb_mainScreen
             // 
-            this.Btn_Pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Pencil.Image = global::TNT_Paint.Properties.Resources.Pencil__2_;
-            this.Btn_Pencil.Location = new System.Drawing.Point(12, 12);
-            this.Btn_Pencil.Name = "Btn_Pencil";
-            this.Btn_Pencil.Size = new System.Drawing.Size(39, 36);
-            this.Btn_Pencil.TabIndex = 0;
-            this.Btn_Pencil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_Pencil, "Pencil");
-            this.Btn_Pencil.UseVisualStyleBackColor = true;
-            this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
-            // 
-            // imageEditorToolStripMenuItem
-            // 
-            this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
-            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.imageEditorToolStripMenuItem.Text = "Image Editor";
-            this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
+            this.pb_mainScreen.Location = new System.Drawing.Point(0, 0);
+            this.pb_mainScreen.Name = "pb_mainScreen";
+            this.pb_mainScreen.Size = new System.Drawing.Size(870, 434);
+            this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_mainScreen.TabIndex = 3;
+            this.pb_mainScreen.TabStop = false;
+            this.pb_mainScreen.SizeChanged += new System.EventHandler(this.pb_mainScreen_SizeChanged);
+            this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
+            this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
             // Form1
             // 
@@ -868,8 +870,10 @@ namespace TNT_Paint
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
             this.Panel_size.ResumeLayout(false);
             this.Panel_size.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).EndInit();
             this.gb_Shape.ResumeLayout(false);
             this.gb_Shape.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -879,8 +883,6 @@ namespace TNT_Paint
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

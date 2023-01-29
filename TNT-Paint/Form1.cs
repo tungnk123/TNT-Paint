@@ -32,6 +32,10 @@ namespace TNT_Paint
         //
         public static Form1 instance;
 
+        //stack
+        public Stack<Bitmap> UndoStack = new Stack<Bitmap>();
+        public Stack<Bitmap> RedoStack = new Stack<Bitmap>();
+        //
 
         public Form1()
         {
@@ -221,6 +225,10 @@ namespace TNT_Paint
             }
             AllowPaint = true;
             px = e.Location;
+            //
+            UndoStack.Push((Bitmap)pb_mainScreen.Image.Clone());
+            RedoStack.Clear();
+            //
         }
         private void pb_mainScreen_MouseMove(object sender, MouseEventArgs e)
         {
@@ -764,6 +772,8 @@ namespace TNT_Paint
             formAbout.ShowDialog();
         }
 
+        
+
         #endregion
 
         #region events và menu tools 
@@ -771,6 +781,40 @@ namespace TNT_Paint
         {
             FormChinhSuaAnh formChinhSuaAnh = new FormChinhSuaAnh();
             formChinhSuaAnh.ShowDialog();
+        }
+
+        
+        #endregion
+
+        #region Undo Redo
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (UndoStack.Count > 0)
+            {
+                RedoStack.Push((Bitmap)pb_mainScreen.Image.Clone());
+                g.DrawImage(UndoStack.Pop(), pb_mainScreen.Location);
+                pb_mainScreen.Refresh();
+
+            }
+            else
+            {
+                MessageBox.Show("Nothing to Undo");
+            }
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (RedoStack.Count > 0)
+            {
+                UndoStack.Push((Bitmap)pb_mainScreen.Image.Clone());
+                g.DrawImage(RedoStack.Pop(), pb_mainScreen.Location);
+                pb_mainScreen.Refresh();
+
+            }
+            else
+            {
+                MessageBox.Show("Nothing to Redo");
+            }
         }
         #endregion
     }
