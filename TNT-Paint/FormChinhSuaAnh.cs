@@ -460,7 +460,8 @@ namespace TNT_Paint
         
         private void button11_Click(object sender, EventArgs e)
         {
-            Form1.instance.pb_mainScreen.Image = pictureBox1.Image;
+            Form1.instance.g.Clear(Color.White);
+            Form1.instance.g.DrawImage(pictureBox1.Image, Form1.instance.pb_mainScreen.Location.X, Form1.instance.pb_mainScreen.Location.Y, pictureBox1.Width, pictureBox1.Height);
             this.Close();
         }
         private void button10_Click(object sender, EventArgs e)
@@ -531,8 +532,8 @@ namespace TNT_Paint
             pictureBox1.Image = _img;
             pictureBox1.Width = _img.Width;
             pictureBox1.Height = _img.Height;
-            
-            
+
+
         }
 
 

@@ -7,7 +7,7 @@ namespace TNT_Paint
 {
     public partial class Form1 : Form
     {
-        Graphics g; // đồ hoạ từ màn hình vẽ chính
+        public Graphics g; // đồ hoạ từ màn hình vẽ chính
         Bitmap bm;
         Pen p; // bút vẽ chính
         Pen eraser; // tẩy
