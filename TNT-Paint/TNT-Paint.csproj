@@ -104,6 +104,12 @@
     <EmbeddedResource Include="FormChinhSuaAnh.resx">
       <DependentUpon>FormChinhSuaAnh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOnlineImage.resx">
+      <DependentUpon>FormOnlineImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStockImages.resx">
+      <DependentUpon>FormStockImages.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>

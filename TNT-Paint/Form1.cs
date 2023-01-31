@@ -782,8 +782,13 @@ namespace TNT_Paint
             FormChinhSuaAnh formChinhSuaAnh = new FormChinhSuaAnh();
             formChinhSuaAnh.ShowDialog();
         }
+        private void onlineImagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOnlineImage formOnlineImage = new FormOnlineImage();
+            formOnlineImage.ShowDialog();
+        }
 
-        
+
         #endregion
 
         #region Undo Redo
@@ -801,6 +806,8 @@ namespace TNT_Paint
                 MessageBox.Show("Nothing to Undo");
             }
         }
+
+        
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
