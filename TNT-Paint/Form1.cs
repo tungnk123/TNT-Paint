@@ -447,6 +447,8 @@ namespace TNT_Paint
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
             pb_mainScreen.Image = bm;
+            this.pb_mainScreen.Width = 870;
+            this.pb_mainScreen.Height = 434;
         }
 
 
