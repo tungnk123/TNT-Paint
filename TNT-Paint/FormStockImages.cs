@@ -16,5 +16,18 @@ namespace TNT_Paint
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                Form1.instance.g.Clear(Color.White);
+                int index = listView1.SelectedItems[0].Index;
+                Image image = listView1.SelectedItems[0].ImageList.Images[index];
+                Form1.instance.g.DrawImage(image, Form1.instance.pb_mainScreen.Location.X, Form1.instance.pb_mainScreen.Location.Y, 
+                    Form1.instance.pb_mainScreen.Width, Form1.instance.pb_mainScreen.Height);
+            }
+            this.Close();
+        }
     }
 }
