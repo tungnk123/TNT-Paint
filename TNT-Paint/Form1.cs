@@ -615,6 +615,13 @@ namespace TNT_Paint
                 if (oldPoint != e.Location)
                 {
                     this.pb_mainScreen.Width = (e.X + panelDauCham1.Location.X - pb_mainScreen.Location.X);
+                    Image temp = bm;
+                    bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
+                    g = Graphics.FromImage(bm);
+                    g.Clear(Color.White);
+                    g.DrawImage(temp, new Point(0, 0));
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    pb_mainScreen.Image = bm;
                     this.Invalidate();
                 }
             }
@@ -639,6 +646,13 @@ namespace TNT_Paint
                 if (oldPoint != e.Location)
                 {
                     pb_mainScreen.Height = (e.Y + panelDauCham2.Location.Y - pb_mainScreen.Location.Y);
+                    Image temp = bm;
+                    bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
+                    g = Graphics.FromImage(bm);
+                    g.Clear(Color.White);
+                    g.DrawImage(temp, new Point(0, 0));
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    pb_mainScreen.Image = bm;
                     this.Invalidate();
                 }
             }
@@ -665,6 +679,13 @@ namespace TNT_Paint
                 {
                     pb_mainScreen.Width = (e.X + panelDauCham1.Location.X - pb_mainScreen.Location.X);
                     pb_mainScreen.Height = (e.Y + panelDauCham2.Location.Y - pb_mainScreen.Location.Y);
+                    Image temp = bm;
+                    bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
+                    g = Graphics.FromImage(bm);
+                    g.Clear(Color.White);
+                    g.DrawImage(temp, new Point(0, 0));
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    pb_mainScreen.Image = bm;
                     this.Invalidate();
                 }
             }
