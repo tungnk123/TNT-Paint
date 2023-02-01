@@ -702,6 +702,10 @@ namespace TNT_Paint
         {
             this.pb_mainScreen.Width = pb_mainScreen.Width + pb_mainScreen.Width / 3;
             this.pb_mainScreen.Height = pb_mainScreen.Height + pb_mainScreen.Height / 3;
+            bm = new Bitmap(bm, pb_mainScreen.Width, pb_mainScreen.Height);
+            g = Graphics.FromImage(bm);
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            pb_mainScreen.Image = bm;
 
         }
 
@@ -709,6 +713,10 @@ namespace TNT_Paint
         {
             this.pb_mainScreen.Width = 870;
             this.pb_mainScreen.Height = 434;
+            bm = new Bitmap(bm, pb_mainScreen.Width, pb_mainScreen.Height);
+            g = Graphics.FromImage(bm);
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            pb_mainScreen.Image = bm;
         }
 
         
@@ -717,6 +725,10 @@ namespace TNT_Paint
         {
             this.pb_mainScreen.Width = pb_mainScreen.Width - pb_mainScreen.Width / 3;
             this.pb_mainScreen.Height = pb_mainScreen.Height - pb_mainScreen.Height / 3;
+            bm = new Bitmap(bm, pb_mainScreen.Width, pb_mainScreen.Height);
+            g = Graphics.FromImage(bm);
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            pb_mainScreen.Image = bm;
         }
 
 
