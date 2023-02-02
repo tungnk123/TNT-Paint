@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace TNT_Paint
@@ -37,6 +38,15 @@ namespace TNT_Paint
         public Stack<Bitmap> RedoStack = new Stack<Bitmap>();
         //
 
+        //crop variable
+        bool isCropping = false;
+        int cropX;
+        int cropY;
+        int cropWidth;
+        int cropHeight;
+        public Pen cropPen;
+        public DashStyle cropDashStyle = DashStyle.DashDot;
+        //
         public Form1()
         {
             instance = this;
@@ -207,6 +217,19 @@ namespace TNT_Paint
 
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
+            if (isCropping)
+            {
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+                    Cursor = Cursors.Cross;
+                    cropX = e.X;
+                    cropY = e.Y;
+                    cropPen = new Pen(Color.Black, 1);
+                    cropPen.DashStyle = DashStyle.DashDotDot;
+                }
+                pb_mainScreen.Refresh();
+                return;
+            }
             isPainted = true;
             if (SelectedMode == 3)
             {
@@ -232,6 +255,19 @@ namespace TNT_Paint
         }
         private void pb_mainScreen_MouseMove(object sender, MouseEventArgs e)
         {
+            if (isCropping)
+            {
+                if (pb_mainScreen.Image == null)
+                    return;
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+                    pb_mainScreen.Refresh();
+                    cropWidth = e.X - cropX;
+                    cropHeight = e.Y - cropY;
+                    pb_mainScreen.CreateGraphics().DrawRectangle(cropPen, cropX, cropY, cropWidth, cropHeight);
+                }
+                return;
+            }
             if (AllowPaint)
             {
                 py = e.Location;
@@ -615,12 +651,11 @@ namespace TNT_Paint
                 if (oldPoint != e.Location)
                 {
                     this.pb_mainScreen.Width = (e.X + panelDauCham1.Location.X - pb_mainScreen.Location.X);
-                    Image temp = bm;
+                    Image temp = pb_mainScreen.Image;
                     bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
                     g = Graphics.FromImage(bm);
                     g.Clear(Color.White);
                     g.DrawImage(temp, new Point(0, 0));
-                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                     pb_mainScreen.Image = bm;
                     this.Invalidate();
                 }
@@ -646,12 +681,11 @@ namespace TNT_Paint
                 if (oldPoint != e.Location)
                 {
                     pb_mainScreen.Height = (e.Y + panelDauCham2.Location.Y - pb_mainScreen.Location.Y);
-                    Image temp = bm;
+                    Image temp = pb_mainScreen.Image;// nếu để bm thì nó sẽ lấy cái bm cũ chưa thay đoi
                     bm = new Bitmap(pb_mainScreen.Width, pb_mainScreen.Height);
                     g = Graphics.FromImage(bm);
                     g.Clear(Color.White);
                     g.DrawImage(temp, new Point(0, 0));
-                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                     pb_mainScreen.Image = bm;
                     this.Invalidate();
                 }
@@ -684,7 +718,6 @@ namespace TNT_Paint
                     g = Graphics.FromImage(bm);
                     g.Clear(Color.White);
                     g.DrawImage(temp, new Point(0, 0));
-                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                     pb_mainScreen.Image = bm;
                     this.Invalidate();
                 }
@@ -848,6 +881,7 @@ namespace TNT_Paint
         }
 
         
+
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (RedoStack.Count > 0)
@@ -861,6 +895,46 @@ namespace TNT_Paint
             {
                 MessageBox.Show("Nothing to Redo");
             }
+        }
+        #endregion
+
+        #region Crop 
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            isCropping = true;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (isCropping)
+            {
+                Crop();
+            }
+            isCropping = false;
+            pb_mainScreen.Invalidate();
+        }
+
+        public void Crop()
+        {
+            Cursor = Cursors.Default;
+            if (cropWidth < 1)
+            {
+                return;
+            }
+            Rectangle rect = new Rectangle(cropX, cropY, cropWidth, cropHeight);
+            Bitmap OriginalImage = new Bitmap(pb_mainScreen.Image, pb_mainScreen.Width, pb_mainScreen.Height);
+            Bitmap _img = new Bitmap(cropWidth, cropHeight);
+            Graphics g = Graphics.FromImage(_img);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            g.DrawImage(OriginalImage, 0, 0, rect, GraphicsUnit.Pixel);
+            pb_mainScreen.Width = _img.Width;
+            pb_mainScreen.Height = _img.Height;
+            pb_mainScreen.Image = _img;
+            pb_mainScreen.Invalidate();
+
         }
         #endregion
     }

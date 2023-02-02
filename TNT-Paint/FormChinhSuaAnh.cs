@@ -522,17 +522,15 @@ namespace TNT_Paint
                 return;
             }
             Rectangle rect = new Rectangle(cropX, cropY, cropWidth, cropHeight);
-            Bitmap OriginalImage = new Bitmap(pictureBox1.Image, pictureBox1.Width, pictureBox1.Height);
             Bitmap _img = new Bitmap(cropWidth, cropHeight);
             Graphics g = Graphics.FromImage(_img);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            g.DrawImage(OriginalImage, 0, 0, rect, GraphicsUnit.Pixel);
+            g.DrawImage(imageFormPb_mainscreen, 0, 0, rect, GraphicsUnit.Pixel);
             pictureBox1.Image = _img;
             pictureBox1.Width = _img.Width;
             pictureBox1.Height = _img.Height;
-
 
         }
 

@@ -911,6 +911,7 @@ namespace TNT_Paint
             this.button12.TabIndex = 13;
             this.button12.Text = "Select";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -920,6 +921,7 @@ namespace TNT_Paint
             this.button13.TabIndex = 14;
             this.button13.Text = "Crop";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Form1
             // 
