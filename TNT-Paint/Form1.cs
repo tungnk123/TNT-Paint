@@ -847,6 +847,7 @@ namespace TNT_Paint
             }
         }
 
+        
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (RedoStack.Count > 0)
