@@ -915,6 +915,8 @@ namespace TNT_Paint
             pb_mainScreen.Invalidate();
         }
 
+        
+
         public void Crop()
         {
             Cursor = Cursors.Default;
