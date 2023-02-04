@@ -23,7 +23,7 @@ namespace TNT_Paint
         //
         //
         public bool isDown = false;// biến chỉ ra các dáu chấm thay đổi kích thước có nhấn ko
-        public Point oldPoint = new Point(); 
+        public Point oldPoint = new Point();
         public bool isSaved = false;
         public static string path = "";// bien string luu duong dan luu file
         public string tenFileTieuDe = "Untitled";
@@ -57,7 +57,7 @@ namespace TNT_Paint
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pb_mainScreen.Image = bm;
             p = new Pen(Color.Black, 1);
-            
+
             eraser = new Pen(Color.White, 20);
             SelectedMode = 1; // chọn bút chì làm mặc định
             // Khởi tạo ban đầu
@@ -209,7 +209,25 @@ namespace TNT_Paint
             SelectedMode = 19;
             veHinh.inPolygon = false;
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 20;
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 21;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 22;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 23;
+        }
 
         #endregion
 
@@ -281,6 +299,86 @@ namespace TNT_Paint
                     g.DrawLine(eraser, px, py);
                     px = py;
                 }
+                if (SelectedMode == 20)
+                {
+                    Image image = TNT_Paint.Properties.Resources.test_black_2;
+                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+
+                    Pen p = new Pen(Color.Red, 3);
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                    GraphicsPath graphicsPath = new GraphicsPath();
+                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    graphicsPath.AddRectangle(rectangle);
+                    g.FillPath(brush, graphicsPath);
+                    px = e.Location;
+                }
+                if (SelectedMode == 20)
+                {
+                    Image image = TNT_Paint.Properties.Resources.test_black_2;
+                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+
+                    Pen p = new Pen(Color.Red, 3);
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                    GraphicsPath graphicsPath = new GraphicsPath();
+                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    graphicsPath.AddRectangle(rectangle);
+                    g.FillPath(brush, graphicsPath);
+                    px = e.Location;
+                }
+                if (SelectedMode == 21)
+                {
+                    Image image = TNT_Paint.Properties.Resources.Screenshot_2023_02_03_111748;
+                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+
+                    Pen p = new Pen(Color.Red, 3);
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                    GraphicsPath graphicsPath = new GraphicsPath();
+                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    graphicsPath.AddRectangle(rectangle);
+                    g.FillPath(brush, graphicsPath);
+                    px = e.Location;
+                }
+                if (SelectedMode == 22)
+                {
+                    Image image = TNT_Paint.Properties.Resources.test_black;
+                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+
+                    Pen p = new Pen(Color.Red, 3);
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                    GraphicsPath graphicsPath = new GraphicsPath();
+                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    graphicsPath.AddRectangle(rectangle);
+                    g.FillPath(brush, graphicsPath);
+                    px = e.Location;
+                }
+                if (SelectedMode == 23)
+                {
+                    Image image = TNT_Paint.Properties.Resources.brush_pattern_5;
+                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+
+                    Pen p = new Pen(Color.Red, 3);
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                    GraphicsPath graphicsPath = new GraphicsPath();
+                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    graphicsPath.AddRectangle(rectangle);
+                    g.FillPath(brush, graphicsPath);
+                    px = e.Location;
+                }
             }
             if (!isGridLine)
             {
@@ -288,7 +386,7 @@ namespace TNT_Paint
             }
             toolStripStatusLabel1.Text = e.X + ", " + e.Y + "px";
             toolStripStatusLabel2.Text = pb_mainScreen.Width + " x " + pb_mainScreen.Height + "px";
-            
+
         }
 
         private void pb_mainScreen_MouseUp(object sender, MouseEventArgs e)
@@ -468,7 +566,7 @@ namespace TNT_Paint
                     veHinh.DrawFivePointStar(p, gx, px, py);
                 }
             }
-            
+
         }
 
 
@@ -561,7 +659,7 @@ namespace TNT_Paint
                 {
                     isSaved = true;
                     path = saveFileDialog.FileName;
-                    
+
                     pb_mainScreen.Image.Save(path);
                 }
             }
@@ -587,7 +685,7 @@ namespace TNT_Paint
                 saveToolStripMenuItem_Click(sender, e);
             }
         }
-        
+
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
             // truong hop khong ve cai gi het
@@ -612,7 +710,7 @@ namespace TNT_Paint
             }
         }
 
-        
+
         #endregion
 
         #region Timer ve cac dau cham
@@ -620,7 +718,7 @@ namespace TNT_Paint
         {
             this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
             panelDauCham1.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height / 2 + pb_mainScreen.Location.Y);
-            panelDauCham2.Location = new Point(this.pb_mainScreen.Width/2 + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
+            panelDauCham2.Location = new Point(this.pb_mainScreen.Width / 2 + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
             panelDauCham3.Location = new Point(this.pb_mainScreen.Width + pb_mainScreen.Location.X, pb_mainScreen.Height + pb_mainScreen.Location.Y);
             Graphics g = this.pb_mainScreen.CreateGraphics();
             if (isGridLine)
@@ -629,7 +727,7 @@ namespace TNT_Paint
             }
         }
 
-        
+
         #endregion
 
         #region Events thay đổi vẽ 3 dấu chấm thay đổi kích thước
@@ -643,7 +741,7 @@ namespace TNT_Paint
             isDown = false;
         }
 
-       
+
         private void panelDauCham1_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDown)
@@ -700,10 +798,10 @@ namespace TNT_Paint
         }
         private void panelDauCham3_MouseUp(object sender, MouseEventArgs e)
         {
-                isDown = false;
+            isDown = false;
         }
 
-        
+
 
         private void panelDauCham3_MouseMove(object sender, MouseEventArgs e)
         {
@@ -725,7 +823,7 @@ namespace TNT_Paint
             oldPoint = e.Location;
         }
 
-        
+
 
 
         #endregion
@@ -752,7 +850,7 @@ namespace TNT_Paint
             pb_mainScreen.Image = bm;
         }
 
-        
+
 
         private void zomeOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -809,7 +907,7 @@ namespace TNT_Paint
             }
         }
 
-        
+
 
         private void gridlinesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -822,7 +920,7 @@ namespace TNT_Paint
             this.Invalidate();
         }
 
-        
+
         #endregion
 
         #region Information and About
@@ -832,7 +930,7 @@ namespace TNT_Paint
             information.ShowDialog();
         }
 
-        
+
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -840,7 +938,7 @@ namespace TNT_Paint
             formAbout.ShowDialog();
         }
 
-        
+
 
         #endregion
 
@@ -880,7 +978,7 @@ namespace TNT_Paint
             }
         }
 
-        
+
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -915,7 +1013,7 @@ namespace TNT_Paint
             pb_mainScreen.Invalidate();
         }
 
-        
+
 
         public void Crop()
         {
