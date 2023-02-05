@@ -206,9 +206,9 @@ namespace TNT_Paint
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(195, 136);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(271, 16);
+            this.label22.Size = new System.Drawing.Size(279, 16);
             this.label22.TabIndex = 6;
-            this.label22.Text = "Giáo Viên hướng dẫn: Đinh Nuyễn Anh Dũng ";
+            this.label22.Text = "Giáo Viên hướng dẫn: Đinh Nguyễn Anh Dũng ";
             // 
             // label1
             // 
