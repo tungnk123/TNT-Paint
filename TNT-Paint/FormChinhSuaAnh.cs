@@ -536,6 +536,42 @@ namespace TNT_Paint
 
 
 
+
+        #endregion
+
+        #region Events menu
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png,*.jpeg, *.jfif| *.png; *.jpg; *.jfif", Title = "Choose image to edit" };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = openFileDialog.FileName;
+                Image img = Image.FromFile(fileName);
+                Bitmap bm = new Bitmap(img, new Size(Form1.instance.pb_mainScreen.Width, Form1.instance.pb_mainScreen.Height));
+                Form1.instance.pb_mainScreen.Refresh();
+                Form1.instance.pb_mainScreen.Image = bm;
+                Form1.instance.g = Graphics.FromImage(bm);
+                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+            }
+
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Save image" };
+            saveFileDialog.RestoreDirectory = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image.Save(saveFileDialog.FileName);
+            }
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
         
