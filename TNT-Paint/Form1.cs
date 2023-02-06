@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 namespace TNT_Paint
 {
@@ -710,7 +712,17 @@ namespace TNT_Paint
             }
         }
 
-
+        private void magnifyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(@"C:\WINDOWS\system32\Magnify.exe"))
+            {
+                Process.Start("Magnify.exe");
+            }
+            else
+            {
+                MessageBox.Show("Your computer don't have this service. ", "Thông báo !", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region Timer ve cac dau cham
@@ -1013,7 +1025,7 @@ namespace TNT_Paint
             pb_mainScreen.Invalidate();
         }
 
-
+        
 
         public void Crop()
         {
