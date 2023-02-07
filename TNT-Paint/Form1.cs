@@ -51,9 +51,9 @@ namespace TNT_Paint
         public DashStyle cropDashStyle = DashStyle.DashDot;
         //
         //
-        bool bold = false;
-        bool italic = false;
-        bool underline = false;
+        bool isBold = false;
+        bool isItalic = false;
+        bool isUnderline = false;
         public Form1()
         {
             instance = this;
@@ -506,7 +506,7 @@ namespace TNT_Paint
             {
                 int i = int.Parse(cb_Size.Text);
                 Font font = new Font(cb_Font.Text, i);
-                textBox1.Font = font;
+                textBox1.SelectionFont = font;
             }
             catch
             {
@@ -523,7 +523,7 @@ namespace TNT_Paint
             {
                 int i = int.Parse(cb_Size.Text);
                 Font font = new Font(cb_Font.Text, i);
-                textBox1.Font = font;
+                textBox1.SelectionFont = font;
             }
             catch
             {
@@ -532,54 +532,194 @@ namespace TNT_Paint
         }
         private void btn_Bold_Click(object sender, EventArgs e)
         {
-            int i = int.Parse(cb_Size.Text);
-            Font font = new Font(cb_Font.Text, i);
-            if (bold == false)
+            
+            //
+            if (isBold == false)
             {
-                bold = true;
-                italic = false;
-                underline = false;
-                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Bold);
+                isBold = true;
+
+                //
+                if (isItalic == true)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
+                    }
+                }
+                else if (isItalic == false)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold);
+                    }
+                }
+                //
+                //isItalic = false;
+                //checkBox3.CheckState = CheckState.Unchecked;
+                //textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold );
             }
             else
             {
-                bold = false;
-                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Regular);
+                isBold = false;
+
+                if (isItalic == true)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                    }
+                }
+                else if (isItalic == false)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
+                    }
+                }
             }
+            //
         }
         private void btn_Italic_Click(object sender, EventArgs e)
         {
-            int i = int.Parse(cb_Size.Text);
-            Font font = new Font(cb_Font.Text, i);
-            if (italic == false)
+            if (isItalic == false)
             {
-                bold = false;
-                italic = true;
-                underline = false;
-                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Italic);
+                isItalic = true;
+
+                //
+                if (isBold == true)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
+                    }
+                }
+                else if (isBold == false)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                    }
+                }
+                //
+                //isItalic = false;
+                //checkBox3.CheckState = CheckState.Unchecked;
+                //textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold );
             }
             else
             {
-                italic = false;
-                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Regular);
+                isItalic = false;
+
+                if (isBold == true)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                    }
+                }
+                else if (isItalic == false)
+                {
+                    if (isUnderline == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
+                    }
+                }
             }
+            //
         }
         private void btn_Underline_Click(object sender, EventArgs e)
         {
-            int i = int.Parse(cb_Size.Text);
-            Font font = new Font(cb_Font.Text, i);
-            if (underline == false)
+            if (isUnderline == false)
             {
-                bold = false;
-                italic = false;
-                underline = true;
-                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Underline);
+                isUnderline = true;
+
+                //
+                if (isBold == true)
+                {
+                    if (isItalic == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
+                    }
+                }
+                else if (isBold == false)
+                {
+                    if (isItalic == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
+                    }
+                }
+                //
+                //isItalic = false;
+                //checkBox3.CheckState = CheckState.Unchecked;
+                //textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold );
             }
             else
             {
-                underline = false;
-                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Regular);
+                isUnderline = false;
+
+                if (isBold== true)
+                {
+                    if (isItalic == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Bold);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold);
+                    }
+                }
+                else if (isBold == false)
+                {
+                    if (isItalic == true)
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                    }
+                    else
+                    {
+                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
+                    }
+                }
             }
+            //
         }
 
 
@@ -1164,6 +1304,7 @@ namespace TNT_Paint
             pb_mainScreen.Invalidate();
         }
 
+        
 
         public void Crop()
         {

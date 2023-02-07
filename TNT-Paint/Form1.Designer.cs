@@ -115,16 +115,16 @@ namespace TNT_Paint
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.RichTextBox();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage_Text = new System.Windows.Forms.TabPage();
-            this.cb_Font = new System.Windows.Forms.ComboBox();
-            this.cb_Size = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.RichTextBox();
-            this.btn_Bold = new System.Windows.Forms.Button();
-            this.btn_Italic = new System.Windows.Forms.Button();
             this.btn_Underline = new System.Windows.Forms.Button();
+            this.btn_Italic = new System.Windows.Forms.Button();
+            this.btn_Bold = new System.Windows.Forms.Button();
+            this.cb_Size = new System.Windows.Forms.ComboBox();
+            this.cb_Font = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
@@ -280,7 +280,7 @@ namespace TNT_Paint
             this.imageEditorToolStripMenuItem,
             this.magnifyToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(52, 21);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // imageEditorToolStripMenuItem
@@ -981,6 +981,16 @@ namespace TNT_Paint
             this.panel2.Size = new System.Drawing.Size(950, 470);
             this.panel2.TabIndex = 9;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(335, 90);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(271, 73);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "";
+            this.textBox1.Visible = false;
+            // 
             // pb_mainScreen
             // 
             this.pb_mainScreen.BackColor = System.Drawing.Color.White;
@@ -1021,15 +1031,38 @@ namespace TNT_Paint
             this.tabPage_Text.Text = "Text";
             this.tabPage_Text.UseVisualStyleBackColor = true;
             // 
-            // cb_Font
+            // btn_Underline
             // 
-            this.cb_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Font.FormattingEnabled = true;
-            this.cb_Font.Location = new System.Drawing.Point(34, 12);
-            this.cb_Font.Name = "cb_Font";
-            this.cb_Font.Size = new System.Drawing.Size(155, 28);
-            this.cb_Font.TabIndex = 0;
-            this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
+            this.btn_Underline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Underline.Location = new System.Drawing.Point(222, 52);
+            this.btn_Underline.Name = "btn_Underline";
+            this.btn_Underline.Size = new System.Drawing.Size(35, 29);
+            this.btn_Underline.TabIndex = 4;
+            this.btn_Underline.Text = "U";
+            this.btn_Underline.UseVisualStyleBackColor = true;
+            this.btn_Underline.Click += new System.EventHandler(this.btn_Underline_Click);
+            // 
+            // btn_Italic
+            // 
+            this.btn_Italic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Italic.Location = new System.Drawing.Point(171, 52);
+            this.btn_Italic.Name = "btn_Italic";
+            this.btn_Italic.Size = new System.Drawing.Size(35, 29);
+            this.btn_Italic.TabIndex = 3;
+            this.btn_Italic.Text = "I";
+            this.btn_Italic.UseVisualStyleBackColor = true;
+            this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
+            // 
+            // btn_Bold
+            // 
+            this.btn_Bold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bold.Location = new System.Drawing.Point(121, 52);
+            this.btn_Bold.Name = "btn_Bold";
+            this.btn_Bold.Size = new System.Drawing.Size(35, 29);
+            this.btn_Bold.TabIndex = 2;
+            this.btn_Bold.Text = "B";
+            this.btn_Bold.UseVisualStyleBackColor = true;
+            this.btn_Bold.Click += new System.EventHandler(this.btn_Bold_Click);
             // 
             // cb_Size
             // 
@@ -1057,47 +1090,15 @@ namespace TNT_Paint
             this.cb_Size.TabIndex = 1;
             this.cb_Size.SelectedIndexChanged += new System.EventHandler(this.cb_Size_SelectedIndexChanged);
             // 
-            // textBox1
+            // cb_Font
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(335, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 73);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "";
-            this.textBox1.Visible = false;
-            // 
-            // btn_Bold
-            // 
-            this.btn_Bold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bold.Location = new System.Drawing.Point(121, 52);
-            this.btn_Bold.Name = "btn_Bold";
-            this.btn_Bold.Size = new System.Drawing.Size(35, 29);
-            this.btn_Bold.TabIndex = 2;
-            this.btn_Bold.Text = "B";
-            this.btn_Bold.UseVisualStyleBackColor = true;
-            // 
-            // btn_Italic
-            // 
-            this.btn_Italic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Italic.Location = new System.Drawing.Point(171, 52);
-            this.btn_Italic.Name = "btn_Italic";
-            this.btn_Italic.Size = new System.Drawing.Size(35, 29);
-            this.btn_Italic.TabIndex = 3;
-            this.btn_Italic.Text = "I";
-            this.btn_Italic.UseVisualStyleBackColor = true;
-            this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
-            // 
-            // btn_Underline
-            // 
-            this.btn_Underline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Underline.Location = new System.Drawing.Point(222, 52);
-            this.btn_Underline.Name = "btn_Underline";
-            this.btn_Underline.Size = new System.Drawing.Size(35, 29);
-            this.btn_Underline.TabIndex = 4;
-            this.btn_Underline.Text = "U";
-            this.btn_Underline.UseVisualStyleBackColor = true;
-            this.btn_Underline.Click += new System.EventHandler(this.btn_Underline_Click);
+            this.cb_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Font.FormattingEnabled = true;
+            this.cb_Font.Location = new System.Drawing.Point(34, 12);
+            this.cb_Font.Name = "cb_Font";
+            this.cb_Font.Size = new System.Drawing.Size(155, 28);
+            this.cb_Font.TabIndex = 0;
+            this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
             // 
             // Form1
             // 
