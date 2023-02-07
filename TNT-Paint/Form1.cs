@@ -243,9 +243,14 @@ namespace TNT_Paint
 
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
-            g.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, textBox1.Location);
-            textBox1.Visible = false;
-            textBox1.Text = "";
+            if(textBox1.Visible == true)
+            {
+                g.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, textBox1.Location);
+                textBox1.Visible = false;
+                textBox1.Text = "";
+                return;
+            }
+            
             //
             //
             if (isCropping)

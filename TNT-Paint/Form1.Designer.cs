@@ -974,6 +974,7 @@ namespace TNT_Paint
             // 
             // pb_mainScreen
             // 
+            this.pb_mainScreen.BackColor = System.Drawing.Color.White;
             this.pb_mainScreen.Location = new System.Drawing.Point(3, 0);
             this.pb_mainScreen.Name = "pb_mainScreen";
             this.pb_mainScreen.Size = new System.Drawing.Size(870, 434);
@@ -987,7 +988,7 @@ namespace TNT_Paint
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(319, 71);
+            this.textBox1.Location = new System.Drawing.Point(319, 88);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(191, 52);
