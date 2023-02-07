@@ -93,6 +93,7 @@ namespace TNT_Paint
             pb_currentColor.BackColor = ((Bitmap)(pb_ColorTable.Image)).GetPixel(pt.X, pt.Y);
             currentColor = pb_currentColor.BackColor;
             p.Color = currentColor;
+            textBox1.SelectionColor = currentColor;
         }
         private void Btn_ColorDialog_Click(object sender, EventArgs e)
         {
@@ -254,7 +255,8 @@ namespace TNT_Paint
         {
             if(textBox1.Visible == true)
             {
-                g.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, textBox1.Location);
+                Brush brush = new SolidBrush(currentColor);
+                g.DrawString(textBox1.Text, textBox1.Font, brush, textBox1.Location);
                 textBox1.Visible = false;
                 textBox1.Text = "";
                 tabControl.Visible = false;
@@ -506,7 +508,9 @@ namespace TNT_Paint
             {
                 int i = int.Parse(cb_Size.Text);
                 Font font = new Font(cb_Font.Text, i);
+                textBox1.SelectionColor = currentColor;
                 textBox1.SelectionFont = font;
+
             }
             catch
             {
@@ -523,12 +527,18 @@ namespace TNT_Paint
             {
                 int i = int.Parse(cb_Size.Text);
                 Font font = new Font(cb_Font.Text, i);
+                textBox1.SelectionColor = currentColor;
                 textBox1.SelectionFont = font;
+                
             }
             catch
             {
                 MessageBox.Show("Loi font chu");
             }
+        }
+        private void tabControl_VisibleChanged(object sender, EventArgs e)
+        {
+            textBox1.SelectionColor = currentColor;
         }
         private void btn_Bold_Click(object sender, EventArgs e)
         {
