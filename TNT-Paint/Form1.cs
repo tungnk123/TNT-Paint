@@ -1314,7 +1314,6 @@ namespace TNT_Paint
             pb_mainScreen.Invalidate();
         }
 
-        
 
         public void Crop()
         {
@@ -1336,6 +1335,31 @@ namespace TNT_Paint
             pb_mainScreen.Image = _img;
             pb_mainScreen.Invalidate();
 
+        }
+
+        
+        #endregion
+
+        #region Cut Copy Paste Delete
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(pb_mainScreen.Image);
+            Btn_Clear_Click(sender, e);
+        }
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(pb_mainScreen.Image);
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            g.DrawImage(Clipboard.GetImage(),pb_mainScreen.Location.X, pb_mainScreen.Location.Y, Clipboard.GetImage().Width, Clipboard.GetImage().Height);
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Btn_Clear_Click(sender, e);
         }
         #endregion
     }
