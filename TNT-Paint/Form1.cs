@@ -1012,6 +1012,16 @@ namespace TNT_Paint
                 MessageBox.Show("Your computer don't have this service. ", "Thông báo !", MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
         }
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
         #region Timer ve cac dau cham
@@ -1356,6 +1366,7 @@ namespace TNT_Paint
             g.Clear(Color.White);
             g.DrawImage(Clipboard.GetImage(),pb_mainScreen.Location.X, pb_mainScreen.Location.Y, Clipboard.GetImage().Width, Clipboard.GetImage().Height);
         }
+
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {

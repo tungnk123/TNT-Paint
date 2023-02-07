@@ -210,12 +210,14 @@ namespace TNT_Paint
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -290,14 +292,14 @@ namespace TNT_Paint
             // imageEditorToolStripMenuItem
             // 
             this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
-            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.imageEditorToolStripMenuItem.Text = "Image Editor";
             this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
             // 
             // magnifyToolStripMenuItem
             // 
             this.magnifyToolStripMenuItem.Name = "magnifyToolStripMenuItem";
-            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.magnifyToolStripMenuItem.Text = "Magnifier";
             this.magnifyToolStripMenuItem.Click += new System.EventHandler(this.magnifyToolStripMenuItem_Click);
             // 
@@ -313,14 +315,14 @@ namespace TNT_Paint
             // stockImagesToolStripMenuItem
             // 
             this.stockImagesToolStripMenuItem.Name = "stockImagesToolStripMenuItem";
-            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stockImagesToolStripMenuItem.Text = "Stock Images";
             this.stockImagesToolStripMenuItem.Click += new System.EventHandler(this.stockImagesToolStripMenuItem_Click);
             // 
             // onlineImagesToolStripMenuItem
             // 
             this.onlineImagesToolStripMenuItem.Name = "onlineImagesToolStripMenuItem";
-            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.onlineImagesToolStripMenuItem.Text = "Online Images";
             this.onlineImagesToolStripMenuItem.Click += new System.EventHandler(this.onlineImagesToolStripMenuItem_Click);
             // 
