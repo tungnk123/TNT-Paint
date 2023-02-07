@@ -1367,6 +1367,10 @@ namespace TNT_Paint
             g.DrawImage(Clipboard.GetImage(),pb_mainScreen.Location.X, pb_mainScreen.Location.Y, Clipboard.GetImage().Width, Clipboard.GetImage().Height);
         }
 
+        private void pasteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            openToolStripMenuItem_Click(sender, e);
+        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
