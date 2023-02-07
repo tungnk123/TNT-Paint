@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Drawing.Text;
 
 namespace TNT_Paint
 {
@@ -49,6 +50,10 @@ namespace TNT_Paint
         public Pen cropPen;
         public DashStyle cropDashStyle = DashStyle.DashDot;
         //
+        //
+        bool bold = false;
+        bool italic = false;
+        bool underline = false;
         public Form1()
         {
             instance = this;
@@ -73,7 +78,11 @@ namespace TNT_Paint
 
             timer1.Start();
             this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
+
+
+            loadcbFont();
         }
+
 
 
         #region All buttons event
@@ -248,6 +257,7 @@ namespace TNT_Paint
                 g.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, textBox1.Location);
                 textBox1.Visible = false;
                 textBox1.Text = "";
+                tabControl.Visible = false;
                 return;
             }
             
@@ -283,6 +293,7 @@ namespace TNT_Paint
                 textBox1.Location = new Point(e.X, e.Y - 20);
                 textBox1.Visible = true;
                 pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
+                tabControl.Visible = true;
                 
             }
 
@@ -483,7 +494,110 @@ namespace TNT_Paint
         }
 
         #endregion
+
+        #region Text Event
+        private void cb_Font_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tabControl.Visible == false)
+            {
+                return;
+            }
+            try
+            {
+                int i = int.Parse(cb_Size.Text);
+                Font font = new Font(cb_Font.Text, i);
+                textBox1.Font = font;
+            }
+            catch
+            {
+                MessageBox.Show("Loi font chu");
+            }
+        }
+        private void cb_Size_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tabControl.Visible == false)
+            {
+                return;
+            }
+            try
+            {
+                int i = int.Parse(cb_Size.Text);
+                Font font = new Font(cb_Font.Text, i);
+                textBox1.Font = font;
+            }
+            catch
+            {
+                MessageBox.Show("Loi font chu");
+            }
+        }
+        private void btn_Bold_Click(object sender, EventArgs e)
+        {
+            int i = int.Parse(cb_Size.Text);
+            Font font = new Font(cb_Font.Text, i);
+            if (bold == false)
+            {
+                bold = true;
+                italic = false;
+                underline = false;
+                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Bold);
+            }
+            else
+            {
+                bold = false;
+                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Regular);
+            }
+        }
+        private void btn_Italic_Click(object sender, EventArgs e)
+        {
+            int i = int.Parse(cb_Size.Text);
+            Font font = new Font(cb_Font.Text, i);
+            if (italic == false)
+            {
+                bold = false;
+                italic = true;
+                underline = false;
+                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Italic);
+            }
+            else
+            {
+                italic = false;
+                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Regular);
+            }
+        }
+        private void btn_Underline_Click(object sender, EventArgs e)
+        {
+            int i = int.Parse(cb_Size.Text);
+            Font font = new Font(cb_Font.Text, i);
+            if (underline == false)
+            {
+                bold = false;
+                italic = false;
+                underline = true;
+                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Underline);
+            }
+            else
+            {
+                underline = false;
+                textBox1.Font = new Font(cb_Font.Text, i, FontStyle.Regular);
+            }
+        }
+
+
+        #endregion
+
         #region Function
+        private void loadcbFont()
+        {
+            InstalledFontCollection installedFont = new InstalledFontCollection();
+            FontFamily[] fontFamilies = installedFont.Families;
+            foreach (FontFamily ff in fontFamilies)
+            {
+                cb_Font.Items.Add(ff.Name);
+            }
+            cb_Font.Text = textBox1.Font.Name.ToString();
+            cb_Size.Text = textBox1.Font.Size.ToString();
+        }
+
         //fill function
         private void validate(Bitmap bm, Stack<Point> sp, int x, int y, Color oldColor, Color newColor)
         {
@@ -1049,6 +1163,7 @@ namespace TNT_Paint
             isCropping = false;
             pb_mainScreen.Invalidate();
         }
+
 
         public void Crop()
         {

@@ -117,7 +117,14 @@ namespace TNT_Paint
             this.panel2 = new System.Windows.Forms.Panel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage_Text = new System.Windows.Forms.TabPage();
+            this.cb_Font = new System.Windows.Forms.ComboBox();
+            this.cb_Size = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_Bold = new System.Windows.Forms.Button();
+            this.btn_Italic = new System.Windows.Forms.Button();
+            this.btn_Underline = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
@@ -130,6 +137,8 @@ namespace TNT_Paint
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.tabPage_Text.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -805,7 +814,7 @@ namespace TNT_Paint
             // 
             this.Btn_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Clear.Location = new System.Drawing.Point(863, 33);
+            this.Btn_Clear.Location = new System.Drawing.Point(869, 33);
             this.Btn_Clear.Name = "Btn_Clear";
             this.Btn_Clear.Size = new System.Drawing.Size(75, 36);
             this.Btn_Clear.TabIndex = 6;
@@ -985,15 +994,110 @@ namespace TNT_Paint
             this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage_Text);
+            this.tabControl.Location = new System.Drawing.Point(297, 4);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(321, 121);
+            this.tabControl.TabIndex = 9;
+            this.tabControl.Visible = false;
+            // 
+            // tabPage_Text
+            // 
+            this.tabPage_Text.Controls.Add(this.btn_Underline);
+            this.tabPage_Text.Controls.Add(this.btn_Italic);
+            this.tabPage_Text.Controls.Add(this.btn_Bold);
+            this.tabPage_Text.Controls.Add(this.cb_Size);
+            this.tabPage_Text.Controls.Add(this.cb_Font);
+            this.tabPage_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage_Text.ForeColor = System.Drawing.Color.Black;
+            this.tabPage_Text.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_Text.Name = "tabPage_Text";
+            this.tabPage_Text.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Text.Size = new System.Drawing.Size(313, 95);
+            this.tabPage_Text.TabIndex = 1;
+            this.tabPage_Text.Text = "Text";
+            this.tabPage_Text.UseVisualStyleBackColor = true;
+            // 
+            // cb_Font
+            // 
+            this.cb_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Font.FormattingEnabled = true;
+            this.cb_Font.Location = new System.Drawing.Point(34, 12);
+            this.cb_Font.Name = "cb_Font";
+            this.cb_Font.Size = new System.Drawing.Size(155, 28);
+            this.cb_Font.TabIndex = 0;
+            this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
+            // 
+            // cb_Size
+            // 
+            this.cb_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Size.FormattingEnabled = true;
+            this.cb_Size.Items.AddRange(new object[] {
+            "8",
+            "9",
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20",
+            "22",
+            "24",
+            "26",
+            "28",
+            "36",
+            "48",
+            "72"});
+            this.cb_Size.Location = new System.Drawing.Point(34, 53);
+            this.cb_Size.Name = "cb_Size";
+            this.cb_Size.Size = new System.Drawing.Size(70, 28);
+            this.cb_Size.TabIndex = 1;
+            this.cb_Size.SelectedIndexChanged += new System.EventHandler(this.cb_Size_SelectedIndexChanged);
+            // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(319, 88);
-            this.textBox1.Multiline = true;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(335, 90);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 52);
+            this.textBox1.Size = new System.Drawing.Size(271, 73);
             this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "";
             this.textBox1.Visible = false;
+            // 
+            // btn_Bold
+            // 
+            this.btn_Bold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bold.Location = new System.Drawing.Point(121, 52);
+            this.btn_Bold.Name = "btn_Bold";
+            this.btn_Bold.Size = new System.Drawing.Size(35, 29);
+            this.btn_Bold.TabIndex = 2;
+            this.btn_Bold.Text = "B";
+            this.btn_Bold.UseVisualStyleBackColor = true;
+            // 
+            // btn_Italic
+            // 
+            this.btn_Italic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Italic.Location = new System.Drawing.Point(171, 52);
+            this.btn_Italic.Name = "btn_Italic";
+            this.btn_Italic.Size = new System.Drawing.Size(35, 29);
+            this.btn_Italic.TabIndex = 3;
+            this.btn_Italic.Text = "I";
+            this.btn_Italic.UseVisualStyleBackColor = true;
+            this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
+            // 
+            // btn_Underline
+            // 
+            this.btn_Underline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Underline.Location = new System.Drawing.Point(222, 52);
+            this.btn_Underline.Name = "btn_Underline";
+            this.btn_Underline.Size = new System.Drawing.Size(35, 29);
+            this.btn_Underline.TabIndex = 4;
+            this.btn_Underline.Text = "U";
+            this.btn_Underline.UseVisualStyleBackColor = true;
+            this.btn_Underline.Click += new System.EventHandler(this.btn_Underline_Click);
             // 
             // Form1
             // 
@@ -1001,6 +1105,7 @@ namespace TNT_Paint
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(950, 595);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -1027,6 +1132,8 @@ namespace TNT_Paint
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.tabPage_Text.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1120,7 +1227,14 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem magnifyToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPage_Text;
+        private System.Windows.Forms.RichTextBox textBox1;
+        private System.Windows.Forms.ComboBox cb_Size;
+        private System.Windows.Forms.ComboBox cb_Font;
+        private System.Windows.Forms.Button btn_Bold;
+        private System.Windows.Forms.Button btn_Underline;
+        private System.Windows.Forms.Button btn_Italic;
     }
 }
 
