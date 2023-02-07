@@ -230,6 +230,12 @@ namespace TNT_Paint
         {
             SelectedMode = 23;
         }
+        private void buttonAddText_Click(object sender, EventArgs e)
+        {
+            SelectedMode = 24;
+            pb_mainScreen.Cursor = System.Windows.Forms.Cursors.IBeam;
+        }
+
 
         #endregion
 
@@ -237,6 +243,13 @@ namespace TNT_Paint
 
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
+            if(textBox1.Text != "")
+            {
+                
+                g.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, textBox1.Location);
+                textBox1.Visible = false;
+                textBox1.Text = "";
+            }
             if (isCropping)
             {
                 if (e.Button == System.Windows.Forms.MouseButtons.Left)
@@ -262,6 +275,16 @@ namespace TNT_Paint
                 }
 
             }
+            if(SelectedMode == 24)
+            {
+                if(textBox1.Text == "")
+                {
+                    textBox1.Location = new Point(e.X, e.Y - 20);
+                    textBox1.Visible = true;
+                    pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
+                }
+            }
+
             if (SelectedMode == 4)
             {
                 Fill(bm, e.X, e.Y, currentColor);
@@ -272,6 +295,7 @@ namespace TNT_Paint
             UndoStack.Push((Bitmap)pb_mainScreen.Image.Clone());
             RedoStack.Clear();
             //
+
         }
         private void pb_mainScreen_MouseMove(object sender, MouseEventArgs e)
         {
@@ -1024,8 +1048,6 @@ namespace TNT_Paint
             isCropping = false;
             pb_mainScreen.Invalidate();
         }
-
-        
 
         public void Crop()
         {

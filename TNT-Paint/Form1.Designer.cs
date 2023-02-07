@@ -50,6 +50,7 @@ namespace TNT_Paint
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magnifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onlineImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,7 +117,7 @@ namespace TNT_Paint
             this.panel2 = new System.Windows.Forms.Panel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.magnifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
@@ -270,15 +271,22 @@ namespace TNT_Paint
             this.imageEditorToolStripMenuItem,
             this.magnifyToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(52, 21);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // imageEditorToolStripMenuItem
             // 
             this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
-            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.imageEditorToolStripMenuItem.Text = "Image Editor";
             this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
+            // 
+            // magnifyToolStripMenuItem
+            // 
+            this.magnifyToolStripMenuItem.Name = "magnifyToolStripMenuItem";
+            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.magnifyToolStripMenuItem.Text = "Magnifier";
+            this.magnifyToolStripMenuItem.Click += new System.EventHandler(this.magnifyToolStripMenuItem_Click);
             // 
             // imageToolStripMenuItem
             // 
@@ -445,6 +453,7 @@ namespace TNT_Paint
             this.buttonAddText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.buttonAddText, "Add text");
             this.buttonAddText.UseVisualStyleBackColor = true;
+            this.buttonAddText.Click += new System.EventHandler(this.buttonAddText_Click);
             // 
             // pb_currentColor
             // 
@@ -951,6 +960,7 @@ namespace TNT_Paint
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Controls.Add(this.panelDauCham3);
             this.panel2.Controls.Add(this.panelDauCham2);
@@ -964,7 +974,7 @@ namespace TNT_Paint
             // 
             // pb_mainScreen
             // 
-            this.pb_mainScreen.Location = new System.Drawing.Point(0, 0);
+            this.pb_mainScreen.Location = new System.Drawing.Point(3, 0);
             this.pb_mainScreen.Name = "pb_mainScreen";
             this.pb_mainScreen.Size = new System.Drawing.Size(870, 434);
             this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -974,12 +984,15 @@ namespace TNT_Paint
             this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
-            // magnifyToolStripMenuItem
+            // textBox1
             // 
-            this.magnifyToolStripMenuItem.Name = "magnifyToolStripMenuItem";
-            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.magnifyToolStripMenuItem.Text = "Magnifier";
-            this.magnifyToolStripMenuItem.Click += new System.EventHandler(this.magnifyToolStripMenuItem_Click);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(319, 71);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(191, 52);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Visible = false;
             // 
             // Form1
             // 
@@ -1106,6 +1119,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem magnifyToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
