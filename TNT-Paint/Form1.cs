@@ -243,13 +243,11 @@ namespace TNT_Paint
 
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
-            if(textBox1.Text != "")
-            {
-                
-                g.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, textBox1.Location);
-                textBox1.Visible = false;
-                textBox1.Text = "";
-            }
+            g.DrawString(textBox1.Text, textBox1.Font, Brushes.Black, textBox1.Location);
+            textBox1.Visible = false;
+            textBox1.Text = "";
+            //
+            //
             if (isCropping)
             {
                 if (e.Button == System.Windows.Forms.MouseButtons.Left)
@@ -277,12 +275,10 @@ namespace TNT_Paint
             }
             if(SelectedMode == 24)
             {
-                if(textBox1.Text == "")
-                {
-                    textBox1.Location = new Point(e.X, e.Y - 20);
-                    textBox1.Visible = true;
-                    pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
-                }
+                textBox1.Location = new Point(e.X, e.Y - 20);
+                textBox1.Visible = true;
+                pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
+                
             }
 
             if (SelectedMode == 4)
