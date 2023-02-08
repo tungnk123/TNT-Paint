@@ -93,16 +93,6 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap brush11 {
-            get {
-                object obj = ResourceManager.GetObject("brush11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap brush2 {
             get {
                 object obj = ResourceManager.GetObject("brush2", resourceCulture);
@@ -383,16 +373,6 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_crop_64 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-crop-64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_edit_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-edit-48", resourceCulture);
@@ -546,16 +526,6 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap icons8_scissors_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-scissors-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_selection_67 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-selection-67", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

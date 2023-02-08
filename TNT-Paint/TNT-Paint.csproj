@@ -210,12 +210,10 @@
     <None Include="Resources\icons8-fill-color-64.png" />
     <None Include="Resources\icons8-color-dropper-48.png" />
     <None Include="Resources\icons8-color-dropper-481.png" />
-    <None Include="Resources\brush2.png" />
     <None Include="Resources\brush1.png" />
+    <None Include="Resources\brush2.png" />
     <None Include="Resources\brush3.png" />
     <None Include="Resources\brush4.png" />
-    <None Include="Resources\icons8-selection-67.png" />
-    <None Include="Resources\icons8-crop-64.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
