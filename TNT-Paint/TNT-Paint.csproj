@@ -175,6 +175,15 @@
     <None Include="Resources\test-black.png" />
     <None Include="Resources\test-black-2.png" />
     <None Include="Resources\icons8-a-25.png" />
+    <None Include="Resources\icons8-add-file-641.png" />
+    <None Include="Resources\icons8-opened-folder-482.png" />
+    <None Include="Resources\icons8-save-601.png" />
+    <None Include="Resources\icons8-save-as-64.png" />
+    <None Include="Resources\icons8-about-48.png" />
+    <None Include="Resources\icons8-undo-481.png" />
+    <None Include="Resources\icons8-redo-48.png" />
+    <None Include="Resources\icons8-scissors-50.png" />
+    <None Include="Resources\icons8-copy-50.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
