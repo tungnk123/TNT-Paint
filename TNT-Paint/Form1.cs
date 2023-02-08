@@ -919,7 +919,7 @@ namespace TNT_Paint
             // truong hop da ve gi do len picturebox
             if (isPainted)
             {
-                switch (MessageBox.Show("Bạn có muốn lưu file không", "Thông Báo", MessageBoxButtons.YesNoCancel))
+                switch (MessageBox.Show("Bạn có muốn lưu file với tên " + tenFileTieuDe + " không", "Thông Báo", MessageBoxButtons.YesNoCancel))
                 {
                     // truong hop nguoi dung muon luu anh dang ve lai va open file sau
                     case DialogResult.Yes:
@@ -1024,7 +1024,7 @@ namespace TNT_Paint
             // truong hop da ve cai gi len picturebox 
             else
             {
-                switch (MessageBox.Show("Bạn có muốn lưu file không", "Thông Báo", MessageBoxButtons.YesNoCancel))
+                switch (MessageBox.Show("Bạn có muốn lưu file với tên " + tenFileTieuDe + " không", "Thông Báo", MessageBoxButtons.YesNoCancel))
                 {
                     case DialogResult.Cancel:
                         e.Cancel = true;
