@@ -867,13 +867,50 @@ namespace TNT_Paint
         #region Menu events
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tenFileTieuDe = "Untitled";
-            isPainted = false;
-            g.Clear(Color.White);
-            pb_mainScreen.Refresh();
-            pb_mainScreen.Image = bm;
-            this.pb_mainScreen.Width = 870;
-            this.pb_mainScreen.Height = 434;
+            if (isPainted)
+            {
+                switch (MessageBox.Show("Bạn có muốn lưu file với tên "+ tenFileTieuDe + " không", "Thông Báo", MessageBoxButtons.YesNoCancel))
+                {
+                    // truong hop nguoi dung muon luu anh dang ve lai va open file sau
+                    case DialogResult.Yes:
+                        {
+                            saveToolStripMenuItem_Click(sender, e);
+                            tenFileTieuDe = "Untitled";
+                            isPainted = false;
+                            g.Clear(Color.White);
+                            pb_mainScreen.Refresh();
+                            pb_mainScreen.Image = bm;
+                            this.pb_mainScreen.Width = 870;
+                            this.pb_mainScreen.Height = 434;
+                            break;
+                        }
+                    // truong hop nguoi dung khong muon luu anh dang ve ma muon open file luon
+                    case DialogResult.No:
+                        {
+                            tenFileTieuDe = "Untitled";
+                            isPainted = false;
+                            g.Clear(Color.White);
+                            pb_mainScreen.Refresh();
+                            pb_mainScreen.Image = bm;
+                            this.pb_mainScreen.Width = 870;
+                            this.pb_mainScreen.Height = 434;
+                            break;
+                        }
+
+                    case DialogResult.Cancel:
+                        return;
+                }
+            }
+            else
+            {
+                tenFileTieuDe = "Untitled";
+                isPainted = false;
+                g.Clear(Color.White);
+                pb_mainScreen.Refresh();
+                pb_mainScreen.Image = bm;
+                this.pb_mainScreen.Width = 870;
+                this.pb_mainScreen.Height = 434;
+            }
         }
 
 
