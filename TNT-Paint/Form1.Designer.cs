@@ -632,7 +632,7 @@ namespace TNT_Paint
             // 
             // buttonAddText
             // 
-            this.buttonAddText.BackgroundImage = global::TNT_Paint.Properties.Resources.insert_text;
+            this.buttonAddText.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_add_text_50;
             this.buttonAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAddText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.buttonAddText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -897,9 +897,10 @@ namespace TNT_Paint
             // 
             // Btn_Fill
             // 
+            this.Btn_Fill.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_fill_color_64;
+            this.Btn_Fill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Fill.Image = global::TNT_Paint.Properties.Resources.Fill;
             this.Btn_Fill.Location = new System.Drawing.Point(57, 54);
             this.Btn_Fill.Name = "Btn_Fill";
             this.Btn_Fill.Size = new System.Drawing.Size(39, 36);
@@ -911,9 +912,10 @@ namespace TNT_Paint
             // 
             // Btn_ColorPicker
             // 
+            this.Btn_ColorPicker.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_color_dropper_481;
+            this.Btn_ColorPicker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ColorPicker.Image = global::TNT_Paint.Properties.Resources.colorPicker;
             this.Btn_ColorPicker.Location = new System.Drawing.Point(102, 12);
             this.Btn_ColorPicker.Name = "Btn_ColorPicker";
             this.Btn_ColorPicker.Size = new System.Drawing.Size(39, 36);

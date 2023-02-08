@@ -97,6 +97,7 @@ namespace TNT_Paint
         }
         private void Btn_ColorDialog_Click(object sender, EventArgs e)
         {
+            colorDialog1.FullOpen = true;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 currentColor = colorDialog1.Color;

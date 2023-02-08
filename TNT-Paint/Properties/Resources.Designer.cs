@@ -273,6 +273,16 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_text_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-text-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_artist_palette_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-artist-palette-48", resourceCulture);
@@ -286,6 +296,26 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap icons8_close_window_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-close-window-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_color_dropper_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-color-dropper-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_color_dropper_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-color-dropper-481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +356,16 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap icons8_eraser_tool_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eraser-tool-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_fill_color_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fill-color-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
