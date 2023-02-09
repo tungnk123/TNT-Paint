@@ -12,7 +12,7 @@ namespace TNT_Paint
     public partial class Form1 : Form
     {
         public Graphics g; // đồ hoạ từ màn hình vẽ chính
-        Bitmap bm;
+        public Bitmap bm;
         Pen p; // bút vẽ chính
         Pen eraser; // tẩy
         Point px, py;
@@ -21,7 +21,6 @@ namespace TNT_Paint
         bool isPainted = false;
         Color currentColor = Color.Black;
         VeHinh veHinh;
-
         //
         //
         //
@@ -282,7 +281,7 @@ namespace TNT_Paint
             if(textBox1.Visible == true)
             {
                 Brush brush = new SolidBrush(currentColor);
-                g.DrawString(textBox1.Text, textBox1.Font, brush, textBox1.Location);
+                g.DrawString(textBox1.Text, textBox1.Font, brush, new Point(textBox1.Location.X - 3, textBox1.Location.Y + 3));
                 textBox1.Visible = false;
                 textBox1.Text = "";
                 tabControl.Visible = false;
@@ -307,9 +306,9 @@ namespace TNT_Paint
             isPainted = true;
             if (SelectedMode == 3)
             {
-                if (pb_mainScreen.Cursor == Cursors.Hand)
+                if (pb_mainScreen.Cursor != Cursors.Default)
                 {
-                    currentColor = ((Bitmap)(pb_mainScreen.Image)).GetPixel(e.X, e.Y);
+                    currentColor = ((Bitmap)(pb_mainScreen.Image)).GetPixel(e.X - 10, e.Y + 10);
                     p.Color = currentColor;
                     pb_currentColor.BackColor = currentColor;
                     pb_mainScreen.Cursor = Cursors.Default;
@@ -322,6 +321,7 @@ namespace TNT_Paint
                 textBox1.Visible = true;
                 pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
                 tabControl.Visible = true;
+                textBox1.Select();
                 
             }
 
@@ -357,7 +357,7 @@ namespace TNT_Paint
                 py = e.Location;
                 if (SelectedMode == 1)
                 {
-                    g.DrawLine(p, px, py);
+                    g.DrawLine(p, new Point(px.X - 10, px.Y + 10), new Point(py.X - 10, py.Y + 10));
                     px = py;
                 }
                 if (SelectedMode == 2)
@@ -535,7 +535,7 @@ namespace TNT_Paint
                 int i = int.Parse(cb_Size.Text);
                 Font font = new Font(cb_Font.Text, i);
                 textBox1.SelectionColor = currentColor;
-                textBox1.SelectionFont = font;
+                textBox1.Font = font;
 
             }
             catch
@@ -554,7 +554,7 @@ namespace TNT_Paint
                 int i = int.Parse(cb_Size.Text);
                 Font font = new Font(cb_Font.Text, i);
                 textBox1.SelectionColor = currentColor;
-                textBox1.SelectionFont = font;
+                textBox1.Font = font;
                 
             }
             catch
@@ -579,22 +579,22 @@ namespace TNT_Paint
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
                     }
                 }
                 else if (isItalic == false)
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold);
                     }
                 }
                 //
@@ -610,22 +610,22 @@ namespace TNT_Paint
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
                     }
                 }
                 else if (isItalic == false)
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
                     }
                 }
             }
@@ -642,22 +642,22 @@ namespace TNT_Paint
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
                     }
                 }
                 else if (isBold == false)
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
                     }
                 }
                 //
@@ -673,22 +673,22 @@ namespace TNT_Paint
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
                     }
                 }
                 else if (isItalic == false)
                 {
                     if (isUnderline == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
                     }
                 }
             }
@@ -705,22 +705,22 @@ namespace TNT_Paint
                 {
                     if (isItalic == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold | FontStyle.Italic);
                     }
                 }
                 else if (isBold == false)
                 {
                     if (isItalic == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Underline);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Underline);
                     }
                 }
                 //
@@ -736,22 +736,22 @@ namespace TNT_Paint
                 {
                     if (isItalic == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Bold);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic | FontStyle.Bold);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Bold);
                     }
                 }
                 else if (isBold == false)
                 {
                     if (isItalic == true)
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Italic);
                     }
                     else
                     {
-                        textBox1.SelectionFont = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
+                        textBox1.Font = new Font(cb_Font.Text, Convert.ToInt32(cb_Size.Text), FontStyle.Regular);
                     }
                 }
             }
@@ -1413,15 +1413,15 @@ namespace TNT_Paint
             }
             Rectangle rect = new Rectangle(cropX, cropY, cropWidth, cropHeight);
             Bitmap OriginalImage = new Bitmap(pb_mainScreen.Image, pb_mainScreen.Width, pb_mainScreen.Height);
-            Bitmap _img = new Bitmap(cropWidth, cropHeight);
-            Graphics g = Graphics.FromImage(_img);
+            bm = new Bitmap(cropWidth, cropHeight);
+            g = Graphics.FromImage(bm);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             g.DrawImage(OriginalImage, 0, 0, rect, GraphicsUnit.Pixel);
-            pb_mainScreen.Width = _img.Width;
-            pb_mainScreen.Height = _img.Height;
-            pb_mainScreen.Image = _img;
+            pb_mainScreen.Width = bm.Width;
+            pb_mainScreen.Height = bm.Height;
+            pb_mainScreen.Image = bm;
             pb_mainScreen.Invalidate();
 
         }

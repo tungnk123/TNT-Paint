@@ -34,6 +34,11 @@ namespace TNT_Paint
                 int height = Int32.Parse(textBox2.Text);
                 Form1.instance.pb_mainScreen.Width = width;
                 Form1.instance.pb_mainScreen.Height = height;
+                Image temp = Form1.instance.pb_mainScreen.Image;
+                Form1.instance.bm = new Bitmap(Form1.instance.bm, Form1.instance.pb_mainScreen.Width, Form1.instance.pb_mainScreen.Height);
+                Form1.instance.g = Graphics.FromImage(Form1.instance.bm);
+                Form1.instance.g.DrawImage(Form1.instance.bm, new Point(0, 0));
+                Form1.instance.pb_mainScreen.Image = Form1.instance.bm;
             }
             catch
             {
