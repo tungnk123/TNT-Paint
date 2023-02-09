@@ -80,6 +80,12 @@
     <Compile Include="FormOnlineImage.Designer.cs">
       <DependentUpon>FormOnlineImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormResize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormResize.Designer.cs">
+      <DependentUpon>FormResize.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStockImages.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOnlineImage.resx">
       <DependentUpon>FormOnlineImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormResize.resx">
+      <DependentUpon>FormResize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStockImages.resx">
       <DependentUpon>FormStockImages.cs</DependentUpon>
@@ -214,6 +223,8 @@
     <None Include="Resources\brush2.png" />
     <None Include="Resources\brush3.png" />
     <None Include="Resources\brush4.png" />
+    <None Include="Resources\icons8-width-48.png" />
+    <None Include="Resources\icons8-height-40.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

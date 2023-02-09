@@ -1345,7 +1345,7 @@ namespace TNT_Paint
         }
         #endregion
 
-        #region Crop 
+        #region Crop + Resize
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -1385,7 +1385,11 @@ namespace TNT_Paint
 
         }
 
-        
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormResize formResize = new FormResize();
+            formResize.ShowDialog();
+        }
         #endregion
 
         #region Cut Copy Paste Delete
@@ -1409,6 +1413,7 @@ namespace TNT_Paint
         {
             openToolStripMenuItem_Click(sender, e);
         }
+
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
