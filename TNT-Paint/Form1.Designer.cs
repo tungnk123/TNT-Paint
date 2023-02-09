@@ -181,7 +181,7 @@ namespace TNT_Paint
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(117, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(183, 6);
             // 
             // editToolStripMenuItem
             // 
@@ -201,7 +201,7 @@ namespace TNT_Paint
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(136, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // toolsToolStripMenuItem
             // 
@@ -238,7 +238,7 @@ namespace TNT_Paint
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(199, 6);
             // 
             // statusBarToolStripMenuItem
             // 
@@ -246,7 +246,7 @@ namespace TNT_Paint
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.statusBarToolStripMenuItem.Text = "Status Bar";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.statusBarToolStripMenuItem_Click);
             // 
@@ -994,7 +994,8 @@ namespace TNT_Paint
             // 
             this.newToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_add_file_64;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -1002,7 +1003,9 @@ namespace TNT_Paint
             // 
             this.openToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_opened_folder_48;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -1010,7 +1013,8 @@ namespace TNT_Paint
             // 
             this.saveToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_save_50;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -1018,7 +1022,8 @@ namespace TNT_Paint
             // 
             this.saveAsToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_save_as_64;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.saveAsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -1026,7 +1031,7 @@ namespace TNT_Paint
             // 
             this.aboutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_about_48;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1034,7 +1039,9 @@ namespace TNT_Paint
             // 
             this.exitToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_close_window_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.Delete)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1042,7 +1049,8 @@ namespace TNT_Paint
             // 
             this.undoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_undo_48;
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -1050,7 +1058,8 @@ namespace TNT_Paint
             // 
             this.redoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_redo_48;
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -1058,7 +1067,8 @@ namespace TNT_Paint
             // 
             this.cutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_scissors_50;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -1066,7 +1076,8 @@ namespace TNT_Paint
             // 
             this.copyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_copy_50;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -1074,7 +1085,8 @@ namespace TNT_Paint
             // 
             this.pasteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_paste_64;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -1082,7 +1094,8 @@ namespace TNT_Paint
             // 
             this.pasteToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_insert_raster_image_100;
             this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
-            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.pasteToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F13;
+            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pasteToolStripMenuItem1.Text = "Paste from";
             this.pasteToolStripMenuItem1.Click += new System.EventHandler(this.pasteToolStripMenuItem1_Click);
             // 
@@ -1090,7 +1103,8 @@ namespace TNT_Paint
             // 
             this.deleteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_remove_48;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -1098,7 +1112,7 @@ namespace TNT_Paint
             // 
             this.imageEditorToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_photo_editor_100;
             this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
-            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.imageEditorToolStripMenuItem.Text = "Image Editor";
             this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
             // 
@@ -1106,7 +1120,7 @@ namespace TNT_Paint
             // 
             this.magnifyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_to_extents_64;
             this.magnifyToolStripMenuItem.Name = "magnifyToolStripMenuItem";
-            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.magnifyToolStripMenuItem.Text = "Magnifier";
             this.magnifyToolStripMenuItem.Click += new System.EventHandler(this.magnifyToolStripMenuItem_Click);
             // 
@@ -1114,7 +1128,7 @@ namespace TNT_Paint
             // 
             this.stockImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_image_48;
             this.stockImagesToolStripMenuItem.Name = "stockImagesToolStripMenuItem";
-            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stockImagesToolStripMenuItem.Text = "Stock Images";
             this.stockImagesToolStripMenuItem.Click += new System.EventHandler(this.stockImagesToolStripMenuItem_Click);
             // 
@@ -1122,7 +1136,7 @@ namespace TNT_Paint
             // 
             this.onlineImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_internet_connection_50;
             this.onlineImagesToolStripMenuItem.Name = "onlineImagesToolStripMenuItem";
-            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.onlineImagesToolStripMenuItem.Text = "Online Images";
             this.onlineImagesToolStripMenuItem.Click += new System.EventHandler(this.onlineImagesToolStripMenuItem_Click);
             // 
@@ -1130,7 +1144,8 @@ namespace TNT_Paint
             // 
             this.zomeInToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_in_50;
             this.zomeInToolStripMenuItem.Name = "zomeInToolStripMenuItem";
-            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.zomeInToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Up)));
+            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.zomeInToolStripMenuItem.Text = "Zome in";
             this.zomeInToolStripMenuItem.Click += new System.EventHandler(this.zomeInToolStripMenuItem_Click);
             // 
@@ -1138,7 +1153,8 @@ namespace TNT_Paint
             // 
             this.zomeOutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_out_50;
             this.zomeOutToolStripMenuItem.Name = "zomeOutToolStripMenuItem";
-            this.zomeOutToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.zomeOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down)));
+            this.zomeOutToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.zomeOutToolStripMenuItem.Text = "Zome out";
             this.zomeOutToolStripMenuItem.Click += new System.EventHandler(this.zomeOutToolStripMenuItem_Click);
             // 
@@ -1146,7 +1162,7 @@ namespace TNT_Paint
             // 
             this.toolStripMenuItem2.Image = global::TNT_Paint.Properties.Resources.icons8_100_50;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(134, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(202, 22);
             this.toolStripMenuItem2.Text = "100%";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -1154,7 +1170,7 @@ namespace TNT_Paint
             // 
             this.rulerToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.ruler;
             this.rulerToolStripMenuItem.Name = "rulerToolStripMenuItem";
-            this.rulerToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.rulerToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.rulerToolStripMenuItem.Text = "Ruler";
             // 
             // gridlinesToolStripMenuItem
@@ -1162,7 +1178,7 @@ namespace TNT_Paint
             this.gridlinesToolStripMenuItem.CheckOnClick = true;
             this.gridlinesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.gridline;
             this.gridlinesToolStripMenuItem.Name = "gridlinesToolStripMenuItem";
-            this.gridlinesToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.gridlinesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.gridlinesToolStripMenuItem.Text = "Gridlines";
             this.gridlinesToolStripMenuItem.Click += new System.EventHandler(this.gridlinesToolStripMenuItem_Click);
             // 
@@ -1170,7 +1186,7 @@ namespace TNT_Paint
             // 
             this.informationToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.personal_infor;
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.informationToolStripMenuItem.Text = "Information";
             this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
@@ -1178,7 +1194,7 @@ namespace TNT_Paint
             // 
             this.aboutToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_about_481;
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
