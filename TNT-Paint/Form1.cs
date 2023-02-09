@@ -234,21 +234,33 @@ namespace TNT_Paint
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_color_picker_67, new Size(18, 18));
+            Cursor cursor = new Cursor(bitmap.GetHicon());
+            pb_mainScreen.Cursor = cursor;
             SelectedMode = 20;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.air_brush, new Size(25, 25));
+            Cursor cursor = new Cursor(bitmap.GetHicon());
+            pb_mainScreen.Cursor = cursor;
             SelectedMode = 21;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_color_picker_67, new Size(18, 18));
+            Cursor cursor = new Cursor(bitmap.GetHicon());
+            pb_mainScreen.Cursor = cursor;
             SelectedMode = 22;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_color_picker_67, new Size(18, 18));
+            Cursor cursor = new Cursor(bitmap.GetHicon());
+            pb_mainScreen.Cursor = cursor;
             SelectedMode = 23;
         }
         private void buttonAddText_Click(object sender, EventArgs e)

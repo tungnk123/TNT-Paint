@@ -63,6 +63,16 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap air_brush {
+            get {
+                object obj = ResourceManager.GetObject("air_brush", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BigLine {
             get {
                 object obj = ResourceManager.GetObject("BigLine", resourceCulture);
@@ -356,6 +366,16 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap icons8_color_dropper_481 {
             get {
                 object obj = ResourceManager.GetObject("icons8-color-dropper-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_color_picker_67 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_color_picker_67", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

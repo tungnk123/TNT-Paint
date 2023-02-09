@@ -128,6 +128,7 @@ namespace TNT_Paint
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -572,7 +573,7 @@ namespace TNT_Paint
             // 
             this.toolStripStatusLabel1.Image = global::TNT_Paint.Properties.Resources.Diamond;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(134, 16);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(134, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // pb_mainScreen
@@ -654,6 +655,7 @@ namespace TNT_Paint
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(35, 35);
             this.button4.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.button4, "Oil Brush");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -664,6 +666,7 @@ namespace TNT_Paint
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(35, 35);
             this.button3.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.button3, "Watercolor Brush");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -674,6 +677,7 @@ namespace TNT_Paint
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(35, 35);
             this.button2.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.button2, "Air Brush");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -684,6 +688,7 @@ namespace TNT_Paint
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(35, 35);
             this.button1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.button1, "Caryon Brush");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1318,6 +1323,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
 
