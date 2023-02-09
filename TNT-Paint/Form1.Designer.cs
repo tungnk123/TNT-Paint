@@ -531,6 +531,7 @@ namespace TNT_Paint
             this.button5.Size = new System.Drawing.Size(49, 27);
             this.button5.TabIndex = 15;
             this.button5.Text = "Resize";
+            this.toolTip1.SetToolTip(this.button5, "Resize\r\n\r\nĐổi kích thước của ảnh.");
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -542,6 +543,7 @@ namespace TNT_Paint
             this.button13.Size = new System.Drawing.Size(49, 27);
             this.button13.TabIndex = 14;
             this.button13.Text = "Crop";
+            this.toolTip1.SetToolTip(this.button13, "Crop \r\n\r\nCrop ảnh đã Select ra ảnh.");
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -556,6 +558,7 @@ namespace TNT_Paint
             this.button12.TabIndex = 13;
             this.button12.Text = "Select";
             this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button12, "Selection\r\n\r\nChọn một phần của ảnh.");
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
