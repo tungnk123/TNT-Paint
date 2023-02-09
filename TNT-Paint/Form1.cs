@@ -95,7 +95,7 @@ namespace TNT_Paint
             pb_currentColor.BackColor = ((Bitmap)(pb_ColorTable.Image)).GetPixel(pt.X, pt.Y);
             currentColor = pb_currentColor.BackColor;
             p.Color = currentColor;
-            textBox1.SelectionColor = currentColor;
+            textBox1.ForeColor = currentColor;
         }
         private void Btn_ColorDialog_Click(object sender, EventArgs e)
         {
@@ -109,6 +109,7 @@ namespace TNT_Paint
         }
         private void Btn_Clear_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             tenFileTieuDe = "Untitled";
             g.Clear(Color.White);
             pb_mainScreen.Refresh();
@@ -117,6 +118,7 @@ namespace TNT_Paint
         }
         private void Btn_Pencil_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_edit_48, new Size(30, 30));
             Cursor cursor = new Cursor(bitmap.GetHicon());
             pb_mainScreen.Cursor = cursor;
@@ -126,6 +128,7 @@ namespace TNT_Paint
 
         private void Btn_Eraser_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Cursor cursor = new Cursor(TNT_Paint.Properties.Resources.icons8_erase_30.GetHicon());
             pb_mainScreen.Cursor = cursor;
             SelectedMode = 2;
@@ -133,6 +136,7 @@ namespace TNT_Paint
         }
         private void Btn_ColorPicker_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_color_dropper_48, new Size(30, 30));
             Cursor cursor = new Cursor(bitmap.GetHicon());
             pb_mainScreen.Cursor = cursor;
@@ -141,6 +145,7 @@ namespace TNT_Paint
         }
         private void Btn_Fill_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_fill_color_64, new Size(30, 30));
             Cursor cursor = new Cursor(bitmap.GetHicon());
             pb_mainScreen.Cursor = cursor;
@@ -149,93 +154,127 @@ namespace TNT_Paint
         }
         private void btn_SmallLine_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             p.Width = 1;
         }
         private void Btn_MediumLine_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             p.Width = 3;
         }
         private void Btn_BigLine_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             p.Width = 6;
         }
         private void Btn_DrawLine_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 5;
             veHinh.inPolygon = false;
         }
         private void Btn_Ellipse_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 6;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawRect_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 7;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawTriangle_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 8;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawRightTriangle_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 9;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawRoundedRectangle_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 10;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawDiamond_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 11;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawPentagon_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 12;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawHexagon_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 13;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawUpArrow_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 14;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawLeftArrow_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 15;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawRightArrow_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;     
             SelectedMode = 16;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawDownArrow_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 17;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawPolygon_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 18;
             veHinh.inPolygon = false;
         }
         private void Btn_DrawFivePointStar_Click(object sender, EventArgs e)
         {
+            pb_mainScreen.Cursor = Cursors.Default;
+            isCropping = false;
             SelectedMode = 19;
             veHinh.inPolygon = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_color_picker_67, new Size(18, 18));
             Cursor cursor = new Cursor(bitmap.GetHicon());
             pb_mainScreen.Cursor = cursor;
@@ -244,6 +283,7 @@ namespace TNT_Paint
 
         private void button2_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.air_brush, new Size(25, 25));
             Cursor cursor = new Cursor(bitmap.GetHicon());
             pb_mainScreen.Cursor = cursor;
@@ -252,6 +292,7 @@ namespace TNT_Paint
 
         private void button3_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_color_picker_67, new Size(18, 18));
             Cursor cursor = new Cursor(bitmap.GetHicon());
             pb_mainScreen.Cursor = cursor;
@@ -260,6 +301,7 @@ namespace TNT_Paint
 
         private void button4_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_color_picker_67, new Size(18, 18));
             Cursor cursor = new Cursor(bitmap.GetHicon());
             pb_mainScreen.Cursor = cursor;
@@ -267,6 +309,7 @@ namespace TNT_Paint
         }
         private void buttonAddText_Click(object sender, EventArgs e)
         {
+            isCropping = false;
             SelectedMode = 24;
             pb_mainScreen.Cursor = System.Windows.Forms.Cursors.IBeam;
         }
