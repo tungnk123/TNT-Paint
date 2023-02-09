@@ -286,7 +286,7 @@ namespace TNT_Paint
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(253, 64);
+            this.button5.Location = new System.Drawing.Point(253, 59);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(49, 27);
             this.button5.TabIndex = 15;
@@ -297,7 +297,7 @@ namespace TNT_Paint
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(253, 21);
+            this.button13.Location = new System.Drawing.Point(253, 13);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(49, 27);
             this.button13.TabIndex = 14;
@@ -592,7 +592,7 @@ namespace TNT_Paint
             // 
             this.pictureBox2.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(222, 64);
+            this.pictureBox2.Location = new System.Drawing.Point(222, 59);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 27);
             this.pictureBox2.TabIndex = 17;
@@ -602,7 +602,7 @@ namespace TNT_Paint
             // 
             this.pictureBox1.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(222, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(222, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 27);
             this.pictureBox1.TabIndex = 16;

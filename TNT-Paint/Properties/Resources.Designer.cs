@@ -413,6 +413,16 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_erase_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_erase_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_eraser_tool_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eraser-tool-48", resourceCulture);
