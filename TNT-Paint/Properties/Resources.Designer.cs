@@ -513,6 +513,16 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_left_arrow_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-left-arrow-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_opened_folder_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-opened-folder-48", resourceCulture);
@@ -563,6 +573,26 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_replay_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-replay-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_right_arrow_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-right-arrow-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_save_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-save-50", resourceCulture);
@@ -596,6 +626,16 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap icons8_scissors_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-scissors-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
