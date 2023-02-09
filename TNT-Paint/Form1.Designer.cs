@@ -119,8 +119,6 @@ namespace TNT_Paint
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.RichTextBox();
-            this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage_Text = new System.Windows.Forms.TabPage();
             this.btn_Underline = new System.Windows.Forms.Button();
@@ -128,6 +126,8 @@ namespace TNT_Paint
             this.btn_Bold = new System.Windows.Forms.Button();
             this.cb_Size = new System.Windows.Forms.ComboBox();
             this.cb_Font = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.RichTextBox();
+            this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
@@ -142,9 +142,9 @@ namespace TNT_Paint
             this.Panel_size.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPage_Text.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1076,7 +1076,6 @@ namespace TNT_Paint
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.tabControl);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Controls.Add(this.panelDauCham3);
@@ -1089,34 +1088,11 @@ namespace TNT_Paint
             this.panel2.Size = new System.Drawing.Size(958, 470);
             this.panel2.TabIndex = 9;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(335, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 73);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "";
-            this.textBox1.Visible = false;
-            // 
-            // pb_mainScreen
-            // 
-            this.pb_mainScreen.BackColor = System.Drawing.Color.White;
-            this.pb_mainScreen.Location = new System.Drawing.Point(3, 0);
-            this.pb_mainScreen.Name = "pb_mainScreen";
-            this.pb_mainScreen.Size = new System.Drawing.Size(870, 434);
-            this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_mainScreen.TabIndex = 3;
-            this.pb_mainScreen.TabStop = false;
-            this.pb_mainScreen.SizeChanged += new System.EventHandler(this.pb_mainScreen_SizeChanged);
-            this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
-            this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
-            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage_Text);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(409, 74);
+            this.tabControl.Location = new System.Drawing.Point(607, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(336, 125);
@@ -1210,12 +1186,36 @@ namespace TNT_Paint
             this.cb_Font.TabIndex = 0;
             this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(335, 90);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(271, 73);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "";
+            this.textBox1.Visible = false;
+            // 
+            // pb_mainScreen
+            // 
+            this.pb_mainScreen.BackColor = System.Drawing.Color.White;
+            this.pb_mainScreen.Location = new System.Drawing.Point(3, 0);
+            this.pb_mainScreen.Name = "pb_mainScreen";
+            this.pb_mainScreen.Size = new System.Drawing.Size(870, 434);
+            this.pb_mainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_mainScreen.TabIndex = 3;
+            this.pb_mainScreen.TabStop = false;
+            this.pb_mainScreen.SizeChanged += new System.EventHandler(this.pb_mainScreen_SizeChanged);
+            this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
+            this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(958, 595);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -1243,9 +1243,9 @@ namespace TNT_Paint
             this.statusStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPage_Text.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
