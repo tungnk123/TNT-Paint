@@ -231,6 +231,7 @@
     <None Include="Resources\icons8-erase-30.png" />
     <None Include="Resources\air-brush.png" />
     <None Include="Resources\icons8-color-picker-67.png" />
+    <None Include="Resources\icons8-full-screen-64.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

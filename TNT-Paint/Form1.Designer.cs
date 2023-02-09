@@ -129,6 +129,7 @@ namespace TNT_Paint
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -227,6 +228,7 @@ namespace TNT_Paint
             this.zomeInToolStripMenuItem,
             this.zomeOutToolStripMenuItem,
             this.toolStripMenuItem2,
+            this.fullScreenToolStripMenuItem,
             this.toolStripSeparator1,
             this.rulerToolStripMenuItem,
             this.gridlinesToolStripMenuItem,
@@ -1198,6 +1200,15 @@ namespace TNT_Paint
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
+            // fullScreenToolStripMenuItem
+            // 
+            this.fullScreenToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_full_screen_64;
+            this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
+            this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
+            this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.fullScreenToolStripMenuItem.Text = "Full Screen";
+            this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.fullScreenToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1340,6 +1351,7 @@ namespace TNT_Paint
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolStripMenuItem fullScreenToolStripMenuItem;
     }
 }
 

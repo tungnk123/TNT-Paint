@@ -32,7 +32,7 @@ namespace TNT_Paint
         public string tenFileTieuDe = "Untitled";
 
         public bool isGridLine = false;
-
+        public bool isFullScreen = false;
         //
         public static Form1 instance;
 
@@ -1221,7 +1221,21 @@ namespace TNT_Paint
             pb_mainScreen.Image = bm;
         }
 
-
+        private void fullScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!isFullScreen)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+                isFullScreen = true;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.FixedSingle;
+                WindowState = FormWindowState.Normal;
+                isFullScreen = false;
+            }
+        }
 
         private void zomeOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
