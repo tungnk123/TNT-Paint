@@ -61,8 +61,8 @@ namespace TNT_Paint
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.3115F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -85,9 +85,9 @@ namespace TNT_Paint
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(809, 58);
+            this.button1.Location = new System.Drawing.Point(809, 53);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 8;
             this.button1.Text = "search";
             this.button1.UseVisualStyleBackColor = true;
@@ -107,9 +107,9 @@ namespace TNT_Paint
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(390, 100);
+            this.button4.Location = new System.Drawing.Point(427, 77);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(75, 33);
             this.button4.TabIndex = 11;
             this.button4.Text = "@";
             this.button4.UseVisualStyleBackColor = true;
@@ -117,9 +117,9 @@ namespace TNT_Paint
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(263, 100);
+            this.button3.Location = new System.Drawing.Point(262, 77);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 33);
             this.button3.TabIndex = 10;
             this.button3.Text = "-->";
             this.button3.UseVisualStyleBackColor = true;
@@ -127,9 +127,9 @@ namespace TNT_Paint
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(124, 100);
+            this.button2.Location = new System.Drawing.Point(97, 77);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 33);
             this.button2.TabIndex = 9;
             this.button2.Text = "<--";
             this.button2.UseVisualStyleBackColor = true;
@@ -138,9 +138,9 @@ namespace TNT_Paint
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(9, 46);
+            this.textBox1.Location = new System.Drawing.Point(19, 27);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(578, 20);
+            this.textBox1.Size = new System.Drawing.Size(564, 20);
             this.textBox1.TabIndex = 8;
             // 
             // FormOnlineImage
