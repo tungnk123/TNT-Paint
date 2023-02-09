@@ -1076,6 +1076,7 @@ namespace TNT_Paint
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.tabControl);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Controls.Add(this.panelDauCham3);
@@ -1115,7 +1116,7 @@ namespace TNT_Paint
             // 
             this.tabControl.Controls.Add(this.tabPage_Text);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(607, 0);
+            this.tabControl.Location = new System.Drawing.Point(409, 74);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(336, 125);
@@ -1215,7 +1216,6 @@ namespace TNT_Paint
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(958, 595);
-            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -1224,6 +1224,7 @@ namespace TNT_Paint
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TNT Paint";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

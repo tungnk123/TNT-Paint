@@ -54,6 +54,9 @@ namespace TNT_Paint
         bool isBold = false;
         bool isItalic = false;
         bool isUnderline = false;
+
+        public FormWindowState LastWindowState { get; private set; }
+
         public Form1()
         {
             instance = this;
@@ -1452,6 +1455,42 @@ namespace TNT_Paint
             openToolStripMenuItem_Click(sender, e);
         }
 
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (WindowState != LastWindowState)
+            {
+                LastWindowState = WindowState;
+
+
+                if (WindowState == FormWindowState.Maximized)
+                {
+                    Panel_size.Location = new Point(Panel_size.Location.X + 200, Panel_size.Location.Y);
+                    groupBox1.Location = new Point(groupBox1.Location.X + 250, groupBox1.Location.Y);
+                    gb_Shape.Location = new Point(gb_Shape.Location.X + 300, gb_Shape.Location.Y);
+                    pb_ColorTable.Location = new Point(pb_ColorTable.Location.X + 150, pb_ColorTable.Location.Y);
+                    pb_currentColor.Location = new Point(pb_currentColor.Location.X + 140, pb_currentColor.Location.Y);
+                    pictureBox1.Location = new Point(pictureBox1.Location.X + 100, pictureBox1.Location.Y);
+                    pictureBox2.Location = new Point(pictureBox2.Location.X + 100, pictureBox2.Location.Y);
+                    button13.Location = new Point(button13.Location.X + 100, button13.Location.Y);
+                    button5.Location = new Point(button5.Location.X + 100, button5.Location.Y);
+                    button12.Location = new Point(button12.Location.X + 80, button12.Location.Y);
+                }
+                if (WindowState == FormWindowState.Normal)
+                {
+
+                    Panel_size.Location = new Point(Panel_size.Location.X - 200, Panel_size.Location.Y);
+                    groupBox1.Location = new Point(groupBox1.Location.X - 250, groupBox1.Location.Y);
+                    gb_Shape.Location = new Point(gb_Shape.Location.X - 300, gb_Shape.Location.Y);
+                    pb_ColorTable.Location = new Point(pb_ColorTable.Location.X - 150, pb_ColorTable.Location.Y);
+                    pb_currentColor.Location = new Point(pb_currentColor.Location.X - 140, pb_currentColor.Location.Y);
+                    pictureBox1.Location = new Point(pictureBox1.Location.X - 100, pictureBox1.Location.Y);
+                    pictureBox2.Location = new Point(pictureBox2.Location.X - 100, pictureBox2.Location.Y);
+                    button13.Location = new Point(button13.Location.X - 100, button13.Location.Y);
+                    button5.Location = new Point(button5.Location.X - 100, button5.Location.Y);
+                    button12.Location = new Point(button12.Location.X - 80, button12.Location.Y);
+                }
+            }
+        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
