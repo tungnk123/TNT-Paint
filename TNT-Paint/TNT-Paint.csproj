@@ -225,6 +225,9 @@
     <None Include="Resources\brush4.png" />
     <None Include="Resources\icons8-width-48.png" />
     <None Include="Resources\icons8-height-40.png" />
+    <None Include="Resources\icons8-selection-67.png" />
+    <None Include="Resources\icons8-crop-64 %281%29.png" />
+    <None Include="Resources\icons8-drag-48.png" />
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

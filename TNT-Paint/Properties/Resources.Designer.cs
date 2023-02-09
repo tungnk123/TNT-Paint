@@ -373,6 +373,26 @@ namespace TNT_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_crop_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-crop-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_drag_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-drag-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_edit_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-edit-48", resourceCulture);
@@ -536,6 +556,16 @@ namespace TNT_Paint.Properties {
         internal static System.Drawing.Bitmap icons8_scissors_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-scissors-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_selection_67 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-selection-67", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
