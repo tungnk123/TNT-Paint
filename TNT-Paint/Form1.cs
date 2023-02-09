@@ -313,6 +313,12 @@ namespace TNT_Paint
             SelectedMode = 24;
             pb_mainScreen.Cursor = System.Windows.Forms.Cursors.IBeam;
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(TNT_Paint.Properties.Resources.icons8_edit_48, new Size(30, 30));
+            Cursor cursor = new Cursor(bitmap.GetHicon());
+            pb_mainScreen.Cursor = cursor;
+        }
 
 
         #endregion
@@ -1534,6 +1540,7 @@ namespace TNT_Paint
                 }
             }
         }
+
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
