@@ -1495,8 +1495,15 @@ namespace TNT_Paint
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            g.Clear(Color.White);
-            g.DrawImage(Clipboard.GetImage(),pb_mainScreen.Location.X, pb_mainScreen.Location.Y, Clipboard.GetImage().Width, Clipboard.GetImage().Height);
+            try
+            {
+                g.Clear(Color.White);
+                g.DrawImage(Clipboard.GetImage(), pb_mainScreen.Location.X, pb_mainScreen.Location.Y, Clipboard.GetImage().Width, Clipboard.GetImage().Height);
+            }
+            catch
+            {
+                MessageBox.Show("Nothing to paste");
+            }
         }
 
         private void pasteToolStripMenuItem1_Click(object sender, EventArgs e)
