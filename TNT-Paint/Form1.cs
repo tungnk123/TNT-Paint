@@ -1548,6 +1548,11 @@ namespace TNT_Paint
             }
         }
 
+        private void imageFromCameraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCamera form = new FormCamera();
+            form.ShowDialog();
+        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
