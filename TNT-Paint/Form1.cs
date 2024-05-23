@@ -1574,6 +1574,11 @@ namespace TNT_Paint
         {
             toolStripShape.Visible = !toolStripShape.Visible;
         }
+        private void imageFromCameraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCamera form = new FormCamera();
+            form.ShowDialog();
+        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {

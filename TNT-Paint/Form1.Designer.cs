@@ -145,6 +145,7 @@ namespace TNT_Paint
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.imageFromCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -378,7 +379,8 @@ namespace TNT_Paint
             // 
             this.imageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stockImagesToolStripMenuItem,
-            this.onlineImagesToolStripMenuItem});
+            this.onlineImagesToolStripMenuItem,
+            this.imageFromCameraToolStripMenuItem});
             this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
             this.imageToolStripMenuItem.Size = new System.Drawing.Size(72, 27);
             this.imageToolStripMenuItem.Text = "Image";
@@ -387,7 +389,7 @@ namespace TNT_Paint
             // 
             this.stockImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_image_48;
             this.stockImagesToolStripMenuItem.Name = "stockImagesToolStripMenuItem";
-            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(204, 28);
+            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(247, 28);
             this.stockImagesToolStripMenuItem.Text = "Stock Images";
             this.stockImagesToolStripMenuItem.Click += new System.EventHandler(this.stockImagesToolStripMenuItem_Click);
             // 
@@ -395,7 +397,7 @@ namespace TNT_Paint
             // 
             this.onlineImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_internet_connection_50;
             this.onlineImagesToolStripMenuItem.Name = "onlineImagesToolStripMenuItem";
-            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(204, 28);
+            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(247, 28);
             this.onlineImagesToolStripMenuItem.Text = "Online Images";
             this.onlineImagesToolStripMenuItem.Click += new System.EventHandler(this.onlineImagesToolStripMenuItem_Click);
             // 
@@ -1021,21 +1023,6 @@ namespace TNT_Paint
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
             // 
-            // pb_ColorTable
-            // 
-            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
-            this.pb_ColorTable.Location = new System.Drawing.Point(163, 0);
-            this.pb_ColorTable.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_ColorTable.Name = "pb_ColorTable";
-            this.pb_ColorTable.Size = new System.Drawing.Size(285, 123);
-            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ColorTable.TabIndex = 9;
-            this.pb_ColorTable.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
-            this.pb_ColorTable.Visible = false;
-            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
-            // 
             // gb_Shape
             // 
             this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1504,9 +1491,6 @@ namespace TNT_Paint
             this.panel2.Size = new System.Drawing.Size(1277, 578);
             this.panel2.TabIndex = 9;
             // 
-            // textBox1
-            // 
-            // 
             // pb_mainScreen
             // 
             this.pb_mainScreen.BackColor = System.Drawing.Color.White;
@@ -1521,6 +1505,13 @@ namespace TNT_Paint
             this.pb_mainScreen.SizeChanged += new System.EventHandler(this.pb_mainScreen_SizeChanged);
             this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
+            // 
+            // imageFromCameraToolStripMenuItem
+            // 
+            this.imageFromCameraToolStripMenuItem.Name = "imageFromCameraToolStripMenuItem";
+            this.imageFromCameraToolStripMenuItem.Size = new System.Drawing.Size(247, 28);
+            this.imageFromCameraToolStripMenuItem.Text = "Image from Camera";
+            this.imageFromCameraToolStripMenuItem.Click += new System.EventHandler(this.imageFromCameraToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1689,6 +1680,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ToolStripMenuItem imageFromCameraToolStripMenuItem;
     }
 }
 
