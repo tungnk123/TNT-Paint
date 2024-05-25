@@ -55,6 +55,7 @@ namespace TNT_Paint
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onlineImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageFromCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,7 +130,7 @@ namespace TNT_Paint
             this.cb_Font = new System.Windows.Forms.ComboBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.imageFromCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.genMusicFromTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -163,7 +164,7 @@ namespace TNT_Paint
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1437, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1437, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -354,7 +355,8 @@ namespace TNT_Paint
             this.imageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stockImagesToolStripMenuItem,
             this.onlineImagesToolStripMenuItem,
-            this.imageFromCameraToolStripMenuItem});
+            this.imageFromCameraToolStripMenuItem,
+            this.genMusicFromTextToolStripMenuItem});
             this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
             this.imageToolStripMenuItem.Size = new System.Drawing.Size(82, 32);
             this.imageToolStripMenuItem.Text = "Image";
@@ -363,7 +365,7 @@ namespace TNT_Paint
             // 
             this.stockImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_image_48;
             this.stockImagesToolStripMenuItem.Name = "stockImagesToolStripMenuItem";
-            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
+            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(295, 36);
             this.stockImagesToolStripMenuItem.Text = "Stock Images";
             this.stockImagesToolStripMenuItem.Click += new System.EventHandler(this.stockImagesToolStripMenuItem_Click);
             // 
@@ -371,9 +373,16 @@ namespace TNT_Paint
             // 
             this.onlineImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_internet_connection_50;
             this.onlineImagesToolStripMenuItem.Name = "onlineImagesToolStripMenuItem";
-            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
+            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(295, 36);
             this.onlineImagesToolStripMenuItem.Text = "Online Images";
             this.onlineImagesToolStripMenuItem.Click += new System.EventHandler(this.onlineImagesToolStripMenuItem_Click);
+            // 
+            // imageFromCameraToolStripMenuItem
+            // 
+            this.imageFromCameraToolStripMenuItem.Name = "imageFromCameraToolStripMenuItem";
+            this.imageFromCameraToolStripMenuItem.Size = new System.Drawing.Size(295, 36);
+            this.imageFromCameraToolStripMenuItem.Text = "Image from Camera";
+            this.imageFromCameraToolStripMenuItem.Click += new System.EventHandler(this.imageFromCameraToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -493,7 +502,7 @@ namespace TNT_Paint
             this.panel1.Controls.Add(this.Btn_Eraser);
             this.panel1.Controls.Add(this.Btn_Pencil);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 38);
+            this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1437, 154);
@@ -1076,7 +1085,7 @@ namespace TNT_Paint
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 691);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 693);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -1115,10 +1124,10 @@ namespace TNT_Paint
             this.panel2.Controls.Add(this.panelDauCham1);
             this.panel2.Controls.Add(this.pb_mainScreen);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 192);
+            this.panel2.Location = new System.Drawing.Point(0, 190);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1437, 723);
+            this.panel2.Size = new System.Drawing.Size(1437, 725);
             this.panel2.TabIndex = 9;
             // 
             // textBox1
@@ -1251,12 +1260,12 @@ namespace TNT_Paint
             this.cb_Font.TabIndex = 0;
             this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
             // 
-            // imageFromCameraToolStripMenuItem
+            // genMusicFromTextToolStripMenuItem
             // 
-            this.imageFromCameraToolStripMenuItem.Name = "imageFromCameraToolStripMenuItem";
-            this.imageFromCameraToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
-            this.imageFromCameraToolStripMenuItem.Text = "Image from Camera";
-            this.imageFromCameraToolStripMenuItem.Click += new System.EventHandler(this.imageFromCameraToolStripMenuItem_Click);
+            this.genMusicFromTextToolStripMenuItem.Name = "genMusicFromTextToolStripMenuItem";
+            this.genMusicFromTextToolStripMenuItem.Size = new System.Drawing.Size(295, 36);
+            this.genMusicFromTextToolStripMenuItem.Text = "Gen Music From Text";
+            this.genMusicFromTextToolStripMenuItem.Click += new System.EventHandler(this.genMusicFromTextToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1404,6 +1413,7 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.ToolStripMenuItem fullScreenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageFromCameraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem genMusicFromTextToolStripMenuItem;
     }
 }
 
