@@ -1580,6 +1580,12 @@ namespace TNT_Paint
             form.ShowDialog();
         }
 
+        private void genMusicFromTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGemini form = new FormGemini();
+            form.ShowDialog();
+        }
+
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Btn_Clear_Click(sender, e);
