@@ -1548,6 +1548,23 @@ namespace TNT_Paint
             }
         }
 
+        private void ptbSizeDrop_Click(object sender, EventArgs e)
+        {
+            Panel_size.BringToFront();
+            Panel_size.Visible = !Panel_size.Visible;
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            pb_ColorTable.BringToFront();
+            pb_ColorTable.Visible = !pb_ColorTable.Visible;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            toolStripShape.Visible = !toolStripShape.Visible;
+        }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
