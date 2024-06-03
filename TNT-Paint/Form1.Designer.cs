@@ -67,6 +67,14 @@ namespace TNT_Paint
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Btn_Pencil = new System.Windows.Forms.Button();
+            this.buttonAddText = new System.Windows.Forms.Button();
+            this.Btn_ColorPicker = new System.Windows.Forms.Button();
+            this.Btn_Eraser = new System.Windows.Forms.Button();
+            this.Btn_Fill = new System.Windows.Forms.Button();
+            this.Btn_ColorDialog = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -75,6 +83,14 @@ namespace TNT_Paint
             this.button13 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button12 = new System.Windows.Forms.Button();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPage_Text = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.cb_Size = new System.Windows.Forms.ComboBox();
+            this.btn_Underline = new System.Windows.Forms.Button();
+            this.btn_Bold = new System.Windows.Forms.Button();
+            this.btn_Italic = new System.Windows.Forms.Button();
+            this.cb_Font = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.pb_currentColor = new System.Windows.Forms.PictureBox();
@@ -85,12 +101,13 @@ namespace TNT_Paint
             this.btn_SmallLine = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ptbSizeDrop = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
             this.gb_Shape = new System.Windows.Forms.GroupBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripShape = new System.Windows.Forms.ToolStrip();
             this.Btn_DrawLine = new System.Windows.Forms.ToolStripButton();
             this.Btn_Ellipse = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRect = new System.Windows.Forms.ToolStripButton();
@@ -106,27 +123,12 @@ namespace TNT_Paint
             this.Btn_DrawRightArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawDownArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawFivePointStar = new System.Windows.Forms.ToolStripButton();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage_Text = new System.Windows.Forms.TabPage();
-            this.btn_Underline = new System.Windows.Forms.Button();
-            this.btn_Italic = new System.Windows.Forms.Button();
-            this.btn_Bold = new System.Windows.Forms.Button();
-            this.cb_Size = new System.Windows.Forms.ComboBox();
-            this.cb_Font = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Btn_Pencil = new System.Windows.Forms.Button();
-            this.buttonAddText = new System.Windows.Forms.Button();
-            this.Btn_ColorPicker = new System.Windows.Forms.Button();
-            this.Btn_Eraser = new System.Windows.Forms.Button();
-            this.Btn_Fill = new System.Windows.Forms.Button();
-            this.Btn_ColorDialog = new System.Windows.Forms.Button();
-            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -142,36 +144,33 @@ namespace TNT_Paint
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.tabPage_Text.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
             this.Panel_size.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.gb_Shape.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPage_Text.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
+            this.toolStripShape.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -502,8 +501,8 @@ namespace TNT_Paint
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.tabControl);
             this.panel1.Controls.Add(this.pb_ColorTable);
+            this.panel1.Controls.Add(this.tabControl);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.gb_Shape);
@@ -514,6 +513,136 @@ namespace TNT_Paint
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1277, 123);
             this.panel1.TabIndex = 1;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.tableLayoutPanel2);
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(162, 122);
+            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tools";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.Btn_Pencil, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.buttonAddText, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_ColorPicker, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_Eraser, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_Fill, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_ColorDialog, 2, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(9, 17);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(144, 96);
+            this.tableLayoutPanel2.TabIndex = 26;
+            // 
+            // Btn_Pencil
+            // 
+            this.Btn_Pencil.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_edit_481;
+            this.Btn_Pencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Pencil.FlatAppearance.BorderSize = 0;
+            this.Btn_Pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Pencil.Location = new System.Drawing.Point(5, 5);
+            this.Btn_Pencil.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Pencil.Name = "Btn_Pencil";
+            this.Btn_Pencil.Size = new System.Drawing.Size(37, 38);
+            this.Btn_Pencil.TabIndex = 0;
+            this.Btn_Pencil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_Pencil, "Pencil");
+            this.Btn_Pencil.UseVisualStyleBackColor = true;
+            this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
+            // 
+            // buttonAddText
+            // 
+            this.buttonAddText.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_add_text_50;
+            this.buttonAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAddText.FlatAppearance.BorderSize = 0;
+            this.buttonAddText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.buttonAddText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddText.Location = new System.Drawing.Point(52, 5);
+            this.buttonAddText.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAddText.Name = "buttonAddText";
+            this.buttonAddText.Size = new System.Drawing.Size(37, 38);
+            this.buttonAddText.TabIndex = 12;
+            this.buttonAddText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.buttonAddText, "Add text");
+            this.buttonAddText.UseVisualStyleBackColor = true;
+            this.buttonAddText.Click += new System.EventHandler(this.buttonAddText_Click);
+            // 
+            // Btn_ColorPicker
+            // 
+            this.Btn_ColorPicker.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_color_dropper_481;
+            this.Btn_ColorPicker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_ColorPicker.FlatAppearance.BorderSize = 0;
+            this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorPicker.Location = new System.Drawing.Point(99, 5);
+            this.Btn_ColorPicker.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_ColorPicker.Name = "Btn_ColorPicker";
+            this.Btn_ColorPicker.Size = new System.Drawing.Size(38, 38);
+            this.Btn_ColorPicker.TabIndex = 2;
+            this.Btn_ColorPicker.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorPicker, "Color Picker");
+            this.Btn_ColorPicker.UseVisualStyleBackColor = true;
+            this.Btn_ColorPicker.Click += new System.EventHandler(this.Btn_ColorPicker_Click);
+            // 
+            // Btn_Eraser
+            // 
+            this.Btn_Eraser.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_eraser_tool_48;
+            this.Btn_Eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Eraser.FlatAppearance.BorderSize = 0;
+            this.Btn_Eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Eraser.Location = new System.Drawing.Point(5, 53);
+            this.Btn_Eraser.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Eraser.Name = "Btn_Eraser";
+            this.Btn_Eraser.Size = new System.Drawing.Size(37, 38);
+            this.Btn_Eraser.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.Btn_Eraser, "Eraser");
+            this.Btn_Eraser.UseVisualStyleBackColor = true;
+            this.Btn_Eraser.Click += new System.EventHandler(this.Btn_Eraser_Click);
+            // 
+            // Btn_Fill
+            // 
+            this.Btn_Fill.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_fill_color_64;
+            this.Btn_Fill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Fill.FlatAppearance.BorderSize = 0;
+            this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Fill.Location = new System.Drawing.Point(52, 53);
+            this.Btn_Fill.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Fill.Name = "Btn_Fill";
+            this.Btn_Fill.Size = new System.Drawing.Size(37, 38);
+            this.Btn_Fill.TabIndex = 4;
+            this.Btn_Fill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_Fill, "Fill With Color");
+            this.Btn_Fill.UseVisualStyleBackColor = true;
+            this.Btn_Fill.Click += new System.EventHandler(this.Btn_Fill_Click);
+            // 
+            // Btn_ColorDialog
+            // 
+            this.Btn_ColorDialog.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_artist_palette_48;
+            this.Btn_ColorDialog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_ColorDialog.FlatAppearance.BorderSize = 0;
+            this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorDialog.Location = new System.Drawing.Point(99, 53);
+            this.Btn_ColorDialog.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_ColorDialog.Name = "Btn_ColorDialog";
+            this.Btn_ColorDialog.Size = new System.Drawing.Size(38, 38);
+            this.Btn_ColorDialog.TabIndex = 5;
+            this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
+            this.Btn_ColorDialog.UseVisualStyleBackColor = true;
+            this.Btn_ColorDialog.Click += new System.EventHandler(this.Btn_ColorDialog_Click);
             // 
             // groupBox3
             // 
@@ -623,11 +752,140 @@ namespace TNT_Paint
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPage_Text);
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(989, 0);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(283, 123);
+            this.tabControl.TabIndex = 9;
+            this.tabControl.Visible = false;
+            this.tabControl.VisibleChanged += new System.EventHandler(this.tabControl_VisibleChanged);
+            // 
+            // tabPage_Text
+            // 
+            this.tabPage_Text.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tabPage_Text.Controls.Add(this.tableLayoutPanel3);
+            this.tabPage_Text.Controls.Add(this.cb_Font);
+            this.tabPage_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage_Text.ForeColor = System.Drawing.Color.Black;
+            this.tabPage_Text.Location = new System.Drawing.Point(4, 29);
+            this.tabPage_Text.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage_Text.Name = "tabPage_Text";
+            this.tabPage_Text.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage_Text.Size = new System.Drawing.Size(275, 90);
+            this.tabPage_Text.TabIndex = 1;
+            this.tabPage_Text.Text = "Text";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.cb_Size, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Underline, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Bold, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Italic, 2, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 47);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(257, 43);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // cb_Size
+            // 
+            this.cb_Size.BackColor = System.Drawing.Color.White;
+            this.cb_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Size.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Size.FormattingEnabled = true;
+            this.cb_Size.Items.AddRange(new object[] {
+            "8",
+            "9",
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20",
+            "22",
+            "24",
+            "26",
+            "28",
+            "36",
+            "48",
+            "72"});
+            this.cb_Size.Location = new System.Drawing.Point(4, 4);
+            this.cb_Size.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_Size.Name = "cb_Size";
+            this.cb_Size.Size = new System.Drawing.Size(94, 33);
+            this.cb_Size.TabIndex = 1;
+            this.cb_Size.SelectedIndexChanged += new System.EventHandler(this.cb_Size_SelectedIndexChanged);
+            // 
+            // btn_Underline
+            // 
+            this.btn_Underline.FlatAppearance.BorderSize = 0;
+            this.btn_Underline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Underline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Underline.Location = new System.Drawing.Point(208, 4);
+            this.btn_Underline.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Underline.Name = "btn_Underline";
+            this.btn_Underline.Size = new System.Drawing.Size(45, 35);
+            this.btn_Underline.TabIndex = 4;
+            this.btn_Underline.Text = "U";
+            this.btn_Underline.UseVisualStyleBackColor = true;
+            this.btn_Underline.Click += new System.EventHandler(this.btn_Underline_Click);
+            // 
+            // btn_Bold
+            // 
+            this.btn_Bold.FlatAppearance.BorderSize = 0;
+            this.btn_Bold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Bold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bold.Location = new System.Drawing.Point(106, 4);
+            this.btn_Bold.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Bold.Name = "btn_Bold";
+            this.btn_Bold.Size = new System.Drawing.Size(43, 35);
+            this.btn_Bold.TabIndex = 2;
+            this.btn_Bold.Text = "B";
+            this.btn_Bold.UseVisualStyleBackColor = true;
+            this.btn_Bold.Click += new System.EventHandler(this.btn_Bold_Click);
+            // 
+            // btn_Italic
+            // 
+            this.btn_Italic.FlatAppearance.BorderSize = 0;
+            this.btn_Italic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Italic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Italic.Location = new System.Drawing.Point(157, 4);
+            this.btn_Italic.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Italic.Name = "btn_Italic";
+            this.btn_Italic.Size = new System.Drawing.Size(43, 35);
+            this.btn_Italic.TabIndex = 3;
+            this.btn_Italic.Text = "I";
+            this.btn_Italic.UseVisualStyleBackColor = true;
+            this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
+            // 
+            // cb_Font
+            // 
+            this.cb_Font.BackColor = System.Drawing.Color.White;
+            this.cb_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Font.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Font.FormattingEnabled = true;
+            this.cb_Font.Location = new System.Drawing.Point(12, 8);
+            this.cb_Font.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_Font.Name = "cb_Font";
+            this.cb_Font.Size = new System.Drawing.Size(253, 33);
+            this.cb_Font.TabIndex = 0;
+            this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.pb_currentColor);
-            this.groupBox2.Controls.Add(this.Panel_size);
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Location = new System.Drawing.Point(463, 3);
             this.groupBox2.Name = "groupBox2";
@@ -651,6 +909,7 @@ namespace TNT_Paint
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.button6, "Selection\r\n\r\nChọn một phần của ảnh.");
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pb_currentColor
             // 
@@ -665,61 +924,68 @@ namespace TNT_Paint
             // 
             // Panel_size
             // 
-            this.Panel_size.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Panel_size.BackColor = System.Drawing.Color.White;
+            this.Panel_size.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Panel_size.Controls.Add(this.label1);
             this.Panel_size.Controls.Add(this.Btn_BigLine);
             this.Panel_size.Controls.Add(this.Btn_MediumLine);
             this.Panel_size.Controls.Add(this.btn_SmallLine);
-            this.Panel_size.Location = new System.Drawing.Point(31, 65);
+            this.Panel_size.Location = new System.Drawing.Point(464, 7);
             this.Panel_size.Margin = new System.Windows.Forms.Padding(4);
             this.Panel_size.Name = "Panel_size";
-            this.Panel_size.Size = new System.Drawing.Size(121, 123);
+            this.Panel_size.Size = new System.Drawing.Size(184, 115);
             this.Panel_size.TabIndex = 7;
             this.Panel_size.Visible = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 96);
+            this.label1.Location = new System.Drawing.Point(0, 93);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 20);
+            this.label1.Size = new System.Drawing.Size(182, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Size";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Btn_BigLine
             // 
-            this.Btn_BigLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Btn_BigLine.Image = global::TNT_Paint.Properties.Resources.BigLine;
-            this.Btn_BigLine.Location = new System.Drawing.Point(4, 68);
+            this.Btn_BigLine.BackgroundImage = global::TNT_Paint.Properties.Resources.BigLine;
+            this.Btn_BigLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_BigLine.FlatAppearance.BorderSize = 0;
+            this.Btn_BigLine.Location = new System.Drawing.Point(0, 54);
             this.Btn_BigLine.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_BigLine.Name = "Btn_BigLine";
-            this.Btn_BigLine.Size = new System.Drawing.Size(113, 27);
+            this.Btn_BigLine.Size = new System.Drawing.Size(182, 27);
             this.Btn_BigLine.TabIndex = 2;
             this.Btn_BigLine.UseVisualStyleBackColor = true;
             this.Btn_BigLine.Click += new System.EventHandler(this.Btn_BigLine_Click);
             // 
             // Btn_MediumLine
             // 
-            this.Btn_MediumLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Btn_MediumLine.Image = global::TNT_Paint.Properties.Resources.MediumLine;
-            this.Btn_MediumLine.Location = new System.Drawing.Point(4, 37);
+            this.Btn_MediumLine.BackgroundImage = global::TNT_Paint.Properties.Resources.MediumLine;
+            this.Btn_MediumLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_MediumLine.FlatAppearance.BorderSize = 0;
+            this.Btn_MediumLine.Location = new System.Drawing.Point(0, 27);
             this.Btn_MediumLine.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_MediumLine.Name = "Btn_MediumLine";
-            this.Btn_MediumLine.Size = new System.Drawing.Size(113, 27);
+            this.Btn_MediumLine.Padding = new System.Windows.Forms.Padding(10);
+            this.Btn_MediumLine.Size = new System.Drawing.Size(182, 27);
             this.Btn_MediumLine.TabIndex = 1;
             this.Btn_MediumLine.UseVisualStyleBackColor = true;
             this.Btn_MediumLine.Click += new System.EventHandler(this.Btn_MediumLine_Click);
             // 
             // btn_SmallLine
             // 
-            this.btn_SmallLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_SmallLine.Image = global::TNT_Paint.Properties.Resources.Small_line;
-            this.btn_SmallLine.Location = new System.Drawing.Point(4, 6);
+            this.btn_SmallLine.BackgroundImage = global::TNT_Paint.Properties.Resources.Small_line;
+            this.btn_SmallLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SmallLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_SmallLine.FlatAppearance.BorderSize = 0;
+            this.btn_SmallLine.Location = new System.Drawing.Point(0, 0);
             this.btn_SmallLine.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SmallLine.Name = "btn_SmallLine";
-            this.btn_SmallLine.Size = new System.Drawing.Size(113, 27);
+            this.btn_SmallLine.Size = new System.Drawing.Size(182, 27);
             this.btn_SmallLine.TabIndex = 0;
             this.btn_SmallLine.UseVisualStyleBackColor = true;
             this.btn_SmallLine.Click += new System.EventHandler(this.btn_SmallLine_Click);
@@ -727,7 +993,7 @@ namespace TNT_Paint
             // panel4
             // 
             this.panel4.Controls.Add(this.button8);
-            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Controls.Add(this.ptbSizeDrop);
             this.panel4.Location = new System.Drawing.Point(1, 76);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(222, 33);
@@ -751,18 +1017,19 @@ namespace TNT_Paint
             this.toolTip1.SetToolTip(this.button8, "Selection\r\n\r\nChọn một phần của ảnh.");
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // pictureBox3
+            // ptbSizeDrop
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox3.Image = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
-            this.pictureBox3.Location = new System.Drawing.Point(184, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox3.Size = new System.Drawing.Size(38, 33);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 24;
-            this.pictureBox3.TabStop = false;
+            this.ptbSizeDrop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbSizeDrop.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbSizeDrop.Image = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
+            this.ptbSizeDrop.Location = new System.Drawing.Point(184, 0);
+            this.ptbSizeDrop.Name = "ptbSizeDrop";
+            this.ptbSizeDrop.Padding = new System.Windows.Forms.Padding(10);
+            this.ptbSizeDrop.Size = new System.Drawing.Size(38, 33);
+            this.ptbSizeDrop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSizeDrop.TabIndex = 24;
+            this.ptbSizeDrop.TabStop = false;
+            this.ptbSizeDrop.Click += new System.EventHandler(this.ptbSizeDrop_Click);
             // 
             // panel5
             // 
@@ -791,6 +1058,7 @@ namespace TNT_Paint
             this.button7.TabIndex = 14;
             this.toolTip1.SetToolTip(this.button7, "Xem danh sách hình thể");
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox4
             // 
@@ -805,9 +1073,23 @@ namespace TNT_Paint
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
             // 
+            // pb_ColorTable
+            // 
+            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
+            this.pb_ColorTable.Location = new System.Drawing.Point(163, 0);
+            this.pb_ColorTable.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_ColorTable.Name = "pb_ColorTable";
+            this.pb_ColorTable.Size = new System.Drawing.Size(285, 123);
+            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ColorTable.TabIndex = 9;
+            this.pb_ColorTable.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
+            this.pb_ColorTable.Visible = false;
+            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
+            // 
             // gb_Shape
             // 
-            this.gb_Shape.Controls.Add(this.toolStrip1);
             this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_Shape.Location = new System.Drawing.Point(853, 2);
             this.gb_Shape.Margin = new System.Windows.Forms.Padding(4);
@@ -818,10 +1100,11 @@ namespace TNT_Paint
             this.gb_Shape.TabStop = false;
             this.gb_Shape.Text = "Shapes";
             // 
-            // toolStrip1
+            // toolStripShape
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripShape.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripShape.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripShape.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Btn_DrawLine,
             this.Btn_Ellipse,
             this.Btn_DrawRect,
@@ -837,13 +1120,13 @@ namespace TNT_Paint
             this.Btn_DrawRightArrow,
             this.Btn_DrawDownArrow,
             this.Btn_DrawFivePointStar});
-            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolStrip1.Location = new System.Drawing.Point(4, 19);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(120, 112);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.Visible = false;
+            this.toolStripShape.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStripShape.Location = new System.Drawing.Point(730, 4);
+            this.toolStripShape.Name = "toolStripShape";
+            this.toolStripShape.Size = new System.Drawing.Size(415, 28);
+            this.toolStripShape.TabIndex = 0;
+            this.toolStripShape.Text = "toolStrip1";
+            this.toolStripShape.Visible = false;
             // 
             // Btn_DrawLine
             // 
@@ -1024,118 +1307,6 @@ namespace TNT_Paint
             this.Btn_DrawFivePointStar.ToolTipText = "Five Point Star";
             this.Btn_DrawFivePointStar.Click += new System.EventHandler(this.Btn_DrawFivePointStar_Click);
             // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabPage_Text);
-            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(989, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(283, 123);
-            this.tabControl.TabIndex = 9;
-            this.tabControl.Visible = false;
-            this.tabControl.VisibleChanged += new System.EventHandler(this.tabControl_VisibleChanged);
-            // 
-            // tabPage_Text
-            // 
-            this.tabPage_Text.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tabPage_Text.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage_Text.Controls.Add(this.cb_Font);
-            this.tabPage_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage_Text.ForeColor = System.Drawing.Color.Black;
-            this.tabPage_Text.Location = new System.Drawing.Point(4, 29);
-            this.tabPage_Text.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage_Text.Name = "tabPage_Text";
-            this.tabPage_Text.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage_Text.Size = new System.Drawing.Size(275, 90);
-            this.tabPage_Text.TabIndex = 1;
-            this.tabPage_Text.Text = "Text";
-            // 
-            // btn_Underline
-            // 
-            this.btn_Underline.FlatAppearance.BorderSize = 0;
-            this.btn_Underline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Underline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Underline.Location = new System.Drawing.Point(208, 4);
-            this.btn_Underline.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Underline.Name = "btn_Underline";
-            this.btn_Underline.Size = new System.Drawing.Size(45, 35);
-            this.btn_Underline.TabIndex = 4;
-            this.btn_Underline.Text = "U";
-            this.btn_Underline.UseVisualStyleBackColor = true;
-            this.btn_Underline.Click += new System.EventHandler(this.btn_Underline_Click);
-            // 
-            // btn_Italic
-            // 
-            this.btn_Italic.FlatAppearance.BorderSize = 0;
-            this.btn_Italic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Italic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Italic.Location = new System.Drawing.Point(157, 4);
-            this.btn_Italic.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Italic.Name = "btn_Italic";
-            this.btn_Italic.Size = new System.Drawing.Size(43, 35);
-            this.btn_Italic.TabIndex = 3;
-            this.btn_Italic.Text = "I";
-            this.btn_Italic.UseVisualStyleBackColor = true;
-            this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
-            // 
-            // btn_Bold
-            // 
-            this.btn_Bold.FlatAppearance.BorderSize = 0;
-            this.btn_Bold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Bold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bold.Location = new System.Drawing.Point(106, 4);
-            this.btn_Bold.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Bold.Name = "btn_Bold";
-            this.btn_Bold.Size = new System.Drawing.Size(43, 35);
-            this.btn_Bold.TabIndex = 2;
-            this.btn_Bold.Text = "B";
-            this.btn_Bold.UseVisualStyleBackColor = true;
-            this.btn_Bold.Click += new System.EventHandler(this.btn_Bold_Click);
-            // 
-            // cb_Size
-            // 
-            this.cb_Size.BackColor = System.Drawing.Color.White;
-            this.cb_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Size.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Size.FormattingEnabled = true;
-            this.cb_Size.Items.AddRange(new object[] {
-            "8",
-            "9",
-            "10",
-            "12",
-            "14",
-            "16",
-            "18",
-            "20",
-            "22",
-            "24",
-            "26",
-            "28",
-            "36",
-            "48",
-            "72"});
-            this.cb_Size.Location = new System.Drawing.Point(4, 4);
-            this.cb_Size.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Size.Name = "cb_Size";
-            this.cb_Size.Size = new System.Drawing.Size(94, 33);
-            this.cb_Size.TabIndex = 1;
-            this.cb_Size.SelectedIndexChanged += new System.EventHandler(this.cb_Size_SelectedIndexChanged);
-            // 
-            // cb_Font
-            // 
-            this.cb_Font.BackColor = System.Drawing.Color.White;
-            this.cb_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Font.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Font.FormattingEnabled = true;
-            this.cb_Font.Location = new System.Drawing.Point(12, 8);
-            this.cb_Font.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Font.Name = "cb_Font";
-            this.cb_Font.Size = new System.Drawing.Size(253, 33);
-            this.cb_Font.TabIndex = 0;
-            this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
@@ -1218,141 +1389,6 @@ namespace TNT_Paint
             this.toolTip1.SetToolTip(this.button2, "Air Brush");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.Btn_Pencil, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.buttonAddText, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Btn_ColorPicker, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Btn_Eraser, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.Btn_Fill, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.Btn_ColorDialog, 2, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(9, 17);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(144, 96);
-            this.tableLayoutPanel2.TabIndex = 26;
-            // 
-            // Btn_Pencil
-            // 
-            this.Btn_Pencil.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_edit_481;
-            this.Btn_Pencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Pencil.FlatAppearance.BorderSize = 0;
-            this.Btn_Pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Pencil.Location = new System.Drawing.Point(5, 5);
-            this.Btn_Pencil.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Pencil.Name = "Btn_Pencil";
-            this.Btn_Pencil.Size = new System.Drawing.Size(37, 38);
-            this.Btn_Pencil.TabIndex = 0;
-            this.Btn_Pencil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_Pencil, "Pencil");
-            this.Btn_Pencil.UseVisualStyleBackColor = true;
-            this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
-            // 
-            // buttonAddText
-            // 
-            this.buttonAddText.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_add_text_50;
-            this.buttonAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAddText.FlatAppearance.BorderSize = 0;
-            this.buttonAddText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonAddText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddText.Location = new System.Drawing.Point(52, 5);
-            this.buttonAddText.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonAddText.Name = "buttonAddText";
-            this.buttonAddText.Size = new System.Drawing.Size(37, 38);
-            this.buttonAddText.TabIndex = 12;
-            this.buttonAddText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.buttonAddText, "Add text");
-            this.buttonAddText.UseVisualStyleBackColor = true;
-            this.buttonAddText.Click += new System.EventHandler(this.buttonAddText_Click);
-            // 
-            // Btn_ColorPicker
-            // 
-            this.Btn_ColorPicker.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_color_dropper_481;
-            this.Btn_ColorPicker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_ColorPicker.FlatAppearance.BorderSize = 0;
-            this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ColorPicker.Location = new System.Drawing.Point(99, 5);
-            this.Btn_ColorPicker.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_ColorPicker.Name = "Btn_ColorPicker";
-            this.Btn_ColorPicker.Size = new System.Drawing.Size(38, 38);
-            this.Btn_ColorPicker.TabIndex = 2;
-            this.Btn_ColorPicker.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_ColorPicker, "Color Picker");
-            this.Btn_ColorPicker.UseVisualStyleBackColor = true;
-            this.Btn_ColorPicker.Click += new System.EventHandler(this.Btn_ColorPicker_Click);
-            // 
-            // Btn_Eraser
-            // 
-            this.Btn_Eraser.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_eraser_tool_48;
-            this.Btn_Eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Eraser.FlatAppearance.BorderSize = 0;
-            this.Btn_Eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Eraser.Location = new System.Drawing.Point(5, 53);
-            this.Btn_Eraser.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Eraser.Name = "Btn_Eraser";
-            this.Btn_Eraser.Size = new System.Drawing.Size(37, 38);
-            this.Btn_Eraser.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.Btn_Eraser, "Eraser");
-            this.Btn_Eraser.UseVisualStyleBackColor = true;
-            this.Btn_Eraser.Click += new System.EventHandler(this.Btn_Eraser_Click);
-            // 
-            // Btn_Fill
-            // 
-            this.Btn_Fill.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_fill_color_64;
-            this.Btn_Fill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Fill.FlatAppearance.BorderSize = 0;
-            this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Fill.Location = new System.Drawing.Point(52, 53);
-            this.Btn_Fill.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Fill.Name = "Btn_Fill";
-            this.Btn_Fill.Size = new System.Drawing.Size(37, 38);
-            this.Btn_Fill.TabIndex = 4;
-            this.Btn_Fill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_Fill, "Fill With Color");
-            this.Btn_Fill.UseVisualStyleBackColor = true;
-            this.Btn_Fill.Click += new System.EventHandler(this.Btn_Fill_Click);
-            // 
-            // Btn_ColorDialog
-            // 
-            this.Btn_ColorDialog.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_artist_palette_48;
-            this.Btn_ColorDialog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_ColorDialog.FlatAppearance.BorderSize = 0;
-            this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ColorDialog.Location = new System.Drawing.Point(99, 53);
-            this.Btn_ColorDialog.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_ColorDialog.Name = "Btn_ColorDialog";
-            this.Btn_ColorDialog.Size = new System.Drawing.Size(38, 38);
-            this.Btn_ColorDialog.TabIndex = 5;
-            this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
-            this.Btn_ColorDialog.UseVisualStyleBackColor = true;
-            this.Btn_ColorDialog.Click += new System.EventHandler(this.Btn_ColorDialog_Click);
-            // 
-            // pb_ColorTable
-            // 
-            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
-            this.pb_ColorTable.Location = new System.Drawing.Point(531, 64);
-            this.pb_ColorTable.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_ColorTable.Name = "pb_ColorTable";
-            this.pb_ColorTable.Size = new System.Drawing.Size(285, 123);
-            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ColorTable.TabIndex = 9;
-            this.pb_ColorTable.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
-            this.pb_ColorTable.Visible = false;
-            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
             // 
             // timer1
             // 
@@ -1437,6 +1473,8 @@ namespace TNT_Paint
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.toolStripShape);
+            this.panel2.Controls.Add(this.Panel_size);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Controls.Add(this.panelDauCham3);
@@ -1453,7 +1491,7 @@ namespace TNT_Paint
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(447, 111);
+            this.textBox1.Location = new System.Drawing.Point(318, 208);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(360, 89);
@@ -1476,34 +1514,6 @@ namespace TNT_Paint
             this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.cb_Size, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_Underline, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_Bold, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_Italic, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 47);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(257, 43);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox4.Location = new System.Drawing.Point(3, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(162, 122);
-            this.groupBox4.TabIndex = 31;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tools";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1524,37 +1534,34 @@ namespace TNT_Paint
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.tabPage_Text.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).EndInit();
             this.Panel_size.ResumeLayout(false);
-            this.Panel_size.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.gb_Shape.ResumeLayout(false);
-            this.gb_Shape.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPage_Text.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
+            this.toolStripShape.ResumeLayout(false);
+            this.toolStripShape.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1598,7 +1605,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Button Btn_ColorDialog;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.GroupBox gb_Shape;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStripShape;
         private System.Windows.Forms.ToolStripButton Btn_DrawLine;
         private System.Windows.Forms.ToolStripButton Btn_Ellipse;
         private System.Windows.Forms.ToolStripButton Btn_DrawRect;
@@ -1662,7 +1669,7 @@ namespace TNT_Paint
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox ptbSizeDrop;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox1;
