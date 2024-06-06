@@ -7,5 +7,5 @@ các chức năng thêm như chỉnh sửa ảnh cơ bản, thêm kho ảnh lưu
 trên Internet về máy.
 
 Thành viên thực hiện:
-  - Đàm Thành Nam
   - Đoàn Thanh Tùng
+  - Lê Khai Trí
