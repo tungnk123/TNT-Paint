@@ -58,6 +58,7 @@ namespace TNT_Paint
             this.stockImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onlineImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageFromCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.genMusicFromTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,7 +147,8 @@ namespace TNT_Paint
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.genMusicFromTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareImagesOnFacebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareImagesOnFacebookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -187,7 +189,8 @@ namespace TNT_Paint
             this.toolsToolStripMenuItem,
             this.imageToolStripMenuItem,
             this.viewToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.shareImagesOnFacebookToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1277, 31);
@@ -410,6 +413,13 @@ namespace TNT_Paint
             this.imageFromCameraToolStripMenuItem.Text = "Image from Camera";
             this.imageFromCameraToolStripMenuItem.Click += new System.EventHandler(this.imageFromCameraToolStripMenuItem_Click);
             // 
+            // genMusicFromTextToolStripMenuItem
+            // 
+            this.genMusicFromTextToolStripMenuItem.Name = "genMusicFromTextToolStripMenuItem";
+            this.genMusicFromTextToolStripMenuItem.Size = new System.Drawing.Size(253, 28);
+            this.genMusicFromTextToolStripMenuItem.Text = "Gen Music From Text";
+            this.genMusicFromTextToolStripMenuItem.Click += new System.EventHandler(this.genMusicFromTextToolStripMenuItem_Click);
+            // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -496,7 +506,7 @@ namespace TNT_Paint
             // 
             this.informationToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.personal_infor;
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.informationToolStripMenuItem.Text = "Information";
             this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
@@ -504,7 +514,7 @@ namespace TNT_Paint
             // 
             this.aboutToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_about_481;
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(184, 28);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -1515,12 +1525,20 @@ namespace TNT_Paint
             this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
-            // genMusicFromTextToolStripMenuItem
+            // shareImagesOnFacebookToolStripMenuItem
             // 
-            this.genMusicFromTextToolStripMenuItem.Name = "genMusicFromTextToolStripMenuItem";
-            this.genMusicFromTextToolStripMenuItem.Size = new System.Drawing.Size(253, 28);
-            this.genMusicFromTextToolStripMenuItem.Text = "Gen Music From Text";
-            this.genMusicFromTextToolStripMenuItem.Click += new System.EventHandler(this.genMusicFromTextToolStripMenuItem_Click);
+            this.shareImagesOnFacebookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shareImagesOnFacebookToolStripMenuItem1});
+            this.shareImagesOnFacebookToolStripMenuItem.Name = "shareImagesOnFacebookToolStripMenuItem";
+            this.shareImagesOnFacebookToolStripMenuItem.Size = new System.Drawing.Size(67, 27);
+            this.shareImagesOnFacebookToolStripMenuItem.Text = "Share";
+            // 
+            // shareImagesOnFacebookToolStripMenuItem1
+            // 
+            this.shareImagesOnFacebookToolStripMenuItem1.Name = "shareImagesOnFacebookToolStripMenuItem1";
+            this.shareImagesOnFacebookToolStripMenuItem1.Size = new System.Drawing.Size(297, 28);
+            this.shareImagesOnFacebookToolStripMenuItem1.Text = "Share images on Facebook";
+            this.shareImagesOnFacebookToolStripMenuItem1.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1691,6 +1709,8 @@ namespace TNT_Paint
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ToolStripMenuItem imageFromCameraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem genMusicFromTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shareImagesOnFacebookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shareImagesOnFacebookToolStripMenuItem1;
     }
 }
 
