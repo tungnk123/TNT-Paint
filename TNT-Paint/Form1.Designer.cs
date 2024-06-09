@@ -56,6 +56,7 @@ namespace TNT_Paint
             this.stockImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onlineImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageFromCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.genMusicFromTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zomeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,7 +131,8 @@ namespace TNT_Paint
             this.cb_Font = new System.Windows.Forms.ComboBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.genMusicFromTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareImagesOnFacebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -161,7 +163,8 @@ namespace TNT_Paint
             this.toolsToolStripMenuItem,
             this.imageToolStripMenuItem,
             this.viewToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.shareToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1437, 36);
@@ -383,6 +386,13 @@ namespace TNT_Paint
             this.imageFromCameraToolStripMenuItem.Size = new System.Drawing.Size(295, 36);
             this.imageFromCameraToolStripMenuItem.Text = "Image from Camera";
             this.imageFromCameraToolStripMenuItem.Click += new System.EventHandler(this.imageFromCameraToolStripMenuItem_Click);
+            // 
+            // genMusicFromTextToolStripMenuItem
+            // 
+            this.genMusicFromTextToolStripMenuItem.Name = "genMusicFromTextToolStripMenuItem";
+            this.genMusicFromTextToolStripMenuItem.Size = new System.Drawing.Size(295, 36);
+            this.genMusicFromTextToolStripMenuItem.Text = "Gen Music From Text";
+            this.genMusicFromTextToolStripMenuItem.Click += new System.EventHandler(this.genMusicFromTextToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -1260,12 +1270,20 @@ namespace TNT_Paint
             this.cb_Font.TabIndex = 0;
             this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
             // 
-            // genMusicFromTextToolStripMenuItem
+            // shareToolStripMenuItem
             // 
-            this.genMusicFromTextToolStripMenuItem.Name = "genMusicFromTextToolStripMenuItem";
-            this.genMusicFromTextToolStripMenuItem.Size = new System.Drawing.Size(295, 36);
-            this.genMusicFromTextToolStripMenuItem.Text = "Gen Music From Text";
-            this.genMusicFromTextToolStripMenuItem.Click += new System.EventHandler(this.genMusicFromTextToolStripMenuItem_Click);
+            this.shareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shareImagesOnFacebookToolStripMenuItem});
+            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
+            this.shareToolStripMenuItem.Text = "Share";
+            // 
+            // shareImagesOnFacebookToolStripMenuItem
+            // 
+            this.shareImagesOnFacebookToolStripMenuItem.Name = "shareImagesOnFacebookToolStripMenuItem";
+            this.shareImagesOnFacebookToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
+            this.shareImagesOnFacebookToolStripMenuItem.Text = "Share images on Facebook";
+            this.shareImagesOnFacebookToolStripMenuItem.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1414,6 +1432,8 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripMenuItem fullScreenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageFromCameraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem genMusicFromTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shareImagesOnFacebookToolStripMenuItem;
     }
 }
 

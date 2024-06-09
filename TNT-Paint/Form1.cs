@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Text;
+using System.Threading.Tasks;
+using CloudinaryDotNet;
 
 namespace TNT_Paint
 {
@@ -53,6 +55,13 @@ namespace TNT_Paint
         bool isBold = false;
         bool isItalic = false;
         bool isUnderline = false;
+
+        private Cloudinary cloudinary;
+        Account account = new Account(
+              "dxyfcffvz",
+              "839826873884674",
+              "EN58HAYBnbxoEjw-TF_FjGFVS3o");
+
 
         public FormWindowState LastWindowState { get; private set; }
 
@@ -1558,6 +1567,49 @@ namespace TNT_Paint
         {
             FormGemini form = new FormGemini();
             form.ShowDialog();
+        }
+
+        private async void shareImagesOnFacebookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            cloudinary = new Cloudinary(account);
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                openFileDialog.Title = "Select an Image";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+                    try
+                    {
+                        var uploadResult = await UploadImageToCloudinary(filePath);
+                        MessageBox.Show($"Image uploaded successfully! URL: {uploadResult.Uri}");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error uploading image: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+        private async Task<CloudinaryDotNet.Actions.ImageUploadResult> UploadImageToCloudinary(string filePath)
+        {
+            var uploadParams = new CloudinaryDotNet.Actions.ImageUploadParams()
+            {
+                File = new FileDescription(filePath)
+            };
+
+            var uploadResult = await cloudinary.UploadAsync(uploadParams);
+            if (uploadResult.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                throw new Exception("Failed to upload image to Cloudinary: " + uploadResult.Error.Message);
+            }
+
+            return uploadResult;
+
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
