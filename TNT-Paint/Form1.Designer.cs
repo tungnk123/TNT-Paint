@@ -265,7 +265,7 @@ namespace TNT_Paint
             // 
             this.exitToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_close_window_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
             | System.Windows.Forms.Keys.Delete)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
             this.exitToolStripMenuItem.Text = "Exit";

@@ -9,11 +9,13 @@ using System.Drawing.Text;
 using TNT_Paint.UserControls;
 using System.Threading.Tasks;
 using CloudinaryDotNet;
+using FacebookWrapper;
 
 namespace TNT_Paint
 {
     public partial class Form1 : Form
     {
+        LoginResult m_LoginResult;
         TransparentRichTextBox textBox1 = new TransparentRichTextBox();
         public Graphics g; // đồ hoạ từ màn hình vẽ chính
         public Bitmap bm;
@@ -58,11 +60,7 @@ namespace TNT_Paint
         bool isItalic = false;
         bool isUnderline = false;
 
-        private Cloudinary cloudinary;
-        Account account = new Account(
-              "dxyfcffvz",
-              "839826873884674",
-              "EN58HAYBnbxoEjw-TF_FjGFVS3o");
+        
 
 
         public FormWindowState LastWindowState { get; private set; }
@@ -1080,13 +1078,13 @@ namespace TNT_Paint
                 {
                     isSaved = true;
                     path = saveFileDialog.FileName;
-
+                    tenFileTieuDe = Path.GetFileName(saveFileDialog.FileName);
                     pb_mainScreen.Image.Save(path);
+                    this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
                 }
             }
             // truong hop da save se goi ham saveas
             else
-
             {
                 saveAsToolStripMenuItem_Click(sender, e);
             }
@@ -1100,6 +1098,7 @@ namespace TNT_Paint
             {
                 pb_mainScreen.Image.Save(path);
                 MessageBox.Show("Lưu thành công!", "TNT Paint");
+
             }
             else
             {
@@ -1595,46 +1594,48 @@ namespace TNT_Paint
             form.ShowDialog();
         }
 
-        private async void shareImagesOnFacebookToolStripMenuItem_Click(object sender, EventArgs e)
+        private void shareImagesOnFacebookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            cloudinary = new Cloudinary(account);
-
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            if (Form1.path == "")
             {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-                openFileDialog.Title = "Select an Image";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                MessageBox.Show("Bạn phải lưu ảnh trước khi share facebook!");
+                return;
+            }
+            
+            if (m_LoginResult == null)
+            {
+                if (login())
                 {
-                    string filePath = openFileDialog.FileName;
-                    try
-                    {
-                        var uploadResult = await UploadImageToCloudinary(filePath);
-                        MessageBox.Show($"Image uploaded successfully! URL: {uploadResult.Uri}");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error uploading image: {ex.Message}");
-                    }
+                    FormFaceBook form1 = new FormFaceBook(m_LoginResult.LoggedInUser);
+                    form1.ShowDialog();
+                }
+                else
+                {
+                    m_LoginResult = null;
                 }
             }
         }
-
-        private async Task<CloudinaryDotNet.Actions.ImageUploadResult> UploadImageToCloudinary(string filePath)
+        private bool login()
         {
-            var uploadParams = new CloudinaryDotNet.Actions.ImageUploadParams()
+            try
             {
-                File = new FileDescription(filePath)
-            };
+                m_LoginResult = FacebookService.Login(
+              /// (This is Desig Patter's App ID. replace it with your own)
+              "823675602636361",
+               /// requested permissions:
+               "pages_manage_posts",
+               "pages_manage_engagement",
+               "pages_read_engagement",
+               "pages_show_list"
+               /// add any relevant permissions
+               );
 
-            var uploadResult = await cloudinary.UploadAsync(uploadParams);
-            if (uploadResult.StatusCode != System.Net.HttpStatusCode.OK)
-            {
-                throw new Exception("Failed to upload image to Cloudinary: " + uploadResult.Error.Message);
+                return true;
             }
-
-            return uploadResult;
+            catch
+            {
+                return false;
+            }
 
         }
 
