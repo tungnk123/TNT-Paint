@@ -55,7 +55,7 @@ namespace TNT_Paint
         bool isUnderline = false;
 
         public FormWindowState LastWindowState { get; private set; }
-
+        Panel panel0;
         public Form1()
         {
             instance = this;
@@ -81,6 +81,27 @@ namespace TNT_Paint
             timer1.Start();
             this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
 
+            panel0 = new Panel
+            {
+                Dock = DockStyle.None,
+                Location = new Point(50, 50),
+                Width = 300,
+                Height = 200,
+                BackColor = Color.Transparent
+            };
+
+            textBox1.Font = new Font("Arial", 14);
+            textBox1.Width = 300;
+            textBox1.Height = 100;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.Margin = new Padding(0);
+
+            pb_mainScreen.Controls.Add(panel0);
+            panel0.Controls.Add(textBox1);
+            // to front panel0
+            panel0.BringToFront();
+
+            panel0.Visible = false;
 
             loadcbFont();
         }
@@ -367,6 +388,8 @@ namespace TNT_Paint
             if(SelectedMode == 24)
             {
                 textBox1.Location = new Point(e.X, e.Y - 20);
+                panel0.Location = new Point(e.X, e.Y - 20);
+                panel0.Visible = true;
                 textBox1.Visible = true;
                 pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
                 tabControl.Visible = true;

@@ -1,4 +1,6 @@
 ﻿
+using TNT_Paint.UserControls;
+
 namespace TNT_Paint
 {
     partial class Form1
@@ -140,7 +142,7 @@ namespace TNT_Paint
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new TNT_Paint.UserControls.TransparentRichTextBox();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -1392,7 +1394,7 @@ namespace TNT_Paint
             // 
             // timer1
             // 
-            this.timer1.Interval = 10000;
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panelDauCham1
@@ -1473,6 +1475,7 @@ namespace TNT_Paint
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.toolStripShape);
             this.panel2.Controls.Add(this.Panel_size);
             this.panel2.Controls.Add(this.textBox1);
@@ -1490,11 +1493,13 @@ namespace TNT_Paint
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Transparent;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(318, 208);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 89);
+            this.textBox1.Size = new System.Drawing.Size(360, 46);
             this.textBox1.TabIndex = 8;
             this.textBox1.Text = "";
             this.textBox1.Visible = false;
@@ -1653,7 +1658,6 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripMenuItem magnifyToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage_Text;
-        private System.Windows.Forms.RichTextBox textBox1;
         private System.Windows.Forms.ComboBox cb_Size;
         private System.Windows.Forms.ComboBox cb_Font;
         private System.Windows.Forms.Button btn_Bold;
@@ -1682,6 +1686,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox4;
+        private TransparentRichTextBox textBox1;
     }
 }
 
