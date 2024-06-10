@@ -48,10 +48,10 @@
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="AForge.Video">
-      <HintPath>..\..\..\..\..\Downloads\AForge.Video.dll</HintPath>
+      <HintPath>C:\Users\tung\Downloads\AForge.Video.dll</HintPath>
     </Reference>
     <Reference Include="AForge.Video.DirectShow">
-      <HintPath>..\..\..\..\..\Downloads\AForge.Video.DirectShow.dll</HintPath>
+      <HintPath>C:\Users\tung\Downloads\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
       <HintPath>..\packages\CefSharp.Common.124.3.80\lib\net462\CefSharp.dll</HintPath>
@@ -66,10 +66,10 @@
       <HintPath>..\packages\CloudinaryDotNet.1.26.2\lib\net452\CloudinaryDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Facebook">
-      <HintPath>..\..\..\..\..\Downloads\FBApi\Facebook.dll</HintPath>
+      <HintPath>C:\Users\tung\Downloads\FBApi\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="FbGraphApiWrapper">
-      <HintPath>..\..\..\..\..\Downloads\FBApi\FbGraphApiWrapper.dll</HintPath>
+      <HintPath>C:\Users\tung\Downloads\FBApi\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="GenerativeAI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=125a6b2231c8ea71, processorArchitecture=MSIL">
       <HintPath>..\packages\Google_GenerativeAI.1.0.0\lib\net462\GenerativeAI.dll</HintPath>
@@ -107,7 +107,9 @@
     <Reference Include="RestSharp, Version=111.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.111.2.0\lib\net471\RestSharp.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -409,6 +411,9 @@
     <None Include="Resources\icons8-search-50.png" />
     <None Include="Resources\loading.png" />
     <Content Include="TNT-Paint.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
