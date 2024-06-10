@@ -68,6 +68,8 @@ namespace TNT_Paint
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareImagesOnFacebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -131,8 +133,6 @@ namespace TNT_Paint
             this.cb_Font = new System.Windows.Forms.ComboBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shareImagesOnFacebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -491,6 +491,21 @@ namespace TNT_Paint
             this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(217, 36);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
+            // 
+            // shareToolStripMenuItem
+            // 
+            this.shareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shareImagesOnFacebookToolStripMenuItem});
+            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
+            this.shareToolStripMenuItem.Text = "Share";
+            // 
+            // shareImagesOnFacebookToolStripMenuItem
+            // 
+            this.shareImagesOnFacebookToolStripMenuItem.Name = "shareImagesOnFacebookToolStripMenuItem";
+            this.shareImagesOnFacebookToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
+            this.shareImagesOnFacebookToolStripMenuItem.Text = "Share images on Facebook";
+            this.shareImagesOnFacebookToolStripMenuItem.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -1269,21 +1284,6 @@ namespace TNT_Paint
             this.cb_Font.Size = new System.Drawing.Size(230, 37);
             this.cb_Font.TabIndex = 0;
             this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
-            // 
-            // shareToolStripMenuItem
-            // 
-            this.shareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shareImagesOnFacebookToolStripMenuItem});
-            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
-            this.shareToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
-            this.shareToolStripMenuItem.Text = "Share";
-            // 
-            // shareImagesOnFacebookToolStripMenuItem
-            // 
-            this.shareImagesOnFacebookToolStripMenuItem.Name = "shareImagesOnFacebookToolStripMenuItem";
-            this.shareImagesOnFacebookToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
-            this.shareImagesOnFacebookToolStripMenuItem.Text = "Share images on Facebook";
-            this.shareImagesOnFacebookToolStripMenuItem.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
             // 
             // Form1
             // 
