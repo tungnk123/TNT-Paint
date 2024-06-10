@@ -47,11 +47,13 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
-    <Reference Include="AForge.Video">
-      <HintPath>C:\Users\tung\Downloads\AForge.Video.dll</HintPath>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\AForge.Video.dll</HintPath>
     </Reference>
-    <Reference Include="AForge.Video.DirectShow">
-      <HintPath>C:\Users\tung\Downloads\AForge.Video.DirectShow.dll</HintPath>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
       <HintPath>..\packages\CefSharp.Common.124.3.80\lib\net462\CefSharp.dll</HintPath>
@@ -65,11 +67,13 @@
     <Reference Include="CloudinaryDotNet, Version=1.26.2.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
       <HintPath>..\packages\CloudinaryDotNet.1.26.2\lib\net452\CloudinaryDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook">
-      <HintPath>C:\Users\tung\Downloads\FBApi\Facebook.dll</HintPath>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\Facebook.dll</HintPath>
     </Reference>
-    <Reference Include="FbGraphApiWrapper">
-      <HintPath>C:\Users\tung\Downloads\FBApi\FbGraphApiWrapper.dll</HintPath>
+    <Reference Include="FbGraphApiWrapper, Version=8.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="GenerativeAI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=125a6b2231c8ea71, processorArchitecture=MSIL">
       <HintPath>..\packages\Google_GenerativeAI.1.0.0\lib\net462\GenerativeAI.dll</HintPath>
@@ -428,6 +432,18 @@
     <Content Include="Resources\icons8-shapes-64 %281%29.png" />
     <None Include="Resources\icons8-shapes-64 %282%291.png" />
     <None Include="Resources\loading.png" />
+    <Content Include="ExternalReferences\AForge.Video.DirectShow.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalReferences\AForge.Video.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalReferences\Facebook.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalReferences\FbGraphApiWrapper.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TNT-Paint.ico" />
   </ItemGroup>
   <ItemGroup>
