@@ -12,34 +12,18 @@ namespace TNT_Paint.UserControls
     {
         public TransparentRichTextBox()
         {
-            // Đăng ký sự kiện ContentsResized để tự động điều chỉnh chiều cao
             this.ContentsResized += new ContentsResizedEventHandler(TransparentRichTextBox_ContentsResized);
 
             this.Multiline = true;
             this.BorderStyle = BorderStyle.None;
-            this.BackColor = Color.White; // Cần một màu nền tạm thời
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.BackColor = Color.Transparent;
         }
 
         private void TransparentRichTextBox_ContentsResized(object sender, ContentsResizedEventArgs e)
         {
-            // Điều chỉnh chiều cao của RichTextBox dựa trên nội dung
             this.Height = e.NewRectangle.Height + this.Font.Height;
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            const int WM_PAINT = 0xF;
-            base.WndProc(ref m);
-            if (m.Msg == WM_PAINT)
-            {
-                // Vẽ nền trong suốt trước khi vẽ RichTextBox
-                using (Graphics g = Graphics.FromHwnd(this.Handle))
-                {
-                    g.FillRectangle(new SolidBrush(Color.FromArgb(0, 255, 255, 255)), this.ClientRectangle);
-                }
-            }
         }
 
         protected override CreateParams CreateParams
@@ -69,14 +53,21 @@ namespace TNT_Paint.UserControls
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            base.OnPaintBackground(e);
-
-            if (this.Parent != null)
-            {
-                Rectangle rect = new Rectangle(this.Left, this.Top, this.Width, this.Height);
-                e.Graphics.FillRectangle(new SolidBrush(this.Parent.BackColor), rect);
-            }
+            // Không vẽ nền mặc định để tránh nhấp nháy
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_PAINT = 0xF;
+            if (m.Msg == WM_PAINT)
+            {
+                // Vẽ nền trong suốt trước khi vẽ RichTextBox
+                using (Graphics g = Graphics.FromHwnd(this.Handle))
+                {
+                    g.FillRectangle(new SolidBrush(Color.FromArgb(0, 255, 255, 255)), this.ClientRectangle);
+                }
+            }
+            base.WndProc(ref m);
+        }
     }
 }

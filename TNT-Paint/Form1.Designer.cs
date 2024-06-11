@@ -143,7 +143,6 @@ namespace TNT_Paint
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new TNT_Paint.UserControls.TransparentRichTextBox();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -1494,7 +1493,6 @@ namespace TNT_Paint
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.toolStripShape);
             this.panel2.Controls.Add(this.Panel_size);
-            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Controls.Add(this.panelDauCham3);
             this.panel2.Controls.Add(this.panelDauCham2);
@@ -1509,16 +1507,6 @@ namespace TNT_Paint
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Transparent;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(318, 208);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 46);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "";
-            this.textBox1.Visible = false;
             // 
             // pb_mainScreen
             // 
@@ -1702,7 +1690,6 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private TransparentRichTextBox textBox1;
     }
 }
 

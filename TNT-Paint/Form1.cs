@@ -6,11 +6,13 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Text;
+using TNT_Paint.UserControls;
 
 namespace TNT_Paint
 {
     public partial class Form1 : Form
     {
+        TransparentRichTextBox textBox1 = new TransparentRichTextBox();
         public Graphics g; // đồ hoạ từ màn hình vẽ chính
         public Bitmap bm;
         Pen p; // bút vẽ chính
@@ -55,7 +57,7 @@ namespace TNT_Paint
         bool isUnderline = false;
 
         public FormWindowState LastWindowState { get; private set; }
-        Panel panel0;
+
         public Form1()
         {
             instance = this;
@@ -81,27 +83,12 @@ namespace TNT_Paint
             timer1.Start();
             this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
 
-            panel0 = new Panel
-            {
-                Dock = DockStyle.None,
-                Location = new Point(50, 50),
-                Width = 300,
-                Height = 200,
-                BackColor = Color.Transparent
-            };
 
             textBox1.Font = new Font("Arial", 14);
             textBox1.Width = 300;
             textBox1.Height = 100;
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Margin = new Padding(0);
-
-            pb_mainScreen.Controls.Add(panel0);
-            panel0.Controls.Add(textBox1);
-            // to front panel0
-            panel0.BringToFront();
-
-            panel0.Visible = false;
 
             loadcbFont();
         }
@@ -351,7 +338,7 @@ namespace TNT_Paint
             if(textBox1.Visible == true)
             {
                 Brush brush = new SolidBrush(currentColor);
-                g.DrawString(textBox1.Text, textBox1.Font, brush, new Point(textBox1.Location.X - 3, textBox1.Location.Y + 3));
+                g.DrawString(textBox1.Text, textBox1.Font, brush, new Point(textBox1.Location.X, textBox1.Location.Y));
                 textBox1.Visible = false;
                 textBox1.Text = "";
                 tabControl.Visible = false;
@@ -387,11 +374,10 @@ namespace TNT_Paint
             }
             if(SelectedMode == 24)
             {
-                textBox1.Location = new Point(e.X, e.Y - 20);
-                panel0.Location = new Point(e.X, e.Y - 20);
-                panel0.Visible = true;
+
+                textBox1.Location = new Point(e.X, e.Y);
+                pb_mainScreen.Controls.Add(textBox1);
                 textBox1.Visible = true;
-                pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
                 tabControl.Visible = true;
                 textBox1.Select();
                 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TNT_Paint.UserControls;
 
 namespace TNT_Paint
 {
@@ -14,7 +15,7 @@ namespace TNT_Paint
     {
         public FormAbout()
         {
-            InitializeComponent();
+            TransparentRichTextBox rtb = new TransparentRichTextBox();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
