@@ -1,445 +1,463 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props')" />
-  <Import Project="..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props')" />
-  <Import Project="..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6F847F3-6D58-4DA5-AE85-D28E4470D697}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>TNT_Paint</RootNamespace>
-    <AssemblyName>TNT-Paint</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>TNT-Paint.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup />
-  <ItemGroup>
-    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ExternalReferences\AForge.Video.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ExternalReferences\AForge.Video.DirectShow.dll</HintPath>
-    </Reference>
-    <Reference Include="CefSharp, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>..\packages\CefSharp.Common.124.3.80\lib\net462\CefSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="CefSharp.Core, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>..\packages\CefSharp.Common.124.3.80\lib\net462\CefSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CefSharp.WinForms, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>..\packages\CefSharp.WinForms.124.3.80\lib\net462\CefSharp.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="CloudinaryDotNet, Version=1.26.2.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
-      <HintPath>..\packages\CloudinaryDotNet.1.26.2\lib\net452\CloudinaryDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ExternalReferences\Facebook.dll</HintPath>
-    </Reference>
-    <Reference Include="FbGraphApiWrapper, Version=8.0.2.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ExternalReferences\FbGraphApiWrapper.dll</HintPath>
-    </Reference>
-    <Reference Include="GenerativeAI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=125a6b2231c8ea71, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google_GenerativeAI.1.0.0\lib\net462\GenerativeAI.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Http, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Http.8.0.0\lib\net462\Microsoft.Extensions.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.8.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Options.8.0.0\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp, Version=111.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.111.2.0\lib\net471\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Messaging" />
-    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormAbout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAbout.Designer.cs">
-      <DependentUpon>FormAbout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCamera.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCamera.Designer.cs">
-      <DependentUpon>FormCamera.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormChinhSuaAnh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormChinhSuaAnh.Designer.cs">
-      <DependentUpon>FormChinhSuaAnh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormFaceBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFaceBook.Designer.cs">
-      <DependentUpon>FormFaceBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormGemini.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormGemini.Designer.cs">
-      <DependentUpon>FormGemini.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOnlineImage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOnlineImage.Designer.cs">
-      <DependentUpon>FormOnlineImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormResize.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormResize.Designer.cs">
-      <DependentUpon>FormResize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormStockImages.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormStockImages.Designer.cs">
-      <DependentUpon>FormStockImages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Information.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Information.Designer.cs">
-      <DependentUpon>Information.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VeHinh.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAbout.resx">
-      <DependentUpon>FormAbout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCamera.resx">
-      <DependentUpon>FormCamera.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormChinhSuaAnh.resx">
-      <DependentUpon>FormChinhSuaAnh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFaceBook.resx">
-      <DependentUpon>FormFaceBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormGemini.resx">
-      <DependentUpon>FormGemini.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOnlineImage.resx">
-      <DependentUpon>FormOnlineImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormResize.resx">
-      <DependentUpon>FormResize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormStockImages.resx">
-      <DependentUpon>FormStockImages.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Information.resx">
-      <DependentUpon>Information.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pencil %282%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Eraser.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\colorPicker.png" />
-    <None Include="Resources\Fill.png" />
-    <None Include="Resources\ColorPanel.png" />
-    <None Include="Resources\Small_line.png" />
-    <None Include="Resources\MediumLine.png" />
-    <None Include="Resources\BigLine.png" />
-    <None Include="Resources\Line.png" />
-    <None Include="Resources\Circle.png" />
-    <None Include="Resources\Rect.png" />
-    <None Include="Resources\Triangle.png" />
-    <None Include="Resources\RightTriangle.png" />
-    <None Include="Resources\RoundedRectangle.png" />
-    <None Include="Resources\Diamond.png" />
-    <None Include="Resources\Pentagon.png" />
-    <None Include="Resources\Hexagon.png" />
-    <None Include="Resources\Up arrow.png" />
-    <None Include="Resources\LeftArrow.png" />
-    <None Include="Resources\UpArrow1.png" />
-    <None Include="Resources\RightArrow.png" />
-    <None Include="Resources\DownArrow.png" />
-    <None Include="Resources\ColorTable.png" />
-    <None Include="Resources\ColorTable2.png" />
-    <None Include="Resources\Polygon.png" />
-    <None Include="Resources\Five_PointStar.png" />
-    <None Include="Resources\Five_PointStar1.png" />
-    <None Include="Resources\TNT-Paint.png" />
-    <None Include="Resources\logo-uit.png" />
-    <None Include="Resources\brush-pattern-5.png" />
-    <None Include="Resources\Screenshot 2023-02-03 111748.png" />
-    <None Include="Resources\test-black.png" />
-    <None Include="Resources\test-black-2.png" />
-    <None Include="Resources\icons8-a-25.png" />
-    <None Include="Resources\icons8-add-file-641.png" />
-    <None Include="Resources\icons8-opened-folder-482.png" />
-    <None Include="Resources\icons8-save-601.png" />
-    <None Include="Resources\icons8-save-as-64.png" />
-    <None Include="Resources\icons8-about-48.png" />
-    <None Include="Resources\icons8-undo-481.png" />
-    <None Include="Resources\icons8-redo-48.png" />
-    <None Include="Resources\icons8-scissors-50.png" />
-    <None Include="Resources\icons8-copy-50.png" />
-    <None Include="Resources\icons8-paste-64.png" />
-    <None Include="Resources\icons8-insert-raster-image-100.png" />
-    <None Include="Resources\icons8-remove-48.png" />
-    <None Include="Resources\icons8-photo-editor-100.png" />
-    <None Include="Resources\icons8-zoom-to-extents-64.png" />
-    <None Include="Resources\icons8-image-48.png" />
-    <None Include="Resources\icons8-internet-connection-50.png" />
-    <None Include="Resources\icons8-zoom-in-50.png" />
-    <None Include="Resources\icons8-zoom-out-50.png" />
-    <None Include="Resources\icons8-100--64.png" />
-    <None Include="Resources\gridline.png" />
-    <None Include="Resources\ruler.png" />
-    <None Include="Resources\personal-infor.png" />
-    <None Include="Resources\icons8-about-481.png" />
-    <None Include="Resources\icons8-close-window-48.png" />
-    <None Include="Resources\icons8-save-50.png" />
-    <None Include="Resources\icons8-100-50.png" />
-    <None Include="Resources\icons8-artist-palette-48.png" />
-    <None Include="Resources\icons8-eraser-tool-48.png" />
-    <None Include="Resources\icons8-edit-48.png" />
-    <None Include="Resources\icons8-edit-481.png" />
-    <None Include="Resources\insert-text.png" />
-    <None Include="Resources\icons8-add-text-50.png" />
-    <None Include="Resources\icons8-fill-color-64.png" />
-    <None Include="Resources\icons8-color-dropper-48.png" />
-    <None Include="Resources\icons8-color-dropper-481.png" />
-    <None Include="Resources\brush1.png" />
-    <None Include="Resources\brush2.png" />
-    <None Include="Resources\brush3.png" />
-    <None Include="Resources\brush4.png" />
-    <None Include="Resources\icons8-width-48.png" />
-    <None Include="Resources\icons8-height-40.png" />
-    <None Include="Resources\icons8-selection-67.png" />
-    <None Include="Resources\icons8-crop-64 %281%29.png" />
-    <None Include="Resources\icons8-drag-48.png" />
-    <None Include="Resources\icons8-erase-30.png" />
-    <None Include="Resources\air-brush.png" />
-    <None Include="Resources\icons8-color-picker-67.png" />
-    <None Include="Resources\icons8-full-screen-64.png" />
-    <None Include="Resources\icons8-left-arrow-48.png" />
-    <None Include="Resources\icons8-right-arrow-48.png" />
-    <None Include="Resources\icons8-replay-48.png" />
-    <None Include="Resources\icons8-search-50.png" />
-    <None Include="Resources\loading.png" />
-    <Content Include="ExternalReferences\AForge.Video.DirectShow.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ExternalReferences\AForge.Video.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ExternalReferences\Facebook.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ExternalReferences\FbGraphApiWrapper.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TNT-Paint.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props'))" />
-    <Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets'))" />
-  </Target>
-  <Import Project="..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets')" />
+	<Import Project="..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props')" />
+	<Import Project="..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props')" />
+	<Import Project="..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props')" />
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{B6F847F3-6D58-4DA5-AE85-D28E4470D697}</ProjectGuid>
+		<OutputType>WinExe</OutputType>
+		<RootNamespace>TNT_Paint</RootNamespace>
+		<AssemblyName>TNT-Paint</AssemblyName>
+		<TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Deterministic>true</Deterministic>
+		<NuGetPackageImportStamp>
+		</NuGetPackageImportStamp>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup>
+		<ApplicationIcon>TNT-Paint.ico</ApplicationIcon>
+	</PropertyGroup>
+	<PropertyGroup />
+	<PropertyGroup />
+	<PropertyGroup />
+	<PropertyGroup />
+	<ItemGroup>
+		<Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>ExternalReferences\AForge.Video.dll</HintPath>
+		</Reference>
+		<Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>ExternalReferences\AForge.Video.DirectShow.dll</HintPath>
+		</Reference>
+		<Reference Include="CefSharp, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+			<HintPath>..\packages\CefSharp.Common.124.3.80\lib\net462\CefSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="CefSharp.Core, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+			<HintPath>..\packages\CefSharp.Common.124.3.80\lib\net462\CefSharp.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="CefSharp.WinForms, Version=124.3.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+			<HintPath>..\packages\CefSharp.WinForms.124.3.80\lib\net462\CefSharp.WinForms.dll</HintPath>
+		</Reference>
+		<Reference Include="CloudinaryDotNet, Version=1.26.2.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+			<HintPath>..\packages\CloudinaryDotNet.1.26.2\lib\net452\CloudinaryDotNet.dll</HintPath>
+		</Reference>
+		<Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>ExternalReferences\Facebook.dll</HintPath>
+		</Reference>
+		<Reference Include="FbGraphApiWrapper, Version=8.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>ExternalReferences\FbGraphApiWrapper.dll</HintPath>
+		</Reference>
+		<Reference Include="GenerativeAI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=125a6b2231c8ea71, processorArchitecture=MSIL">
+			<HintPath>..\packages\Google_GenerativeAI.1.0.0\lib\net462\GenerativeAI.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.Http, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.Http.8.0.0\lib\net462\Microsoft.Extensions.Http.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.Logging.8.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.Options, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.Options.8.0.0\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+			<HintPath>..\packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+			<HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="RestSharp, Version=111.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+			<HintPath>..\packages\RestSharp.111.2.0\lib\net471\RestSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="System">
+			<HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+		</Reference>
+		<Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+		</Reference>
+		<Reference Include="System.ComponentModel.Composition" />
+		<Reference Include="System.ComponentModel.DataAnnotations" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+		</Reference>
+		<Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Messaging" />
+		<Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Numerics" />
+		<Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+			<Private>True</Private>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+		</Reference>
+		<Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Web" />
+		<Reference Include="System.Xml.Linq" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Deployment" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Form1.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Form1.Designer.cs">
+			<DependentUpon>Form1.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormAbout.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormAbout.Designer.cs">
+			<DependentUpon>FormAbout.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormCamera.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormCamera.Designer.cs">
+			<DependentUpon>FormCamera.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormChinhSuaAnh.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormChinhSuaAnh.Designer.cs">
+			<DependentUpon>FormChinhSuaAnh.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormFaceBook.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormFaceBook.Designer.cs">
+			<DependentUpon>FormFaceBook.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormGemini.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormGemini.Designer.cs">
+			<DependentUpon>FormGemini.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormOnlineImage.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormOnlineImage.Designer.cs">
+			<DependentUpon>FormOnlineImage.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormResize.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormResize.Designer.cs">
+			<DependentUpon>FormResize.cs</DependentUpon>
+		</Compile>
+		<Compile Include="FormStockImages.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormStockImages.Designer.cs">
+			<DependentUpon>FormStockImages.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Information.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Information.Designer.cs">
+			<DependentUpon>Information.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Program.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="Properties\Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Include="UserControls\AlphaTextBox.cs">
+			<SubType>Component</SubType>
+		</Compile>
+		<Compile Include="UserControls\TransparentRichTextbox.cs">
+			<SubType>Component</SubType>
+		</Compile>
+		<Compile Include="VeHinh.cs" />
+		<EmbeddedResource Include="Form1.resx">
+			<DependentUpon>Form1.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormAbout.resx">
+			<DependentUpon>FormAbout.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormCamera.resx">
+			<DependentUpon>FormCamera.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormChinhSuaAnh.resx">
+			<DependentUpon>FormChinhSuaAnh.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormFaceBook.resx">
+			<DependentUpon>FormFaceBook.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormGemini.resx">
+			<DependentUpon>FormGemini.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormOnlineImage.resx">
+			<DependentUpon>FormOnlineImage.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormResize.resx">
+			<DependentUpon>FormResize.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="FormStockImages.resx">
+			<DependentUpon>FormStockImages.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Information.resx">
+			<DependentUpon>Information.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<SubType>Designer</SubType>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<Compile Include="Properties\Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<None Include="packages.config" />
+		<None Include="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<Compile Include="Properties\Settings.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="App.config" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\Pencil %282%291.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\Eraser.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Resources\colorPicker.png" />
+		<None Include="Resources\Fill.png" />
+		<None Include="Resources\ColorPanel.png" />
+		<None Include="Resources\Small_line.png" />
+		<None Include="Resources\MediumLine.png" />
+		<None Include="Resources\BigLine.png" />
+		<None Include="Resources\Line.png" />
+		<None Include="Resources\Circle.png" />
+		<None Include="Resources\Rect.png" />
+		<None Include="Resources\Triangle.png" />
+		<None Include="Resources\RightTriangle.png" />
+		<None Include="Resources\RoundedRectangle.png" />
+		<None Include="Resources\Diamond.png" />
+		<None Include="Resources\Pentagon.png" />
+		<None Include="Resources\Hexagon.png" />
+		<None Include="Resources\Up arrow.png" />
+		<None Include="Resources\LeftArrow.png" />
+		<None Include="Resources\UpArrow1.png" />
+		<None Include="Resources\RightArrow.png" />
+		<None Include="Resources\DownArrow.png" />
+		<None Include="Resources\ColorTable.png" />
+		<None Include="Resources\ColorTable2.png" />
+		<None Include="Resources\Polygon.png" />
+		<None Include="Resources\Five_PointStar.png" />
+		<None Include="Resources\Five_PointStar1.png" />
+		<None Include="Resources\TNT-Paint.png" />
+		<None Include="Resources\logo-uit.png" />
+		<None Include="Resources\brush-pattern-5.png" />
+		<None Include="Resources\Screenshot 2023-02-03 111748.png" />
+		<None Include="Resources\test-black.png" />
+		<None Include="Resources\test-black-2.png" />
+		<None Include="Resources\icons8-a-25.png" />
+		<None Include="Resources\icons8-add-file-641.png" />
+		<None Include="Resources\icons8-opened-folder-482.png" />
+		<None Include="Resources\icons8-save-601.png" />
+		<None Include="Resources\icons8-save-as-64.png" />
+		<None Include="Resources\icons8-about-48.png" />
+		<None Include="Resources\icons8-undo-481.png" />
+		<None Include="Resources\icons8-redo-48.png" />
+		<None Include="Resources\icons8-scissors-50.png" />
+		<None Include="Resources\icons8-copy-50.png" />
+		<None Include="Resources\icons8-paste-64.png" />
+		<None Include="Resources\icons8-insert-raster-image-100.png" />
+		<None Include="Resources\icons8-remove-48.png" />
+		<None Include="Resources\icons8-photo-editor-100.png" />
+		<None Include="Resources\icons8-zoom-to-extents-64.png" />
+		<None Include="Resources\icons8-image-48.png" />
+		<None Include="Resources\icons8-internet-connection-50.png" />
+		<None Include="Resources\icons8-zoom-in-50.png" />
+		<None Include="Resources\icons8-zoom-out-50.png" />
+		<None Include="Resources\icons8-100--64.png" />
+		<None Include="Resources\gridline.png" />
+		<None Include="Resources\ruler.png" />
+		<None Include="Resources\personal-infor.png" />
+		<None Include="Resources\icons8-about-481.png" />
+		<None Include="Resources\icons8-close-window-48.png" />
+		<None Include="Resources\icons8-save-50.png" />
+		<None Include="Resources\icons8-100-50.png" />
+		<None Include="Resources\icons8-artist-palette-48.png" />
+		<None Include="Resources\icons8-eraser-tool-48.png" />
+		<None Include="Resources\icons8-edit-48.png" />
+		<None Include="Resources\icons8-edit-481.png" />
+		<None Include="Resources\insert-text.png" />
+		<None Include="Resources\icons8-add-text-50.png" />
+		<None Include="Resources\icons8-fill-color-64.png" />
+		<None Include="Resources\icons8-color-dropper-48.png" />
+		<None Include="Resources\icons8-color-dropper-481.png" />
+		<None Include="Resources\brush1.png" />
+		<None Include="Resources\brush2.png" />
+		<None Include="Resources\brush3.png" />
+		<None Include="Resources\brush4.png" />
+		<None Include="Resources\icons8-width-48.png" />
+		<None Include="Resources\icons8-height-40.png" />
+		<None Include="Resources\icons8-selection-67.png" />
+		<None Include="Resources\icons8-crop-64 %281%29.png" />
+		<None Include="Resources\icons8-drag-48.png" />
+		<None Include="Resources\icons8-erase-30.png" />
+		<None Include="Resources\air-brush.png" />
+		<None Include="Resources\icons8-color-picker-67.png" />
+		<None Include="Resources\icons8-full-screen-64.png" />
+		<None Include="Resources\icons8-left-arrow-48.png" />
+		<None Include="Resources\icons8-right-arrow-48.png" />
+		<None Include="Resources\icons8-replay-48.png" />
+		<None Include="Resources\icons8-search-50.png" />
+		<None Include="Resources\brush-sizes.png" />
+		<None Include="Resources\color-ribbon.png" />
+		<None Include="Resources\icons8-dropdown-100.png" />
+		<None Include="Resources\icons8-shapes-64.png" />
+		<None Include="Resources\icons8-shapes-64 %282%29.png" />
+		<Content Include="Resources\icons8-shapes-64 %281%29.png" />
+		<None Include="Resources\icons8-shapes-64 %282%291.png" />
+		<None Include="Resources\loading.png" />
+		<Content Include="ExternalReferences\AForge.Video.DirectShow.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="ExternalReferences\AForge.Video.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="ExternalReferences\Facebook.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="ExternalReferences\FbGraphApiWrapper.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="TNT-Paint.ico" />
+	</ItemGroup>
+	<ItemGroup>
+		<WCFMetadata Include="Connected Services\" />
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+		<PropertyGroup>
+			<ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+		</PropertyGroup>
+		<Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x64.124.3.8\build\chromiumembeddedframework.runtime.win-x64.props'))" />
+		<Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x86.124.3.8\build\chromiumembeddedframework.runtime.win-x86.props'))" />
+		<Error Condition="!Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.props'))" />
+		<Error Condition="!Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets'))" />
+	</Target>
+	<Import Project="..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.124.3.80\build\CefSharp.Common.targets')" />
 </Project>

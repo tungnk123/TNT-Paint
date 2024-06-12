@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing.Text;
+using TNT_Paint.UserControls;
 using System.Threading.Tasks;
 using CloudinaryDotNet;
 using FacebookWrapper;
@@ -15,6 +16,7 @@ namespace TNT_Paint
     public partial class Form1 : Form
     {
         LoginResult m_LoginResult;
+        TransparentRichTextBox textBox1 = new TransparentRichTextBox();
         public Graphics g; // đồ hoạ từ màn hình vẽ chính
         public Bitmap bm;
         Pen p; // bút vẽ chính
@@ -58,7 +60,7 @@ namespace TNT_Paint
         bool isItalic = false;
         bool isUnderline = false;
 
-        
+
 
 
         public FormWindowState LastWindowState { get; private set; }
@@ -88,6 +90,12 @@ namespace TNT_Paint
             timer1.Start();
             this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
 
+
+            textBox1.Font = new Font("Arial", 14);
+            textBox1.Width = 300;
+            textBox1.Height = 100;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.Margin = new Padding(0);
 
             loadcbFont();
         }
@@ -254,7 +262,7 @@ namespace TNT_Paint
         private void Btn_DrawRightArrow_Click(object sender, EventArgs e)
         {
             pb_mainScreen.Cursor = Cursors.Default;
-            isCropping = false;     
+            isCropping = false;
             SelectedMode = 16;
             veHinh.inPolygon = false;
         }
@@ -334,16 +342,16 @@ namespace TNT_Paint
 
         private void pb_mainScreen_MouseDown(object sender, MouseEventArgs e)
         {
-            if(textBox1.Visible == true)
+            if (textBox1.Visible == true)
             {
                 Brush brush = new SolidBrush(currentColor);
-                g.DrawString(textBox1.Text, textBox1.Font, brush, new Point(textBox1.Location.X - 3, textBox1.Location.Y + 3));
+                g.DrawString(textBox1.Text, textBox1.Font, brush, new Point(textBox1.Location.X, textBox1.Location.Y));
                 textBox1.Visible = false;
                 textBox1.Text = "";
                 tabControl.Visible = false;
                 return;
             }
-            
+
             //
             //
             if (isCropping)
@@ -371,14 +379,15 @@ namespace TNT_Paint
                 }
 
             }
-            if(SelectedMode == 24)
+            if (SelectedMode == 24)
             {
-                textBox1.Location = new Point(e.X, e.Y - 20);
+
+                textBox1.Location = new Point(e.X, e.Y);
+                pb_mainScreen.Controls.Add(textBox1);
                 textBox1.Visible = true;
-                pb_mainScreen.Cursor = System.Windows.Forms.Cursors.Default;
                 tabControl.Visible = true;
                 textBox1.Select();
-                
+
             }
 
             if (SelectedMode == 4)
@@ -423,7 +432,7 @@ namespace TNT_Paint
                 }
                 if (SelectedMode == 20)
                 {
-                    Image image = TNT_Paint.Properties.Resources.test_black_2;
+                    System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black_2;
                     Bitmap bitmap = new Bitmap(image, 10, 10);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
@@ -439,7 +448,7 @@ namespace TNT_Paint
                 }
                 if (SelectedMode == 20)
                 {
-                    Image image = TNT_Paint.Properties.Resources.test_black_2;
+                    System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black_2;
                     Bitmap bitmap = new Bitmap(image, 10, 10);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
@@ -455,7 +464,7 @@ namespace TNT_Paint
                 }
                 if (SelectedMode == 21)
                 {
-                    Image image = TNT_Paint.Properties.Resources.Screenshot_2023_02_03_111748;
+                    System.Drawing.Image image = TNT_Paint.Properties.Resources.Screenshot_2023_02_03_111748;
                     Bitmap bitmap = new Bitmap(image, 10, 10);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
@@ -471,7 +480,7 @@ namespace TNT_Paint
                 }
                 if (SelectedMode == 22)
                 {
-                    Image image = TNT_Paint.Properties.Resources.test_black;
+                    System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black;
                     Bitmap bitmap = new Bitmap(image, 10, 10);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
@@ -487,7 +496,7 @@ namespace TNT_Paint
                 }
                 if (SelectedMode == 23)
                 {
-                    Image image = TNT_Paint.Properties.Resources.brush_pattern_5;
+                    System.Drawing.Image image = TNT_Paint.Properties.Resources.brush_pattern_5;
                     Bitmap bitmap = new Bitmap(image, 10, 10);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
@@ -582,7 +591,7 @@ namespace TNT_Paint
         #region Text Event
         private void cb_Font_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabControl.Visible == false)
+            if (tabControl.Visible == false)
             {
                 return;
             }
@@ -601,7 +610,7 @@ namespace TNT_Paint
         }
         private void cb_Size_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabControl.Visible == false)
+            if (tabControl.Visible == false)
             {
                 return;
             }
@@ -611,7 +620,7 @@ namespace TNT_Paint
                 Font font = new Font(cb_Font.Text, i);
                 textBox1.SelectionColor = currentColor;
                 textBox1.Font = font;
-                
+
             }
             catch
             {
@@ -624,7 +633,7 @@ namespace TNT_Paint
         }
         private void btn_Bold_Click(object sender, EventArgs e)
         {
-            
+
             //
             if (isBold == false)
             {
@@ -788,7 +797,7 @@ namespace TNT_Paint
             {
                 isUnderline = false;
 
-                if (isBold== true)
+                if (isBold == true)
                 {
                     if (isItalic == true)
                     {
@@ -951,7 +960,7 @@ namespace TNT_Paint
         {
             if (isPainted)
             {
-                switch (MessageBox.Show("Bạn có muốn lưu file với tên "+ tenFileTieuDe + " không", "Thông Báo", MessageBoxButtons.YesNoCancel))
+                switch (MessageBox.Show("Bạn có muốn lưu file với tên " + tenFileTieuDe + " không", "Thông Báo", MessageBoxButtons.YesNoCancel))
                 {
                     // truong hop nguoi dung muon luu anh dang ve lai va open file sau
                     case DialogResult.Yes:
@@ -1011,7 +1020,7 @@ namespace TNT_Paint
                             if (openFileDialog.ShowDialog() == DialogResult.OK)
                             {
                                 string fileName = openFileDialog.FileName;
-                                Image img = Image.FromFile(fileName);
+                                System.Drawing.Image img = System.Drawing.Image.FromFile(fileName);
                                 bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
                                 pb_mainScreen.Refresh();
                                 pb_mainScreen.Image = bm;
@@ -1129,7 +1138,7 @@ namespace TNT_Paint
             }
             else
             {
-                MessageBox.Show("Your computer don't have this service. ", "Thông báo !", MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                MessageBox.Show("Your computer don't have this service. ", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1556,6 +1565,23 @@ namespace TNT_Paint
             }
         }
 
+        private void ptbSizeDrop_Click(object sender, EventArgs e)
+        {
+            Panel_size.BringToFront();
+            Panel_size.Visible = !Panel_size.Visible;
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            pb_ColorTable.BringToFront();
+            pb_ColorTable.Visible = !pb_ColorTable.Visible;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            toolStripShape.Visible = !toolStripShape.Visible;
+        }
         private void imageFromCameraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCamera form = new FormCamera();
@@ -1575,7 +1601,7 @@ namespace TNT_Paint
                 MessageBox.Show("Bạn phải lưu ảnh trước khi share facebook!");
                 return;
             }
-            
+
             if (m_LoginResult == null)
             {
                 if (login())

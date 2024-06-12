@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using GenerativeAI.Methods;
 using GenerativeAI.Models;
 using GenerativeAI.Types;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TNT_Paint
 {
@@ -72,7 +73,7 @@ namespace TNT_Paint
                 response.EnsureSuccessStatusCode();
                 using (var stream = await response.Content.ReadAsStreamAsync())
                 {
-                    var image = Image.FromStream(stream);
+                    var image = System.Drawing.Image.FromStream(stream);
                     pb_image.Image = image;
                 }
             }
@@ -89,6 +90,12 @@ namespace TNT_Paint
 
         private void btn_chup_Click(object sender, EventArgs e)
         {
+            if (pb_image.Image == null)
+            {
+                MessageBox.Show("Vui lòng tạo ảnh trước khi chụp");
+                return;
+            }
+
             this.Close();
             Form1.instance.g.DrawImage(pb_image.Image, Form1.instance.pb_mainScreen.Location.X, Form1.instance.pb_mainScreen.Location.Y,
                     Form1.instance.pb_mainScreen.Width, Form1.instance.pb_mainScreen.Height);

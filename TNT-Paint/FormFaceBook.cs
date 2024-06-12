@@ -36,6 +36,11 @@ namespace TNT_Paint
         }
         private void fetchUserInfo()
         {
+            if (m_LoggedInUser == null)
+            {
+                MessageBox.Show("User is null");
+                return;
+            }
 
             pb_ava.LoadAsync(m_LoggedInUser.PictureNormalURL);
             lb_name.Text = m_LoggedInUser.Name;
