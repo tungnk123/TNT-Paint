@@ -30,8 +30,6 @@ namespace TNT_Paint
             //Form1.instance.Visible = false;
             instanceFormCSA = this;
             InitializeComponent();
-            trackBar1.SetRange(0, 30);
-            trackBar2.SetRange(-100, 100);
 
         }
 

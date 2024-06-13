@@ -69,48 +69,53 @@ namespace TNT_Paint
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 378);
+            this.label1.Location = new System.Drawing.Point(57, 465);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Brightness";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 424);
+            this.label2.Location = new System.Drawing.Point(57, 522);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Saturation";
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(131, 372);
-            this.trackBar1.Maximum = 30;
+            this.trackBar1.Location = new System.Drawing.Point(175, 458);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.trackBar1.Maximum = 20;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(441, 45);
+            this.trackBar1.Size = new System.Drawing.Size(588, 56);
             this.trackBar1.TabIndex = 3;
             this.trackBar1.TickFrequency = 5;
-            this.trackBar1.Value = 15;
+            this.trackBar1.Value = 10;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(131, 414);
+            this.trackBar2.Location = new System.Drawing.Point(175, 510);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Minimum = -100;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(441, 45);
+            this.trackBar2.Size = new System.Drawing.Size(588, 56);
             this.trackBar2.TabIndex = 4;
             this.trackBar2.TickFrequency = 5;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(713, 27);
+            this.button1.Location = new System.Drawing.Point(951, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.Size = new System.Drawing.Size(100, 52);
             this.button1.TabIndex = 5;
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
@@ -118,11 +123,12 @@ namespace TNT_Paint
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(835, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1113, 28);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -133,36 +139,37 @@ namespace TNT_Paint
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(657, 326);
+            this.pictureBox1.Size = new System.Drawing.Size(876, 401);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -171,28 +178,31 @@ namespace TNT_Paint
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 467);
+            this.label3.Location = new System.Drawing.Point(57, 575);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "Contrast";
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(131, 458);
+            this.trackBar3.Location = new System.Drawing.Point(175, 564);
+            this.trackBar3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar3.Maximum = 100;
             this.trackBar3.Minimum = -100;
             this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(441, 45);
+            this.trackBar3.Size = new System.Drawing.Size(588, 56);
             this.trackBar3.TabIndex = 13;
             this.trackBar3.TickFrequency = 5;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(748, 447);
+            this.button10.Location = new System.Drawing.Point(997, 550);
+            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 45);
+            this.button10.Size = new System.Drawing.Size(100, 55);
             this.button10.TabIndex = 17;
             this.button10.Text = "Thoát";
             this.button10.UseVisualStyleBackColor = true;
@@ -200,9 +210,10 @@ namespace TNT_Paint
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(636, 447);
+            this.button11.Location = new System.Drawing.Point(848, 550);
+            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 45);
+            this.button11.Size = new System.Drawing.Size(100, 55);
             this.button11.TabIndex = 18;
             this.button11.Text = "Lưu";
             this.button11.UseVisualStyleBackColor = true;
@@ -218,18 +229,21 @@ namespace TNT_Paint
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(673, 75);
+            this.groupBox1.Location = new System.Drawing.Point(897, 92);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(150, 254);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(200, 313);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Color";
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(40, 222);
+            this.button9.Location = new System.Drawing.Point(53, 273);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.Size = new System.Drawing.Size(100, 28);
             this.button9.TabIndex = 24;
             this.button9.Text = "Kakao";
             this.button9.UseVisualStyleBackColor = true;
@@ -237,9 +251,10 @@ namespace TNT_Paint
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(40, 193);
+            this.button8.Location = new System.Drawing.Point(53, 238);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(100, 28);
             this.button8.TabIndex = 23;
             this.button8.Text = "Dramatic";
             this.button8.UseVisualStyleBackColor = true;
@@ -247,9 +262,10 @@ namespace TNT_Paint
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(40, 164);
+            this.button7.Location = new System.Drawing.Point(53, 202);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(100, 28);
             this.button7.TabIndex = 22;
             this.button7.Text = "Red Scale";
             this.button7.UseVisualStyleBackColor = true;
@@ -257,9 +273,10 @@ namespace TNT_Paint
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(40, 135);
+            this.button6.Location = new System.Drawing.Point(53, 166);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(100, 28);
             this.button6.TabIndex = 21;
             this.button6.Text = "Frozen";
             this.button6.UseVisualStyleBackColor = true;
@@ -267,9 +284,10 @@ namespace TNT_Paint
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(40, 106);
+            this.button5.Location = new System.Drawing.Point(53, 130);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(100, 28);
             this.button5.TabIndex = 20;
             this.button5.Text = "Flash";
             this.button5.UseVisualStyleBackColor = true;
@@ -277,9 +295,10 @@ namespace TNT_Paint
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(40, 77);
+            this.button4.Location = new System.Drawing.Point(53, 95);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 19;
             this.button4.Text = "Fog";
             this.button4.UseVisualStyleBackColor = true;
@@ -287,9 +306,10 @@ namespace TNT_Paint
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(40, 48);
+            this.button3.Location = new System.Drawing.Point(53, 59);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 18;
             this.button3.Text = "Sephia";
             this.button3.UseVisualStyleBackColor = true;
@@ -297,9 +317,10 @@ namespace TNT_Paint
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(40, 19);
+            this.button2.Location = new System.Drawing.Point(53, 23);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 17;
             this.button2.Text = "Gray";
             this.button2.UseVisualStyleBackColor = true;
@@ -309,18 +330,21 @@ namespace TNT_Paint
             // 
             this.groupBox2.Controls.Add(this.button13);
             this.groupBox2.Controls.Add(this.button12);
-            this.groupBox2.Location = new System.Drawing.Point(673, 344);
+            this.groupBox2.Location = new System.Drawing.Point(897, 423);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(150, 93);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(200, 114);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Crop";
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(17, 50);
+            this.button13.Location = new System.Drawing.Point(23, 62);
+            this.button13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(109, 37);
+            this.button13.Size = new System.Drawing.Size(145, 46);
             this.button13.TabIndex = 1;
             this.button13.Text = "Crop";
             this.button13.UseVisualStyleBackColor = true;
@@ -328,9 +352,10 @@ namespace TNT_Paint
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(17, 19);
+            this.button12.Location = new System.Drawing.Point(23, 23);
+            this.button12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(109, 23);
+            this.button12.Size = new System.Drawing.Size(145, 28);
             this.button12.TabIndex = 0;
             this.button12.Text = "Make Selection";
             this.button12.UseVisualStyleBackColor = true;
@@ -338,9 +363,9 @@ namespace TNT_Paint
             // 
             // FormChinhSuaAnh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 504);
+            this.ClientSize = new System.Drawing.Size(1113, 620);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button11);
@@ -356,6 +381,7 @@ namespace TNT_Paint
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormChinhSuaAnh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TNT Paint - Image Editor";

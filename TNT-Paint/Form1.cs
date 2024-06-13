@@ -10,6 +10,7 @@ using TNT_Paint.UserControls;
 using System.Threading.Tasks;
 using CloudinaryDotNet;
 using FacebookWrapper;
+using System.Drawing.Imaging;
 
 namespace TNT_Paint
 {
@@ -75,22 +76,19 @@ namespace TNT_Paint
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pb_mainScreen.Image = bm;
             p = new Pen(Color.Black, 1);
-
             eraser = new Pen(Color.White, 20);
             SelectedMode = 1; // chọn bút chì làm mặc định
+
             // Khởi tạo ban đầu
             veHinh = new VeHinh();
             pb_mainScreen.MouseDown += pb_mainScreen_MouseDown;
             pb_mainScreen.MouseMove += pb_mainScreen_MouseMove;
             pb_mainScreen.MouseUp += pb_mainScreen_MouseUp;
             pb_mainScreen.Paint += pb_mainScreen_Paint;
-
-            this.FormClosing += new FormClosingEventHandler(Form1_Closing);
-
+            FormClosing += new FormClosingEventHandler(Form1_Closing);
             timer1.Start();
-            this.Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
 
-
+            Text = "TNT Paint     | " + tenFileTieuDe + " - Paint";
             textBox1.Font = new Font("Arial", 14);
             textBox1.Width = 300;
             textBox1.Height = 100;
@@ -98,7 +96,6 @@ namespace TNT_Paint
             textBox1.Margin = new Padding(0);
             textBox1.BorderStyle = BorderStyle.Fixed3D;
             textBox1.Visible = false;
-
             loadcbFont();
         }
 
@@ -1546,7 +1543,7 @@ namespace TNT_Paint
                     gb_Shape.Location = new Point(gb_Shape.Location.X + 300, gb_Shape.Location.Y);
                     pb_ColorTable.Location = new Point(pb_ColorTable.Location.X + 150, pb_ColorTable.Location.Y);
                     pb_currentColor.Location = new Point(pb_currentColor.Location.X + 140, pb_currentColor.Location.Y);
-                    pictureBox1.Location = new Point(pictureBox1.Location.X + 100, pictureBox1.Location.Y);
+                    pictureBoxCrop.Location = new Point(pictureBoxCrop.Location.X + 100, pictureBoxCrop.Location.Y);
                     pictureBox2.Location = new Point(pictureBox2.Location.X + 100, pictureBox2.Location.Y);
                     button13.Location = new Point(button13.Location.X + 100, button13.Location.Y);
                     button5.Location = new Point(button5.Location.X + 100, button5.Location.Y);
@@ -1560,7 +1557,7 @@ namespace TNT_Paint
                     gb_Shape.Location = new Point(gb_Shape.Location.X - 300, gb_Shape.Location.Y);
                     pb_ColorTable.Location = new Point(pb_ColorTable.Location.X - 150, pb_ColorTable.Location.Y);
                     pb_currentColor.Location = new Point(pb_currentColor.Location.X - 140, pb_currentColor.Location.Y);
-                    pictureBox1.Location = new Point(pictureBox1.Location.X - 100, pictureBox1.Location.Y);
+                    pictureBoxCrop.Location = new Point(pictureBoxCrop.Location.X - 100, pictureBoxCrop.Location.Y);
                     pictureBox2.Location = new Point(pictureBox2.Location.X - 100, pictureBox2.Location.Y);
                     button13.Location = new Point(button13.Location.X - 100, button13.Location.Y);
                     button5.Location = new Point(button5.Location.X - 100, button5.Location.Y);
@@ -1654,11 +1651,15 @@ namespace TNT_Paint
             pb_ColorTable2.Visible = !pb_ColorTable2.Visible;
         }
 
+        private Image originalImage;
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Panel_size.Visible = false;
+            toolStripShape.Visible = false;
             if (tabControl.SelectedIndex == 2)
             {
                 panel8.Visible = true;
+                originalImage = pb_mainScreen.Image;
             }
             else
             {
@@ -1666,15 +1667,431 @@ namespace TNT_Paint
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Btn_Clear_Click(sender, e);
         }
+        #endregion
+
+        #region Image Editor
+        public const float rwgt = 0.3086f;
+        public const float gwgt = 0.6094f;
+        public const float bwgt = 0.0820f;
+        private static ImageAttributes imageAttributes = new ImageAttributes();
+        private static ColorMatrix colorMatrix = new ColorMatrix();
+
+        #region Events scroll
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            float value = trackBar1.Value / 10.0f;
+
+            pb_mainScreen.Image = AdjustBrightness(originalImage, value);
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            float value = trackBar2.Value;
+            pb_mainScreen.Image = AdjustSaturation(originalImage, value / 10);
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            float value = trackBar3.Value;
+            pb_mainScreen.Image = AdjustContrast(originalImage, value);
+        }
+        #endregion
+        #region Code thay đổi brightness, saturation, contrast, gray ...
+        private static Bitmap AdjustBrightness(Image image, float brightness)
+        {
+            // Make the ColorMatrix.
+            float b = brightness;
+            ColorMatrix cm = new ColorMatrix(new float[][]
+            {
+            new float[] {b, 0, 0, 0, 0},
+            new float[] {0, b, 0, 0, 0},
+            new float[] {0, 0, b, 0, 0},
+            new float[] {0, 0, 0, 1, 0},
+            new float[] {0, 0, 0, 0, 1},
+            });
+            ImageAttributes attributes = new ImageAttributes();
+            attributes.SetColorMatrix(cm);
+
+            // Draw the image onto the new bitmap while applying the new ColorMatrix.
+            Point[] points =
+            {
+            new Point(0, 0),
+            new Point(image.Width, 0),
+            new Point(0, image.Height),
+        };
+            Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
+
+            // Make the result bitmap.
+            Bitmap bm = new Bitmap(image.Width, image.Height);
+            using (Graphics gr = Graphics.FromImage(bm))
+            {
+                gr.DrawImage(image, points, rect, GraphicsUnit.Pixel, attributes);
+            }
+
+            // Return the result.
+            return bm;
+        }
+        private static Bitmap AdjustSaturation(Image image, float saturation)
+        {
+
+            Bitmap TempBitmap = (Bitmap)image;
+
+            Bitmap NewBitmap = new Bitmap(TempBitmap.Width, TempBitmap.Height);
+
+            Graphics NewGraphics = Graphics.FromImage(NewBitmap);
+
+            saturation = (float)saturation + 255 / 255.0f;
+            float rWeight = 0.3086f;
+            float gWeight = 0.6094f;
+            float bWeight = 0.0820f;
+
+            float a = (1.0f - saturation) * rWeight + saturation;
+            float b = (1.0f - saturation) * rWeight;
+            float c = (1.0f - saturation) * rWeight;
+            float d = (1.0f - saturation) * gWeight;
+            float e = (1.0f - saturation) * gWeight + saturation;
+            float f = (1.0f - saturation) * gWeight;
+            float g = (1.0f - saturation) * bWeight;
+            float h = (1.0f - saturation) * bWeight;
+            float i = (1.0f - saturation) * bWeight + saturation;
+
+            float[][] FloatColorMatrix = {
+                new float[] {a,  b,  c,  0, 0},
+                new float[] {d,  e,  f,  0, 0},
+                new float[] {g,  h,  i,  0, 0},
+                new float[] {0,  0,  0,  1, 0},
+                new float[] {0, 0, 0, 0, 1}
+            };
+            ColorMatrix NewColorMatrix = new ColorMatrix(FloatColorMatrix);
+
+            ImageAttributes Attributes = new ImageAttributes();
+
+            Attributes.SetColorMatrix(NewColorMatrix);
+
+            NewGraphics.DrawImage(TempBitmap, new Rectangle(0, 0, TempBitmap.Width, TempBitmap.Height), 0, 0, TempBitmap.Width, TempBitmap.Height, GraphicsUnit.Pixel, Attributes);
+
+            Attributes.Dispose();
+
+            NewGraphics.Dispose();
+
+            return NewBitmap;
+        }
+        public static Bitmap AdjustContrast(Image Image, float Value)
+        {
+            Value = (100.0f + Value) / 100.0f;
+            Value *= Value;
+            Bitmap NewBitmap = (Bitmap)Image.Clone();
+            BitmapData data = NewBitmap.LockBits(
+                new Rectangle(0, 0, NewBitmap.Width, NewBitmap.Height),
+                ImageLockMode.ReadWrite,
+                NewBitmap.PixelFormat);
+            int Height = NewBitmap.Height;
+            int Width = NewBitmap.Width;
+
+            unsafe
+            {
+                for (int y = 0; y < Height; ++y)
+                {
+                    byte* row = (byte*)data.Scan0 + (y * data.Stride);
+                    int columnOffset = 0;
+                    for (int x = 0; x < Width; ++x)
+                    {
+                        byte B = row[columnOffset];
+                        byte G = row[columnOffset + 1];
+                        byte R = row[columnOffset + 2];
+
+                        float Red = R / 255.0f;
+                        float Green = G / 255.0f;
+                        float Blue = B / 255.0f;
+                        Red = (((Red - 0.5f) * Value) + 0.5f) * 255.0f;
+                        Green = (((Green - 0.5f) * Value) + 0.5f) * 255.0f;
+                        Blue = (((Blue - 0.5f) * Value) + 0.5f) * 255.0f;
+
+                        int iR = (int)Red;
+                        iR = iR > 255 ? 255 : iR;
+                        iR = iR < 0 ? 0 : iR;
+                        int iG = (int)Green;
+                        iG = iG > 255 ? 255 : iG;
+                        iG = iG < 0 ? 0 : iG;
+                        int iB = (int)Blue;
+                        iB = iB > 255 ? 255 : iB;
+                        iB = iB < 0 ? 0 : iB;
+
+                        row[columnOffset] = (byte)iB;
+                        row[columnOffset + 1] = (byte)iG;
+                        row[columnOffset + 2] = (byte)iR;
+
+                        columnOffset += 4;
+                    }
+                }
+            }
+
+            NewBitmap.UnlockBits(data);
+
+            return NewBitmap;
+        }
+        public Bitmap MakeGrayscale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(
+               new float[][]
+               {
+                   new float[] {.3f, .3f, .3f, 0, 0},
+                   new float[] {.59f, .59f, .59f, 0, 0},
+                   new float[] {.11f, .11f, .11f, 0, 0},
+                   new float[] {0, 0, 0, 1, 0},
+                   new float[] {0, 0, 0, 0, 1}
+               });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
+        public Bitmap MakeFogScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{1+0.3f, 0, 0, 0, 0},
+            new float[]{0, 1+0.7f, 0, 0, 0},
+            new float[]{0, 0, 1+1.3f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+        public Bitmap MakeFlashScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{1+0.9f, 0, 0, 0, 0},
+            new float[]{0, 1+1.5f, 0, 0, 0},
+            new float[]{0, 0, 1+1.3f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+        public Bitmap MakeFrozenScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{1+0.3f, 0, 0, 0, 0},
+            new float[]{0, 1+0f, 0, 0, 0},
+            new float[]{0, 0, 1+5f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
+        public Bitmap MakeRedScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{.393f, .349f, .272f+1.3f, 0, 0},
+            new float[]{.769f, .686f+0.5f, .534f, 0, 0},
+            new float[]{.189f+2.3f, .168f, .131f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
+        public Bitmap MakeDramaticScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{.393f, .349f+0.5f, .272f, 0, 0},
+            new float[]{.769f+0.3f, .686f, .534f, 0, 0},
+            new float[]{.189f, .168f, .131f+0.5f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
+        public Bitmap MakeKakaoScale(Image original)
+
+        {
+            Bitmap newBmp = new Bitmap(original.Width, original.Height);
+            Graphics g = Graphics.FromImage(newBmp);
+            ColorMatrix colorMatrix = new ColorMatrix(new float[][]       // now creating the color matrix object to change the colors or apply  image filter on image
+                {
+                    new float[]{.393f+0.3f, .349f, .272f, 0, 0},
+            new float[]{.769f, .686f+0.2f, .534f, 0, 0},
+            new float[]{.189f, .168f, .131f+0.9f, 0, 0},
+            new float[]{0, 0, 0, 1, 0},
+            new float[]{0, 0, 0, 0, 1}
+                });
+            ImageAttributes img = new ImageAttributes();
+            img.SetColorMatrix(colorMatrix);
+            g.DrawImage(original, new Rectangle(0, 0, original.Width, original.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, img);
+            g.Dispose();
+            return newBmp;
+        }
+
+        #endregion
+
+        #region Events các button
+        private void button2gr_Click_1(object sender, EventArgs e)
+        {
+            pb_mainScreen.Image = MakeGrayscale(pb_mainScreen.Image);
+        }
+
+        private void button3se_Click_1(object sender, EventArgs e)
+        {
+
+            Bitmap bmp = new Bitmap(pb_mainScreen.Image);
+
+            int width = pb_mainScreen.Image.Width;
+            int height = pb_mainScreen.Image.Height;
+
+            //color of pixel
+            Color p;
+
+            //sepia
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    //get pixel value
+                    p = bmp.GetPixel(x, y);
+
+                    //extract pixel component ARGB
+                    int a = p.A;
+                    int r = p.R;
+                    int g = p.G;
+                    int b = p.B;
+
+                    //calculate temp value
+                    int tr = (int)(0.393 * r + 0.769 * g + 0.189 * b);
+                    int tg = (int)(0.349 * r + 0.686 * g + 0.168 * b);
+                    int tb = (int)(0.272 * r + 0.534 * g + 0.131 * b);
+
+                    //set new RGB value
+                    if (tr > 255)
+                    {
+                        r = 255;
+                    }
+                    else
+                    {
+                        r = tr;
+                    }
+
+                    if (tg > 255)
+                    {
+                        g = 255;
+                    }
+                    else
+                    {
+                        g = tg;
+                    }
+
+                    if (tb > 255)
+                    {
+                        b = 255;
+                    }
+                    else
+                    {
+                        b = tb;
+                    }
+
+                    //set the new RGB value in image pixel
+                    bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
+                }
+            }
+
+            //load sepia image in picturebox2
+            pb_mainScreen.Image = bmp;
+
+        }
+
+        private void button4fo_Click_1(object sender, EventArgs e)
+        {
+            pb_mainScreen.Image = MakeFogScale(pb_mainScreen.Image);
+        }
+
+        private void button5fl_Click_1(object sender, EventArgs e)
+        {
+            pb_mainScreen.Image = MakeFlashScale(pb_mainScreen.Image);
+        }
+
+        private void button6fr_Click_1(object sender, EventArgs e)
+        {
+            pb_mainScreen.Image = MakeFrozenScale(pb_mainScreen.Image);
+        }
+
+        private void button7re_Click_1(object sender, EventArgs e)
+        {
+            pb_mainScreen.Image = MakeRedScale(pb_mainScreen.Image);
+        }
+
+        private void button8dr_Click_1(object sender, EventArgs e)
+        {
+            pb_mainScreen.Image = MakeDramaticScale(pb_mainScreen.Image);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                panel8.Visible = false;
+            }
+            else
+            {
+                panel8.Visible = true;
+            }
+        }
+
+        private void button9ka_Click_1(object sender, EventArgs e)
+        {
+            pb_mainScreen.Image = MakeKakaoScale(pb_mainScreen.Image);
+        }
+
+        #endregion
         #endregion
     }
 }
