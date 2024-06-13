@@ -96,6 +96,8 @@ namespace TNT_Paint
             textBox1.Height = 100;
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Margin = new Padding(0);
+            textBox1.BorderStyle = BorderStyle.Fixed3D;
+            textBox1.Visible = false;
 
             loadcbFont();
         }
@@ -348,7 +350,8 @@ namespace TNT_Paint
                 g.DrawString(textBox1.Text, textBox1.Font, brush, new Point(textBox1.Location.X, textBox1.Location.Y));
                 textBox1.Visible = false;
                 textBox1.Text = "";
-                tabControl.Visible = false;
+                panelText.Visible = false;
+                tabControl.SelectedIndex = 0;
                 return;
             }
 
@@ -385,7 +388,8 @@ namespace TNT_Paint
                 textBox1.Location = new Point(e.X, e.Y);
                 pb_mainScreen.Controls.Add(textBox1);
                 textBox1.Visible = true;
-                tabControl.Visible = true;
+                panelText.Visible = true;
+                tabControl.SelectedIndex = 1;
                 textBox1.Select();
 
             }
@@ -591,7 +595,7 @@ namespace TNT_Paint
         #region Text Event
         private void cb_Font_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl.Visible == false)
+            if (panelText.Visible == false)
             {
                 return;
             }
@@ -610,7 +614,7 @@ namespace TNT_Paint
         }
         private void cb_Size_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl.Visible == false)
+            if (panelText.Visible == false)
             {
                 return;
             }
@@ -1636,6 +1640,34 @@ namespace TNT_Paint
             {
                 return false;
             }
+
+        }
+
+        private void pb_currentColor_BackColorChanged(object sender, EventArgs e)
+        {
+            pb_color2.BackColor = pb_currentColor.BackColor;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            pb_ColorTable2.BringToFront();
+            pb_ColorTable2.Visible = !pb_ColorTable2.Visible;
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedIndex == 2)
+            {
+                panel8.Visible = true;
+            }
+            else
+            {
+                panel8.Visible = false;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
 

@@ -70,15 +70,12 @@ namespace TNT_Paint
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareImagesOnFacebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareImagesOnFacebookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Btn_Pencil = new System.Windows.Forms.Button();
-            this.buttonAddText = new System.Windows.Forms.Button();
-            this.Btn_ColorPicker = new System.Windows.Forms.Button();
-            this.Btn_Eraser = new System.Windows.Forms.Button();
-            this.Btn_Fill = new System.Windows.Forms.Button();
-            this.Btn_ColorDialog = new System.Windows.Forms.Button();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabHome = new System.Windows.Forms.TabPage();
+            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -87,31 +84,42 @@ namespace TNT_Paint
             this.button13 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage_Text = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.cb_Size = new System.Windows.Forms.ComboBox();
-            this.btn_Underline = new System.Windows.Forms.Button();
-            this.btn_Bold = new System.Windows.Forms.Button();
-            this.btn_Italic = new System.Windows.Forms.Button();
-            this.cb_Font = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Btn_Pencil = new System.Windows.Forms.Button();
+            this.buttonAddText = new System.Windows.Forms.Button();
+            this.Btn_ColorPicker = new System.Windows.Forms.Button();
+            this.Btn_Eraser = new System.Windows.Forms.Button();
+            this.Btn_Fill = new System.Windows.Forms.Button();
+            this.Btn_ColorDialog = new System.Windows.Forms.Button();
+            this.gb_Shape = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.pb_currentColor = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.ptbSizeDrop = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.gb_Shape = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.tabText = new System.Windows.Forms.TabPage();
+            this.panelText = new System.Windows.Forms.Panel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cb_Font = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.cb_Size = new System.Windows.Forms.ComboBox();
+            this.btn_Underline = new System.Windows.Forms.Button();
+            this.btn_Bold = new System.Windows.Forms.Button();
+            this.btn_Italic = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.pb_color2 = new System.Windows.Forms.PictureBox();
             this.Panel_size = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_BigLine = new System.Windows.Forms.Button();
@@ -147,35 +155,77 @@ namespace TNT_Paint
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.shareImagesOnFacebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shareImagesOnFacebookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pb_ColorTable2 = new System.Windows.Forms.PictureBox();
+            this.tabImgEditor = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
-            this.tabControl.SuspendLayout();
-            this.tabPage_Text.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.gb_Shape.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabText.SuspendLayout();
+            this.panelText.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_color2)).BeginInit();
             this.Panel_size.SuspendLayout();
             this.toolStripShape.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable2)).BeginInit();
+            this.tabImgEditor.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -265,7 +315,7 @@ namespace TNT_Paint
             // 
             this.exitToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_close_window_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.Delete)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -291,7 +341,7 @@ namespace TNT_Paint
             this.undoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_undo_48;
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -300,21 +350,21 @@ namespace TNT_Paint
             this.redoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_redo_48;
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.redoToolStripMenuItem.Text = "Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(208, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(221, 6);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_scissors_50;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -323,7 +373,7 @@ namespace TNT_Paint
             this.copyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_copy_50;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -332,7 +382,7 @@ namespace TNT_Paint
             this.pasteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_paste_64;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -341,7 +391,7 @@ namespace TNT_Paint
             this.pasteToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_insert_raster_image_100;
             this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
             this.pasteToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F13;
-            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(211, 28);
+            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
             this.pasteToolStripMenuItem1.Text = "Paste from";
             this.pasteToolStripMenuItem1.Click += new System.EventHandler(this.pasteToolStripMenuItem1_Click);
             // 
@@ -350,7 +400,7 @@ namespace TNT_Paint
             this.deleteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_remove_48;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -367,7 +417,7 @@ namespace TNT_Paint
             // 
             this.imageEditorToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_photo_editor_100;
             this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
-            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
+            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.imageEditorToolStripMenuItem.Text = "Image Editor";
             this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
             // 
@@ -375,7 +425,7 @@ namespace TNT_Paint
             // 
             this.magnifyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_to_extents_64;
             this.magnifyToolStripMenuItem.Name = "magnifyToolStripMenuItem";
-            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
+            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.magnifyToolStripMenuItem.Text = "Magnifier";
             this.magnifyToolStripMenuItem.Click += new System.EventHandler(this.magnifyToolStripMenuItem_Click);
             // 
@@ -506,7 +556,7 @@ namespace TNT_Paint
             // 
             this.informationToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.personal_infor;
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
             this.informationToolStripMenuItem.Text = "Information";
             this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
@@ -514,32 +564,192 @@ namespace TNT_Paint
             // 
             this.aboutToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_about_481;
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(184, 28);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
+            // 
+            // shareImagesOnFacebookToolStripMenuItem
+            // 
+            this.shareImagesOnFacebookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shareImagesOnFacebookToolStripMenuItem1});
+            this.shareImagesOnFacebookToolStripMenuItem.Name = "shareImagesOnFacebookToolStripMenuItem";
+            this.shareImagesOnFacebookToolStripMenuItem.Size = new System.Drawing.Size(67, 27);
+            this.shareImagesOnFacebookToolStripMenuItem.Text = "Share";
+            // 
+            // shareImagesOnFacebookToolStripMenuItem1
+            // 
+            this.shareImagesOnFacebookToolStripMenuItem1.Name = "shareImagesOnFacebookToolStripMenuItem1";
+            this.shareImagesOnFacebookToolStripMenuItem1.Size = new System.Drawing.Size(297, 28);
+            this.shareImagesOnFacebookToolStripMenuItem1.Text = "Share images on Facebook";
+            this.shareImagesOnFacebookToolStripMenuItem1.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.groupBox4);
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.pb_ColorTable);
             this.panel1.Controls.Add(this.tabControl);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.gb_Shape);
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 31);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1277, 123);
+            this.panel1.Size = new System.Drawing.Size(1277, 164);
             this.panel1.TabIndex = 1;
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabHome);
+            this.tabControl.Controls.Add(this.tabText);
+            this.tabControl.Controls.Add(this.tabImgEditor);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1277, 164);
+            this.tabControl.TabIndex = 32;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            // 
+            // tabHome
+            // 
+            this.tabHome.Controls.Add(this.pb_ColorTable);
+            this.tabHome.Controls.Add(this.groupBox3);
+            this.tabHome.Controls.Add(this.groupBox4);
+            this.tabHome.Controls.Add(this.gb_Shape);
+            this.tabHome.Controls.Add(this.groupBox2);
+            this.tabHome.Controls.Add(this.groupBox1);
+            this.tabHome.Location = new System.Drawing.Point(4, 25);
+            this.tabHome.Name = "tabHome";
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHome.Size = new System.Drawing.Size(1269, 135);
+            this.tabHome.TabIndex = 0;
+            this.tabHome.Text = "Home";
+            this.tabHome.UseVisualStyleBackColor = true;
+            // 
+            // pb_ColorTable
+            // 
+            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
+            this.pb_ColorTable.Location = new System.Drawing.Point(890, 7);
+            this.pb_ColorTable.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_ColorTable.Name = "pb_ColorTable";
+            this.pb_ColorTable.Size = new System.Drawing.Size(285, 123);
+            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ColorTable.TabIndex = 9;
+            this.pb_ColorTable.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
+            this.pb_ColorTable.Visible = false;
+            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.panel6);
+            this.groupBox3.Controls.Add(this.panel3);
+            this.groupBox3.Controls.Add(this.button12);
+            this.groupBox3.Location = new System.Drawing.Point(174, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(231, 123);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Image";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.button5);
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Location = new System.Drawing.Point(119, 71);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(112, 41);
+            this.panel6.TabIndex = 24;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(42, 0);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(68, 39);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Resize";
+            this.toolTip1.SetToolTip(this.button5, "Resize\r\n\r\nĐổi kích thước của ảnh.");
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button13);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(119, 20);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(112, 41);
+            this.panel3.TabIndex = 23;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(41, 0);
+            this.button13.Margin = new System.Windows.Forms.Padding(0);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(69, 39);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "Crop";
+            this.toolTip1.SetToolTip(this.button13, "Crop \r\n\r\nCrop ảnh đã Select ra ảnh.");
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 39);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button12
+            // 
+            this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Image = global::TNT_Paint.Properties.Resources.icons8_selection_67;
+            this.button12.Location = new System.Drawing.Point(7, 20);
+            this.button12.Margin = new System.Windows.Forms.Padding(1);
+            this.button12.Name = "button12";
+            this.button12.Padding = new System.Windows.Forms.Padding(5);
+            this.button12.Size = new System.Drawing.Size(107, 92);
+            this.button12.TabIndex = 22;
+            this.button12.Text = "Select";
+            this.toolTip1.SetToolTip(this.button12, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(162, 122);
             this.groupBox4.TabIndex = 31;
@@ -666,267 +876,69 @@ namespace TNT_Paint
             this.Btn_ColorDialog.UseVisualStyleBackColor = true;
             this.Btn_ColorDialog.Click += new System.EventHandler(this.Btn_ColorDialog_Click);
             // 
-            // groupBox3
+            // gb_Shape
             // 
-            this.groupBox3.Controls.Add(this.panel6);
-            this.groupBox3.Controls.Add(this.panel3);
-            this.groupBox3.Controls.Add(this.button12);
-            this.groupBox3.Location = new System.Drawing.Point(198, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(231, 123);
-            this.groupBox3.TabIndex = 30;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Image";
+            this.gb_Shape.Controls.Add(this.panel5);
+            this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_Shape.Location = new System.Drawing.Point(535, 7);
+            this.gb_Shape.Margin = new System.Windows.Forms.Padding(4);
+            this.gb_Shape.Name = "gb_Shape";
+            this.gb_Shape.Padding = new System.Windows.Forms.Padding(4);
+            this.gb_Shape.Size = new System.Drawing.Size(114, 121);
+            this.gb_Shape.TabIndex = 8;
+            this.gb_Shape.TabStop = false;
+            this.gb_Shape.Text = "Shapes";
             // 
-            // panel6
+            // panel5
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.button5);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Location = new System.Drawing.Point(119, 71);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(112, 41);
-            this.panel6.TabIndex = 24;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.button7);
+            this.panel5.Controls.Add(this.pictureBox4);
+            this.panel5.Location = new System.Drawing.Point(7, 22);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(10);
+            this.panel5.Size = new System.Drawing.Size(92, 95);
+            this.panel5.TabIndex = 28;
             // 
-            // button5
+            // button7
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(42, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(68, 39);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Resize";
-            this.toolTip1.SetToolTip(this.button5, "Resize\r\n\r\nĐổi kích thước của ảnh.");
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button7.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(10, 69);
+            this.button7.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(70, 14);
+            this.button7.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.button7, "Xem danh sách hình thể");
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // pictureBox2
+            // pictureBox4
             // 
-            this.pictureBox2.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button13);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(119, 20);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(112, 41);
-            this.panel3.TabIndex = 23;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(41, 0);
-            this.button13.Margin = new System.Windows.Forms.Padding(0);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(69, 39);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "Crop";
-            this.toolTip1.SetToolTip(this.button13, "Crop \r\n\r\nCrop ảnh đã Select ra ảnh.");
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 39);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button12
-            // 
-            this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Image = global::TNT_Paint.Properties.Resources.icons8_selection_67;
-            this.button12.Location = new System.Drawing.Point(7, 20);
-            this.button12.Margin = new System.Windows.Forms.Padding(1);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(5);
-            this.button12.Size = new System.Drawing.Size(107, 92);
-            this.button12.TabIndex = 22;
-            this.button12.Text = "Select";
-            this.toolTip1.SetToolTip(this.button12, "Selection\r\n\r\nChọn một phần của ảnh.");
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // pb_ColorTable
-            // 
-            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
-            this.pb_ColorTable.Location = new System.Drawing.Point(163, 0);
-            this.pb_ColorTable.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_ColorTable.Name = "pb_ColorTable";
-            this.pb_ColorTable.Size = new System.Drawing.Size(285, 123);
-            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ColorTable.TabIndex = 9;
-            this.pb_ColorTable.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
-            this.pb_ColorTable.Visible = false;
-            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tabPage_Text);
-            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(989, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(283, 123);
-            this.tabControl.TabIndex = 9;
-            this.tabControl.Visible = false;
-            this.tabControl.VisibleChanged += new System.EventHandler(this.tabControl_VisibleChanged);
-            // 
-            // tabPage_Text
-            // 
-            this.tabPage_Text.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tabPage_Text.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage_Text.Controls.Add(this.cb_Font);
-            this.tabPage_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage_Text.ForeColor = System.Drawing.Color.Black;
-            this.tabPage_Text.Location = new System.Drawing.Point(4, 29);
-            this.tabPage_Text.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage_Text.Name = "tabPage_Text";
-            this.tabPage_Text.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage_Text.Size = new System.Drawing.Size(275, 90);
-            this.tabPage_Text.TabIndex = 1;
-            this.tabPage_Text.Text = "Text";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.cb_Size, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_Underline, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_Bold, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_Italic, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 47);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(257, 43);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // cb_Size
-            // 
-            this.cb_Size.BackColor = System.Drawing.Color.White;
-            this.cb_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Size.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Size.FormattingEnabled = true;
-            this.cb_Size.Items.AddRange(new object[] {
-            "8",
-            "9",
-            "10",
-            "12",
-            "14",
-            "16",
-            "18",
-            "20",
-            "22",
-            "24",
-            "26",
-            "28",
-            "36",
-            "48",
-            "72"});
-            this.cb_Size.Location = new System.Drawing.Point(4, 4);
-            this.cb_Size.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Size.Name = "cb_Size";
-            this.cb_Size.Size = new System.Drawing.Size(94, 33);
-            this.cb_Size.TabIndex = 1;
-            this.cb_Size.SelectedIndexChanged += new System.EventHandler(this.cb_Size_SelectedIndexChanged);
-            // 
-            // btn_Underline
-            // 
-            this.btn_Underline.FlatAppearance.BorderSize = 0;
-            this.btn_Underline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Underline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Underline.Location = new System.Drawing.Point(208, 4);
-            this.btn_Underline.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Underline.Name = "btn_Underline";
-            this.btn_Underline.Size = new System.Drawing.Size(45, 35);
-            this.btn_Underline.TabIndex = 4;
-            this.btn_Underline.Text = "U";
-            this.btn_Underline.UseVisualStyleBackColor = true;
-            this.btn_Underline.Click += new System.EventHandler(this.btn_Underline_Click);
-            // 
-            // btn_Bold
-            // 
-            this.btn_Bold.FlatAppearance.BorderSize = 0;
-            this.btn_Bold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Bold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bold.Location = new System.Drawing.Point(106, 4);
-            this.btn_Bold.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Bold.Name = "btn_Bold";
-            this.btn_Bold.Size = new System.Drawing.Size(43, 35);
-            this.btn_Bold.TabIndex = 2;
-            this.btn_Bold.Text = "B";
-            this.btn_Bold.UseVisualStyleBackColor = true;
-            this.btn_Bold.Click += new System.EventHandler(this.btn_Bold_Click);
-            // 
-            // btn_Italic
-            // 
-            this.btn_Italic.FlatAppearance.BorderSize = 0;
-            this.btn_Italic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Italic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Italic.Location = new System.Drawing.Point(157, 4);
-            this.btn_Italic.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Italic.Name = "btn_Italic";
-            this.btn_Italic.Size = new System.Drawing.Size(43, 35);
-            this.btn_Italic.TabIndex = 3;
-            this.btn_Italic.Text = "I";
-            this.btn_Italic.UseVisualStyleBackColor = true;
-            this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
-            // 
-            // cb_Font
-            // 
-            this.cb_Font.BackColor = System.Drawing.Color.White;
-            this.cb_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Font.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Font.FormattingEnabled = true;
-            this.cb_Font.Location = new System.Drawing.Point(12, 8);
-            this.cb_Font.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Font.Name = "cb_Font";
-            this.cb_Font.Size = new System.Drawing.Size(253, 33);
-            this.cb_Font.TabIndex = 0;
-            this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox4.Image = global::TNT_Paint.Properties.Resources.icons8_shapes_64__2_1;
+            this.pictureBox4.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(70, 59);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.pb_currentColor);
             this.groupBox2.Controls.Add(this.panel4);
-            this.groupBox2.Location = new System.Drawing.Point(463, 3);
+            this.groupBox2.Location = new System.Drawing.Point(656, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(227, 120);
+            this.groupBox2.Size = new System.Drawing.Size(227, 123);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Color and Size";
@@ -958,6 +970,7 @@ namespace TNT_Paint
             this.pb_currentColor.TabIndex = 11;
             this.pb_currentColor.TabStop = false;
             this.toolTip1.SetToolTip(this.pb_currentColor, "Current Color");
+            this.pb_currentColor.BackColorChanged += new System.EventHandler(this.pb_currentColor_BackColorChanged);
             // 
             // panel4
             // 
@@ -1000,64 +1013,10 @@ namespace TNT_Paint
             this.ptbSizeDrop.TabStop = false;
             this.ptbSizeDrop.Click += new System.EventHandler(this.ptbSizeDrop_Click);
             // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.button7);
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Location = new System.Drawing.Point(858, 21);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(92, 95);
-            this.panel5.TabIndex = 28;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button7.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(10, 69);
-            this.button7.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(70, 14);
-            this.button7.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.button7, "Xem danh sách hình thể");
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox4.Image = global::TNT_Paint.Properties.Resources.icons8_shapes_64__2_1;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(70, 59);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
-            // gb_Shape
-            // 
-            this.gb_Shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_Shape.Location = new System.Drawing.Point(853, 2);
-            this.gb_Shape.Margin = new System.Windows.Forms.Padding(4);
-            this.gb_Shape.Name = "gb_Shape";
-            this.gb_Shape.Padding = new System.Windows.Forms.Padding(4);
-            this.gb_Shape.Size = new System.Drawing.Size(128, 117);
-            this.gb_Shape.TabIndex = 8;
-            this.gb_Shape.TabStop = false;
-            this.gb_Shape.Text = "Shapes";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Location = new System.Drawing.Point(730, 0);
+            this.groupBox1.Location = new System.Drawing.Point(412, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(116, 123);
             this.groupBox1.TabIndex = 27;
@@ -1137,6 +1096,182 @@ namespace TNT_Paint
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // tabText
+            // 
+            this.tabText.Controls.Add(this.panelText);
+            this.tabText.Location = new System.Drawing.Point(4, 25);
+            this.tabText.Name = "tabText";
+            this.tabText.Padding = new System.Windows.Forms.Padding(3);
+            this.tabText.Size = new System.Drawing.Size(1269, 135);
+            this.tabText.TabIndex = 1;
+            this.tabText.Text = "Text";
+            this.tabText.UseVisualStyleBackColor = true;
+            // 
+            // panelText
+            // 
+            this.panelText.Controls.Add(this.groupBox6);
+            this.panelText.Controls.Add(this.pb_ColorTable2);
+            this.panelText.Controls.Add(this.groupBox5);
+            this.panelText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelText.Location = new System.Drawing.Point(3, 3);
+            this.panelText.Name = "panelText";
+            this.panelText.Size = new System.Drawing.Size(1263, 129);
+            this.panelText.TabIndex = 0;
+            this.panelText.Visible = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox6.Controls.Add(this.cb_Font);
+            this.groupBox6.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox6.Location = new System.Drawing.Point(5, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(271, 121);
+            this.groupBox6.TabIndex = 31;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Font";
+            // 
+            // cb_Font
+            // 
+            this.cb_Font.BackColor = System.Drawing.Color.White;
+            this.cb_Font.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Font.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Font.FormattingEnabled = true;
+            this.cb_Font.Location = new System.Drawing.Point(6, 32);
+            this.cb_Font.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_Font.Name = "cb_Font";
+            this.cb_Font.Size = new System.Drawing.Size(253, 24);
+            this.cb_Font.TabIndex = 0;
+            this.cb_Font.SelectedIndexChanged += new System.EventHandler(this.cb_Font_SelectedIndexChanged);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.cb_Size, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Underline, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Bold, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Italic, 2, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 72);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(257, 43);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // cb_Size
+            // 
+            this.cb_Size.BackColor = System.Drawing.Color.White;
+            this.cb_Size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Size.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_Size.FormattingEnabled = true;
+            this.cb_Size.Items.AddRange(new object[] {
+            "8",
+            "9",
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20",
+            "22",
+            "24",
+            "26",
+            "28",
+            "36",
+            "48",
+            "72"});
+            this.cb_Size.Location = new System.Drawing.Point(4, 4);
+            this.cb_Size.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_Size.Name = "cb_Size";
+            this.cb_Size.Size = new System.Drawing.Size(94, 24);
+            this.cb_Size.TabIndex = 1;
+            this.cb_Size.SelectedIndexChanged += new System.EventHandler(this.cb_Size_SelectedIndexChanged);
+            // 
+            // btn_Underline
+            // 
+            this.btn_Underline.FlatAppearance.BorderSize = 0;
+            this.btn_Underline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Underline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Underline.Location = new System.Drawing.Point(208, 4);
+            this.btn_Underline.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Underline.Name = "btn_Underline";
+            this.btn_Underline.Size = new System.Drawing.Size(45, 35);
+            this.btn_Underline.TabIndex = 4;
+            this.btn_Underline.Text = "U";
+            this.btn_Underline.UseVisualStyleBackColor = true;
+            this.btn_Underline.Click += new System.EventHandler(this.btn_Underline_Click);
+            // 
+            // btn_Bold
+            // 
+            this.btn_Bold.FlatAppearance.BorderSize = 0;
+            this.btn_Bold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Bold.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bold.Location = new System.Drawing.Point(106, 4);
+            this.btn_Bold.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Bold.Name = "btn_Bold";
+            this.btn_Bold.Size = new System.Drawing.Size(43, 35);
+            this.btn_Bold.TabIndex = 2;
+            this.btn_Bold.Text = "B";
+            this.btn_Bold.UseVisualStyleBackColor = true;
+            this.btn_Bold.Click += new System.EventHandler(this.btn_Bold_Click);
+            // 
+            // btn_Italic
+            // 
+            this.btn_Italic.FlatAppearance.BorderSize = 0;
+            this.btn_Italic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Italic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Italic.Location = new System.Drawing.Point(157, 4);
+            this.btn_Italic.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Italic.Name = "btn_Italic";
+            this.btn_Italic.Size = new System.Drawing.Size(43, 35);
+            this.btn_Italic.TabIndex = 3;
+            this.btn_Italic.Text = "I";
+            this.btn_Italic.UseVisualStyleBackColor = true;
+            this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.Controls.Add(this.pb_color2);
+            this.groupBox5.Location = new System.Drawing.Point(282, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(227, 121);
+            this.groupBox5.TabIndex = 30;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Color";
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = global::TNT_Paint.Properties.Resources.color_ribbon;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(1, 25);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(184, 33);
+            this.button9.TabIndex = 19;
+            this.button9.Text = "Select";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button9, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // pb_color2
+            // 
+            this.pb_color2.BackColor = System.Drawing.Color.Black;
+            this.pb_color2.Location = new System.Drawing.Point(193, 27);
+            this.pb_color2.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_color2.Name = "pb_color2";
+            this.pb_color2.Size = new System.Drawing.Size(30, 30);
+            this.pb_color2.TabIndex = 11;
+            this.pb_color2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_color2, "Current Color");
+            // 
             // Panel_size
             // 
             this.Panel_size.BackColor = System.Drawing.Color.White;
@@ -1145,7 +1280,7 @@ namespace TNT_Paint
             this.Panel_size.Controls.Add(this.Btn_BigLine);
             this.Panel_size.Controls.Add(this.Btn_MediumLine);
             this.Panel_size.Controls.Add(this.btn_SmallLine);
-            this.Panel_size.Location = new System.Drawing.Point(464, 7);
+            this.Panel_size.Location = new System.Drawing.Point(661, 8);
             this.Panel_size.Margin = new System.Windows.Forms.Padding(4);
             this.Panel_size.Name = "Panel_size";
             this.Panel_size.Size = new System.Drawing.Size(184, 115);
@@ -1226,7 +1361,7 @@ namespace TNT_Paint
             this.Btn_DrawDownArrow,
             this.Btn_DrawFivePointStar});
             this.toolStripShape.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolStripShape.Location = new System.Drawing.Point(730, 4);
+            this.toolStripShape.Location = new System.Drawing.Point(398, 9);
             this.toolStripShape.Name = "toolStripShape";
             this.toolStripShape.Size = new System.Drawing.Size(376, 28);
             this.toolStripShape.TabIndex = 0;
@@ -1467,7 +1602,7 @@ namespace TNT_Paint
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(1277, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1256, 26);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1504,10 +1639,10 @@ namespace TNT_Paint
             this.panel2.Controls.Add(this.panelDauCham1);
             this.panel2.Controls.Add(this.pb_mainScreen);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 154);
+            this.panel2.Location = new System.Drawing.Point(0, 195);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1277, 578);
+            this.panel2.Size = new System.Drawing.Size(1277, 491);
             this.panel2.TabIndex = 9;
             // 
             // pb_mainScreen
@@ -1525,28 +1660,324 @@ namespace TNT_Paint
             this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
-            // shareImagesOnFacebookToolStripMenuItem
+            // pb_ColorTable2
             // 
-            this.shareImagesOnFacebookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shareImagesOnFacebookToolStripMenuItem1});
-            this.shareImagesOnFacebookToolStripMenuItem.Name = "shareImagesOnFacebookToolStripMenuItem";
-            this.shareImagesOnFacebookToolStripMenuItem.Size = new System.Drawing.Size(67, 27);
-            this.shareImagesOnFacebookToolStripMenuItem.Text = "Share";
+            this.pb_ColorTable2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_ColorTable2.Image = ((System.Drawing.Image)(resources.GetObject("pb_ColorTable2.Image")));
+            this.pb_ColorTable2.Location = new System.Drawing.Point(516, 3);
+            this.pb_ColorTable2.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_ColorTable2.Name = "pb_ColorTable2";
+            this.pb_ColorTable2.Size = new System.Drawing.Size(285, 123);
+            this.pb_ColorTable2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ColorTable2.TabIndex = 32;
+            this.pb_ColorTable2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_ColorTable2, "Color Table");
+            this.pb_ColorTable2.Visible = false;
+            this.pb_ColorTable2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
             // 
-            // shareImagesOnFacebookToolStripMenuItem1
+            // tabImgEditor
             // 
-            this.shareImagesOnFacebookToolStripMenuItem1.Name = "shareImagesOnFacebookToolStripMenuItem1";
-            this.shareImagesOnFacebookToolStripMenuItem1.Size = new System.Drawing.Size(297, 28);
-            this.shareImagesOnFacebookToolStripMenuItem1.Text = "Share images on Facebook";
-            this.shareImagesOnFacebookToolStripMenuItem1.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
+            this.tabImgEditor.Controls.Add(this.groupBox8);
+            this.tabImgEditor.Controls.Add(this.groupBox7);
+            this.tabImgEditor.Location = new System.Drawing.Point(4, 25);
+            this.tabImgEditor.Name = "tabImgEditor";
+            this.tabImgEditor.Padding = new System.Windows.Forms.Padding(3);
+            this.tabImgEditor.Size = new System.Drawing.Size(1269, 135);
+            this.tabImgEditor.TabIndex = 2;
+            this.tabImgEditor.Text = "Image Editor";
+            this.tabImgEditor.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.trackBar3);
+            this.panel8.Controls.Add(this.label3);
+            this.panel8.Controls.Add(this.trackBar2);
+            this.panel8.Controls.Add(this.trackBar1);
+            this.panel8.Controls.Add(this.label2);
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 686);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1277, 69);
+            this.panel8.TabIndex = 10;
+            this.panel8.Visible = false;
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(876, 16);
+            this.trackBar3.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar3.Maximum = 100;
+            this.trackBar3.Minimum = -100;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(247, 56);
+            this.trackBar3.TabIndex = 19;
+            this.trackBar3.TickFrequency = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(812, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Contrast";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(492, 16);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar2.Maximum = 100;
+            this.trackBar2.Minimum = -100;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(247, 56);
+            this.trackBar2.TabIndex = 17;
+            this.trackBar2.TickFrequency = 5;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(94, 16);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar1.Maximum = 30;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(247, 56);
+            this.trackBar1.TabIndex = 16;
+            this.trackBar1.TickFrequency = 5;
+            this.trackBar1.Value = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(417, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Saturation";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Brightness";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.panel7);
+            this.groupBox7.Controls.Add(this.panel9);
+            this.groupBox7.Controls.Add(this.button14);
+            this.groupBox7.Location = new System.Drawing.Point(8, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(231, 123);
+            this.groupBox7.TabIndex = 31;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Image";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.button10);
+            this.panel7.Controls.Add(this.pictureBox3);
+            this.panel7.Location = new System.Drawing.Point(119, 71);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(112, 41);
+            this.panel7.TabIndex = 24;
+            // 
+            // button10
+            // 
+            this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(42, 0);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(68, 39);
+            this.button10.TabIndex = 18;
+            this.button10.Text = "Resize";
+            this.toolTip1.SetToolTip(this.button10, "Resize\r\n\r\nĐổi kích thước của ảnh.");
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(42, 39);
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.button11);
+            this.panel9.Controls.Add(this.pictureBox5);
+            this.panel9.Location = new System.Drawing.Point(119, 20);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(112, 41);
+            this.panel9.TabIndex = 23;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(41, 0);
+            this.button11.Margin = new System.Windows.Forms.Padding(0);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(69, 39);
+            this.button11.TabIndex = 14;
+            this.button11.Text = "Crop";
+            this.toolTip1.SetToolTip(this.button11, "Crop \r\n\r\nCrop ảnh đã Select ra ảnh.");
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 39);
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            // 
+            // button14
+            // 
+            this.button14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Image = global::TNT_Paint.Properties.Resources.icons8_selection_67;
+            this.button14.Location = new System.Drawing.Point(7, 20);
+            this.button14.Margin = new System.Windows.Forms.Padding(1);
+            this.button14.Name = "button14";
+            this.button14.Padding = new System.Windows.Forms.Padding(5);
+            this.button14.Size = new System.Drawing.Size(107, 92);
+            this.button14.TabIndex = 22;
+            this.button14.Text = "Select";
+            this.toolTip1.SetToolTip(this.button14, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button15);
+            this.groupBox8.Controls.Add(this.button16);
+            this.groupBox8.Controls.Add(this.button17);
+            this.groupBox8.Controls.Add(this.button18);
+            this.groupBox8.Controls.Add(this.button19);
+            this.groupBox8.Controls.Add(this.button20);
+            this.groupBox8.Controls.Add(this.button21);
+            this.groupBox8.Controls.Add(this.button22);
+            this.groupBox8.Location = new System.Drawing.Point(246, 7);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox8.Size = new System.Drawing.Size(532, 122);
+            this.groupBox8.TabIndex = 32;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Color";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(373, 70);
+            this.button15.Margin = new System.Windows.Forms.Padding(4);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(100, 28);
+            this.button15.TabIndex = 24;
+            this.button15.Text = "Kakao";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(373, 34);
+            this.button16.Margin = new System.Windows.Forms.Padding(4);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(100, 28);
+            this.button16.TabIndex = 23;
+            this.button16.Text = "Dramatic";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(265, 70);
+            this.button17.Margin = new System.Windows.Forms.Padding(4);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(100, 28);
+            this.button17.TabIndex = 22;
+            this.button17.Text = "Red Scale";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(265, 34);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(100, 28);
+            this.button18.TabIndex = 21;
+            this.button18.Text = "Frozen";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(157, 70);
+            this.button19.Margin = new System.Windows.Forms.Padding(4);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(100, 28);
+            this.button19.TabIndex = 20;
+            this.button19.Text = "Flash";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(157, 34);
+            this.button20.Margin = new System.Windows.Forms.Padding(4);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(100, 28);
+            this.button20.TabIndex = 19;
+            this.button20.Text = "Fog";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(49, 70);
+            this.button21.Margin = new System.Windows.Forms.Padding(4);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(100, 28);
+            this.button21.TabIndex = 18;
+            this.button21.Text = "Sephia";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(49, 34);
+            this.button22.Margin = new System.Windows.Forms.Padding(4);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(100, 28);
+            this.button22.TabIndex = 17;
+            this.button22.Text = "Gray";
+            this.button22.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1277, 732);
+            this.ClientSize = new System.Drawing.Size(1277, 755);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1560,25 +1991,31 @@ namespace TNT_Paint
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
+            this.tabHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
-            this.tabControl.ResumeLayout(false);
-            this.tabPage_Text.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.gb_Shape.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tabText.ResumeLayout(false);
+            this.panelText.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_color2)).EndInit();
             this.Panel_size.ResumeLayout(false);
             this.toolStripShape.ResumeLayout(false);
             this.toolStripShape.PerformLayout();
@@ -1588,6 +2025,19 @@ namespace TNT_Paint
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable2)).EndInit();
+            this.tabImgEditor.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1677,8 +2127,6 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem magnifyToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage_Text;
         private System.Windows.Forms.ComboBox cb_Size;
         private System.Windows.Forms.ComboBox cb_Font;
         private System.Windows.Forms.Button btn_Bold;
@@ -1711,6 +2159,40 @@ namespace TNT_Paint
         private System.Windows.Forms.ToolStripMenuItem genMusicFromTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shareImagesOnFacebookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shareImagesOnFacebookToolStripMenuItem1;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabHome;
+        private System.Windows.Forms.TabPage tabText;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.PictureBox pb_color2;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Panel panelText;
+        private System.Windows.Forms.PictureBox pb_ColorTable2;
+        private System.Windows.Forms.TabPage tabImgEditor;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
     }
 }
 
