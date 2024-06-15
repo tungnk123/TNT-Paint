@@ -99,6 +99,24 @@ namespace TNT_Paint
             textBox1.BorderStyle = BorderStyle.Fixed3D;
             textBox1.Visible = false;
             loadcbFont();
+
+            // set back color for button
+            // gray
+            button22.BackColor = Color.FromArgb(64, 64, 64);
+            // sephia
+            button21.BackColor = Color.FromArgb(255, 230, 179);
+            // fog
+            button20.BackColor = Color.FromArgb(192, 192, 192);
+            // flash
+            button19.BackColor = Color.FromArgb(255, 255, 0);
+            // frozen
+            button18.BackColor = Color.FromArgb(0, 255, 255);
+            //  red scale
+            button17.BackColor = Color.FromArgb(255, 0, 0);
+            // grammatic
+            button16.BackColor = Color.FromArgb(0, 255, 0);
+            // kakao
+            button15.BackColor = Color.FromArgb(255, 255, 0);
         }
 
 
