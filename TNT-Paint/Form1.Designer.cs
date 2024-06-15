@@ -2013,7 +2013,6 @@ namespace TNT_Paint
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TNT Paint";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
