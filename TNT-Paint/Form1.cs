@@ -61,7 +61,9 @@ namespace TNT_Paint
         bool isItalic = false;
         bool isUnderline = false;
 
-
+        private float lightLineWidth = 1;
+        private float mediumLineWidth = 3;
+        private float bigLineWidth = 6;
 
 
         public FormWindowState LastWindowState { get; private set; }
@@ -75,7 +77,8 @@ namespace TNT_Paint
             g.Clear(Color.White);
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pb_mainScreen.Image = bm;
-            p = new Pen(Color.Black, 1);
+            p = new Pen(Color.Black, lightLineWidth);
+            currentBrushSize = lightLineWidth * 3;
             eraser = new Pen(Color.White, 20);
             SelectedMode = 1; // chọn bút chì làm mặc định
 
@@ -169,17 +172,20 @@ namespace TNT_Paint
         private void btn_SmallLine_Click(object sender, EventArgs e)
         {
             isCropping = false;
-            p.Width = 1;
+            p.Width = lightLineWidth;
+            currentBrushSize = lightLineWidth * 3;
         }
         private void Btn_MediumLine_Click(object sender, EventArgs e)
         {
             isCropping = false;
-            p.Width = 3;
+            p.Width = mediumLineWidth;
+            currentBrushSize = mediumLineWidth * 3;
         }
         private void Btn_BigLine_Click(object sender, EventArgs e)
         {
             isCropping = false;
-            p.Width = 6;
+            p.Width = bigLineWidth;
+            currentBrushSize = bigLineWidth * 3;
         }
         private void Btn_DrawLine_Click(object sender, EventArgs e)
         {
@@ -434,31 +440,14 @@ namespace TNT_Paint
                 if (SelectedMode == 20)
                 {
                     System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black_2;
-                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                    Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
-
-                    Pen p = new Pen(Color.Red, 3);
                     g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
                     GraphicsPath graphicsPath = new GraphicsPath();
-                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
-                    graphicsPath.AddRectangle(rectangle);
-                    g.FillPath(brush, graphicsPath);
-                    px = e.Location;
-                }
-                if (SelectedMode == 20)
-                {
-                    System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black_2;
-                    Bitmap bitmap = new Bitmap(image, 10, 10);
-                    Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
-
-
-                    Pen p = new Pen(Color.Red, 3);
-                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-
-                    GraphicsPath graphicsPath = new GraphicsPath();
-                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
                     px = e.Location;
@@ -466,15 +455,14 @@ namespace TNT_Paint
                 if (SelectedMode == 21)
                 {
                     System.Drawing.Image image = TNT_Paint.Properties.Resources.Screenshot_2023_02_03_111748;
-                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                    Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
-
-                    Pen p = new Pen(Color.Red, 3);
                     g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
                     GraphicsPath graphicsPath = new GraphicsPath();
-                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
                     px = e.Location;
@@ -482,15 +470,14 @@ namespace TNT_Paint
                 if (SelectedMode == 22)
                 {
                     System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black;
-                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                    Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
-
-                    Pen p = new Pen(Color.Red, 3);
                     g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
                     GraphicsPath graphicsPath = new GraphicsPath();
-                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
                     px = e.Location;
@@ -498,15 +485,14 @@ namespace TNT_Paint
                 if (SelectedMode == 23)
                 {
                     System.Drawing.Image image = TNT_Paint.Properties.Resources.brush_pattern_5;
-                    Bitmap bitmap = new Bitmap(image, 10, 10);
+                    Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                    Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
                     Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
 
-
-                    Pen p = new Pen(Color.Red, 3);
                     g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
                     GraphicsPath graphicsPath = new GraphicsPath();
-                    Rectangle rectangle = new Rectangle(px, new Size(10, 10));
+                    Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
                     px = e.Location;
@@ -519,6 +505,32 @@ namespace TNT_Paint
             toolStripStatusLabel1.Text = e.X + ", " + e.Y + "px";
             toolStripStatusLabel2.Text = pb_mainScreen.Width + " x " + pb_mainScreen.Height + "px";
 
+        }
+
+        private static Bitmap ChangeBitmapColor(Bitmap bitmap, Color color)
+        {
+            Bitmap newBitmap = new Bitmap(bitmap.Width, bitmap.Height);
+            using (Graphics g = Graphics.FromImage(newBitmap))
+            {
+                float r = color.R / 255f;
+                float gC = color.G / 255f;
+                float b = color.B / 255f;
+                ColorMatrix colorMatrix = new ColorMatrix(new float[][]
+                {
+            new float[] {r, 0, 0, 0, 0},
+            new float[] {0, gC, 0, 0, 0},
+            new float[] {0, 0, b, 0, 0},
+            new float[] {0, 0, 0, 1, 0},
+            new float[] {0, 0, 0, 0, 1}
+                });
+
+                ImageAttributes attributes = new ImageAttributes();
+                attributes.SetColorMatrix(colorMatrix);
+
+                g.DrawImage(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height),
+                           0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel, attributes);
+            }
+            return newBitmap;
         }
 
         private void pb_mainScreen_MouseUp(object sender, MouseEventArgs e)
@@ -1570,6 +1582,7 @@ namespace TNT_Paint
         {
             Panel_size.BringToFront();
             Panel_size.Visible = !Panel_size.Visible;
+            toolStripShape.Visible = false;
 
         }
 
@@ -1582,6 +1595,7 @@ namespace TNT_Paint
         private void button7_Click(object sender, EventArgs e)
         {
             toolStripShape.Visible = !toolStripShape.Visible;
+            Panel_size.Visible = false;
         }
         private void imageFromCameraToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1679,6 +1693,7 @@ namespace TNT_Paint
         public const float bwgt = 0.0820f;
         private static ImageAttributes imageAttributes = new ImageAttributes();
         private static ColorMatrix colorMatrix = new ColorMatrix();
+        private float currentBrushSize;
 
         #region Events scroll
         private void trackBar1_Scroll(object sender, EventArgs e)
