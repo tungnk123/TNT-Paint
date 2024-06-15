@@ -79,7 +79,7 @@ namespace TNT_Paint
             pb_mainScreen.Image = bm;
             p = new Pen(Color.Black, lightLineWidth);
             currentBrushSize = lightLineWidth * 3;
-            eraser = new Pen(Color.White, 20);
+            eraser = new Pen(Color.White, currentBrushSize);
             SelectedMode = 1; // chọn bút chì làm mặc định
 
             // Khởi tạo ban đầu
@@ -174,18 +174,21 @@ namespace TNT_Paint
             isCropping = false;
             p.Width = lightLineWidth;
             currentBrushSize = lightLineWidth * 3;
+            eraser = new Pen(Color.White, currentBrushSize);
         }
         private void Btn_MediumLine_Click(object sender, EventArgs e)
         {
             isCropping = false;
             p.Width = mediumLineWidth;
             currentBrushSize = mediumLineWidth * 3;
+            eraser = new Pen(Color.White, currentBrushSize);
         }
         private void Btn_BigLine_Click(object sender, EventArgs e)
         {
             isCropping = false;
             p.Width = bigLineWidth;
             currentBrushSize = bigLineWidth * 3;
+            eraser = new Pen(Color.White, currentBrushSize);
         }
         private void Btn_DrawLine_Click(object sender, EventArgs e)
         {
