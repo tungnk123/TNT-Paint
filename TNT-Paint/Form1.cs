@@ -87,7 +87,6 @@ namespace TNT_Paint
             pb_mainScreen.MouseDown += pb_mainScreen_MouseDown;
             pb_mainScreen.MouseMove += pb_mainScreen_MouseMove;
             pb_mainScreen.MouseUp += pb_mainScreen_MouseUp;
-            pb_mainScreen.Paint += pb_mainScreen_Paint;
             FormClosing += new FormClosingEventHandler(Form1_Closing);
             timer1.Start();
 
