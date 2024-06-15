@@ -64,19 +64,21 @@ namespace TNT_Paint
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1017, 423);
+            this.tabControl1.Size = new System.Drawing.Size(1356, 521);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.listView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1009, 392);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1348, 484);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Phong Cảnh";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -85,9 +87,10 @@ namespace TNT_Paint
             // 
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Location = new System.Drawing.Point(4, 4);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1003, 386);
+            this.listView1.Size = new System.Drawing.Size(1340, 476);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -95,10 +98,11 @@ namespace TNT_Paint
             // 
             this.tabPage2.Controls.Add(this.listView2);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1009, 392);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1348, 484);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Con Người";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -107,18 +111,20 @@ namespace TNT_Paint
             // 
             this.listView2.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(3, 3);
+            this.listView2.Location = new System.Drawing.Point(4, 4);
+            this.listView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1003, 388);
+            this.listView2.Size = new System.Drawing.Size(1340, 477);
             this.listView2.TabIndex = 2;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.listView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Location = new System.Drawing.Point(4, 33);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1009, 392);
+            this.tabPage3.Size = new System.Drawing.Size(1348, 484);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Du Lịch";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -128,17 +134,19 @@ namespace TNT_Paint
             this.listView3.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView3.HideSelection = false;
             this.listView3.Location = new System.Drawing.Point(0, 0);
+            this.listView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1009, 388);
+            this.listView3.Size = new System.Drawing.Size(1348, 477);
             this.listView3.TabIndex = 3;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.listView4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Location = new System.Drawing.Point(4, 33);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1009, 392);
+            this.tabPage4.Size = new System.Drawing.Size(1348, 484);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Thể Thao";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -148,17 +156,19 @@ namespace TNT_Paint
             this.listView4.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView4.HideSelection = false;
             this.listView4.Location = new System.Drawing.Point(0, 0);
+            this.listView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(1009, 388);
+            this.listView4.Size = new System.Drawing.Size(1348, 477);
             this.listView4.TabIndex = 3;
             this.listView4.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.listView5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 27);
+            this.tabPage5.Location = new System.Drawing.Point(4, 33);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1009, 392);
+            this.tabPage5.Size = new System.Drawing.Size(1348, 484);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Động Vật";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -168,17 +178,19 @@ namespace TNT_Paint
             this.listView5.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView5.HideSelection = false;
             this.listView5.Location = new System.Drawing.Point(0, 0);
+            this.listView5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(1009, 388);
+            this.listView5.Size = new System.Drawing.Size(1348, 477);
             this.listView5.TabIndex = 3;
             this.listView5.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.listView6);
-            this.tabPage6.Location = new System.Drawing.Point(4, 27);
+            this.tabPage6.Location = new System.Drawing.Point(4, 33);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1009, 392);
+            this.tabPage6.Size = new System.Drawing.Size(1348, 484);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Đồ Vật";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -188,25 +200,28 @@ namespace TNT_Paint
             this.listView6.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView6.HideSelection = false;
             this.listView6.Location = new System.Drawing.Point(0, 0);
+            this.listView6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(1009, 388);
+            this.listView6.Size = new System.Drawing.Size(1348, 477);
             this.listView6.TabIndex = 3;
             this.listView6.UseCompatibleStateImageBehavior = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(833, 448);
+            this.button2.Location = new System.Drawing.Point(1243, 529);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 5;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(712, 448);
+            this.button1.Location = new System.Drawing.Point(1136, 529);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
@@ -214,12 +229,14 @@ namespace TNT_Paint
             // 
             // FormStockImages
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 496);
+            this.ClientSize = new System.Drawing.Size(1356, 569);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormStockImages";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Stock Images";
