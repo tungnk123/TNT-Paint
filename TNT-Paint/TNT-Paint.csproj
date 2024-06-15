@@ -429,6 +429,9 @@
     <None Include="Resources\icons8-dropdown-100.png" />
     <None Include="Resources\icons8-shapes-64.png" />
     <None Include="Resources\icons8-shapes-64 %282%29.png" />
+    <None Include="Resources\fb-icon.png" />
+    <None Include="Resources\camera-icon.jpg" />
+    <None Include="Resources\gemini-icon.png" />
     <Content Include="Resources\icons8-shapes-64 %281%29.png" />
     <None Include="Resources\icons8-shapes-64 %282%291.png" />
     <None Include="Resources\loading.png" />

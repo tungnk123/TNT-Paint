@@ -41,26 +41,30 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(393, 35);
+            this.label1.Location = new System.Drawing.Point(183, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 32);
+            this.label1.Size = new System.Drawing.Size(224, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mô tả ảnh của bạn";
             // 
             // tb_content
             // 
             this.tb_content.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_content.Location = new System.Drawing.Point(12, 89);
+            this.tb_content.Location = new System.Drawing.Point(31, 73);
+            this.tb_content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_content.Name = "tb_content";
-            this.tb_content.Size = new System.Drawing.Size(837, 39);
+            this.tb_content.Size = new System.Drawing.Size(542, 34);
             this.tb_content.TabIndex = 1;
+            this.tb_content.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_tao
             // 
-            this.btn_tao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_tao.Location = new System.Drawing.Point(867, 88);
+            this.btn_tao.BackColor = System.Drawing.Color.Cyan;
+            this.btn_tao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_tao.Location = new System.Drawing.Point(222, 120);
+            this.btn_tao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_tao.Name = "btn_tao";
-            this.btn_tao.Size = new System.Drawing.Size(166, 48);
+            this.btn_tao.Size = new System.Drawing.Size(148, 38);
             this.btn_tao.TabIndex = 2;
             this.btn_tao.Text = "Tạo";
             this.btn_tao.UseVisualStyleBackColor = false;
@@ -69,9 +73,11 @@
             // btn_chup
             // 
             this.btn_chup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btn_chup.Location = new System.Drawing.Point(543, 583);
+            this.btn_chup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chup.Location = new System.Drawing.Point(472, 509);
+            this.btn_chup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_chup.Name = "btn_chup";
-            this.btn_chup.Size = new System.Drawing.Size(114, 44);
+            this.btn_chup.Size = new System.Drawing.Size(101, 35);
             this.btn_chup.TabIndex = 5;
             this.btn_chup.Text = "Lấy ảnh";
             this.btn_chup.UseVisualStyleBackColor = false;
@@ -79,11 +85,13 @@
             // 
             // btn_huy
             // 
-            this.btn_huy.BackColor = System.Drawing.Color.Red;
-            this.btn_huy.ForeColor = System.Drawing.Color.White;
-            this.btn_huy.Location = new System.Drawing.Point(385, 583);
+            this.btn_huy.BackColor = System.Drawing.Color.Tomato;
+            this.btn_huy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_huy.ForeColor = System.Drawing.Color.Black;
+            this.btn_huy.Location = new System.Drawing.Point(361, 509);
+            this.btn_huy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(114, 44);
+            this.btn_huy.Size = new System.Drawing.Size(101, 35);
             this.btn_huy.TabIndex = 4;
             this.btn_huy.Text = "Hủy bỏ";
             this.btn_huy.UseVisualStyleBackColor = false;
@@ -91,25 +99,29 @@
             // 
             // pb_image
             // 
-            this.pb_image.Location = new System.Drawing.Point(239, 158);
+            this.pb_image.BackColor = System.Drawing.Color.White;
+            this.pb_image.Location = new System.Drawing.Point(31, 177);
+            this.pb_image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pb_image.Name = "pb_image";
-            this.pb_image.Size = new System.Drawing.Size(610, 388);
+            this.pb_image.Size = new System.Drawing.Size(542, 310);
             this.pb_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_image.TabIndex = 3;
             this.pb_image.TabStop = false;
             // 
             // FormGemini
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1045, 655);
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.ClientSize = new System.Drawing.Size(598, 562);
             this.Controls.Add(this.btn_chup);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.pb_image);
             this.Controls.Add(this.btn_tao);
             this.Controls.Add(this.tb_content);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormGemini";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Màn hình tạo ảnh từ mô tả";
