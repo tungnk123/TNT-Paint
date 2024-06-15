@@ -855,23 +855,13 @@ namespace TNT_Paint
         }
 
         //fill function
-        private void validate(Bitmap bm, Stack<Point> sp, int x, int y, Color oldColor, Color newColor)
-        {
-            Color cx = bm.GetPixel(x, y);
-            if (cx == oldColor)
-            {
-                sp.Push(new Point(x, y));
-                bm.SetPixel(x, y, newColor);
-            }
-        }
-
         private void Fill(Bitmap bm, int x, int y, Color newColor)
         {
             Color oldColor = bm.GetPixel(x, y);
             Stack<Point> pixel = new Stack<Point>();
             pixel.Push(new Point(x, y));
             bm.SetPixel(x, y, newColor);
-            if (oldColor == newColor) { return; }
+            if (oldColor.ToArgb() == newColor.ToArgb()) { return; }
 
             while (pixel.Count > 0)
             {
@@ -885,6 +875,30 @@ namespace TNT_Paint
                 }
             }
         }
+
+        private void validate(Bitmap bm, Stack<Point> pixel, int x, int y, Color oldColor, Color newColor)
+        {
+            Color cx = bm.GetPixel(x, y);
+
+            // Kiểm tra màu sắc và độ trong suốt
+            if (IsColorSimilar(cx, oldColor))
+            {
+                pixel.Push(new Point(x, y));
+                bm.SetPixel(x, y, newColor);
+            }
+        }
+
+        private bool IsColorSimilar(Color c1, Color c2, int tolerance = 50)
+        {
+            int r1 = c1.R, g1 = c1.G, b1 = c1.B, a1 = c1.A;
+            int r2 = c2.R, g2 = c2.G, b2 = c2.B, a2 = c2.A;
+
+            return Math.Abs(r1 - r2) <= tolerance &&
+                   Math.Abs(g1 - g2) <= tolerance &&
+                   Math.Abs(b1 - b2) <= tolerance &&
+                   Math.Abs(a1 - a2) <= tolerance;
+        }
+
         // set point function 
         private Point setPoint(PictureBox pb, Point pt)
         {
@@ -1022,65 +1036,77 @@ namespace TNT_Paint
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // truong hop da ve gi do len picturebox
+            // Trường hợp đã vẽ gì đó lên picturebox
             if (isPainted)
             {
                 switch (MessageBox.Show("Bạn có muốn lưu file với tên " + tenFileTieuDe + " không", "Thông Báo", MessageBoxButtons.YesNoCancel))
                 {
-                    // truong hop nguoi dung muon luu anh dang ve lai va open file sau
+                    // Trường hợp người dùng muốn lưu ảnh đang vẽ lại và open file sau
                     case DialogResult.Yes:
                         {
                             saveToolStripMenuItem_Click(sender, e);
-                            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
-                            if (openFileDialog.ShowDialog() == DialogResult.OK)
-                            {
-                                string fileName = openFileDialog.FileName;
-                                System.Drawing.Image img = System.Drawing.Image.FromFile(fileName);
-                                bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
-                                pb_mainScreen.Refresh();
-                                pb_mainScreen.Image = bm;
-                                g = Graphics.FromImage(bm);
-                            }
+                            OpenImage();
                             break;
                         }
-                    // truong hop nguoi dung khong muon luu anh dang ve ma muon open file luon
+                    // Trường hợp người dùng không muốn lưu ảnh đang vẽ mà muốn open file luôn
                     case DialogResult.No:
                         {
-                            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
-                            if (openFileDialog.ShowDialog() == DialogResult.OK)
-                            {
-                                string fileName = openFileDialog.FileName;
-                                Image img = Image.FromFile(fileName);
-                                bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
-                                pb_mainScreen.Refresh();
-                                pb_mainScreen.Image = bm;
-                                g = Graphics.FromImage(bm);
-                            }
-
+                            OpenImage();
                             break;
                         }
-
                     case DialogResult.Cancel:
                         return;
-
                 }
             }
-            // truong hop chua ve gi len picturebox
+            // Trường hợp chưa vẽ gì lên picturebox
             else
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string fileName = openFileDialog.FileName;
-                    tenFileTieuDe = openFileDialog.SafeFileName;
-                    Image img = Image.FromFile(fileName);
-                    bm = new Bitmap(img, new Size(pb_mainScreen.Width, pb_mainScreen.Height));
-                    pb_mainScreen.Refresh();
-                    pb_mainScreen.Image = bm;
-                    g = Graphics.FromImage(bm);
-                }
+                OpenImage();
             }
+        }
 
+        private void OpenImage()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "File *.png, *jpg, *.bmp, *.gif|*.png; *.jpg; *.bmp; *.gif ", Title = "Open image" };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = openFileDialog.FileName;
+                tenFileTieuDe = openFileDialog.SafeFileName;
+                Image img = Image.FromFile(fileName);
+
+                // Tính toán kích thước mới dựa trên tỷ lệ của ảnh gốc và kích thước của pb_mainScreen
+                Size newSize = CalculateNewSize(img.Width, img.Height, pb_mainScreen.Width, pb_mainScreen.Height);
+
+                // Tạo bitmap mới với kích thước đã tính toán và vẽ ảnh lên đó
+                Bitmap newBm = new Bitmap(newSize.Width, newSize.Height);
+                using (Graphics gr = Graphics.FromImage(newBm))
+                {
+                    gr.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    gr.SmoothingMode = SmoothingMode.AntiAlias;
+                    gr.DrawImage(img, new Rectangle(0, 0, newSize.Width, newSize.Height));
+                }
+
+                // Thay thế bm toàn cục với bitmap mới
+                bm = newBm;
+
+                // Thiết lập PictureBox để hiển thị bm mới và thay đổi kích thước của PictureBox
+                pb_mainScreen.Size = new Size(newSize.Width, newSize.Height);
+                pb_mainScreen.Refresh();
+                pb_mainScreen.Image = bm;
+                g = Graphics.FromImage(bm);
+            }
+        }
+
+        private Size CalculateNewSize(int originalWidth, int originalHeight, int maxWidth, int maxHeight)
+        {
+            double ratioX = (double)maxWidth / originalWidth;
+            double ratioY = (double)maxHeight / originalHeight;
+            double ratio = Math.Min(ratioX, ratioY);
+
+            int newWidth = (int)(originalWidth * ratio);
+            int newHeight = (int)(originalHeight * ratio);
+
+            return new Size(newWidth, newHeight);
         }
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {

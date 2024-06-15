@@ -701,7 +701,7 @@ namespace TNT_Paint
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button13.BackColor = System.Drawing.Color.Transparent;
             this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -731,7 +731,7 @@ namespace TNT_Paint
             // button12
             // 
             this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button12.BackColor = System.Drawing.Color.Transparent;
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1481,7 +1481,7 @@ namespace TNT_Paint
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button11.BackColor = System.Drawing.Color.Transparent;
             this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1511,7 +1511,7 @@ namespace TNT_Paint
             // button14
             // 
             this.button14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button14.BackColor = System.Drawing.Color.Transparent;
             this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
