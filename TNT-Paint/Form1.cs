@@ -174,6 +174,7 @@ namespace TNT_Paint
             p.Width = lightLineWidth;
             currentBrushSize = lightLineWidth * 3;
             eraser = new Pen(Color.White, currentBrushSize);
+            button8.BackgroundImage = btn_SmallLine.BackgroundImage;
         }
         private void Btn_MediumLine_Click(object sender, EventArgs e)
         {
@@ -181,6 +182,7 @@ namespace TNT_Paint
             p.Width = mediumLineWidth;
             currentBrushSize = mediumLineWidth * 3;
             eraser = new Pen(Color.White, currentBrushSize);
+            button8.BackgroundImage = Btn_MediumLine.BackgroundImage;
         }
         private void Btn_BigLine_Click(object sender, EventArgs e)
         {
@@ -188,6 +190,7 @@ namespace TNT_Paint
             p.Width = bigLineWidth;
             currentBrushSize = bigLineWidth * 3;
             eraser = new Pen(Color.White, currentBrushSize);
+            button8.BackgroundImage = Btn_BigLine.BackgroundImage;
         }
         private void Btn_DrawLine_Click(object sender, EventArgs e)
         {

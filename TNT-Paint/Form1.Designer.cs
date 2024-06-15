@@ -931,6 +931,7 @@ namespace TNT_Paint
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.button7_Click);
             // 
             // groupBox2
             // 
