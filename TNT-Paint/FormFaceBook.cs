@@ -62,7 +62,7 @@ namespace TNT_Paint
             {
                 var uploadResult = await UploadImageToCloudinary(filePath);
 
-                string m_AccessToken = "EAALtIOu0jkkBOZCJRpctzG2h3Tl7T57AhajrLiV2wCWmGK8QGUrpQxQwAyuyZCkWwELqHkVYnpwCA5Si8tZC1ZBONWEW8Fr1BzLCETBZA9FWgDsF7Qc0do9MFDLEVyFZCMMIR6EgY82KUpzZADYRPwJnTAzgZB3LtRZCDmzGe0casscD6UnLK63F5kDGT4FjNoBkeQLCNXqtZAAiIyu13ORIYqZAGYC";
+                string m_AccessToken = "EAALtIOu0jkkBOww1gw0Vben9ZB25J0fGLcS1WdQolDwyhZBr27H2079IOcBGNLEY0E5XSuqqMVfFmddO9jq8066IFtCqNEwVTv69bSB4fbfazu4m7Q5pwTdaZAKWhx5FEBAOk1dEjCb4Yhmr6VMkaZBhZAuZCS4SIZAcB1dcczuKyaSSHsobGp1krX5amFDOmzfXfthTl32qnzZC63x5jGErBH0ZD";
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
 

@@ -96,7 +96,7 @@ namespace TNT_Paint
             textBox1.Height = 100;
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBox1.Margin = new Padding(0);
-            textBox1.BorderStyle = BorderStyle.Fixed3D;
+            //textBox1.BorderStyle = BorderStyle.Fixed3D;
             textBox1.Visible = false;
             loadcbFont();
 
