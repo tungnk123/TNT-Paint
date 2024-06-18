@@ -62,14 +62,14 @@ namespace TNT_Paint
             {
                 var uploadResult = await UploadImageToCloudinary(filePath);
 
-                string m_AccessToken = "EAALtIOu0jkkBOww1gw0Vben9ZB25J0fGLcS1WdQolDwyhZBr27H2079IOcBGNLEY0E5XSuqqMVfFmddO9jq8066IFtCqNEwVTv69bSB4fbfazu4m7Q5pwTdaZAKWhx5FEBAOk1dEjCb4Yhmr6VMkaZBhZAuZCS4SIZAcB1dcczuKyaSSHsobGp1krX5amFDOmzfXfthTl32qnzZC63x5jGErBH0ZD";
+                string m_AccessToken = "EAALtIOu0jkkBO6js56FFO2cxXJmDKkdGImzMuwnyJEL420xUL4dR5ZA09L0eRKgq3ATzzoPL7YrrEZBZCB9JIvLHbvnolrcTE1BPmRw9ci3vOn4T0dJcBL8KAISNKHwLqIRKrhoIkhsE8GNvEaeriD61RZAKawPyyHNlZCmwGeAZCQJi1FWR9ZB7hELTIztZCEeZB9YvFi2ZAZBz1TVhnv8zVYB634ZD";
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
 
                 JObject json = JObject.Parse($@"
             {{
                 ""access_token"": ""{m_AccessToken}"",
-                ""message"": ""hahaha"",
+                ""message"": ""{rtb_status.Text}"",
                 ""published"": ""true"",
                 ""url"": ""{uploadResult.Uri}"",
 
