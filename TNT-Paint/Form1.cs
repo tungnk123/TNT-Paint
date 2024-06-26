@@ -510,6 +510,14 @@ namespace TNT_Paint
                     Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
+
+                    if (isDrawingSymmetry)
+                    {
+                        points.Add(px);
+                        DrawMandala(points);
+                        pb_mainScreen.Invalidate();
+                    }
+
                     px = e.Location;
                 }
                 if (SelectedMode == 22)
@@ -525,6 +533,14 @@ namespace TNT_Paint
                     Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
+
+                    if (isDrawingSymmetry)
+                    {
+                        points.Add(px);
+                        DrawMandala(points);
+                        pb_mainScreen.Invalidate();
+                    }
+
                     px = e.Location;
                 }
                 if (SelectedMode == 23)
@@ -540,6 +556,14 @@ namespace TNT_Paint
                     Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
+
+                    if (isDrawingSymmetry)
+                    {
+                        points.Add(px);
+                        DrawMandala(points);
+                        pb_mainScreen.Invalidate();
+                    }
+
                     px = e.Location;
                 }
             }
@@ -676,6 +700,19 @@ namespace TNT_Paint
                         transformedPoints.Add(tempPointArray[0]);
                     }
 
+                    if (SelectedMode == 1)
+                    {
+                        try
+                        {
+                            g.DrawLines(p, transformedPoints.ToArray());
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi vẽ đường: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
                     if (SelectedMode == 20)
                     {
                         System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black_2;
@@ -693,16 +730,55 @@ namespace TNT_Paint
                             g.FillPath(brush, graphicsPath);
                         }
                     }
-                    else
+                    if (SelectedMode == 21)
                     {
-                        try
+                        System.Drawing.Image image = TNT_Paint.Properties.Resources.Screenshot_2023_02_03_111748;
+                        Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                        Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
+                        Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                        foreach (Point p in transformedPoints)
                         {
-                            g.DrawLines(p, transformedPoints.ToArray());
+                            GraphicsPath graphicsPath = new GraphicsPath();
+                            Rectangle rectangle = new Rectangle(p, new Size((int)currentBrushSize, (int)currentBrushSize));
+                            graphicsPath.AddRectangle(rectangle);
+                            g.FillPath(brush, graphicsPath);
                         }
-                        catch (Exception ex)
+                    }
+                    if (SelectedMode == 22)
+                    {
+                        System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black;
+                        Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                        Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
+                        Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                        foreach (Point p in transformedPoints)
                         {
-                            MessageBox.Show($"Lỗi vẽ đường: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
+                            GraphicsPath graphicsPath = new GraphicsPath();
+                            Rectangle rectangle = new Rectangle(p, new Size((int)currentBrushSize, (int)currentBrushSize));
+                            graphicsPath.AddRectangle(rectangle);
+                            g.FillPath(brush, graphicsPath);
+                        }
+                    }
+                    if (SelectedMode == 23)
+                    {
+                        System.Drawing.Image image = TNT_Paint.Properties.Resources.brush_pattern_5;
+                        Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                        Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
+                        Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                        foreach (Point p in transformedPoints)
+                        {
+                            GraphicsPath graphicsPath = new GraphicsPath();
+                            Rectangle rectangle = new Rectangle(p, new Size((int)currentBrushSize, (int)currentBrushSize));
+                            graphicsPath.AddRectangle(rectangle);
+                            g.FillPath(brush, graphicsPath);
                         }
                     }
                 }
