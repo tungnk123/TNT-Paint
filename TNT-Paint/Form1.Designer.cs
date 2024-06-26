@@ -35,32 +35,81 @@ namespace TNT_Paint
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magnifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlineImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageFromCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.genMusicFromTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zomeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.gridlinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.shareImagesOnFacebookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareImagesOnFacebookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.cbSymm = new System.Windows.Forms.CheckBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
+            this.pictureBoxCrop = new System.Windows.Forms.PictureBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Btn_Pencil = new System.Windows.Forms.Button();
+            this.buttonAddText = new System.Windows.Forms.Button();
+            this.Btn_ColorPicker = new System.Windows.Forms.Button();
+            this.Btn_Eraser = new System.Windows.Forms.Button();
+            this.Btn_Fill = new System.Windows.Forms.Button();
+            this.Btn_ColorDialog = new System.Windows.Forms.Button();
             this.gb_Shape = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.pb_currentColor = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.ptbSizeDrop = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabText = new System.Windows.Forms.TabPage();
             this.panelText = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -70,7 +119,10 @@ namespace TNT_Paint
             this.btn_Underline = new System.Windows.Forms.Button();
             this.btn_Bold = new System.Windows.Forms.Button();
             this.btn_Italic = new System.Windows.Forms.Button();
+            this.pb_ColorTable2 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.pb_color2 = new System.Windows.Forms.PictureBox();
             this.tabImgEditor = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -85,29 +137,19 @@ namespace TNT_Paint
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
+            this.pbResize = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
             this.Panel_size = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_BigLine = new System.Windows.Forms.Button();
+            this.Btn_MediumLine = new System.Windows.Forms.Button();
+            this.btn_SmallLine = new System.Windows.Forms.Button();
             this.toolStripShape = new System.Windows.Forms.ToolStrip();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelDauCham1 = new System.Windows.Forms.Panel();
-            this.panelDauCham2 = new System.Windows.Forms.Panel();
-            this.panelDauCham3 = new System.Windows.Forms.Panel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Btn_DrawLine = new System.Windows.Forms.ToolStripButton();
             this.Btn_Ellipse = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawRect = new System.Windows.Forms.ToolStripButton();
@@ -123,109 +165,73 @@ namespace TNT_Paint
             this.Btn_DrawRightArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawDownArrow = new System.Windows.Forms.ToolStripButton();
             this.Btn_DrawFivePointStar = new System.Windows.Forms.ToolStripButton();
-            this.Btn_BigLine = new System.Windows.Forms.Button();
-            this.Btn_MediumLine = new System.Windows.Forms.Button();
-            this.btn_SmallLine = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelDauCham1 = new System.Windows.Forms.Panel();
+            this.panelDauCham2 = new System.Windows.Forms.Panel();
+            this.panelDauCham3 = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pb_mainScreen = new System.Windows.Forms.PictureBox();
-            this.pb_ColorTable = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCrop = new System.Windows.Forms.PictureBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.Btn_Pencil = new System.Windows.Forms.Button();
-            this.buttonAddText = new System.Windows.Forms.Button();
-            this.Btn_ColorPicker = new System.Windows.Forms.Button();
-            this.Btn_Eraser = new System.Windows.Forms.Button();
-            this.Btn_Fill = new System.Windows.Forms.Button();
-            this.Btn_ColorDialog = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.pb_currentColor = new System.Windows.Forms.PictureBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.ptbSizeDrop = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pb_ColorTable2 = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.pb_color2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.magnifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.onlineImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageFromCameraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.genMusicFromTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zomeInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zomeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridlinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.shareImagesOnFacebookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrop)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.gb_Shape.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabText.SuspendLayout();
             this.panelText.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable2)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_color2)).BeginInit();
             this.tabImgEditor.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResize)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
             this.Panel_size.SuspendLayout();
             this.toolStripShape.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_color2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -262,10 +268,65 @@ namespace TNT_Paint
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(49, 27);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_add_file_64;
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_opened_folder_48;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_save_50;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_save_as_64;
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(238, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_about_48;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_close_window_48;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.Delete)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -282,10 +343,73 @@ namespace TNT_Paint
             this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 27);
             this.editToolStripMenuItem.Text = "Edit";
             // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_undo_48;
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_redo_48;
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.redoToolStripMenuItem.Text = "Redo";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(208, 6);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_scissors_50;
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.cutToolStripMenuItem.Text = "Cut";
+            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_copy_50;
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_paste_64;
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem1
+            // 
+            this.pasteToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_insert_raster_image_100;
+            this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
+            this.pasteToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F13;
+            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(211, 28);
+            this.pasteToolStripMenuItem1.Text = "Paste from";
+            this.pasteToolStripMenuItem1.Click += new System.EventHandler(this.pasteToolStripMenuItem1_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_remove_48;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -295,6 +419,22 @@ namespace TNT_Paint
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(62, 27);
             this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // imageEditorToolStripMenuItem
+            // 
+            this.imageEditorToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_photo_editor_100;
+            this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
+            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
+            this.imageEditorToolStripMenuItem.Text = "Image Editor";
+            this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
+            // 
+            // magnifyToolStripMenuItem
+            // 
+            this.magnifyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_to_extents_64;
+            this.magnifyToolStripMenuItem.Name = "magnifyToolStripMenuItem";
+            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(192, 28);
+            this.magnifyToolStripMenuItem.Text = "Magnifier";
+            this.magnifyToolStripMenuItem.Click += new System.EventHandler(this.magnifyToolStripMenuItem_Click);
             // 
             // imageToolStripMenuItem
             // 
@@ -306,6 +446,38 @@ namespace TNT_Paint
             this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
             this.imageToolStripMenuItem.Size = new System.Drawing.Size(72, 27);
             this.imageToolStripMenuItem.Text = "Image";
+            // 
+            // stockImagesToolStripMenuItem
+            // 
+            this.stockImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_image_48;
+            this.stockImagesToolStripMenuItem.Name = "stockImagesToolStripMenuItem";
+            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
+            this.stockImagesToolStripMenuItem.Text = "Stock Images";
+            this.stockImagesToolStripMenuItem.Click += new System.EventHandler(this.stockImagesToolStripMenuItem_Click);
+            // 
+            // onlineImagesToolStripMenuItem
+            // 
+            this.onlineImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_internet_connection_50;
+            this.onlineImagesToolStripMenuItem.Name = "onlineImagesToolStripMenuItem";
+            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
+            this.onlineImagesToolStripMenuItem.Text = "Online Images";
+            this.onlineImagesToolStripMenuItem.Click += new System.EventHandler(this.onlineImagesToolStripMenuItem_Click);
+            // 
+            // imageFromCameraToolStripMenuItem
+            // 
+            this.imageFromCameraToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.camera_icon;
+            this.imageFromCameraToolStripMenuItem.Name = "imageFromCameraToolStripMenuItem";
+            this.imageFromCameraToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
+            this.imageFromCameraToolStripMenuItem.Text = "Image from Camera";
+            this.imageFromCameraToolStripMenuItem.Click += new System.EventHandler(this.imageFromCameraToolStripMenuItem_Click);
+            // 
+            // genMusicFromTextToolStripMenuItem
+            // 
+            this.genMusicFromTextToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.gemini_icon;
+            this.genMusicFromTextToolStripMenuItem.Name = "genMusicFromTextToolStripMenuItem";
+            this.genMusicFromTextToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
+            this.genMusicFromTextToolStripMenuItem.Text = "Gen Image From Text";
+            this.genMusicFromTextToolStripMenuItem.Click += new System.EventHandler(this.genMusicFromTextToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -321,10 +493,54 @@ namespace TNT_Paint
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(60, 27);
             this.viewToolStripMenuItem.Text = "View";
             // 
+            // zomeInToolStripMenuItem
+            // 
+            this.zomeInToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_in_50;
+            this.zomeInToolStripMenuItem.Name = "zomeInToolStripMenuItem";
+            this.zomeInToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Up)));
+            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
+            this.zomeInToolStripMenuItem.Text = "Zome in";
+            this.zomeInToolStripMenuItem.Click += new System.EventHandler(this.zomeInToolStripMenuItem_Click);
+            // 
+            // zomeOutToolStripMenuItem
+            // 
+            this.zomeOutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_out_50;
+            this.zomeOutToolStripMenuItem.Name = "zomeOutToolStripMenuItem";
+            this.zomeOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down)));
+            this.zomeOutToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
+            this.zomeOutToolStripMenuItem.Text = "Zome out";
+            this.zomeOutToolStripMenuItem.Click += new System.EventHandler(this.zomeOutToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Image = global::TNT_Paint.Properties.Resources.icons8_100_50;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(262, 28);
+            this.toolStripMenuItem2.Text = "100%";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // fullScreenToolStripMenuItem
+            // 
+            this.fullScreenToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_full_screen_64;
+            this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
+            this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
+            this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
+            this.fullScreenToolStripMenuItem.Text = "Full Screen";
+            this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.fullScreenToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(259, 6);
+            // 
+            // gridlinesToolStripMenuItem
+            // 
+            this.gridlinesToolStripMenuItem.CheckOnClick = true;
+            this.gridlinesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.gridline;
+            this.gridlinesToolStripMenuItem.Name = "gridlinesToolStripMenuItem";
+            this.gridlinesToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
+            this.gridlinesToolStripMenuItem.Text = "Gridlines";
+            this.gridlinesToolStripMenuItem.Click += new System.EventHandler(this.gridlinesToolStripMenuItem_Click);
             // 
             // statusBarToolStripMenuItem
             // 
@@ -345,6 +561,22 @@ namespace TNT_Paint
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(59, 27);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // informationToolStripMenuItem
+            // 
+            this.informationToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.personal_infor;
+            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
+            this.informationToolStripMenuItem.Text = "Information";
+            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            this.aboutToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_about_481;
+            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(184, 28);
+            this.aboutToolStripMenuItem1.Text = "About";
+            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
+            // 
             // shareImagesOnFacebookToolStripMenuItem
             // 
             this.shareImagesOnFacebookToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -352,6 +584,14 @@ namespace TNT_Paint
             this.shareImagesOnFacebookToolStripMenuItem.Name = "shareImagesOnFacebookToolStripMenuItem";
             this.shareImagesOnFacebookToolStripMenuItem.Size = new System.Drawing.Size(67, 27);
             this.shareImagesOnFacebookToolStripMenuItem.Text = "Share";
+            // 
+            // shareImagesOnFacebookToolStripMenuItem1
+            // 
+            this.shareImagesOnFacebookToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.fb_icon;
+            this.shareImagesOnFacebookToolStripMenuItem1.Name = "shareImagesOnFacebookToolStripMenuItem1";
+            this.shareImagesOnFacebookToolStripMenuItem1.Size = new System.Drawing.Size(297, 28);
+            this.shareImagesOnFacebookToolStripMenuItem1.Text = "Share images on Facebook";
+            this.shareImagesOnFacebookToolStripMenuItem1.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -369,6 +609,7 @@ namespace TNT_Paint
             this.tabControl.Controls.Add(this.tabHome);
             this.tabControl.Controls.Add(this.tabText);
             this.tabControl.Controls.Add(this.tabImgEditor);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -379,7 +620,7 @@ namespace TNT_Paint
             // 
             // tabHome
             // 
-            this.tabHome.Controls.Add(this.pb_ColorTable);
+            this.tabHome.Controls.Add(this.groupBox9);
             this.tabHome.Controls.Add(this.groupBox3);
             this.tabHome.Controls.Add(this.groupBox4);
             this.tabHome.Controls.Add(this.gb_Shape);
@@ -392,6 +633,41 @@ namespace TNT_Paint
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.cbSymm);
+            this.groupBox9.Controls.Add(this.numericUpDown1);
+            this.groupBox9.Location = new System.Drawing.Point(889, 7);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(154, 122);
+            this.groupBox9.TabIndex = 33;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Symmetrical drawing";
+            // 
+            // cbSymm
+            // 
+            this.cbSymm.AutoSize = true;
+            this.cbSymm.Location = new System.Drawing.Point(36, 45);
+            this.cbSymm.Name = "cbSymm";
+            this.cbSymm.Size = new System.Drawing.Size(74, 20);
+            this.cbSymm.TabIndex = 25;
+            this.cbSymm.Text = "Turn on";
+            this.cbSymm.UseVisualStyleBackColor = true;
+            this.cbSymm.CheckedChanged += new System.EventHandler(this.cbSymm_CheckedChanged);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(36, 88);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(71, 22);
+            this.numericUpDown1.TabIndex = 24;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // groupBox3
             // 
@@ -431,6 +707,18 @@ namespace TNT_Paint
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -457,6 +745,37 @@ namespace TNT_Paint
             this.toolTip1.SetToolTip(this.button13, "Crop \r\n\r\nCrop ảnh đã Select ra ảnh.");
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // pictureBoxCrop
+            // 
+            this.pictureBoxCrop.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
+            this.pictureBoxCrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCrop.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxCrop.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxCrop.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxCrop.Name = "pictureBoxCrop";
+            this.pictureBoxCrop.Size = new System.Drawing.Size(41, 39);
+            this.pictureBoxCrop.TabIndex = 16;
+            this.pictureBoxCrop.TabStop = false;
+            // 
+            // button12
+            // 
+            this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button12.BackColor = System.Drawing.Color.Transparent;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Image = global::TNT_Paint.Properties.Resources.icons8_selection_67;
+            this.button12.Location = new System.Drawing.Point(7, 20);
+            this.button12.Margin = new System.Windows.Forms.Padding(1);
+            this.button12.Name = "button12";
+            this.button12.Padding = new System.Windows.Forms.Padding(5);
+            this.button12.Size = new System.Drawing.Size(107, 92);
+            this.button12.TabIndex = 22;
+            this.button12.Text = "Select";
+            this.toolTip1.SetToolTip(this.button12, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // groupBox4
             // 
@@ -488,6 +807,106 @@ namespace TNT_Paint
             this.tableLayoutPanel2.Size = new System.Drawing.Size(144, 96);
             this.tableLayoutPanel2.TabIndex = 26;
             // 
+            // Btn_Pencil
+            // 
+            this.Btn_Pencil.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_edit_481;
+            this.Btn_Pencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Pencil.FlatAppearance.BorderSize = 0;
+            this.Btn_Pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Pencil.Location = new System.Drawing.Point(5, 5);
+            this.Btn_Pencil.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Pencil.Name = "Btn_Pencil";
+            this.Btn_Pencil.Size = new System.Drawing.Size(37, 38);
+            this.Btn_Pencil.TabIndex = 0;
+            this.Btn_Pencil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_Pencil, "Pencil");
+            this.Btn_Pencil.UseVisualStyleBackColor = true;
+            this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
+            // 
+            // buttonAddText
+            // 
+            this.buttonAddText.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_add_text_50;
+            this.buttonAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAddText.FlatAppearance.BorderSize = 0;
+            this.buttonAddText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.buttonAddText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddText.Location = new System.Drawing.Point(52, 5);
+            this.buttonAddText.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAddText.Name = "buttonAddText";
+            this.buttonAddText.Size = new System.Drawing.Size(37, 38);
+            this.buttonAddText.TabIndex = 12;
+            this.buttonAddText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.buttonAddText, "Add text");
+            this.buttonAddText.UseVisualStyleBackColor = true;
+            this.buttonAddText.Click += new System.EventHandler(this.buttonAddText_Click);
+            // 
+            // Btn_ColorPicker
+            // 
+            this.Btn_ColorPicker.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_color_dropper_481;
+            this.Btn_ColorPicker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_ColorPicker.FlatAppearance.BorderSize = 0;
+            this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorPicker.Location = new System.Drawing.Point(99, 5);
+            this.Btn_ColorPicker.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_ColorPicker.Name = "Btn_ColorPicker";
+            this.Btn_ColorPicker.Size = new System.Drawing.Size(38, 38);
+            this.Btn_ColorPicker.TabIndex = 2;
+            this.Btn_ColorPicker.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorPicker, "Color Picker");
+            this.Btn_ColorPicker.UseVisualStyleBackColor = true;
+            this.Btn_ColorPicker.Click += new System.EventHandler(this.Btn_ColorPicker_Click);
+            // 
+            // Btn_Eraser
+            // 
+            this.Btn_Eraser.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_eraser_tool_48;
+            this.Btn_Eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Eraser.FlatAppearance.BorderSize = 0;
+            this.Btn_Eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Eraser.Location = new System.Drawing.Point(5, 53);
+            this.Btn_Eraser.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Eraser.Name = "Btn_Eraser";
+            this.Btn_Eraser.Size = new System.Drawing.Size(37, 38);
+            this.Btn_Eraser.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.Btn_Eraser, "Eraser");
+            this.Btn_Eraser.UseVisualStyleBackColor = true;
+            this.Btn_Eraser.Click += new System.EventHandler(this.Btn_Eraser_Click);
+            // 
+            // Btn_Fill
+            // 
+            this.Btn_Fill.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_fill_color_64;
+            this.Btn_Fill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Fill.FlatAppearance.BorderSize = 0;
+            this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Fill.Location = new System.Drawing.Point(52, 53);
+            this.Btn_Fill.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_Fill.Name = "Btn_Fill";
+            this.Btn_Fill.Size = new System.Drawing.Size(37, 38);
+            this.Btn_Fill.TabIndex = 4;
+            this.Btn_Fill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_Fill, "Fill With Color");
+            this.Btn_Fill.UseVisualStyleBackColor = true;
+            this.Btn_Fill.Click += new System.EventHandler(this.Btn_Fill_Click);
+            // 
+            // Btn_ColorDialog
+            // 
+            this.Btn_ColorDialog.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_artist_palette_48;
+            this.Btn_ColorDialog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_ColorDialog.FlatAppearance.BorderSize = 0;
+            this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ColorDialog.Location = new System.Drawing.Point(99, 53);
+            this.Btn_ColorDialog.Margin = new System.Windows.Forms.Padding(5);
+            this.Btn_ColorDialog.Name = "Btn_ColorDialog";
+            this.Btn_ColorDialog.Size = new System.Drawing.Size(38, 38);
+            this.Btn_ColorDialog.TabIndex = 5;
+            this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
+            this.Btn_ColorDialog.UseVisualStyleBackColor = true;
+            this.Btn_ColorDialog.Click += new System.EventHandler(this.Btn_ColorDialog_Click);
+            // 
             // gb_Shape
             // 
             this.gb_Shape.Controls.Add(this.panel5);
@@ -512,6 +931,38 @@ namespace TNT_Paint
             this.panel5.Size = new System.Drawing.Size(92, 95);
             this.panel5.TabIndex = 28;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button7.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(10, 69);
+            this.button7.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(70, 14);
+            this.button7.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.button7, "Xem danh sách hình thể");
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox4.Image = global::TNT_Paint.Properties.Resources.icons8_shapes_64__2_1;
+            this.pictureBox4.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(70, 59);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.button7_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button6);
@@ -524,6 +975,35 @@ namespace TNT_Paint
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Color and Size";
             // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::TNT_Paint.Properties.Resources.color_ribbon;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(1, 25);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(184, 33);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "Select";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button6, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // pb_currentColor
+            // 
+            this.pb_currentColor.BackColor = System.Drawing.Color.Black;
+            this.pb_currentColor.Location = new System.Drawing.Point(193, 27);
+            this.pb_currentColor.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_currentColor.Name = "pb_currentColor";
+            this.pb_currentColor.Size = new System.Drawing.Size(30, 30);
+            this.pb_currentColor.TabIndex = 11;
+            this.pb_currentColor.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_currentColor, "Current Color");
+            this.pb_currentColor.BackColorChanged += new System.EventHandler(this.pb_currentColor_BackColorChanged);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button8);
@@ -532,6 +1012,38 @@ namespace TNT_Paint
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(222, 33);
             this.panel4.TabIndex = 24;
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = global::TNT_Paint.Properties.Resources.Small_line;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.Black;
+            this.button8.Location = new System.Drawing.Point(0, 0);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(184, 33);
+            this.button8.TabIndex = 25;
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolTip1.SetToolTip(this.button8, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // ptbSizeDrop
+            // 
+            this.ptbSizeDrop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbSizeDrop.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbSizeDrop.Image = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
+            this.ptbSizeDrop.Location = new System.Drawing.Point(184, 0);
+            this.ptbSizeDrop.Name = "ptbSizeDrop";
+            this.ptbSizeDrop.Padding = new System.Windows.Forms.Padding(10);
+            this.ptbSizeDrop.Size = new System.Drawing.Size(38, 33);
+            this.ptbSizeDrop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSizeDrop.TabIndex = 24;
+            this.ptbSizeDrop.TabStop = false;
+            this.ptbSizeDrop.Click += new System.EventHandler(this.ptbSizeDrop_Click);
             // 
             // groupBox1
             // 
@@ -559,6 +1071,62 @@ namespace TNT_Paint
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(104, 103);
             this.tableLayoutPanel1.TabIndex = 25;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::TNT_Paint.Properties.Resources.brush4;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(56, 55);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(44, 44);
+            this.button4.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.button4, "Oil Brush");
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::TNT_Paint.Properties.Resources.brush1;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 43);
+            this.button1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.button1, "Caryon Brush");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::TNT_Paint.Properties.Resources.brush3;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(4, 55);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(44, 44);
+            this.button3.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.button3, "Watercolor Brush");
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::TNT_Paint.Properties.Resources.brush2;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(56, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 43);
+            this.button2.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.button2, "Air Brush");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabText
             // 
@@ -697,6 +1265,21 @@ namespace TNT_Paint
             this.btn_Italic.UseVisualStyleBackColor = true;
             this.btn_Italic.Click += new System.EventHandler(this.btn_Italic_Click);
             // 
+            // pb_ColorTable2
+            // 
+            this.pb_ColorTable2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_ColorTable2.Image = ((System.Drawing.Image)(resources.GetObject("pb_ColorTable2.Image")));
+            this.pb_ColorTable2.Location = new System.Drawing.Point(516, 3);
+            this.pb_ColorTable2.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_ColorTable2.Name = "pb_ColorTable2";
+            this.pb_ColorTable2.Size = new System.Drawing.Size(285, 123);
+            this.pb_ColorTable2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ColorTable2.TabIndex = 32;
+            this.pb_ColorTable2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_ColorTable2, "Color Table");
+            this.pb_ColorTable2.Visible = false;
+            this.pb_ColorTable2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.button9);
@@ -707,6 +1290,34 @@ namespace TNT_Paint
             this.groupBox5.TabIndex = 30;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Color";
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = global::TNT_Paint.Properties.Resources.color_ribbon;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(1, 25);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(184, 33);
+            this.button9.TabIndex = 19;
+            this.button9.Text = "Select";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.button9, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // pb_color2
+            // 
+            this.pb_color2.BackColor = System.Drawing.Color.Black;
+            this.pb_color2.Location = new System.Drawing.Point(193, 27);
+            this.pb_color2.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_color2.Name = "pb_color2";
+            this.pb_color2.Size = new System.Drawing.Size(30, 30);
+            this.pb_color2.TabIndex = 11;
+            this.pb_color2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_color2, "Current Color");
             // 
             // tabImgEditor
             // 
@@ -855,7 +1466,7 @@ namespace TNT_Paint
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.button10);
-            this.panel7.Controls.Add(this.pictureBox1);
+            this.panel7.Controls.Add(this.pbResize);
             this.panel7.Location = new System.Drawing.Point(119, 71);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(112, 41);
@@ -876,6 +1487,18 @@ namespace TNT_Paint
             this.toolTip1.SetToolTip(this.button10, "Resize\r\n\r\nĐổi kích thước của ảnh.");
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // pbResize
+            // 
+            this.pbResize.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
+            this.pbResize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbResize.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbResize.Location = new System.Drawing.Point(0, 0);
+            this.pbResize.Margin = new System.Windows.Forms.Padding(4);
+            this.pbResize.Name = "pbResize";
+            this.pbResize.Size = new System.Drawing.Size(42, 39);
+            this.pbResize.TabIndex = 19;
+            this.pbResize.TabStop = false;
             // 
             // panel9
             // 
@@ -904,6 +1527,62 @@ namespace TNT_Paint
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button13_Click);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 39);
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            // 
+            // button14
+            // 
+            this.button14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button14.BackColor = System.Drawing.Color.Transparent;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Image = global::TNT_Paint.Properties.Resources.icons8_selection_67;
+            this.button14.Location = new System.Drawing.Point(7, 20);
+            this.button14.Margin = new System.Windows.Forms.Padding(1);
+            this.button14.Name = "button14";
+            this.button14.Padding = new System.Windows.Forms.Padding(5);
+            this.button14.Size = new System.Drawing.Size(107, 92);
+            this.button14.TabIndex = 22;
+            this.button14.Text = "Select";
+            this.toolTip1.SetToolTip(this.button14, "Selection\r\n\r\nChọn một phần của ảnh.");
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1269, 135);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Specials";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pb_ColorTable
+            // 
+            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
+            this.pb_ColorTable.Location = new System.Drawing.Point(917, 4);
+            this.pb_ColorTable.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_ColorTable.Name = "pb_ColorTable";
+            this.pb_ColorTable.Size = new System.Drawing.Size(285, 123);
+            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_ColorTable.TabIndex = 9;
+            this.pb_ColorTable.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
+            this.pb_ColorTable.Visible = false;
+            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
+            // 
             // Panel_size
             // 
             this.Panel_size.BackColor = System.Drawing.Color.White;
@@ -930,6 +1609,47 @@ namespace TNT_Paint
             this.label1.TabIndex = 3;
             this.label1.Text = "Size";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Btn_BigLine
+            // 
+            this.Btn_BigLine.BackgroundImage = global::TNT_Paint.Properties.Resources.BigLine;
+            this.Btn_BigLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_BigLine.FlatAppearance.BorderSize = 0;
+            this.Btn_BigLine.Location = new System.Drawing.Point(0, 54);
+            this.Btn_BigLine.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_BigLine.Name = "Btn_BigLine";
+            this.Btn_BigLine.Size = new System.Drawing.Size(182, 27);
+            this.Btn_BigLine.TabIndex = 2;
+            this.Btn_BigLine.UseVisualStyleBackColor = true;
+            this.Btn_BigLine.Click += new System.EventHandler(this.Btn_BigLine_Click);
+            // 
+            // Btn_MediumLine
+            // 
+            this.Btn_MediumLine.BackgroundImage = global::TNT_Paint.Properties.Resources.MediumLine;
+            this.Btn_MediumLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_MediumLine.FlatAppearance.BorderSize = 0;
+            this.Btn_MediumLine.Location = new System.Drawing.Point(0, 27);
+            this.Btn_MediumLine.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_MediumLine.Name = "Btn_MediumLine";
+            this.Btn_MediumLine.Padding = new System.Windows.Forms.Padding(10);
+            this.Btn_MediumLine.Size = new System.Drawing.Size(182, 27);
+            this.Btn_MediumLine.TabIndex = 1;
+            this.Btn_MediumLine.UseVisualStyleBackColor = true;
+            this.Btn_MediumLine.Click += new System.EventHandler(this.Btn_MediumLine_Click);
+            // 
+            // btn_SmallLine
+            // 
+            this.btn_SmallLine.BackgroundImage = global::TNT_Paint.Properties.Resources.Small_line;
+            this.btn_SmallLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SmallLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_SmallLine.FlatAppearance.BorderSize = 0;
+            this.btn_SmallLine.Location = new System.Drawing.Point(0, 0);
+            this.btn_SmallLine.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_SmallLine.Name = "btn_SmallLine";
+            this.btn_SmallLine.Size = new System.Drawing.Size(182, 27);
+            this.btn_SmallLine.TabIndex = 0;
+            this.btn_SmallLine.UseVisualStyleBackColor = true;
+            this.btn_SmallLine.Click += new System.EventHandler(this.btn_SmallLine_Click);
             // 
             // toolStripShape
             // 
@@ -958,178 +1678,6 @@ namespace TNT_Paint
             this.toolStripShape.TabIndex = 0;
             this.toolStripShape.Text = "toolStrip1";
             this.toolStripShape.Visible = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelDauCham1
-            // 
-            this.panelDauCham1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham1.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.panelDauCham1.Location = new System.Drawing.Point(1168, 262);
-            this.panelDauCham1.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDauCham1.Name = "panelDauCham1";
-            this.panelDauCham1.Size = new System.Drawing.Size(11, 10);
-            this.panelDauCham1.TabIndex = 4;
-            this.panelDauCham1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseDown);
-            this.panelDauCham1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseMove);
-            this.panelDauCham1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseUp);
-            // 
-            // panelDauCham2
-            // 
-            this.panelDauCham2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham2.Cursor = System.Windows.Forms.Cursors.SizeNS;
-            this.panelDauCham2.Location = new System.Drawing.Point(563, 542);
-            this.panelDauCham2.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDauCham2.Name = "panelDauCham2";
-            this.panelDauCham2.Size = new System.Drawing.Size(11, 10);
-            this.panelDauCham2.TabIndex = 5;
-            this.panelDauCham2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseDown);
-            this.panelDauCham2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseMove);
-            this.panelDauCham2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseUp);
-            // 
-            // panelDauCham3
-            // 
-            this.panelDauCham3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelDauCham3.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.panelDauCham3.Location = new System.Drawing.Point(1168, 542);
-            this.panelDauCham3.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDauCham3.Name = "panelDauCham3";
-            this.panelDauCham3.Size = new System.Drawing.Size(11, 10);
-            this.panelDauCham3.TabIndex = 5;
-            this.panelDauCham3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseDown);
-            this.panelDauCham3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseMove);
-            this.panelDauCham3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseUp);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 552);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(1256, 26);
-            this.statusStrip1.TabIndex = 7;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(661, 20);
-            this.toolStripStatusLabel3.Text = "                                                                                 " +
-    "                                                                                " +
-    "  ";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(151, 20);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
-            // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.toolStripShape);
-            this.panel2.Controls.Add(this.Panel_size);
-            this.panel2.Controls.Add(this.statusStrip1);
-            this.panel2.Controls.Add(this.panelDauCham3);
-            this.panel2.Controls.Add(this.panelDauCham2);
-            this.panel2.Controls.Add(this.panelDauCham1);
-            this.panel2.Controls.Add(this.pb_mainScreen);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 195);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1277, 385);
-            this.panel2.TabIndex = 9;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.trackBar3);
-            this.panel8.Controls.Add(this.label3);
-            this.panel8.Controls.Add(this.trackBar2);
-            this.panel8.Controls.Add(this.trackBar1);
-            this.panel8.Controls.Add(this.label2);
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 580);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1277, 175);
-            this.panel8.TabIndex = 10;
-            this.panel8.Visible = false;
-            // 
-            // trackBar3
-            // 
-            this.trackBar3.Location = new System.Drawing.Point(320, 125);
-            this.trackBar3.Margin = new System.Windows.Forms.Padding(4);
-            this.trackBar3.Maximum = 100;
-            this.trackBar3.Minimum = -100;
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(588, 56);
-            this.trackBar3.TabIndex = 19;
-            this.trackBar3.TickFrequency = 5;
-            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(202, 136);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Contrast";
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Location = new System.Drawing.Point(320, 71);
-            this.trackBar2.Margin = new System.Windows.Forms.Padding(4);
-            this.trackBar2.Maximum = 100;
-            this.trackBar2.Minimum = -100;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(588, 56);
-            this.trackBar2.TabIndex = 17;
-            this.trackBar2.TickFrequency = 5;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(320, 19);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(4);
-            this.trackBar1.Maximum = 20;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(588, 56);
-            this.trackBar1.TabIndex = 16;
-            this.trackBar1.TickFrequency = 5;
-            this.trackBar1.Value = 10;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 83);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Saturation";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(202, 26);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Brightness";
             // 
             // Btn_DrawLine
             // 
@@ -1310,46 +1858,64 @@ namespace TNT_Paint
             this.Btn_DrawFivePointStar.ToolTipText = "Five Point Star";
             this.Btn_DrawFivePointStar.Click += new System.EventHandler(this.Btn_DrawFivePointStar_Click);
             // 
-            // Btn_BigLine
+            // timer1
             // 
-            this.Btn_BigLine.BackgroundImage = global::TNT_Paint.Properties.Resources.BigLine;
-            this.Btn_BigLine.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_BigLine.FlatAppearance.BorderSize = 0;
-            this.Btn_BigLine.Location = new System.Drawing.Point(0, 54);
-            this.Btn_BigLine.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_BigLine.Name = "Btn_BigLine";
-            this.Btn_BigLine.Size = new System.Drawing.Size(182, 27);
-            this.Btn_BigLine.TabIndex = 2;
-            this.Btn_BigLine.UseVisualStyleBackColor = true;
-            this.Btn_BigLine.Click += new System.EventHandler(this.Btn_BigLine_Click);
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Btn_MediumLine
+            // panelDauCham1
             // 
-            this.Btn_MediumLine.BackgroundImage = global::TNT_Paint.Properties.Resources.MediumLine;
-            this.Btn_MediumLine.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_MediumLine.FlatAppearance.BorderSize = 0;
-            this.Btn_MediumLine.Location = new System.Drawing.Point(0, 27);
-            this.Btn_MediumLine.Margin = new System.Windows.Forms.Padding(4);
-            this.Btn_MediumLine.Name = "Btn_MediumLine";
-            this.Btn_MediumLine.Padding = new System.Windows.Forms.Padding(10);
-            this.Btn_MediumLine.Size = new System.Drawing.Size(182, 27);
-            this.Btn_MediumLine.TabIndex = 1;
-            this.Btn_MediumLine.UseVisualStyleBackColor = true;
-            this.Btn_MediumLine.Click += new System.EventHandler(this.Btn_MediumLine_Click);
+            this.panelDauCham1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham1.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.panelDauCham1.Location = new System.Drawing.Point(1168, 262);
+            this.panelDauCham1.Margin = new System.Windows.Forms.Padding(4);
+            this.panelDauCham1.Name = "panelDauCham1";
+            this.panelDauCham1.Size = new System.Drawing.Size(11, 10);
+            this.panelDauCham1.TabIndex = 4;
+            this.panelDauCham1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseDown);
+            this.panelDauCham1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseMove);
+            this.panelDauCham1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham1_MouseUp);
             // 
-            // btn_SmallLine
+            // panelDauCham2
             // 
-            this.btn_SmallLine.BackgroundImage = global::TNT_Paint.Properties.Resources.Small_line;
-            this.btn_SmallLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_SmallLine.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_SmallLine.FlatAppearance.BorderSize = 0;
-            this.btn_SmallLine.Location = new System.Drawing.Point(0, 0);
-            this.btn_SmallLine.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_SmallLine.Name = "btn_SmallLine";
-            this.btn_SmallLine.Size = new System.Drawing.Size(182, 27);
-            this.btn_SmallLine.TabIndex = 0;
-            this.btn_SmallLine.UseVisualStyleBackColor = true;
-            this.btn_SmallLine.Click += new System.EventHandler(this.btn_SmallLine_Click);
+            this.panelDauCham2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham2.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.panelDauCham2.Location = new System.Drawing.Point(563, 542);
+            this.panelDauCham2.Margin = new System.Windows.Forms.Padding(4);
+            this.panelDauCham2.Name = "panelDauCham2";
+            this.panelDauCham2.Size = new System.Drawing.Size(11, 10);
+            this.panelDauCham2.TabIndex = 5;
+            this.panelDauCham2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseDown);
+            this.panelDauCham2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseMove);
+            this.panelDauCham2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham2_MouseUp);
+            // 
+            // panelDauCham3
+            // 
+            this.panelDauCham3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelDauCham3.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.panelDauCham3.Location = new System.Drawing.Point(1168, 542);
+            this.panelDauCham3.Margin = new System.Windows.Forms.Padding(4);
+            this.panelDauCham3.Name = "panelDauCham3";
+            this.panelDauCham3.Size = new System.Drawing.Size(11, 10);
+            this.panelDauCham3.TabIndex = 5;
+            this.panelDauCham3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseDown);
+            this.panelDauCham3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseMove);
+            this.panelDauCham3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDauCham3_MouseUp);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 552);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(1256, 26);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
@@ -1357,6 +1923,39 @@ namespace TNT_Paint
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(171, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(661, 20);
+            this.toolStripStatusLabel3.Text = "                                                                                 " +
+    "                                                                                " +
+    "  ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.pb_ColorTable);
+            this.panel2.Controls.Add(this.toolStripShape);
+            this.panel2.Controls.Add(this.Panel_size);
+            this.panel2.Controls.Add(this.statusStrip1);
+            this.panel2.Controls.Add(this.panelDauCham3);
+            this.panel2.Controls.Add(this.panelDauCham2);
+            this.panel2.Controls.Add(this.panelDauCham1);
+            this.panel2.Controls.Add(this.pb_mainScreen);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 195);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1277, 385);
+            this.panel2.TabIndex = 9;
             // 
             // pb_mainScreen
             // 
@@ -1373,632 +1972,86 @@ namespace TNT_Paint
             this.pb_mainScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pb_mainScreen_Paint);
             this.pb_mainScreen.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_mainScreen_MouseMove);
             // 
-            // pb_ColorTable
-            // 
-            this.pb_ColorTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_ColorTable.Image = global::TNT_Paint.Properties.Resources.ColorTable2;
-            this.pb_ColorTable.Location = new System.Drawing.Point(890, 7);
-            this.pb_ColorTable.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_ColorTable.Name = "pb_ColorTable";
-            this.pb_ColorTable.Size = new System.Drawing.Size(285, 123);
-            this.pb_ColorTable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ColorTable.TabIndex = 9;
-            this.pb_ColorTable.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_ColorTable, "Color Table");
-            this.pb_ColorTable.Visible = false;
-            this.pb_ColorTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBoxCrop
-            // 
-            this.pictureBoxCrop.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
-            this.pictureBoxCrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCrop.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxCrop.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxCrop.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxCrop.Name = "pictureBoxCrop";
-            this.pictureBoxCrop.Size = new System.Drawing.Size(41, 39);
-            this.pictureBoxCrop.TabIndex = 16;
-            this.pictureBoxCrop.TabStop = false;
-            // 
-            // button12
-            // 
-            this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button12.BackColor = System.Drawing.Color.Transparent;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Image = global::TNT_Paint.Properties.Resources.icons8_selection_67;
-            this.button12.Location = new System.Drawing.Point(7, 20);
-            this.button12.Margin = new System.Windows.Forms.Padding(1);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(5);
-            this.button12.Size = new System.Drawing.Size(107, 92);
-            this.button12.TabIndex = 22;
-            this.button12.Text = "Select";
-            this.toolTip1.SetToolTip(this.button12, "Selection\r\n\r\nChọn một phần của ảnh.");
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // Btn_Pencil
-            // 
-            this.Btn_Pencil.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_edit_481;
-            this.Btn_Pencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Pencil.FlatAppearance.BorderSize = 0;
-            this.Btn_Pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Pencil.Location = new System.Drawing.Point(5, 5);
-            this.Btn_Pencil.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Pencil.Name = "Btn_Pencil";
-            this.Btn_Pencil.Size = new System.Drawing.Size(37, 38);
-            this.Btn_Pencil.TabIndex = 0;
-            this.Btn_Pencil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_Pencil, "Pencil");
-            this.Btn_Pencil.UseVisualStyleBackColor = true;
-            this.Btn_Pencil.Click += new System.EventHandler(this.Btn_Pencil_Click);
-            // 
-            // buttonAddText
-            // 
-            this.buttonAddText.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_add_text_50;
-            this.buttonAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAddText.FlatAppearance.BorderSize = 0;
-            this.buttonAddText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.buttonAddText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddText.Location = new System.Drawing.Point(52, 5);
-            this.buttonAddText.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonAddText.Name = "buttonAddText";
-            this.buttonAddText.Size = new System.Drawing.Size(37, 38);
-            this.buttonAddText.TabIndex = 12;
-            this.buttonAddText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.buttonAddText, "Add text");
-            this.buttonAddText.UseVisualStyleBackColor = true;
-            this.buttonAddText.Click += new System.EventHandler(this.buttonAddText_Click);
-            // 
-            // Btn_ColorPicker
-            // 
-            this.Btn_ColorPicker.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_color_dropper_481;
-            this.Btn_ColorPicker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_ColorPicker.FlatAppearance.BorderSize = 0;
-            this.Btn_ColorPicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_ColorPicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ColorPicker.Location = new System.Drawing.Point(99, 5);
-            this.Btn_ColorPicker.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_ColorPicker.Name = "Btn_ColorPicker";
-            this.Btn_ColorPicker.Size = new System.Drawing.Size(38, 38);
-            this.Btn_ColorPicker.TabIndex = 2;
-            this.Btn_ColorPicker.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_ColorPicker, "Color Picker");
-            this.Btn_ColorPicker.UseVisualStyleBackColor = true;
-            this.Btn_ColorPicker.Click += new System.EventHandler(this.Btn_ColorPicker_Click);
-            // 
-            // Btn_Eraser
-            // 
-            this.Btn_Eraser.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_eraser_tool_48;
-            this.Btn_Eraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Eraser.FlatAppearance.BorderSize = 0;
-            this.Btn_Eraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Eraser.Location = new System.Drawing.Point(5, 53);
-            this.Btn_Eraser.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Eraser.Name = "Btn_Eraser";
-            this.Btn_Eraser.Size = new System.Drawing.Size(37, 38);
-            this.Btn_Eraser.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.Btn_Eraser, "Eraser");
-            this.Btn_Eraser.UseVisualStyleBackColor = true;
-            this.Btn_Eraser.Click += new System.EventHandler(this.Btn_Eraser_Click);
-            // 
-            // Btn_Fill
-            // 
-            this.Btn_Fill.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_fill_color_64;
-            this.Btn_Fill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_Fill.FlatAppearance.BorderSize = 0;
-            this.Btn_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Fill.Location = new System.Drawing.Point(52, 53);
-            this.Btn_Fill.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_Fill.Name = "Btn_Fill";
-            this.Btn_Fill.Size = new System.Drawing.Size(37, 38);
-            this.Btn_Fill.TabIndex = 4;
-            this.Btn_Fill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_Fill, "Fill With Color");
-            this.Btn_Fill.UseVisualStyleBackColor = true;
-            this.Btn_Fill.Click += new System.EventHandler(this.Btn_Fill_Click);
-            // 
-            // Btn_ColorDialog
-            // 
-            this.Btn_ColorDialog.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_artist_palette_48;
-            this.Btn_ColorDialog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_ColorDialog.FlatAppearance.BorderSize = 0;
-            this.Btn_ColorDialog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.Btn_ColorDialog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ColorDialog.Location = new System.Drawing.Point(99, 53);
-            this.Btn_ColorDialog.Margin = new System.Windows.Forms.Padding(5);
-            this.Btn_ColorDialog.Name = "Btn_ColorDialog";
-            this.Btn_ColorDialog.Size = new System.Drawing.Size(38, 38);
-            this.Btn_ColorDialog.TabIndex = 5;
-            this.Btn_ColorDialog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.Btn_ColorDialog, "Color Panel");
-            this.Btn_ColorDialog.UseVisualStyleBackColor = true;
-            this.Btn_ColorDialog.Click += new System.EventHandler(this.Btn_ColorDialog_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button7.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(10, 69);
-            this.button7.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(70, 14);
-            this.button7.TabIndex = 14;
-            this.toolTip1.SetToolTip(this.button7, "Xem danh sách hình thể");
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox4.Image = global::TNT_Paint.Properties.Resources.icons8_shapes_64__2_1;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(70, 59);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = global::TNT_Paint.Properties.Resources.color_ribbon;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(1, 25);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(184, 33);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Select";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.button6, "Selection\r\n\r\nChọn một phần của ảnh.");
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // pb_currentColor
-            // 
-            this.pb_currentColor.BackColor = System.Drawing.Color.Black;
-            this.pb_currentColor.Location = new System.Drawing.Point(193, 27);
-            this.pb_currentColor.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_currentColor.Name = "pb_currentColor";
-            this.pb_currentColor.Size = new System.Drawing.Size(30, 30);
-            this.pb_currentColor.TabIndex = 11;
-            this.pb_currentColor.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_currentColor, "Current Color");
-            this.pb_currentColor.BackColorChanged += new System.EventHandler(this.pb_currentColor_BackColorChanged);
-            // 
-            // button8
-            // 
-            this.button8.BackgroundImage = global::TNT_Paint.Properties.Resources.Small_line;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(0, 0);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(184, 33);
-            this.button8.TabIndex = 25;
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolTip1.SetToolTip(this.button8, "Selection\r\n\r\nChọn một phần của ảnh.");
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // ptbSizeDrop
-            // 
-            this.ptbSizeDrop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbSizeDrop.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ptbSizeDrop.Image = global::TNT_Paint.Properties.Resources.icons8_dropdown_100;
-            this.ptbSizeDrop.Location = new System.Drawing.Point(184, 0);
-            this.ptbSizeDrop.Name = "ptbSizeDrop";
-            this.ptbSizeDrop.Padding = new System.Windows.Forms.Padding(10);
-            this.ptbSizeDrop.Size = new System.Drawing.Size(38, 33);
-            this.ptbSizeDrop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbSizeDrop.TabIndex = 24;
-            this.ptbSizeDrop.TabStop = false;
-            this.ptbSizeDrop.Click += new System.EventHandler(this.ptbSizeDrop_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::TNT_Paint.Properties.Resources.brush4;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(56, 55);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 44);
-            this.button4.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.button4, "Oil Brush");
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::TNT_Paint.Properties.Resources.brush1;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 43);
-            this.button1.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.button1, "Caryon Brush");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::TNT_Paint.Properties.Resources.brush3;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(4, 55);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(44, 44);
-            this.button3.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.button3, "Watercolor Brush");
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::TNT_Paint.Properties.Resources.brush2;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(56, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 43);
-            this.button2.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.button2, "Air Brush");
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pb_ColorTable2
-            // 
-            this.pb_ColorTable2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_ColorTable2.Image = ((System.Drawing.Image)(resources.GetObject("pb_ColorTable2.Image")));
-            this.pb_ColorTable2.Location = new System.Drawing.Point(516, 3);
-            this.pb_ColorTable2.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_ColorTable2.Name = "pb_ColorTable2";
-            this.pb_ColorTable2.Size = new System.Drawing.Size(285, 123);
-            this.pb_ColorTable2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_ColorTable2.TabIndex = 32;
-            this.pb_ColorTable2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_ColorTable2, "Color Table");
-            this.pb_ColorTable2.Visible = false;
-            this.pb_ColorTable2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb_ColorTable_MouseClick);
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImage = global::TNT_Paint.Properties.Resources.color_ribbon;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(1, 25);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(184, 33);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "Select";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.button9, "Selection\r\n\r\nChọn một phần của ảnh.");
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // pb_color2
-            // 
-            this.pb_color2.BackColor = System.Drawing.Color.Black;
-            this.pb_color2.Location = new System.Drawing.Point(193, 27);
-            this.pb_color2.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_color2.Name = "pb_color2";
-            this.pb_color2.Size = new System.Drawing.Size(30, 30);
-            this.pb_color2.TabIndex = 11;
-            this.pb_color2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_color2, "Current Color");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_drag_48;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 39);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::TNT_Paint.Properties.Resources.icons8_crop_64__1_;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(41, 39);
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
-            // 
-            // button14
-            // 
-            this.button14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button14.BackColor = System.Drawing.Color.Transparent;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Image = global::TNT_Paint.Properties.Resources.icons8_selection_67;
-            this.button14.Location = new System.Drawing.Point(7, 20);
-            this.button14.Margin = new System.Windows.Forms.Padding(1);
-            this.button14.Name = "button14";
-            this.button14.Padding = new System.Windows.Forms.Padding(5);
-            this.button14.Size = new System.Drawing.Size(107, 92);
-            this.button14.TabIndex = 22;
-            this.button14.Text = "Select";
-            this.toolTip1.SetToolTip(this.button14, "Selection\r\n\r\nChọn một phần của ảnh.");
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_add_file_64;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
-            this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_opened_folder_48;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_save_50;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_save_as_64;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_about_48;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_close_window_48;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.Delete)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(241, 28);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_undo_48;
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
-            this.undoToolStripMenuItem.Text = "Undo";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_redo_48;
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
-            this.redoToolStripMenuItem.Text = "Redo";
-            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
-            // 
-            // cutToolStripMenuItem
-            // 
-            this.cutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_scissors_50;
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
-            this.cutToolStripMenuItem.Text = "Cut";
-            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_copy_50;
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
-            this.copyToolStripMenuItem.Text = "Copy";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_paste_64;
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
-            // 
-            // pasteToolStripMenuItem1
-            // 
-            this.pasteToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_insert_raster_image_100;
-            this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
-            this.pasteToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F13;
-            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(211, 28);
-            this.pasteToolStripMenuItem1.Text = "Paste from";
-            this.pasteToolStripMenuItem1.Click += new System.EventHandler(this.pasteToolStripMenuItem1_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_remove_48;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(211, 28);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // imageEditorToolStripMenuItem
-            // 
-            this.imageEditorToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_photo_editor_100;
-            this.imageEditorToolStripMenuItem.Name = "imageEditorToolStripMenuItem";
-            this.imageEditorToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.imageEditorToolStripMenuItem.Text = "Image Editor";
-            this.imageEditorToolStripMenuItem.Click += new System.EventHandler(this.imageEditorToolStripMenuItem_Click);
-            // 
-            // magnifyToolStripMenuItem
-            // 
-            this.magnifyToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_to_extents_64;
-            this.magnifyToolStripMenuItem.Name = "magnifyToolStripMenuItem";
-            this.magnifyToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.magnifyToolStripMenuItem.Text = "Magnifier";
-            this.magnifyToolStripMenuItem.Click += new System.EventHandler(this.magnifyToolStripMenuItem_Click);
-            // 
-            // stockImagesToolStripMenuItem
-            // 
-            this.stockImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_image_48;
-            this.stockImagesToolStripMenuItem.Name = "stockImagesToolStripMenuItem";
-            this.stockImagesToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
-            this.stockImagesToolStripMenuItem.Text = "Stock Images";
-            this.stockImagesToolStripMenuItem.Click += new System.EventHandler(this.stockImagesToolStripMenuItem_Click);
-            // 
-            // onlineImagesToolStripMenuItem
-            // 
-            this.onlineImagesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_internet_connection_50;
-            this.onlineImagesToolStripMenuItem.Name = "onlineImagesToolStripMenuItem";
-            this.onlineImagesToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
-            this.onlineImagesToolStripMenuItem.Text = "Online Images";
-            this.onlineImagesToolStripMenuItem.Click += new System.EventHandler(this.onlineImagesToolStripMenuItem_Click);
-            // 
-            // imageFromCameraToolStripMenuItem
-            // 
-            this.imageFromCameraToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.camera_icon;
-            this.imageFromCameraToolStripMenuItem.Name = "imageFromCameraToolStripMenuItem";
-            this.imageFromCameraToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
-            this.imageFromCameraToolStripMenuItem.Text = "Image from Camera";
-            this.imageFromCameraToolStripMenuItem.Click += new System.EventHandler(this.imageFromCameraToolStripMenuItem_Click);
-            // 
-            // genMusicFromTextToolStripMenuItem
-            // 
-            this.genMusicFromTextToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.gemini_icon;
-            this.genMusicFromTextToolStripMenuItem.Name = "genMusicFromTextToolStripMenuItem";
-            this.genMusicFromTextToolStripMenuItem.Size = new System.Drawing.Size(257, 28);
-            this.genMusicFromTextToolStripMenuItem.Text = "Gen Image From Text";
-            this.genMusicFromTextToolStripMenuItem.Click += new System.EventHandler(this.genMusicFromTextToolStripMenuItem_Click);
-            // 
-            // zomeInToolStripMenuItem
-            // 
-            this.zomeInToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_in_50;
-            this.zomeInToolStripMenuItem.Name = "zomeInToolStripMenuItem";
-            this.zomeInToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Up)));
-            this.zomeInToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
-            this.zomeInToolStripMenuItem.Text = "Zome in";
-            this.zomeInToolStripMenuItem.Click += new System.EventHandler(this.zomeInToolStripMenuItem_Click);
-            // 
-            // zomeOutToolStripMenuItem
-            // 
-            this.zomeOutToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_zoom_out_50;
-            this.zomeOutToolStripMenuItem.Name = "zomeOutToolStripMenuItem";
-            this.zomeOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down)));
-            this.zomeOutToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
-            this.zomeOutToolStripMenuItem.Text = "Zome out";
-            this.zomeOutToolStripMenuItem.Click += new System.EventHandler(this.zomeOutToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Image = global::TNT_Paint.Properties.Resources.icons8_100_50;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(262, 28);
-            this.toolStripMenuItem2.Text = "100%";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // fullScreenToolStripMenuItem
-            // 
-            this.fullScreenToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.icons8_full_screen_64;
-            this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
-            this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
-            this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
-            this.fullScreenToolStripMenuItem.Text = "Full Screen";
-            this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.fullScreenToolStripMenuItem_Click);
-            // 
-            // gridlinesToolStripMenuItem
-            // 
-            this.gridlinesToolStripMenuItem.CheckOnClick = true;
-            this.gridlinesToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.gridline;
-            this.gridlinesToolStripMenuItem.Name = "gridlinesToolStripMenuItem";
-            this.gridlinesToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
-            this.gridlinesToolStripMenuItem.Text = "Gridlines";
-            this.gridlinesToolStripMenuItem.Click += new System.EventHandler(this.gridlinesToolStripMenuItem_Click);
-            // 
-            // informationToolStripMenuItem
-            // 
-            this.informationToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.personal_infor;
-            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
-            this.informationToolStripMenuItem.Text = "Information";
-            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem1
-            // 
-            this.aboutToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_about_481;
-            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(184, 28);
-            this.aboutToolStripMenuItem1.Text = "About";
-            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
-            // 
-            // shareImagesOnFacebookToolStripMenuItem1
-            // 
-            this.shareImagesOnFacebookToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.fb_icon;
-            this.shareImagesOnFacebookToolStripMenuItem1.Name = "shareImagesOnFacebookToolStripMenuItem1";
-            this.shareImagesOnFacebookToolStripMenuItem1.Size = new System.Drawing.Size(297, 28);
-            this.shareImagesOnFacebookToolStripMenuItem1.Text = "Share images on Facebook";
-            this.shareImagesOnFacebookToolStripMenuItem1.Click += new System.EventHandler(this.shareImagesOnFacebookToolStripMenuItem_Click);
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.trackBar3);
+            this.panel8.Controls.Add(this.label3);
+            this.panel8.Controls.Add(this.trackBar2);
+            this.panel8.Controls.Add(this.trackBar1);
+            this.panel8.Controls.Add(this.label2);
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 580);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1277, 175);
+            this.panel8.TabIndex = 10;
+            this.panel8.Visible = false;
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(320, 125);
+            this.trackBar3.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar3.Maximum = 100;
+            this.trackBar3.Minimum = -100;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(588, 56);
+            this.trackBar3.TabIndex = 19;
+            this.trackBar3.TickFrequency = 5;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(202, 136);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Contrast";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(320, 71);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar2.Maximum = 100;
+            this.trackBar2.Minimum = -100;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(588, 56);
+            this.trackBar2.TabIndex = 17;
+            this.trackBar2.TickFrequency = 5;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(320, 19);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar1.Maximum = 20;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(588, 56);
+            this.trackBar1.TabIndex = 16;
+            this.trackBar1.TickFrequency = 5;
+            this.trackBar1.Value = 10;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(202, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Saturation";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(202, 26);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Brightness";
             // 
             // Form1
             // 
@@ -2022,28 +2075,41 @@ namespace TNT_Paint
             this.panel1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrop)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.gb_Shape.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabText.ResumeLayout(false);
             this.panelText.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable2)).EndInit();
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_color2)).EndInit();
             this.tabImgEditor.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbResize)).EndInit();
             this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
             this.Panel_size.ResumeLayout(false);
             this.toolStripShape.ResumeLayout(false);
             this.toolStripShape.PerformLayout();
@@ -2051,22 +2117,12 @@ namespace TNT_Paint
             this.statusStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_mainScreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCrop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_currentColor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSizeDrop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_color2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2216,7 +2272,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbResize;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TrackBar trackBar3;
         private System.Windows.Forms.Label label3;
@@ -2224,6 +2280,10 @@ namespace TNT_Paint
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.CheckBox cbSymm;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

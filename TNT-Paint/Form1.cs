@@ -424,6 +424,12 @@ namespace TNT_Paint
             {
                 Fill(bm, e.X, e.Y, currentColor);
             }
+
+            if (cbSymm.Checked == true)
+            {
+                isDrawingSymmetry = true;
+            }
+
             AllowPaint = true;
             px = e.Location;
             //
@@ -449,11 +455,19 @@ namespace TNT_Paint
             }
             if (AllowPaint)
             {
+                // px: điểm cũ, py: điểm mới
                 py = e.Location;
                 if (SelectedMode == 1)
                 {
                     g.DrawLine(p, new Point(px.X - 10, px.Y + 10), new Point(py.X - 10, py.Y + 10));
                     px = py;
+
+                    if (isDrawingSymmetry)
+                    {
+                        points.Add(new Point(py.X - 10, py.Y + 10));
+                        DrawMandala(points);
+                        pb_mainScreen.Invalidate();
+                    }
                 }
                 if (SelectedMode == 2)
                 {
@@ -473,6 +487,14 @@ namespace TNT_Paint
                     Rectangle rectangle = new Rectangle(px, new Size((int)currentBrushSize, (int)currentBrushSize));
                     graphicsPath.AddRectangle(rectangle);
                     g.FillPath(brush, graphicsPath);
+
+                    if (isDrawingSymmetry)
+                    {
+                        points.Add(px);
+                        DrawMandala(points);
+                        pb_mainScreen.Invalidate();
+                    }
+
                     px = e.Location;
                 }
                 if (SelectedMode == 21)
@@ -619,7 +641,72 @@ namespace TNT_Paint
             {
                 veHinh.DrawFivePointStar(p, g, px, py);
             }
+            if (isDrawingSymmetry)
+            {
+                isDrawingSymmetry = false;
+                points.Clear();
+            }
+        }
 
+        private void DrawMandala(List<Point> points)
+        {
+            if (points.Count < 2) return;
+
+            using (Graphics g = Graphics.FromImage(bm))
+            {
+                for (int i = 0; i < symmetryCount; i++)
+                {
+                    float angle = 360f / symmetryCount * i;
+                    Matrix transform = new Matrix();
+                    transform.RotateAt(angle, new PointF(pb_mainScreen.Width / 2, pb_mainScreen.Height / 2));
+
+                    List<Point> transformedPoints = new List<Point>();
+                    foreach (Point p in points)
+                    {
+                        Point[] tempPointArray = { p };
+                        try
+                        {
+                            transform.TransformPoints(tempPointArray);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi biến đổi điểm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        transformedPoints.Add(tempPointArray[0]);
+                    }
+
+                    if (SelectedMode == 20)
+                    {
+                        System.Drawing.Image image = TNT_Paint.Properties.Resources.test_black_2;
+                        Bitmap coloredBitmap = ChangeBitmapColor(new Bitmap(image), currentColor);
+                        Bitmap bitmap = new Bitmap(coloredBitmap, (int)currentBrushSize, (int)currentBrushSize);
+                        Brush brush = new TextureBrush(bitmap, System.Drawing.Drawing2D.WrapMode.Tile);
+
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                        foreach (Point p in transformedPoints)
+                        {
+                            GraphicsPath graphicsPath = new GraphicsPath();
+                            Rectangle rectangle = new Rectangle(p, new Size((int)currentBrushSize, (int)currentBrushSize));
+                            graphicsPath.AddRectangle(rectangle);
+                            g.FillPath(brush, graphicsPath);
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            g.DrawLines(p, transformedPoints.ToArray());
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi vẽ đường: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                }
+            }
         }
 
         #endregion
@@ -2147,6 +2234,29 @@ namespace TNT_Paint
             else
             {
                 panel8.Visible = true;
+            }
+        }
+
+        private List<Point> points = new List<Point>();
+        private bool isDrawingSymmetry = false;
+        private int symmetryCount = 8; // Số lượng đối xứng
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            symmetryCount = (int)numericUpDown1.Value;
+            pb_mainScreen.Invalidate();
+
+        }
+
+        private void cbSymm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSymm.Checked)
+            {
+                isDrawingSymmetry = true;
+            }
+            else
+            {
+                isDrawingSymmetry = false;
             }
         }
 
