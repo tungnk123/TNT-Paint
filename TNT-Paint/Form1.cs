@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 using CloudinaryDotNet;
 using FacebookWrapper;
 using System.Drawing.Imaging;
+using System.Net.Http.Headers;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace TNT_Paint
 {
@@ -2334,6 +2338,121 @@ namespace TNT_Paint
             {
                 isDrawingSymmetry = false;
             }
+        }
+
+        private async void btnUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                username = tbUsername.Text;
+                password = tbPass.Text;
+
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu!");
+                    return;
+                }
+
+                label10.Visible = true;
+
+                // Chụp ảnh từ PictureBox
+                var bitmap = CaptureCanvas(pb_mainScreen);
+
+                // Chuyển đổi ảnh thành byte array
+                var imageBytes = ImageToByteArray(bitmap);
+
+                // URL của API
+                string apiUrl = "https://un-silent-backend-mobile.azurewebsites.net/api/v1/Gallery/PostImage";
+
+                // Gửi ảnh lên API
+                await UploadImageAsync(imageBytes, apiUrl);
+
+                label10.Visible = false;
+                MessageBox.Show("Ảnh đã được tải lên thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải lên ảnh: {ex.Message}");
+            }
+
+        }
+
+        string username, password;
+        private async Task UploadImageAsync(byte[] imageBytes, string apiUrl)
+        {
+            using (var client = new HttpClient())
+            {
+                using (var content = new MultipartFormDataContent())
+                {
+                    var imageContent = new ByteArrayContent(imageBytes);
+                    imageContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                    content.Add(imageContent, "ImageFile", "canvas.png");
+                    content.Add(new StringContent(tbTitle.Text), "Title");
+                    content.Add(new StringContent(username), "Username");
+                    content.Add(new StringContent(password), "Password");
+
+                    var response = await client.PostAsync(apiUrl, content);
+                    response.EnsureSuccessStatusCode();
+                }
+            }
+        }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (var ms = new MemoryStream())
+            {
+                image.Save(ms, ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        private async void btnReg_Click(object sender, EventArgs e)
+        {
+            string username = tbUNReg.Text;
+            string password = tbPassReg.Text;
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu!");
+                return;
+            }
+
+            label11.Visible = true;
+
+            var user = new
+            {
+                username,
+                password
+            };
+
+            string apiUrl = "https://un-silent-backend-mobile.azurewebsites.net/RegisterAccount";
+
+            using (HttpClient client = new HttpClient())
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+
+                label11.Visible = false;
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("User created successfully!");
+                }
+                else
+                {
+                    // print error message
+                    string errorMessage = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show(errorMessage);
+                }
+            }
+
+        }
+
+        private Bitmap CaptureCanvas(PictureBox pictureBox)
+        {
+            Bitmap bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+            pictureBox.DrawToBitmap(bitmap, new Rectangle(0, 0, pictureBox.Width, pictureBox.Height));
+            return bitmap;
         }
 
         private void button9ka_Click_1(object sender, EventArgs e)

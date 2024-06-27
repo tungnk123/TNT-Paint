@@ -142,7 +142,7 @@ namespace TNT_Paint
             this.button11 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabUpload = new System.Windows.Forms.TabPage();
             this.pb_ColorTable = new System.Windows.Forms.PictureBox();
             this.Panel_size = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -186,6 +186,22 @@ namespace TNT_Paint
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tbPass = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.tbUNReg = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbPassReg = new System.Windows.Forms.TextBox();
+            this.btnReg = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -222,6 +238,7 @@ namespace TNT_Paint
             ((System.ComponentModel.ISupportInitialize)(this.pbResize)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.tabUpload.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
             this.Panel_size.SuspendLayout();
             this.toolStripShape.SuspendLayout();
@@ -233,6 +250,8 @@ namespace TNT_Paint
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -609,7 +628,7 @@ namespace TNT_Paint
             this.tabControl.Controls.Add(this.tabHome);
             this.tabControl.Controls.Add(this.tabText);
             this.tabControl.Controls.Add(this.tabImgEditor);
-            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabUpload);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -1558,15 +1577,17 @@ namespace TNT_Paint
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button12_Click);
             // 
-            // tabPage1
+            // tabUpload
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1269, 135);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Specials";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabUpload.Controls.Add(this.groupBox11);
+            this.tabUpload.Controls.Add(this.groupBox10);
+            this.tabUpload.Location = new System.Drawing.Point(4, 25);
+            this.tabUpload.Name = "tabUpload";
+            this.tabUpload.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUpload.Size = new System.Drawing.Size(1269, 135);
+            this.tabUpload.TabIndex = 3;
+            this.tabUpload.Text = "Upload Artwork";
+            this.tabUpload.UseVisualStyleBackColor = true;
             // 
             // pb_ColorTable
             // 
@@ -2053,6 +2074,162 @@ namespace TNT_Paint
             this.label4.TabIndex = 14;
             this.label4.Text = "Brightness";
             // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(103, 21);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(133, 22);
+            this.tbUsername.TabIndex = 1;
+            // 
+            // tbPass
+            // 
+            this.tbPass.Location = new System.Drawing.Point(103, 56);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.PasswordChar = '~';
+            this.tbPass.Size = new System.Drawing.Size(133, 22);
+            this.tbPass.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Password";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.label10);
+            this.groupBox10.Controls.Add(this.label9);
+            this.groupBox10.Controls.Add(this.tbTitle);
+            this.groupBox10.Controls.Add(this.btnUpload);
+            this.groupBox10.Controls.Add(this.tbPass);
+            this.groupBox10.Controls.Add(this.label5);
+            this.groupBox10.Controls.Add(this.label6);
+            this.groupBox10.Controls.Add(this.tbUsername);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox10.Location = new System.Drawing.Point(3, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(454, 129);
+            this.groupBox10.TabIndex = 4;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Artwork Upload";
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Location = new System.Drawing.Point(354, 93);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(85, 30);
+            this.btnUpload.TabIndex = 4;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // tbUNReg
+            // 
+            this.tbUNReg.Location = new System.Drawing.Point(106, 24);
+            this.tbUNReg.Name = "tbUNReg";
+            this.tbUNReg.Size = new System.Drawing.Size(133, 22);
+            this.tbUNReg.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 56);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Password";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Username";
+            // 
+            // tbPassReg
+            // 
+            this.tbPassReg.Location = new System.Drawing.Point(106, 56);
+            this.tbPassReg.Name = "tbPassReg";
+            this.tbPassReg.PasswordChar = '~';
+            this.tbPassReg.Size = new System.Drawing.Size(133, 22);
+            this.tbPassReg.TabIndex = 3;
+            // 
+            // btnReg
+            // 
+            this.btnReg.Location = new System.Drawing.Point(169, 93);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(85, 30);
+            this.btnReg.TabIndex = 5;
+            this.btnReg.Text = "Register";
+            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label11);
+            this.groupBox11.Controls.Add(this.btnReg);
+            this.groupBox11.Controls.Add(this.tbPassReg);
+            this.groupBox11.Controls.Add(this.label7);
+            this.groupBox11.Controls.Add(this.label8);
+            this.groupBox11.Controls.Add(this.tbUNReg);
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox11.Location = new System.Drawing.Point(457, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(260, 129);
+            this.groupBox11.TabIndex = 5;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Account Registration";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Username";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(255, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 16);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Title";
+            // 
+            // tbTitle
+            // 
+            this.tbTitle.Location = new System.Drawing.Point(306, 21);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(133, 22);
+            this.tbTitle.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 16);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Uploading...";
+            this.label10.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(53, 103);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 16);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Registering...";
+            this.label11.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2109,6 +2286,7 @@ namespace TNT_Paint
             ((System.ComponentModel.ISupportInitialize)(this.pbResize)).EndInit();
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.tabUpload.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
             this.Panel_size.ResumeLayout(false);
             this.toolStripShape.ResumeLayout(false);
@@ -2124,6 +2302,10 @@ namespace TNT_Paint
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2280,10 +2462,26 @@ namespace TNT_Paint
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabUpload;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.CheckBox cbSymm;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TextBox tbPass;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button btnReg;
+        private System.Windows.Forms.TextBox tbPassReg;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbUNReg;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbTitle;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
 
