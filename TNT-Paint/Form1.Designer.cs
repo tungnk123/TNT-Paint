@@ -202,6 +202,7 @@ namespace TNT_Paint
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnGallery = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -584,7 +585,7 @@ namespace TNT_Paint
             // 
             this.informationToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.personal_infor;
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
             this.informationToolStripMenuItem.Text = "Information";
             this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
@@ -592,7 +593,7 @@ namespace TNT_Paint
             // 
             this.aboutToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_about_481;
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(184, 28);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -2100,6 +2101,7 @@ namespace TNT_Paint
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.btnGallery);
             this.groupBox10.Controls.Add(this.label10);
             this.groupBox10.Controls.Add(this.label9);
             this.groupBox10.Controls.Add(this.tbTitle);
@@ -2118,12 +2120,14 @@ namespace TNT_Paint
             // 
             // btnUpload
             // 
+            this.btnUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Location = new System.Drawing.Point(354, 93);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(85, 30);
             this.btnUpload.TabIndex = 4;
             this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // tbUNReg
@@ -2161,12 +2165,14 @@ namespace TNT_Paint
             // 
             // btnReg
             // 
+            this.btnReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Location = new System.Drawing.Point(169, 93);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(85, 30);
             this.btnReg.TabIndex = 5;
             this.btnReg.Text = "Register";
-            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.UseVisualStyleBackColor = false;
             this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // groupBox11
@@ -2229,6 +2235,18 @@ namespace TNT_Paint
             this.label11.TabIndex = 8;
             this.label11.Text = "Registering...";
             this.label11.Visible = false;
+            // 
+            // btnGallery
+            // 
+            this.btnGallery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnGallery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGallery.Location = new System.Drawing.Point(3, 96);
+            this.btnGallery.Name = "btnGallery";
+            this.btnGallery.Size = new System.Drawing.Size(146, 30);
+            this.btnGallery.TabIndex = 8;
+            this.btnGallery.Text = "Visit the Gallery";
+            this.btnGallery.UseVisualStyleBackColor = false;
+            this.btnGallery.Click += new System.EventHandler(this.btnGallery_Click);
             // 
             // Form1
             // 
@@ -2482,6 +2500,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnGallery;
     }
 }
 

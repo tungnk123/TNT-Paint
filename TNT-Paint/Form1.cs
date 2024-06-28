@@ -2448,6 +2448,12 @@ namespace TNT_Paint
 
         }
 
+        private void btnGallery_Click(object sender, EventArgs e)
+        {
+            GalleryForm galleryForm = new GalleryForm();
+            galleryForm.ShowDialog();
+        }
+
         private Bitmap CaptureCanvas(PictureBox pictureBox)
         {
             Bitmap bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
