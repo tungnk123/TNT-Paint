@@ -2467,6 +2467,12 @@ namespace TNT_Paint
             foreach (string command in commands)
             {
                 ProcessCommand(command);
+
+                //
+                UndoStack.Push((Bitmap)pb_mainScreen.Image.Clone());
+                RedoStack.Clear();
+                //
+
             }
 
         }
