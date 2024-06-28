@@ -2454,6 +2454,159 @@ namespace TNT_Paint
             galleryForm.ShowDialog();
         }
 
+        private void llViewSyntax_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string syntax = "Thay Đổi Màu Sắc\r\nCú pháp: color <colorName>\r\nVí dụ:\r\ncolor red\r\n\r\nThay Đổi Độ Dày Nét Vẽ\r\nCú pháp: thickness <value>\r\nVí dụ:\r\nthickness 3 (Thay đổi độ dày nét vẽ sang 3)\r\n\r\nVẽ Đường Thẳng\r\nCú pháp: line <x1> <y1> <x2> <y2>\r\nVí dụ:\r\nline 10 10 100 100 (Vẽ một đường thẳng từ (10, 10) đến (100, 100))\r\n\r\nVẽ Hình Chữ Nhật\r\nCú pháp: rectangle <x> <y> <width> <height>\r\nVí dụ:\r\nrectangle 50 50 150 100 (Vẽ một hình chữ nhật tại (50, 50) với kích thước 150x100)\r\n\r\nVẽ Hình Ellipse\r\nCú pháp: ellipse <x> <y> <width> <height>\r\nVí dụ:\r\nellipse 200 200 100 50 (Vẽ một hình ellipse tại (200, 200) với kích thước 100x50)";
+            // show message box with syntax but do not prevent user from interacting with the form
+            MessageBox.Show(syntax, "Cú Pháp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnExecute_Click(object sender, EventArgs e)
+        {
+            string[] commands = tbCommand.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string command in commands)
+            {
+                ProcessCommand(command);
+            }
+
+        }
+
+        private void ProcessCommand(string command)
+        {
+            string[] parts = command.Split(' ');
+            string action = parts[0].ToLower();
+
+            switch (action)
+            {
+                case "line":
+                    if (parts.Length == 5 &&
+                        int.TryParse(parts[1], out int x1) &&
+                        int.TryParse(parts[2], out int y1) &&
+                        int.TryParse(parts[3], out int x2) &&
+                        int.TryParse(parts[4], out int y2))
+                    {
+                        g.DrawLine(new Pen(currentColor, currentBrushSize), x1, y1, x2, y2);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid command format for 'line'. Correct format: line x1 y1 x2 y2");
+                    }
+                    break;
+
+                case "rectangle":
+                    if (parts.Length == 5 &&
+                        int.TryParse(parts[1], out int rx) &&
+                        int.TryParse(parts[2], out int ry) &&
+                        int.TryParse(parts[3], out int width) &&
+                        int.TryParse(parts[4], out int height))
+                    {
+                        g.DrawRectangle(new Pen(currentColor, currentBrushSize), rx, ry, width, height);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid command format for 'rectangle'. Correct format: rectangle x y width height");
+                    }
+                    break;
+
+                case "ellipse":
+                    if (parts.Length == 5 &&
+                        int.TryParse(parts[1], out int ex) &&
+                        int.TryParse(parts[2], out int ey) &&
+                        int.TryParse(parts[3], out int ewidth) &&
+                        int.TryParse(parts[4], out int eheight))
+                    {
+                        g.DrawEllipse(new Pen(currentColor, currentBrushSize), ex, ey, ewidth, eheight);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid command format for 'ellipse'. Correct format: ellipse x y width height");
+                    }
+                    break;
+
+                case "polygon":
+                    if (parts.Length >= 7 && (parts.Length - 1) % 2 == 0)
+                    {
+                        Point[] points = new Point[(parts.Length - 1) / 2];
+                        try
+                        {
+                            for (int i = 1; i < parts.Length; i += 2)
+                            {
+                                points[(i - 1) / 2] = new Point(int.Parse(parts[i]), int.Parse(parts[i + 1]));
+                            }
+                            g.DrawPolygon(new Pen(currentColor, currentBrushSize), points);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Invalid points for polygon.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid command format for 'polygon'. Correct format: polygon x1 y1 x2 y2 ... xn yn");
+                    }
+                    break;
+
+                case "color":
+                    if (parts.Length == 2)
+                    {
+                        try
+                        {
+                            currentColor = Color.FromName(parts[1]);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Invalid color name.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid command format for 'color'. Correct format: color colorName");
+                    }
+                    break;
+
+                case "thickness":
+                    if (parts.Length == 2 && float.TryParse(parts[1], out float thickness))
+                    {
+                        currentBrushSize = thickness;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid command format for 'thickness'. Correct format: thickness value");
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show("Unknown command.");
+                    break;
+            }
+        }
+
+        private void btnLoadScript_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Text Files|*.txt";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    tbCommand.Text = File.ReadAllText(openFileDialog.FileName);
+                }
+            }
+
+        }
+
+        private void btnSaveScript_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Text Files|*.txt";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(saveFileDialog.FileName, tbCommand.Text);
+                }
+            }
+
+        }
+
         private Bitmap CaptureCanvas(PictureBox pictureBox)
         {
             Bitmap bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);

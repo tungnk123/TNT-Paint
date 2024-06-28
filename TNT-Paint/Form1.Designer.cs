@@ -143,6 +143,28 @@ namespace TNT_Paint
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button14 = new System.Windows.Forms.Button();
             this.tabUpload = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnReg = new System.Windows.Forms.Button();
+            this.tbPassReg = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbUNReg = new System.Windows.Forms.TextBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.btnGallery = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.tbPass = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tabCommand = new System.Windows.Forms.TabPage();
+            this.llViewSyntax = new System.Windows.Forms.LinkLabel();
+            this.btnExecute = new System.Windows.Forms.Button();
+            this.tbCommand = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.pb_ColorTable = new System.Windows.Forms.PictureBox();
             this.Panel_size = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -186,23 +208,8 @@ namespace TNT_Paint
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tbPass = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.tbUNReg = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbPassReg = new System.Windows.Forms.TextBox();
-            this.btnReg = new System.Windows.Forms.Button();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbTitle = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnGallery = new System.Windows.Forms.Button();
+            this.btnSaveScript = new System.Windows.Forms.Button();
+            this.btnLoadScript = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -240,6 +247,9 @@ namespace TNT_Paint
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabUpload.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.tabCommand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).BeginInit();
             this.Panel_size.SuspendLayout();
             this.toolStripShape.SuspendLayout();
@@ -251,8 +261,6 @@ namespace TNT_Paint
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -585,7 +593,7 @@ namespace TNT_Paint
             // 
             this.informationToolStripMenuItem.Image = global::TNT_Paint.Properties.Resources.personal_infor;
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(184, 28);
             this.informationToolStripMenuItem.Text = "Information";
             this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
@@ -593,7 +601,7 @@ namespace TNT_Paint
             // 
             this.aboutToolStripMenuItem1.Image = global::TNT_Paint.Properties.Resources.icons8_about_481;
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(184, 28);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -626,10 +634,12 @@ namespace TNT_Paint
             // 
             // tabControl
             // 
+            this.tabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl.Controls.Add(this.tabHome);
             this.tabControl.Controls.Add(this.tabText);
             this.tabControl.Controls.Add(this.tabImgEditor);
             this.tabControl.Controls.Add(this.tabUpload);
+            this.tabControl.Controls.Add(this.tabCommand);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -646,10 +656,10 @@ namespace TNT_Paint
             this.tabHome.Controls.Add(this.gb_Shape);
             this.tabHome.Controls.Add(this.groupBox2);
             this.tabHome.Controls.Add(this.groupBox1);
-            this.tabHome.Location = new System.Drawing.Point(4, 25);
+            this.tabHome.Location = new System.Drawing.Point(4, 28);
             this.tabHome.Name = "tabHome";
             this.tabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHome.Size = new System.Drawing.Size(1269, 135);
+            this.tabHome.Size = new System.Drawing.Size(1269, 132);
             this.tabHome.TabIndex = 0;
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
@@ -1151,10 +1161,10 @@ namespace TNT_Paint
             // tabText
             // 
             this.tabText.Controls.Add(this.panelText);
-            this.tabText.Location = new System.Drawing.Point(4, 25);
+            this.tabText.Location = new System.Drawing.Point(4, 28);
             this.tabText.Name = "tabText";
             this.tabText.Padding = new System.Windows.Forms.Padding(3);
-            this.tabText.Size = new System.Drawing.Size(1269, 135);
+            this.tabText.Size = new System.Drawing.Size(1269, 132);
             this.tabText.TabIndex = 1;
             this.tabText.Text = "Text";
             this.tabText.UseVisualStyleBackColor = true;
@@ -1167,7 +1177,7 @@ namespace TNT_Paint
             this.panelText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelText.Location = new System.Drawing.Point(3, 3);
             this.panelText.Name = "panelText";
-            this.panelText.Size = new System.Drawing.Size(1263, 129);
+            this.panelText.Size = new System.Drawing.Size(1263, 126);
             this.panelText.TabIndex = 0;
             this.panelText.Visible = false;
             // 
@@ -1343,10 +1353,10 @@ namespace TNT_Paint
             // 
             this.tabImgEditor.Controls.Add(this.groupBox8);
             this.tabImgEditor.Controls.Add(this.groupBox7);
-            this.tabImgEditor.Location = new System.Drawing.Point(4, 25);
+            this.tabImgEditor.Location = new System.Drawing.Point(4, 28);
             this.tabImgEditor.Name = "tabImgEditor";
             this.tabImgEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabImgEditor.Size = new System.Drawing.Size(1269, 135);
+            this.tabImgEditor.Size = new System.Drawing.Size(1269, 132);
             this.tabImgEditor.TabIndex = 2;
             this.tabImgEditor.Text = "Image Editor";
             this.tabImgEditor.UseVisualStyleBackColor = true;
@@ -1582,13 +1592,243 @@ namespace TNT_Paint
             // 
             this.tabUpload.Controls.Add(this.groupBox11);
             this.tabUpload.Controls.Add(this.groupBox10);
-            this.tabUpload.Location = new System.Drawing.Point(4, 25);
+            this.tabUpload.Location = new System.Drawing.Point(4, 28);
             this.tabUpload.Name = "tabUpload";
             this.tabUpload.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUpload.Size = new System.Drawing.Size(1269, 135);
+            this.tabUpload.Size = new System.Drawing.Size(1269, 132);
             this.tabUpload.TabIndex = 3;
             this.tabUpload.Text = "Upload Artwork";
             this.tabUpload.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label11);
+            this.groupBox11.Controls.Add(this.btnReg);
+            this.groupBox11.Controls.Add(this.tbPassReg);
+            this.groupBox11.Controls.Add(this.label7);
+            this.groupBox11.Controls.Add(this.label8);
+            this.groupBox11.Controls.Add(this.tbUNReg);
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox11.Location = new System.Drawing.Point(457, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(260, 126);
+            this.groupBox11.TabIndex = 5;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Account Registration";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(53, 103);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 16);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Registering...";
+            this.label11.Visible = false;
+            // 
+            // btnReg
+            // 
+            this.btnReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReg.Location = new System.Drawing.Point(169, 89);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(85, 30);
+            this.btnReg.TabIndex = 5;
+            this.btnReg.Text = "Register";
+            this.btnReg.UseVisualStyleBackColor = false;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
+            // 
+            // tbPassReg
+            // 
+            this.tbPassReg.Location = new System.Drawing.Point(106, 56);
+            this.tbPassReg.Name = "tbPassReg";
+            this.tbPassReg.PasswordChar = '~';
+            this.tbPassReg.Size = new System.Drawing.Size(133, 22);
+            this.tbPassReg.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Username";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 56);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Password";
+            // 
+            // tbUNReg
+            // 
+            this.tbUNReg.Location = new System.Drawing.Point(106, 24);
+            this.tbUNReg.Name = "tbUNReg";
+            this.tbUNReg.Size = new System.Drawing.Size(133, 22);
+            this.tbUNReg.TabIndex = 1;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.btnGallery);
+            this.groupBox10.Controls.Add(this.label10);
+            this.groupBox10.Controls.Add(this.label9);
+            this.groupBox10.Controls.Add(this.tbTitle);
+            this.groupBox10.Controls.Add(this.btnUpload);
+            this.groupBox10.Controls.Add(this.tbPass);
+            this.groupBox10.Controls.Add(this.label5);
+            this.groupBox10.Controls.Add(this.label6);
+            this.groupBox10.Controls.Add(this.tbUsername);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox10.Location = new System.Drawing.Point(3, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(454, 126);
+            this.groupBox10.TabIndex = 4;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Artwork Upload";
+            // 
+            // btnGallery
+            // 
+            this.btnGallery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnGallery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGallery.Location = new System.Drawing.Point(3, 90);
+            this.btnGallery.Name = "btnGallery";
+            this.btnGallery.Size = new System.Drawing.Size(146, 30);
+            this.btnGallery.TabIndex = 8;
+            this.btnGallery.Text = "Visit the Gallery";
+            this.btnGallery.UseVisualStyleBackColor = false;
+            this.btnGallery.Click += new System.EventHandler(this.btnGallery_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 16);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Uploading...";
+            this.label10.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(255, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 16);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Title";
+            // 
+            // tbTitle
+            // 
+            this.tbTitle.Location = new System.Drawing.Point(306, 21);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(133, 22);
+            this.tbTitle.TabIndex = 6;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpload.Location = new System.Drawing.Point(363, 90);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(85, 30);
+            this.btnUpload.TabIndex = 4;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // tbPass
+            // 
+            this.tbPass.Location = new System.Drawing.Point(103, 56);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.PasswordChar = '~';
+            this.tbPass.Size = new System.Drawing.Size(133, 22);
+            this.tbPass.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Username";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Password";
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(103, 21);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(133, 22);
+            this.tbUsername.TabIndex = 1;
+            // 
+            // tabCommand
+            // 
+            this.tabCommand.Controls.Add(this.btnLoadScript);
+            this.tabCommand.Controls.Add(this.btnSaveScript);
+            this.tabCommand.Controls.Add(this.llViewSyntax);
+            this.tabCommand.Controls.Add(this.btnExecute);
+            this.tabCommand.Controls.Add(this.tbCommand);
+            this.tabCommand.Controls.Add(this.label12);
+            this.tabCommand.Location = new System.Drawing.Point(4, 28);
+            this.tabCommand.Name = "tabCommand";
+            this.tabCommand.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCommand.Size = new System.Drawing.Size(1269, 132);
+            this.tabCommand.TabIndex = 4;
+            this.tabCommand.Text = "Draw by command";
+            this.tabCommand.UseVisualStyleBackColor = true;
+            // 
+            // llViewSyntax
+            // 
+            this.llViewSyntax.AutoSize = true;
+            this.llViewSyntax.Location = new System.Drawing.Point(23, 57);
+            this.llViewSyntax.Name = "llViewSyntax";
+            this.llViewSyntax.Size = new System.Drawing.Size(77, 16);
+            this.llViewSyntax.TabIndex = 3;
+            this.llViewSyntax.TabStop = true;
+            this.llViewSyntax.Text = "View syntax";
+            this.llViewSyntax.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llViewSyntax_LinkClicked);
+            // 
+            // btnExecute
+            // 
+            this.btnExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnExecute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExecute.Location = new System.Drawing.Point(372, 90);
+            this.btnExecute.Name = "btnExecute";
+            this.btnExecute.Size = new System.Drawing.Size(95, 36);
+            this.btnExecute.TabIndex = 2;
+            this.btnExecute.Text = "Execute";
+            this.btnExecute.UseVisualStyleBackColor = false;
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
+            // tbCommand
+            // 
+            this.tbCommand.Location = new System.Drawing.Point(135, 6);
+            this.tbCommand.Multiline = true;
+            this.tbCommand.Name = "tbCommand";
+            this.tbCommand.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbCommand.Size = new System.Drawing.Size(231, 120);
+            this.tbCommand.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 16);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Input Commands";
             // 
             // pb_ColorTable
             // 
@@ -2075,178 +2315,27 @@ namespace TNT_Paint
             this.label4.TabIndex = 14;
             this.label4.Text = "Brightness";
             // 
-            // tbUsername
+            // btnSaveScript
             // 
-            this.tbUsername.Location = new System.Drawing.Point(103, 21);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(133, 22);
-            this.tbUsername.TabIndex = 1;
+            this.btnSaveScript.BackColor = System.Drawing.Color.White;
+            this.btnSaveScript.Location = new System.Drawing.Point(372, 48);
+            this.btnSaveScript.Name = "btnSaveScript";
+            this.btnSaveScript.Size = new System.Drawing.Size(95, 36);
+            this.btnSaveScript.TabIndex = 4;
+            this.btnSaveScript.Text = "Save Script";
+            this.btnSaveScript.UseVisualStyleBackColor = false;
+            this.btnSaveScript.Click += new System.EventHandler(this.btnSaveScript_Click);
             // 
-            // tbPass
+            // btnLoadScript
             // 
-            this.tbPass.Location = new System.Drawing.Point(103, 56);
-            this.tbPass.Name = "tbPass";
-            this.tbPass.PasswordChar = '~';
-            this.tbPass.Size = new System.Drawing.Size(133, 22);
-            this.tbPass.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Password";
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.btnGallery);
-            this.groupBox10.Controls.Add(this.label10);
-            this.groupBox10.Controls.Add(this.label9);
-            this.groupBox10.Controls.Add(this.tbTitle);
-            this.groupBox10.Controls.Add(this.btnUpload);
-            this.groupBox10.Controls.Add(this.tbPass);
-            this.groupBox10.Controls.Add(this.label5);
-            this.groupBox10.Controls.Add(this.label6);
-            this.groupBox10.Controls.Add(this.tbUsername);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox10.Location = new System.Drawing.Point(3, 3);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(454, 129);
-            this.groupBox10.TabIndex = 4;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Artwork Upload";
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Location = new System.Drawing.Point(354, 93);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(85, 30);
-            this.btnUpload.TabIndex = 4;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = false;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            // 
-            // tbUNReg
-            // 
-            this.tbUNReg.Location = new System.Drawing.Point(106, 24);
-            this.tbUNReg.Name = "tbUNReg";
-            this.tbUNReg.Size = new System.Drawing.Size(133, 22);
-            this.tbUNReg.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 56);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 16);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Password";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Username";
-            // 
-            // tbPassReg
-            // 
-            this.tbPassReg.Location = new System.Drawing.Point(106, 56);
-            this.tbPassReg.Name = "tbPassReg";
-            this.tbPassReg.PasswordChar = '~';
-            this.tbPassReg.Size = new System.Drawing.Size(133, 22);
-            this.tbPassReg.TabIndex = 3;
-            // 
-            // btnReg
-            // 
-            this.btnReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReg.Location = new System.Drawing.Point(169, 93);
-            this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(85, 30);
-            this.btnReg.TabIndex = 5;
-            this.btnReg.Text = "Register";
-            this.btnReg.UseVisualStyleBackColor = false;
-            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.label11);
-            this.groupBox11.Controls.Add(this.btnReg);
-            this.groupBox11.Controls.Add(this.tbPassReg);
-            this.groupBox11.Controls.Add(this.label7);
-            this.groupBox11.Controls.Add(this.label8);
-            this.groupBox11.Controls.Add(this.tbUNReg);
-            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox11.Location = new System.Drawing.Point(457, 3);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(260, 129);
-            this.groupBox11.TabIndex = 5;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Account Registration";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Username";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(255, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 16);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Title";
-            // 
-            // tbTitle
-            // 
-            this.tbTitle.Location = new System.Drawing.Point(306, 21);
-            this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(133, 22);
-            this.tbTitle.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 16);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Uploading...";
-            this.label10.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(53, 103);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 16);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Registering...";
-            this.label11.Visible = false;
-            // 
-            // btnGallery
-            // 
-            this.btnGallery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnGallery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGallery.Location = new System.Drawing.Point(3, 96);
-            this.btnGallery.Name = "btnGallery";
-            this.btnGallery.Size = new System.Drawing.Size(146, 30);
-            this.btnGallery.TabIndex = 8;
-            this.btnGallery.Text = "Visit the Gallery";
-            this.btnGallery.UseVisualStyleBackColor = false;
-            this.btnGallery.Click += new System.EventHandler(this.btnGallery_Click);
+            this.btnLoadScript.BackColor = System.Drawing.Color.White;
+            this.btnLoadScript.Location = new System.Drawing.Point(372, 9);
+            this.btnLoadScript.Name = "btnLoadScript";
+            this.btnLoadScript.Size = new System.Drawing.Size(95, 36);
+            this.btnLoadScript.TabIndex = 5;
+            this.btnLoadScript.Text = "Load Script";
+            this.btnLoadScript.UseVisualStyleBackColor = false;
+            this.btnLoadScript.Click += new System.EventHandler(this.btnLoadScript_Click);
             // 
             // Form1
             // 
@@ -2305,6 +2394,12 @@ namespace TNT_Paint
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabUpload.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.tabCommand.ResumeLayout(false);
+            this.tabCommand.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ColorTable)).EndInit();
             this.Panel_size.ResumeLayout(false);
             this.toolStripShape.ResumeLayout(false);
@@ -2320,10 +2415,6 @@ namespace TNT_Paint
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2501,6 +2592,13 @@ namespace TNT_Paint
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnGallery;
+        private System.Windows.Forms.TabPage tabCommand;
+        private System.Windows.Forms.Button btnExecute;
+        private System.Windows.Forms.TextBox tbCommand;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel llViewSyntax;
+        private System.Windows.Forms.Button btnLoadScript;
+        private System.Windows.Forms.Button btnSaveScript;
     }
 }
 
