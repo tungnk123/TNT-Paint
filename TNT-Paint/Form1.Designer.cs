@@ -75,6 +75,10 @@ namespace TNT_Paint
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.pbEndColor = new System.Windows.Forms.PictureBox();
+            this.pbStartColor = new System.Windows.Forms.PictureBox();
+            this.cbIsGradientFill = new System.Windows.Forms.CheckBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.cbSymm = new System.Windows.Forms.CheckBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -161,6 +165,8 @@ namespace TNT_Paint
             this.label6 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tabCommand = new System.Windows.Forms.TabPage();
+            this.btnLoadScript = new System.Windows.Forms.Button();
+            this.btnSaveScript = new System.Windows.Forms.Button();
             this.llViewSyntax = new System.Windows.Forms.LinkLabel();
             this.btnExecute = new System.Windows.Forms.Button();
             this.tbCommand = new System.Windows.Forms.TextBox();
@@ -208,12 +214,16 @@ namespace TNT_Paint
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSaveScript = new System.Windows.Forms.Button();
-            this.btnLoadScript = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbbGradientType = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEndColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStartColor)).BeginInit();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -650,6 +660,7 @@ namespace TNT_Paint
             // 
             // tabHome
             // 
+            this.tabHome.Controls.Add(this.groupBox12);
             this.tabHome.Controls.Add(this.groupBox9);
             this.tabHome.Controls.Add(this.groupBox3);
             this.tabHome.Controls.Add(this.groupBox4);
@@ -664,13 +675,62 @@ namespace TNT_Paint
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
             // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.cbbGradientType);
+            this.groupBox12.Controls.Add(this.label14);
+            this.groupBox12.Controls.Add(this.label13);
+            this.groupBox12.Controls.Add(this.pbEndColor);
+            this.groupBox12.Controls.Add(this.pbStartColor);
+            this.groupBox12.Controls.Add(this.cbIsGradientFill);
+            this.groupBox12.Location = new System.Drawing.Point(1009, 7);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(204, 122);
+            this.groupBox12.TabIndex = 34;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Gradient Fill";
+            // 
+            // pbEndColor
+            // 
+            this.pbEndColor.BackColor = System.Drawing.Color.Cyan;
+            this.pbEndColor.Location = new System.Drawing.Point(136, 82);
+            this.pbEndColor.Margin = new System.Windows.Forms.Padding(4);
+            this.pbEndColor.Name = "pbEndColor";
+            this.pbEndColor.Size = new System.Drawing.Size(30, 30);
+            this.pbEndColor.TabIndex = 29;
+            this.pbEndColor.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbEndColor, "Current Color");
+            this.pbEndColor.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pbStartColor
+            // 
+            this.pbStartColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pbStartColor.Location = new System.Drawing.Point(43, 82);
+            this.pbStartColor.Margin = new System.Windows.Forms.Padding(4);
+            this.pbStartColor.Name = "pbStartColor";
+            this.pbStartColor.Size = new System.Drawing.Size(30, 30);
+            this.pbStartColor.TabIndex = 28;
+            this.pbStartColor.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbStartColor, "Current Color");
+            this.pbStartColor.Click += new System.EventHandler(this.pbStartColor_Click);
+            // 
+            // cbIsGradientFill
+            // 
+            this.cbIsGradientFill.AutoSize = true;
+            this.cbIsGradientFill.Location = new System.Drawing.Point(6, 22);
+            this.cbIsGradientFill.Name = "cbIsGradientFill";
+            this.cbIsGradientFill.Size = new System.Drawing.Size(74, 20);
+            this.cbIsGradientFill.TabIndex = 25;
+            this.cbIsGradientFill.Text = "Turn on";
+            this.cbIsGradientFill.UseVisualStyleBackColor = true;
+            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.cbSymm);
             this.groupBox9.Controls.Add(this.numericUpDown1);
             this.groupBox9.Location = new System.Drawing.Point(889, 7);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(154, 122);
+            this.groupBox9.Size = new System.Drawing.Size(114, 122);
             this.groupBox9.TabIndex = 33;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Symmetrical drawing";
@@ -678,7 +738,7 @@ namespace TNT_Paint
             // cbSymm
             // 
             this.cbSymm.AutoSize = true;
-            this.cbSymm.Location = new System.Drawing.Point(36, 45);
+            this.cbSymm.Location = new System.Drawing.Point(24, 45);
             this.cbSymm.Name = "cbSymm";
             this.cbSymm.Size = new System.Drawing.Size(74, 20);
             this.cbSymm.TabIndex = 25;
@@ -688,7 +748,7 @@ namespace TNT_Paint
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(36, 88);
+            this.numericUpDown1.Location = new System.Drawing.Point(24, 81);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(71, 22);
             this.numericUpDown1.TabIndex = 24;
@@ -1789,6 +1849,28 @@ namespace TNT_Paint
             this.tabCommand.Text = "Draw by command";
             this.tabCommand.UseVisualStyleBackColor = true;
             // 
+            // btnLoadScript
+            // 
+            this.btnLoadScript.BackColor = System.Drawing.Color.White;
+            this.btnLoadScript.Location = new System.Drawing.Point(372, 9);
+            this.btnLoadScript.Name = "btnLoadScript";
+            this.btnLoadScript.Size = new System.Drawing.Size(95, 36);
+            this.btnLoadScript.TabIndex = 5;
+            this.btnLoadScript.Text = "Load Script";
+            this.btnLoadScript.UseVisualStyleBackColor = false;
+            this.btnLoadScript.Click += new System.EventHandler(this.btnLoadScript_Click);
+            // 
+            // btnSaveScript
+            // 
+            this.btnSaveScript.BackColor = System.Drawing.Color.White;
+            this.btnSaveScript.Location = new System.Drawing.Point(372, 48);
+            this.btnSaveScript.Name = "btnSaveScript";
+            this.btnSaveScript.Size = new System.Drawing.Size(95, 36);
+            this.btnSaveScript.TabIndex = 4;
+            this.btnSaveScript.Text = "Save Script";
+            this.btnSaveScript.UseVisualStyleBackColor = false;
+            this.btnSaveScript.Click += new System.EventHandler(this.btnSaveScript_Click);
+            // 
             // llViewSyntax
             // 
             this.llViewSyntax.AutoSize = true;
@@ -2315,27 +2397,34 @@ namespace TNT_Paint
             this.label4.TabIndex = 14;
             this.label4.Text = "Brightness";
             // 
-            // btnSaveScript
+            // label13
             // 
-            this.btnSaveScript.BackColor = System.Drawing.Color.White;
-            this.btnSaveScript.Location = new System.Drawing.Point(372, 48);
-            this.btnSaveScript.Name = "btnSaveScript";
-            this.btnSaveScript.Size = new System.Drawing.Size(95, 36);
-            this.btnSaveScript.TabIndex = 4;
-            this.btnSaveScript.Text = "Save Script";
-            this.btnSaveScript.UseVisualStyleBackColor = false;
-            this.btnSaveScript.Click += new System.EventHandler(this.btnSaveScript_Click);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 16);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Start Color";
             // 
-            // btnLoadScript
+            // label14
             // 
-            this.btnLoadScript.BackColor = System.Drawing.Color.White;
-            this.btnLoadScript.Location = new System.Drawing.Point(372, 9);
-            this.btnLoadScript.Name = "btnLoadScript";
-            this.btnLoadScript.Size = new System.Drawing.Size(95, 36);
-            this.btnLoadScript.TabIndex = 5;
-            this.btnLoadScript.Text = "Load Script";
-            this.btnLoadScript.UseVisualStyleBackColor = false;
-            this.btnLoadScript.Click += new System.EventHandler(this.btnLoadScript_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(115, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 16);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "End Color";
+            // 
+            // cbbGradientType
+            // 
+            this.cbbGradientType.FormattingEnabled = true;
+            this.cbbGradientType.Items.AddRange(new object[] {
+            "Linear",
+            "Radial"});
+            this.cbbGradientType.Location = new System.Drawing.Point(94, 18);
+            this.cbbGradientType.Name = "cbbGradientType";
+            this.cbbGradientType.Size = new System.Drawing.Size(104, 24);
+            this.cbbGradientType.TabIndex = 32;
             // 
             // Form1
             // 
@@ -2359,6 +2448,10 @@ namespace TNT_Paint
             this.panel1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabHome.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEndColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStartColor)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -2599,6 +2692,13 @@ namespace TNT_Paint
         private System.Windows.Forms.LinkLabel llViewSyntax;
         private System.Windows.Forms.Button btnLoadScript;
         private System.Windows.Forms.Button btnSaveScript;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.CheckBox cbIsGradientFill;
+        private System.Windows.Forms.PictureBox pbEndColor;
+        private System.Windows.Forms.PictureBox pbStartColor;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbbGradientType;
     }
 }
 

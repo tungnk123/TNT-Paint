@@ -121,6 +121,8 @@ namespace TNT_Paint
             button16.BackColor = Color.FromArgb(0, 255, 0);
             // kakao
             button15.BackColor = Color.FromArgb(255, 255, 0);
+
+            cbbGradientType.SelectedIndex = 0;
         }
 
 
@@ -426,7 +428,16 @@ namespace TNT_Paint
 
             if (SelectedMode == 4)
             {
-                Fill(bm, e.X, e.Y, currentColor);
+                if (cbIsGradientFill.Checked == true)
+                {
+                    GradientFill.GradientType type = cbbGradientType.SelectedIndex == 0 ? GradientFill.GradientType.Linear : GradientFill.GradientType.Radial;
+                    GradientFill gradientFill = new GradientFill(type, pbStartColor.BackColor, pbEndColor.BackColor);
+                    FillGradient(bm, e.X, e.Y, gradientFill);
+                }
+                else
+                {
+                    FillSolidColor(bm, e.X, e.Y, currentColor);
+                }
             }
 
             if (cbSymm.Checked == true)
@@ -1042,8 +1053,35 @@ namespace TNT_Paint
             cb_Size.Text = textBox1.Font.Size.ToString();
         }
 
-        //fill function
-        private void Fill(Bitmap bm, int x, int y, Color newColor)
+        public Color CalculateGradientColor(GradientFill gradient, Point point, Rectangle rect)
+        {
+            if (gradient.Type == GradientFill.GradientType.Linear)
+            {
+                float t = (float)(point.X - rect.Left) / rect.Width;
+                return BlendColor(gradient.StartColor, gradient.EndColor, t);
+            }
+            else if (gradient.Type == GradientFill.GradientType.Radial)
+            {
+                float centerX = rect.Left + rect.Width / 2;
+                float centerY = rect.Top + rect.Height / 2;
+                float maxDistance = Math.Max(rect.Width, rect.Height) / 2;
+                float distance = (float)Math.Sqrt(Math.Pow(point.X - centerX, 2) + Math.Pow(point.Y - centerY, 2));
+                float t = distance / maxDistance;
+                return BlendColor(gradient.StartColor, gradient.EndColor, t);
+            }
+            return gradient.StartColor;
+        }
+
+        public Color BlendColor(Color color1, Color color2, float t)
+        {
+            byte r = (byte)(color1.R + (color2.R - color1.R) * t);
+            byte g = (byte)(color1.G + (color2.G - color1.G) * t);
+            byte b = (byte)(color1.B + (color2.B - color1.B) * t);
+            return Color.FromArgb(r, g, b);
+        }
+
+        // Fill function for solid color
+        private void FillSolidColor(Bitmap bm, int x, int y, Color newColor)
         {
             Color oldColor = bm.GetPixel(x, y);
             Stack<Point> pixel = new Stack<Point>();
@@ -1056,24 +1094,91 @@ namespace TNT_Paint
                 Point pt = pixel.Pop();
                 if (pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
                 {
-                    validate(bm, pixel, pt.X - 1, pt.Y, oldColor, newColor);
-                    validate(bm, pixel, pt.X, pt.Y - 1, oldColor, newColor);
-                    validate(bm, pixel, pt.X + 1, pt.Y, oldColor, newColor);
-                    validate(bm, pixel, pt.X, pt.Y + 1, oldColor, newColor);
+                    ValidateSolidColor(bm, pixel, pt.X - 1, pt.Y, oldColor, newColor);
+                    ValidateSolidColor(bm, pixel, pt.X, pt.Y - 1, oldColor, newColor);
+                    ValidateSolidColor(bm, pixel, pt.X + 1, pt.Y, oldColor, newColor);
+                    ValidateSolidColor(bm, pixel, pt.X, pt.Y + 1, oldColor, newColor);
                 }
             }
         }
 
-        private void validate(Bitmap bm, Stack<Point> pixel, int x, int y, Color oldColor, Color newColor)
+        private void ValidateSolidColor(Bitmap bm, Stack<Point> pixel, int x, int y, Color oldColor, Color newColor)
         {
             Color cx = bm.GetPixel(x, y);
-
-            // Kiểm tra màu sắc và độ trong suốt
             if (IsColorSimilar(cx, oldColor))
             {
                 pixel.Push(new Point(x, y));
                 bm.SetPixel(x, y, newColor);
             }
+        }
+
+        // Fill function for gradient
+        private void FillGradient(Bitmap bm, int x, int y, GradientFill gradient)
+        {
+            Color oldColor = bm.GetPixel(x, y);
+            Stack<Point> pixel = new Stack<Point>();
+            HashSet<Point> visited = new HashSet<Point>(); // Thêm HashSet để lưu các điểm đã xử lý
+            pixel.Push(new Point(x, y));
+
+            Rectangle rect = GetFillRegion(bm, x, y, oldColor);
+            Color actualColor = CalculateGradientColor(gradient, new Point(x, y), rect);
+            bm.SetPixel(x, y, actualColor);
+            visited.Add(new Point(x, y)); // Đánh dấu điểm đã xử lý
+            if (oldColor.ToArgb() == actualColor.ToArgb()) { return; }
+
+            while (pixel.Count > 0)
+            {
+                Point pt = pixel.Pop();
+                if (pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
+                {
+                    ValidateGradient(bm, pixel, visited, pt.X - 1, pt.Y, oldColor, gradient, rect);
+                    ValidateGradient(bm, pixel, visited, pt.X, pt.Y - 1, oldColor, gradient, rect);
+                    ValidateGradient(bm, pixel, visited, pt.X + 1, pt.Y, oldColor, gradient, rect);
+                    ValidateGradient(bm, pixel, visited, pt.X, pt.Y + 1, oldColor, gradient, rect);
+                }
+            }
+        }
+
+        private void ValidateGradient(Bitmap bm, Stack<Point> pixel, HashSet<Point> visited, int x, int y, Color oldColor, GradientFill gradient, Rectangle rect)
+        {
+            Color cx = bm.GetPixel(x, y);
+            Point point = new Point(x, y);
+            if (IsColorSimilar(cx, oldColor) && !visited.Contains(point))
+            {
+                pixel.Push(point);
+                Color actualColor = CalculateGradientColor(gradient, point, rect);
+                bm.SetPixel(x, y, actualColor);
+                visited.Add(point); // Đánh dấu điểm đã xử lý
+            }
+        }
+
+        private Rectangle GetFillRegion(Bitmap bm, int x, int y, Color oldColor)
+        {
+            int left = x, right = x, top = y, bottom = y;
+            Stack<Point> pixel = new Stack<Point>();
+            HashSet<Point> visited = new HashSet<Point>(); // Thêm HashSet để lưu các điểm đã xử lý
+            pixel.Push(new Point(x, y));
+
+            while (pixel.Count > 0)
+            {
+                Point pt = pixel.Pop();
+                if (pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
+                {
+                    if (IsColorSimilar(bm.GetPixel(pt.X - 1, pt.Y), oldColor) && !visited.Contains(new Point(pt.X - 1, pt.Y))) { left = Math.Min(left, pt.X - 1); }
+                    if (IsColorSimilar(bm.GetPixel(pt.X + 1, pt.Y), oldColor) && !visited.Contains(new Point(pt.X + 1, pt.Y))) { right = Math.Max(right, pt.X + 1); }
+                    if (IsColorSimilar(bm.GetPixel(pt.X, pt.Y - 1), oldColor) && !visited.Contains(new Point(pt.X, pt.Y - 1))) { top = Math.Min(top, pt.Y - 1); }
+                    if (IsColorSimilar(bm.GetPixel(pt.X, pt.Y + 1), oldColor) && !visited.Contains(new Point(pt.X, pt.Y + 1))) { bottom = Math.Max(bottom, pt.Y + 1); }
+
+                    if (IsColorSimilar(bm.GetPixel(pt.X - 1, pt.Y), oldColor) && !visited.Contains(new Point(pt.X - 1, pt.Y))) { pixel.Push(new Point(pt.X - 1, pt.Y)); }
+                    if (IsColorSimilar(bm.GetPixel(pt.X + 1, pt.Y), oldColor) && !visited.Contains(new Point(pt.X + 1, pt.Y))) { pixel.Push(new Point(pt.X + 1, pt.Y)); }
+                    if (IsColorSimilar(bm.GetPixel(pt.X, pt.Y - 1), oldColor) && !visited.Contains(new Point(pt.X, pt.Y - 1))) { pixel.Push(new Point(pt.X, pt.Y - 1)); }
+                    if (IsColorSimilar(bm.GetPixel(pt.X, pt.Y + 1), oldColor) && !visited.Contains(new Point(pt.X, pt.Y + 1))) { pixel.Push(new Point(pt.X, pt.Y + 1)); }
+
+                    visited.Add(pt); // Đánh dấu điểm đã xử lý
+                }
+            }
+
+            return new Rectangle(left, top, right - left + 1, bottom - top + 1);
         }
 
         private bool IsColorSimilar(Color c1, Color c2, int tolerance = 50)
@@ -2609,6 +2714,26 @@ namespace TNT_Paint
                 {
                     File.WriteAllText(saveFileDialog.FileName, tbCommand.Text);
                 }
+            }
+
+        }
+
+        private void pbStartColor_Click(object sender, EventArgs e)
+        {
+            colorDialog1.FullOpen = true;
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pbStartColor.BackColor = colorDialog1.Color;
+            }
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            colorDialog1.FullOpen = true;
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pbEndColor.BackColor = colorDialog1.Color;
             }
 
         }

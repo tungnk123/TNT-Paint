@@ -265,6 +265,7 @@
     <Compile Include="GalleryForm.Designer.cs">
       <DependentUpon>GalleryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GradientFill.cs" />
     <Compile Include="Information.cs">
       <SubType>Form</SubType>
     </Compile>
