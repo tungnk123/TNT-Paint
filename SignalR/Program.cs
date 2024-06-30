@@ -6,9 +6,17 @@ namespace SignalR
     class Program
     {
         private static HubConnection hubConnection;
+        private static string pipeNameReceive;
+        private static string pipeNameSend;
 
         static async Task Main(string[] args)
         {
+            string uuid = Guid.NewGuid().ToString();
+            pipeNameReceive = $"SignalRPipeReceive-{uuid}";
+            pipeNameSend = $"SignalRPipeSend-{uuid}";
+
+            WritePipeNames(pipeNameReceive, pipeNameSend);
+
             // Setup SignalR client
             hubConnection = new HubConnectionBuilder()
                 .WithUrl("https://localhost:7184/paintHub")
@@ -21,12 +29,18 @@ namespace SignalR
                 SendToPipe(data);
             });
 
+            hubConnection.On<string>("UserConnected", data =>
+            {
+                Console.WriteLine(data);
+                // Send received data to .NET 4.7.2 application
+            });
+
             await hubConnection.StartAsync();
             Console.WriteLine("Connected to SignalR hub");
 
             // Setup named pipes
-            var pipeServerReceive = new NamedPipeServerStream("SignalRPipeReceive", PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
-            var pipeServerSend = new NamedPipeClientStream(".", "SignalRPipeSend", PipeDirection.Out);
+            var pipeServerReceive = new NamedPipeServerStream(pipeNameReceive, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
+            var pipeServerSend = new NamedPipeClientStream(".", pipeNameSend, PipeDirection.Out);
 
             Console.WriteLine("Named Pipe Server is waiting for connection...");
 
@@ -37,6 +51,14 @@ namespace SignalR
 
             await Task.WhenAll(ListenToPipe(pipeServerReceive), Task.CompletedTask);
         }
+
+        private static void WritePipeNames(string receivePipe, string sendPipe)
+        {
+            // add a file at .exe location with the pipe names
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "pipeNames.txt");
+            File.WriteAllText(path, $"{receivePipe}{Environment.NewLine}{sendPipe}");
+        }
+
 
         private static async Task ListenToPipe(NamedPipeServerStream pipeServerReceive)
         {
@@ -62,7 +84,7 @@ namespace SignalR
 
         private static async void SendToPipe(byte[] data)
         {
-            using var pipeServerSend = new NamedPipeClientStream(".", "SignalRPipeSend", PipeDirection.Out);
+            using var pipeServerSend = new NamedPipeClientStream(".", pipeNameSend, PipeDirection.Out);
             await pipeServerSend.ConnectAsync();
             await pipeServerSend.WriteAsync(data, 0, data.Length);
         }

@@ -127,11 +127,19 @@ namespace TNT_Paint
 
             cbbGradientType.SelectedIndex = 0;
 
-            Task.Run(() => StartReceivingData());
-            Task.Delay(5000);
             StartNet6Application();
-            //ConnectToNamedPipe();
+            //Task.Delay(10000);
+            System.Threading.Thread.Sleep(3000);
+
+            // get pipe names from file
+            string pipeNamesPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\SignalR\bin\Debug\net6.0\pipeNames.txt"));
+            string[] pipeNames = File.ReadAllLines(pipeNamesPath);
+            pipeNameReceive = pipeNames[0];
+            pipeNameSend = pipeNames[1];
+
             Task.Run(() => StartSendingData());
+            Task.Run(() => StartReceivingData());
+            //ConnectToNamedPipe();
 
         }
 
@@ -139,26 +147,8 @@ namespace TNT_Paint
         {
             while (true)
             {
-                //using (var pipeClient = new NamedPipeClientStream(".", "SignalRPipeReceive", PipeDirection.In))
-                //{
-                //    MessageBox.Show("Connecting to named pipe for receiving data...");
-                //    await pipeClient.ConnectAsync();
-
-                //    using (var streamReader = new StreamReader(pipeClient, Encoding.UTF8))
-                //    {
-                //        string receivedData;
-                //        while ((receivedData = await streamReader.ReadLineAsync()) != null)
-                //        {
-                //            MessageBox.Show("Received from .NET 6 app: " + receivedData);
-                //            // Process the received data as needed
-                //        }
-                //    }
-                //}
-
-                //await Task.Delay(1000); // Retry connection after delay
-
                 // setup named pipe for receiving data
-                using (var pipeServer = new NamedPipeServerStream("SignalRPipeSend", PipeDirection.In))
+                using (var pipeServer = new NamedPipeServerStream(pipeNameSend, PipeDirection.In))
                 {
                     MessageBox.Show("Named Pipe Server is waiting for connection...");
                     await pipeServer.WaitForConnectionAsync();
@@ -181,7 +171,7 @@ namespace TNT_Paint
         {
             while (true)
             {
-                using (var pipeClient = new NamedPipeClientStream(".", "SignalRPipeReceive", PipeDirection.Out))
+                using (var pipeClient = new NamedPipeClientStream(".", pipeNameReceive, PipeDirection.Out))
                 {
                     Console.WriteLine("Connecting to named pipe for sending data...");
                     await pipeClient.ConnectAsync();
@@ -209,6 +199,8 @@ namespace TNT_Paint
             return DateTime.Now.ToString("O");
         }
 
+        static string pipeNameReceive;
+        static string pipeNameSend;
         private void StartNet6Application()
         {
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
