@@ -15,6 +15,9 @@ using System.Net.Http.Headers;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
+using CefSharp.DevTools.Page;
+using System.IO.Pipes;
+using System.Threading;
 
 namespace TNT_Paint
 {
@@ -123,8 +126,150 @@ namespace TNT_Paint
             button15.BackColor = Color.FromArgb(255, 255, 0);
 
             cbbGradientType.SelectedIndex = 0;
+
+            Task.Run(() => StartReceivingData());
+            Task.Delay(5000);
+            StartNet6Application();
+            //ConnectToNamedPipe();
+            Task.Run(() => StartSendingData());
+
         }
 
+        static async Task StartReceivingData()
+        {
+            while (true)
+            {
+                //using (var pipeClient = new NamedPipeClientStream(".", "SignalRPipeReceive", PipeDirection.In))
+                //{
+                //    MessageBox.Show("Connecting to named pipe for receiving data...");
+                //    await pipeClient.ConnectAsync();
+
+                //    using (var streamReader = new StreamReader(pipeClient, Encoding.UTF8))
+                //    {
+                //        string receivedData;
+                //        while ((receivedData = await streamReader.ReadLineAsync()) != null)
+                //        {
+                //            MessageBox.Show("Received from .NET 6 app: " + receivedData);
+                //            // Process the received data as needed
+                //        }
+                //    }
+                //}
+
+                //await Task.Delay(1000); // Retry connection after delay
+
+                // setup named pipe for receiving data
+                using (var pipeServer = new NamedPipeServerStream("SignalRPipeSend", PipeDirection.In))
+                {
+                    MessageBox.Show("Named Pipe Server is waiting for connection...");
+                    await pipeServer.WaitForConnectionAsync();
+                    MessageBox.Show("Named Pipe Server is connected.");
+
+                    using (var streamReader = new StreamReader(pipeServer, Encoding.UTF8))
+                    {
+                        string receivedData;
+                        while ((receivedData = await streamReader.ReadLineAsync()) != null)
+                        {
+                            MessageBox.Show("Received from .NET 6 app: " + receivedData);
+                            // Process the received data as needed
+                        }
+                    }
+                }
+            }
+        }
+
+        static async Task StartSendingData()
+        {
+            while (true)
+            {
+                using (var pipeClient = new NamedPipeClientStream(".", "SignalRPipeReceive", PipeDirection.Out))
+                {
+                    Console.WriteLine("Connecting to named pipe for sending data...");
+                    await pipeClient.ConnectAsync();
+
+                    using (var streamWriter = new StreamWriter(pipeClient, Encoding.UTF8))
+                    {
+                        while (true)
+                        {
+                            string dataToSend = GetDataToSend();
+                            await streamWriter.WriteLineAsync(dataToSend);
+                            await streamWriter.FlushAsync();
+                            Console.WriteLine("Sent to .NET 6 app: " + dataToSend);
+                            await Task.Delay(5000); // Send data every 5 seconds
+                        }
+                    }
+                }
+
+                await Task.Delay(1000); // Retry connection after delay
+            }
+        }
+
+        static string GetDataToSend()
+        {
+            // Simulate getting data to send
+            return DateTime.Now.ToString("O");
+        }
+
+        private void StartNet6Application()
+        {
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string signalRexePath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\SignalR\bin\Debug\net6.0\SignalR.exe"));
+
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = signalRexePath,
+                UseShellExecute = false
+            };
+
+            Process.Start(startInfo);
+        }
+
+        private NamedPipeClientStream pipeClientReceive;
+        private NamedPipeClientStream pipeClientSend;
+        private StreamWriter writer;
+        private NamedPipeClientStream pipeClient;
+        private void ConnectToNamedPipe()
+        {
+            pipeClient = new NamedPipeClientStream(".", "SignalRPipe", PipeDirection.In);
+            pipeClient.Connect();
+
+            Thread pipeThread = new Thread(new ThreadStart(ListenToPipe));
+            pipeThread.Start();
+        }
+
+        private void ListenToPipe()
+        {
+            using (StreamReader reader = new StreamReader(pipeClient))
+            {
+                string message;
+                while ((message = reader.ReadLine()) != null)
+                {
+                    string[] parts = message.Split('|');
+                    string user = parts[0];
+                    int x = int.Parse(parts[1]);
+                    int y = int.Parse(parts[2]);
+                    Color color = ColorTranslator.FromHtml(parts[3]);
+
+                    this.Invoke((Action)(() =>
+                    {
+                        DrawOnBitmap(x, y, color);
+                    }));
+                }
+            }
+        }
+
+        private void DrawOnBitmap(int x, int y, Color color)
+        {
+            using (SolidBrush brush = new SolidBrush(color))
+            {
+                g.FillEllipse(brush, x, y, 10, 10); // Example drawing action
+                this.Invalidate();
+            }
+        }
+
+        private void DrawCanvas(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
 
 
         #region All buttons event
@@ -2735,6 +2880,13 @@ namespace TNT_Paint
             {
                 pbEndColor.BackColor = colorDialog1.Color;
             }
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            pipeClientSend = new NamedPipeClientStream(".", "SignalRPipeSend", PipeDirection.Out);
+            pipeClientSend.Connect();
 
         }
 

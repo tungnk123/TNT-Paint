@@ -76,6 +76,9 @@ namespace TNT_Paint
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabHome = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.cbbGradientType = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.pbEndColor = new System.Windows.Forms.PictureBox();
             this.pbStartColor = new System.Windows.Forms.PictureBox();
             this.cbIsGradientFill = new System.Windows.Forms.CheckBox();
@@ -214,9 +217,7 @@ namespace TNT_Paint
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cbbGradientType = new System.Windows.Forms.ComboBox();
+            this.button23 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -689,6 +690,35 @@ namespace TNT_Paint
             this.groupBox12.TabIndex = 34;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Gradient Fill";
+            // 
+            // cbbGradientType
+            // 
+            this.cbbGradientType.FormattingEnabled = true;
+            this.cbbGradientType.Items.AddRange(new object[] {
+            "Linear",
+            "Radial"});
+            this.cbbGradientType.Location = new System.Drawing.Point(94, 18);
+            this.cbbGradientType.Name = "cbbGradientType";
+            this.cbbGradientType.Size = new System.Drawing.Size(104, 24);
+            this.cbbGradientType.TabIndex = 32;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(115, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 16);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "End Color";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 16);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Start Color";
             // 
             // pbEndColor
             // 
@@ -1835,6 +1865,7 @@ namespace TNT_Paint
             // 
             // tabCommand
             // 
+            this.tabCommand.Controls.Add(this.button23);
             this.tabCommand.Controls.Add(this.btnLoadScript);
             this.tabCommand.Controls.Add(this.btnSaveScript);
             this.tabCommand.Controls.Add(this.llViewSyntax);
@@ -2397,34 +2428,15 @@ namespace TNT_Paint
             this.label4.TabIndex = 14;
             this.label4.Text = "Brightness";
             // 
-            // label13
+            // button23
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 16);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Start Color";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(115, 58);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 16);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "End Color";
-            // 
-            // cbbGradientType
-            // 
-            this.cbbGradientType.FormattingEnabled = true;
-            this.cbbGradientType.Items.AddRange(new object[] {
-            "Linear",
-            "Radial"});
-            this.cbbGradientType.Location = new System.Drawing.Point(94, 18);
-            this.cbbGradientType.Name = "cbbGradientType";
-            this.cbbGradientType.Size = new System.Drawing.Size(104, 24);
-            this.cbbGradientType.TabIndex = 32;
+            this.button23.Location = new System.Drawing.Point(559, 39);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(75, 23);
+            this.button23.TabIndex = 6;
+            this.button23.Text = "button23";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // Form1
             // 
@@ -2699,6 +2711,7 @@ namespace TNT_Paint
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbbGradientType;
+        private System.Windows.Forms.Button button23;
     }
 }
 
