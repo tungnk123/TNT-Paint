@@ -129,7 +129,7 @@ namespace TNT_Paint
 
             StartNet6Application();
             //Task.Delay(10000);
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(1000);
 
             // get pipe names from file
             string pipeNamesPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\SignalR\bin\Debug\net6.0\pipeNames.txt"));
@@ -143,31 +143,45 @@ namespace TNT_Paint
 
         }
 
-        static async Task StartReceivingData()
+        private async Task StartReceivingData()
         {
             while (true)
             {
-                // setup named pipe for receiving data
-                using (var pipeServer = new NamedPipeServerStream(pipeNameSend, PipeDirection.In))
+                using (var pipeServer = new NamedPipeServerStream(pipeNameSend, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous))
                 {
-                    MessageBox.Show("Named Pipe Server is waiting for connection...");
                     await pipeServer.WaitForConnectionAsync();
-                    MessageBox.Show("Named Pipe Server is connected.");
+                    //MessageBox.Show("Named Pipe Server is connected.");
 
                     using (var streamReader = new StreamReader(pipeServer, Encoding.UTF8))
                     {
-                        string receivedData;
-                        while ((receivedData = await streamReader.ReadLineAsync()) != null)
+                        while (pipeServer.IsConnected)
                         {
-                            MessageBox.Show("Received from .NET 6 app: " + receivedData);
-                            // Process the received data as needed
+                            string receivedBase64 = await streamReader.ReadLineAsync();
+                            if (string.IsNullOrEmpty(receivedBase64)) continue;
+
+                            Bitmap bitmap = ConvertBase64ToBitmap(receivedBase64);
+                            if (bitmap != null)
+                            {
+                                // Display the bitmap in a PictureBox
+                                pb_mainScreen.Image = bitmap;
+                            }
                         }
                     }
                 }
             }
         }
 
-        static async Task StartSendingData()
+
+        private Bitmap ConvertBase64ToBitmap(string base64String)
+        {
+            byte[] bitmapBytes = Convert.FromBase64String(base64String);
+            using (var ms = new MemoryStream(bitmapBytes))
+            {
+                return new Bitmap(ms);
+            }
+        }
+
+        async Task StartSendingData()
         {
             while (true)
             {
@@ -180,16 +194,26 @@ namespace TNT_Paint
                     {
                         while (true)
                         {
-                            string dataToSend = GetDataToSend();
-                            await streamWriter.WriteLineAsync(dataToSend);
+                            string base64String = ConvertBitmapToBase64(bm);
+                            await streamWriter.WriteLineAsync(base64String);
                             await streamWriter.FlushAsync();
-                            Console.WriteLine("Sent to .NET 6 app: " + dataToSend);
-                            await Task.Delay(5000); // Send data every 5 seconds
+                            Console.WriteLine("Sent to .NET 6 app: " + base64String);
+                            await Task.Delay(1000); // Send data every 5 seconds
                         }
                     }
                 }
 
                 await Task.Delay(1000); // Retry connection after delay
+            }
+        }
+
+        private string ConvertBitmapToBase64(Bitmap bitmap)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bitmap.Save(ms, ImageFormat.Png);
+                byte[] bitmapBytes = ms.ToArray();
+                return Convert.ToBase64String(bitmapBytes);
             }
         }
 
